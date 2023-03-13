@@ -21,25 +21,30 @@ class AuthentificationController extends Controller
             if (Hash::check($request->password, $user->password) && $user->is_active) {
                 $token = $user->createToken('auth_token')->plainTextToken;
                 Auth::login($user);
-                $status = 'true';
-                $message = 'Hello '.$user->name;
-            } elseif (Hash::check($request->password, $user->password) && ! $user->is_active) {
-                $status = 'false';
-                $message = 'Your account is disable, Please contact administrator';
+                $data = [
+                    'status' => 'true',
+                    'message' => 'Hello ' . $user->name,
+                    'token' => $token
+                ];
+            } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {
+                $data = [
+                    'status' => 'false',
+                    'message' => 'Your account is disable, Please contact administrator'
+                ];
             } else {
-                $status = 'false';
-                $message = 'These credentials do not match our records.';
+                $data = [
+                    'status' => 'false',
+                    'message' => 'These credentials do not match our records.'
+                ];
             }
         } else {
-            $status = 'false';
-            $message = 'These credentials do not match our records.';
+            $data = [
+                'status' => 'false',
+                'message' => 'These credentials do not match our records.'
+            ];
         }
 
-        return response()->json([
-            'Staus' => $status,
-            'info' => $message,
-            'token' => $token
-        ]);
+        return response()->json($data);
     }
 
     public function logout(Request $request)
