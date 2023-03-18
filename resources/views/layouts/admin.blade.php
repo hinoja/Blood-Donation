@@ -9,11 +9,12 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <title>:: Swift - Hospital Admin ::</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/back/plugins/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
-    <link rel="stylesheet" href="assets/plugins/morrisjs/morris.css" />
+    <link rel="stylesheet" href="{{ asset('assets/back/plugins/morrisjs/morris.css') }}" />
     <!-- Custom Css -->
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="{{ asset('assets/back/css/main.css') }}" />
+    @stack('css')
 </head>
 
 <body class="theme-cyan">
@@ -55,88 +56,7 @@
         </li>
     </ul>
 
-    <!-- Morphing Search  -->
-    <div id="morphsearch" class="morphsearch">
-        <form class="morphsearch-form">
-            <div class="form-group m-0">
-                <input value="" type="search" placeholder="Explore Swift..."
-                    class="form-control morphsearch-input" />
-                <button class="morphsearch-submit" type="submit">Search</button>
-            </div>
-        </form>
-        <div class="morphsearch-content">
-            <div class="dummy-column">
-                <h2>People</h2>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar1.jpg" alt="" />
-                    <h3>Sara Soueidan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar2.jpg" alt="" />
-                    <h3>Rachel Smith</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar3.jpg" alt="" />
-                    <h3>Peter Finlan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar4.jpg" alt="" />
-                    <h3>Patrick Cox</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar5.jpg" alt="" />
-                    <h3>Tim Holman</h3>
-                </a>
-            </div>
-            <div class="dummy-column">
-                <h2>Popular</h2>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar5.jpg" alt="" />
-                    <h3>Sara Soueidan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar4.jpg" alt="" />
-                    <h3>Rachel Smith</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar1.jpg" alt="" />
-                    <h3>Peter Finlan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar2.jpg" alt="" />
-                    <h3>Patrick Cox</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar3.jpg" alt="" />
-                    <h3>Tim Holman</h3>
-                </a>
-            </div>
-            <div class="dummy-column">
-                <h2>Recent</h2>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar1.jpg" alt="" />
-                    <h3>Sara Soueidan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar5.jpg" alt="" />
-                    <h3>Rachel Smith</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar1.jpg" alt="" />
-                    <h3>Peter Finlan</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar4.jpg" alt="" />
-                    <h3>Patrick Cox</h3>
-                </a>
-                <a class="dummy-media-object" href="javascript:void(0);"><img class="rounded"
-                        src="assets/images/xs/avatar2.jpg" alt="" />
-                    <h3>Tim Holman</h3>
-                </a>
-            </div>
-        </div>
-        <span class="morphsearch-close"></span>
-    </div>
+
 
     <!-- Top Bar -->
     @include('includes.back.navbar')
@@ -151,20 +71,24 @@
     </section>
 
     <section class="content home">
+        <div class="block-header">
+            <h2>@yield('title')</h2>
+            <small class="text-muted">@yield('sub-title')</small>
+        </div>
         @yield('content')
     </section>
 
     <div class="color-bg"></div>
     <!-- Jquery Core Js -->
-    <script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
-    <script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js -->
+    <script src="{{ asset('assets/back/bundles/libscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
+    <script src="{{ asset('assets/back/bundles/vendorscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
+    @stack('js')
+    <script src="{{ asset('assets/back/bundles/chartscripts.bundle.js') }}"></script> <!-- Chart Plugins Js -->
+    <script src="{{ asset('assets/back/bundles/sparklinescripts.bundle.js') }}"></script> <!-- Chart Plugins Js -->
 
-    <script src="assets/bundles/chartscripts.bundle.js"></script> <!-- Chart Plugins Js -->
-    <script src="assets/bundles/sparklinescripts.bundle.js"></script> <!-- Chart Plugins Js -->
-
-    <script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
-    <script src="assets/js/pages/index.js"></script>
-    <script src="assets/js/pages/charts/sparkline.min.js"></script>
+    <script src="{{ asset('assets/back/bundles/mainscripts.bundle.js') }}"></script><!-- Custom Js -->
+    <script src="{{ asset('assets/back/js/pages/index.js') }}"></script>
+    <script src="{{ asset('assets/back/js/pages/charts/sparkline.min.js') }}"></script>
 </body>
 
 <!-- Mirrored from thememakker.com/templates/swift/hospital/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2023 08:01:08 GMT -->

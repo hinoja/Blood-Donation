@@ -23,24 +23,24 @@ class AuthentificationController extends Controller
                 Auth::login($user);
                 $data = [
                     'status' => 'true',
-                    'message' => 'Hello ' . $user->name,
-                    'token' => $token
+                    'message' => 'Hello '.$user->name,
+                    'token' => $token,
                 ];
-            } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {
+            } elseif (Hash::check($request->password, $user->password) && ! $user->is_active) {
                 $data = [
                     'status' => 'false',
-                    'message' => 'Your account is disable, Please contact administrator'
+                    'message' => 'Your account is disable, Please contact administrator',
                 ];
             } else {
                 $data = [
                     'status' => 'false',
-                    'message' => 'These credentials do not match our records.'
+                    'message' => 'These credentials do not match our records.',
                 ];
             }
         } else {
             $data = [
                 'status' => 'false',
-                'message' => 'These credentials do not match our records.'
+                'message' => 'These credentials do not match our records.',
             ];
         }
 
@@ -65,4 +65,3 @@ class AuthentificationController extends Controller
         }
     }
 }
-
