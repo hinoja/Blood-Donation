@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/morrisjs/morris.css') }}" />
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ asset('assets/back/css/main.css') }}" />
+     <!-- Fontawesome Css -->
+
+    <link rel="stylesheet" href="{{ asset('assets/back/modules/fontawesome/css/all.min.css') }}">
     @stack('css')
 </head>
 

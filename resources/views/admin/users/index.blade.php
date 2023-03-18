@@ -5,14 +5,19 @@
     <link rel="stylesheet" href="{{ asset('assets/back/modules/datatables/datatables.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('assets/back/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
+    @livewireStyles()
 @endpush
 @push('js')
+    @livewireScripts()
     <script src="{{ asset('assets/back/modules/datatables/datatables.min.js') }}"></script>
     <script src="{{ asset('assets/back/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/back/js/page/modules-datatables.js') }}"></script>
 @endpush
 @section('content')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
     <div class="container-fluid">
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -33,39 +38,7 @@
                         </ul>
                     </div>
                     <div class="body">
-                        <div class="table-responsive">
-                            <table class="table table-striped" id="table-1">
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>First Name</th>
-                                        <th>Email</th>
-                                        <th>Active</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($users as $user)
-                                        <tr>
-                                            <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>
-                                                @if ($user->is_active)
-                                                    Yes
-                                                @else
-                                                    No
-                                                @endif
-                                            </td>
-                                            <td><span class="btn btn-danger"><i class="fa fa-trash"></i>Delete </span>
-                                                <span class="btn btn-primary"><i class="fa fa-eye"></i> Show</span>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-
-                                </tbody>
-                            </table>
-                        </div>
+                        @livewire('admin.users.user-manage')
                     </div>
                 </div>
             </div>

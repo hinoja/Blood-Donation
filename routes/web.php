@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,10 +29,14 @@ Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+//home
+Route::view('/home','layouts.front');
+
+
 //ADMIN
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
-    Route::get('users/index', [UsersController::class, 'index'])->name('users.index');
+    Route::view('users/index', 'admin.users.index')->name('users.index');
 });
 
 require __DIR__.'/auth.php';
