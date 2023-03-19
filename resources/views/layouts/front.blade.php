@@ -11,7 +11,8 @@
     <!-- #favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/front/images/favicon.png') }}" type="image/x-icon">
     <!-- #title -->
-    <title>Blad Ai - Blood Donation Activism & Campaign HTML Template</title>
+    {{-- <title> Blood Donation Activism | @yield('signleTitle') </title> --}}
+    <title> Blood Donation | Acceuil </title>
     <!-- #keywords -->
     <meta name="keywords" content="blood, blood activism campaign, blood campaign, Blood Donation, Medical, Hospital">
     <!-- #description -->

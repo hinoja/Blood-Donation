@@ -7,7 +7,8 @@
                         <div class="col-md-6 col-lg-4 col-sm-6">
                             <div class="footer-area__single">
                                 <h5>About Us</h5>
-                                <p class="alt">Duis aute irure dolor in reprehenderit velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat</p>
+                                <p class="alt">Duis aute irure dolor in reprehenderit velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat</p>
 
                                 <div class="address">
                                     <p><strong>Phone :</strong> +1(456)657-887, 999</p>
@@ -84,7 +85,8 @@
                                 <h5>Latest News</h5>
                                 <div class="latest-news__single">
                                     <a href="blog-details.html">
-                                        <img src="{{ asset('assets/front/images/news/latest-one.png') }}" alt="Latest News">
+                                        <img src="{{ asset('assets/front/images/news/latest-one.png') }}"
+                                            alt="Latest News">
                                     </a>
                                     <div class="latest-news__single-content">
                                         <p class="mt-0">
@@ -95,7 +97,8 @@
                                 </div>
                                 <div class="latest-news__single">
                                     <a href="blog-details.html">
-                                        <img src="{{ asset('assets/front/images/news/latest-two.png') }}" alt="Latest News">
+                                        <img src="{{ asset('assets/front/images/news/latest-two.png') }}"
+                                            alt="Latest News">
                                     </a>
                                     <div class="latest-news__single-content">
                                         <p class="mt-0">
@@ -140,8 +143,10 @@
                                     </div>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
-                                            <li class="breadcrumb-item"><a href="privacy-policy.html">Privacy Policy</a></li>
-                                            <li class="breadcrumb-item"><a href="terms-conditions.html">Terms & Conditions</a></li>
+                                            <li class="breadcrumb-item"><a href="privacy-policy.html">Privacy Policy</a>
+                                            </li>
+                                            <li class="breadcrumb-item"><a href="terms-conditions.html">Terms &
+                                                    Conditions</a></li>
                                             <li class="breadcrumb-item"><a href="faq.html">FAQ</a></li>
                                         </ol>
                                     </nav>
@@ -157,7 +162,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                   <p class="secondary neutral-bottom">Copyright &copy; 2022 <a href="https://themeforest.net/user/croptheme">Blad Ai</a>. All rights reserved.</p>
+                    <p class="secondary neutral-bottom">Copyright &copy; 2022 <a
+                            href="https://themeforest.net/user/croptheme">Blad Ai</a>. All rights reserved.</p>
                 </div>
             </div>
         </div>

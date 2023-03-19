@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +28,7 @@ class AuthenticatedSessionController extends Controller
     public function store(LoginRequest $request): RedirectResponse
     {
         $remember = (bool) $request->remember;
+        // $route="/";
         if (! Auth::attempt(['email' => $request->email, 'password' => $request->password, 'is_active' => true], $remember)) {
             $user = User::where('email', $request->email)->first();
             if ($user) {
@@ -47,14 +47,12 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
 
-        // $redirect = match (auth()->user()->role->name) {
-        //     'Admin' => 'admin/dashboard',
-        //     default => '/'
-        // };
+        $redirect = match (auth()->user()->role->name) {
+            'Admin' => 'admin/dashboard',
+            default => '/'
+        };
 
-        // return redirect()->intended($redirect);
-
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->intended($redirect);
     }
 
     /**

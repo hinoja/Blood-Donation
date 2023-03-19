@@ -20,7 +20,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about-us.html">About Us</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Campaign
@@ -29,12 +29,12 @@
                             <li><a class="dropdown-item" href="campaigns.html">Campaigns</a></li>
                             <li><a class="dropdown-item" href="campaign-details.html">Campaign Details</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+                        {{-- <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Pages
-                        </a>
+                        </a> --}}
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="services.html">Our Services</a></li>
                             <li><a class="dropdown-item" href="service-details.html">Service Details</a></li>
@@ -65,6 +65,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact-us.html">Contact Us</a>
                     </li>
+                    @if (Route::has('login'))
+                        {{-- <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> --}}
+                        @auth
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                            </li>
+                        @else
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="{{ route('login') }}">Log in</a>
+                            </li>
+                            <li class="nav-item">
+                                @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                @endif
+                            </li>
+                        @endauth
+                        {{-- </div> --}}
+                    @endif
+
+                    </li>
+
                 </ul>
             </div>
             <div class="navbar-out order-2 order-xl-3">
@@ -73,10 +95,8 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                     <select class="select-language">
+                        <option value="spanish">Français</option>
                         <option value="english">English</option>
-                        <option value="spanish">Spanish</option>
-                        <option value="china">China</option>
-                        <option value="germany">Germany</option>
                     </select>
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
                         <span class="icon-bar top-bar"></span>

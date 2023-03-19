@@ -1,12 +1,12 @@
 <section class="hero-slider-area">
     <div class="hero-slider owl-carousel owl-theme">
-        <div class="hero-slider-item bg-img" data-background="assets/images/hero/hero-slider-bg.png">
+        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-slider-bg.png') }}">
             <div class="container">
                 <div class="hero-slider-content">
                     <div class="intro-video">
                         <div class="d-flex align-items-center">
-                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                            title="YouTube video player" class="video-btn video-popup-btn">
+                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0" title="YouTube video player"
+                                class="video-btn video-popup-btn">
                                 <span>
                                     <i class="fa-solid fa-play"></i>
                                 </span>
@@ -21,13 +21,13 @@
             </div>
         </div>
 
-        <div class="hero-slider-item bg-img" data-background="assets/images/hero/hero-four.jpg">
+        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-four.jpg') }}">
             <div class="container">
                 <div class="hero-slider-content animation-style-two">
                     <div class="intro-video">
                         <div class="d-flex align-items-center">
-                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                            title="YouTube video player" class="video-btn video-popup-btn">
+                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0" title="YouTube video player"
+                                class="video-btn video-popup-btn">
                                 <span>
                                     <i class="fa-solid fa-play"></i>
                                 </span>
@@ -42,13 +42,13 @@
             </div>
         </div>
 
-        <div class="hero-slider-item bg-img" data-background="assets/images/hero/hero-five.jpg">
+        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-five.jpg') }}">
             <div class="container">
                 <div class="hero-slider-content animation-style-three">
                     <div class="intro-video">
                         <div class="d-flex align-items-center">
-                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0"
-                            title="YouTube video player" class="video-btn video-popup-btn">
+                            <a href="https://www.youtube.com/watch?v=NtETKgSE7i0" title="YouTube video player"
+                                class="video-btn video-popup-btn">
                                 <span>
                                     <i class="fa-solid fa-play"></i>
                                 </span>

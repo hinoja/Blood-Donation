@@ -18,7 +18,10 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
@@ -41,7 +44,10 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
@@ -64,11 +70,15 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
-                                        <img src="{{ asset('assets/front/images/avatars/nicolas.png') }}" alt="Nicolas">
+                                        <img src="{{ asset('assets/front/images/avatars/nicolas.png') }}"
+                                            alt="Nicolas">
                                     </div>
                                     <div class="avatar-info">
                                         <h5>Nicolas Mark</h5>
@@ -87,7 +97,10 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
@@ -110,11 +123,14 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
-                                        <img src="{{asset('assets/front/images/avatars/niro.png')  }}" alt="Niro">
+                                        <img src="{{ asset('assets/front/images/avatars/niro.png') }}" alt="Niro">
                                     </div>
                                     <div class="avatar-info">
                                         <h5>Niro Markusa</h5>
@@ -133,11 +149,15 @@
                                         <i class="fa-solid fa-star"></i>
                                         <i class="fa-solid fa-star"></i>
                                     </div>
-                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum cillum dolore fugiat nulla pariatur.</p>
+                                    <p class="secondary neutral-descender">Duis aute irure dolor in reprehenderit in
+                                        voluptate velit esse cillum dolore fugiat nulla pariatur. Excepteur sint
+                                        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+                                        laborum cillum dolore fugiat nulla pariatur.</p>
                                 </div>
                                 <div class="avatar-wrapper">
                                     <div class="avatar">
-                                        <img src="{{ asset('assets/front/images/avatars/nicolas.png') }}" alt="Nicolas">
+                                        <img src="{{ asset('assets/front/images/avatars/nicolas.png') }}"
+                                            alt="Nicolas">
                                     </div>
                                     <div class="avatar-info">
                                         <h5>Nicolas Mark</h5>

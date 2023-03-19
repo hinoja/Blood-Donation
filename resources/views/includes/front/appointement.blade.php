@@ -25,14 +25,17 @@
                                 <form action="#" method="post" name="appointmentForm">
                                     <div class="input-group-column">
                                         <div class="input">
-                                            <input type="text" name="appointment__name" id="appointmentName" placeholder="Your Name" required>
+                                            <input type="text" name="appointment__name" id="appointmentName"
+                                                placeholder="Your Name" required>
                                         </div>
                                         <div class="input">
-                                            <input type="number" name="appointment__number" id="appointmentNumber" placeholder="Phone Number" required>
+                                            <input type="number" name="appointment__number" id="appointmentNumber"
+                                                placeholder="Phone Number" required>
                                         </div>
                                     </div>
                                     <div class="input">
-                                        <input type="email" name="appointment__email" id="appointmentEmail" placeholder="Your Email" required>
+                                        <input type="email" name="appointment__email" id="appointmentEmail"
+                                            placeholder="Your Email" required>
                                     </div>
                                     <div class="input">
                                         <select class="select-donation-type">
@@ -46,7 +49,8 @@
                                     <div class="input">
                                         <textarea name="appointment__message" id="appointmentMessage" cols="30" rows="10" placeholder="Your Message"></textarea>
                                     </div>
-                                    <button type="submit" class="button button--tertiary button--effect">Submit Now</button>
+                                    <button type="submit" class="button button--tertiary button--effect">Submit
+                                        Now</button>
                                 </form>
                             </div>
                         </div>

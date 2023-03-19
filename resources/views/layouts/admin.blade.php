@@ -7,14 +7,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>:: Swift - Hospital Admin ::</title>
+    <title> Blood Donation :: @yield('signleTitle')</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/morrisjs/morris.css') }}" />
     <!-- Custom Css -->
     <link rel="stylesheet" href="{{ asset('assets/back/css/main.css') }}" />
-     <!-- Fontawesome Css -->
+    <!-- Fontawesome Css -->
 
     <link rel="stylesheet" href="{{ asset('assets/back/modules/fontawesome/css/all.min.css') }}">
     @stack('css')
@@ -42,7 +42,7 @@
     <div class="overlay"></div>
 
     <!-- #Float icon -->
-    <ul id="f-menu" class="mfbc-br mfb-zoomin" data-mfb-toggle="hover">
+    {{-- <ul id="f-menu" class="mfbc-br mfb-zoomin" data-mfb-toggle="hover">
         <li class="mfbc_wrap">
             <a href="javascript:void(0);" class="mfbcb-main g-bg-cyan">
                 <i class="mfbcm-icon-resting zmdi zmdi-plus"></i>
@@ -57,7 +57,7 @@
                             class="zmdi zmdi-balance-wallet mfbc_icon"></i></a></li>
             </ul>
         </li>
-    </ul>
+    </ul> --}}
 
 
 
@@ -74,14 +74,15 @@
     </section>
 
     <section class="content home">
-        <div class="block-header">
+        <div class="block-header text-center" >
             <h2>@yield('title')</h2>
             <small class="text-muted">@yield('sub-title')</small>
         </div>
         @yield('content')
     </section>
 
-    <div class="color-bg"></div>
+    <div class="color-bg"> </div>
+
     <!-- Jquery Core Js -->
     <script src="{{ asset('assets/back/bundles/libscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
     <script src="{{ asset('assets/back/bundles/vendorscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->

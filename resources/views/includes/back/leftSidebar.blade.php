@@ -5,19 +5,27 @@
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
     <div class="user-info">
-        <div class="admin-image"> <img src="{{ asset('assets/back/images/random-avatar7.jpg') }}" alt=""> </div>
+        <div class="admin-image "> <img src="{{ asset('assets/front/images/avatars/niro.png') }}" alt=""> </div>
         <div class="admin-action-info"> <span>Welcome</span>
             <h3>{{ auth()->user()->name }}</h3>
             <ul>
-                <li><a href="mail-inbox.html" title="Go to Inbox"><i class="zmdi zmdi-email"></i></a></li>
-                <li><a href="profile.html" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
+                <li><a href="{{ route('home') }}" class="text-success" title="Go to WelcomePage"><i
+                            class="fas fa-home"></i> @lang('WelcomePage')</a></li> <br>
+
+                {{-- <li><a href="profile.html" title="Go to Profile"><i class="zmdi zmdi-account"></i></a></li>
                 <li><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i
-                            class="zmdi zmdi-settings"></i></a></li>
-                <li><form action="{{ route('logout') }}" method="post">
+                            class="zmdi zmdi-settings"></i></a></li>  --}}
+                <li>
+                    <form action="{{ route('logout') }}" method="post">
                         @csrf
-                    <button type="submit" title="sign out"><i class="zmdi zmdi-sign-in"></i></button>
-                </form>
-                    {{-- <a href="{{ route('logout') }}" ></a> --}}
+                        <a class="text-danger" title="sign out" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                        this.closest('form').submit();">
+                            <i class="btn-sm fas fa-sign-out-alt"></i> @lang('Log Out')
+                        </a>
+
+                        {{-- <button type="submit" title="sign out"><i class="zmdi zmdi-sign-in"></i></button> --}}
+                    </form>
                 </li>
             </ul>
         </div>
@@ -28,8 +36,12 @@
                 <li><span>20<i>Panding</i></span></li>
                 <li><span>04<i>Visit</i></span></li>
             </ul>
+
         </div>
+        <div class="row"></div>
+        <hr>
     </div>
+    <br>
     <!-- #User Info -->
     <!-- Menu -->
     <div class="menu">
@@ -37,7 +49,7 @@
             <li class="header">MAIN NAVIGATION</li>
             <li class="@if (Str::contains($currentUri, 'dashboard')) active open @endif"><a href="{{ route('admin.dashboard') }}"><i
                         class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-            <li><a href="javascript:void(0);" class="menu-toggle"><i
+            {{-- <li><a href="javascript:void(0);" class="menu-toggle"><i
                         class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                 <ul class="ml-menu">
                     <li><a href="doctor-schedule.html">Doctor Schedule</a></li>
@@ -62,18 +74,19 @@
                 </ul>
             </li>
 
-            <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
-                    <span>@lang('All Users')</span></a>
-            </li>
-
-            {{-- <li class="header">LABELS</li>
+              <li class="header">LABELS</li>
             <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-red"></i><span>Important</span> </a>
             </li>
             <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-amber"></i><span>Warning</span> </a>
             </li>
             <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-blue"></i><span>Information</span>
-                </a> </li> --}}
+                </a> </li>   --}}
+
+            <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
+                    <span>@lang('All Users')</span></a>
+            </li>
+
         </ul>
     </div>
     <!-- #Menu -->

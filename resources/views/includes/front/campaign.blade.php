@@ -12,7 +12,8 @@
                             <div class="campaign-area__single-inner">
                                 <div class="poster campaign-area__single-inner__item">
                                     <a href="campaign-details.html">
-                                        <img src="{{ asset('assets/front/images/campaigns/free-group.png') }}" alt="Free Blood Donation">
+                                        <img src="{{ asset('assets/front/images/campaigns/free-group.png') }}"
+                                            alt="Free Blood Donation">
                                     </a>
                                     <a href="campaign-details.html" class="read-more">Read More</a>
                                 </div>
@@ -22,7 +23,8 @@
                                         13 February, 2022
                                     </p>
                                     <h6><a href="blog-details.html">Free Group Checking</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do incididunt et dolore magna sit consectetur.</p>
+                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
+                                        incididunt et dolore magna sit consectetur.</p>
                                     <div class="group">
                                         <p class="text-icon-group">
                                             <i class="fa-solid fa-clock"></i>
@@ -51,7 +53,8 @@
                                         14 February, 2022
                                     </p>
                                     <h6><a href="blog-details.html">Blood Donation Camp</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do incididunt et dolore magna sit consectetur.</p>
+                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
+                                        incididunt et dolore magna sit consectetur.</p>
                                     <div class="group">
                                         <p class="text-icon-group">
                                             <i class="fa-solid fa-clock"></i>
@@ -69,7 +72,8 @@
                             <div class="campaign-area__single-inner">
                                 <div class="poster campaign-area__single-inner__item">
                                     <a href="campaign-details.html">
-                                        <img src="{{ asset('assets/front/images/campaigns/free-group.png') }}" alt="Free Blood Donation">
+                                        <img src="{{ asset('assets/front/images/campaigns/free-group.png') }}"
+                                            alt="Free Blood Donation">
                                     </a>
                                     <a href="campaign-details.html" class="read-more">Read More</a>
                                 </div>
@@ -79,7 +83,8 @@
                                         15 February, 2022
                                     </p>
                                     <h6><a href="blog-details.html">Free Group Checking</a></h6>
-                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do incididunt et dolore magna sit consectetur.</p>
+                                    <p class="regular">Lorem ipsum dolor sit consectetur adipiscing elit, sed do
+                                        incididunt et dolore magna sit consectetur.</p>
                                     <div class="group">
                                         <p class="text-icon-group">
                                             <i class="fa-solid fa-clock"></i>

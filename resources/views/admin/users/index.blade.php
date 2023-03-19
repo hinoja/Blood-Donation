@@ -1,4 +1,5 @@
 @extends('layouts.admin')
+@section('signleTitle', __('Users list'))
 @section('title', 'All Users')
 @section('sub-title', 'Description text here...')
 @push('css')
@@ -23,19 +24,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card">
                     <div class="header">
-                        <ul class="header-dropdown">
-                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
-                                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i
-                                        class="zmdi zmdi-more-vert"></i></a>
-                                <ul class="dropdown-menu float-right">
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Action</a></li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Another action</a>
-                                    </li>
-                                    <li><a href="javascript:void(0);" class=" waves-effect waves-block">Something else
-                                            here</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+
                     </div>
                     <div class="body">
                         @livewire('admin.users.user-manage')

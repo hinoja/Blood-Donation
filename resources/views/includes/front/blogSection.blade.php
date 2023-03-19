@@ -19,10 +19,13 @@
                                 <div class="blog-area__single-content">
                                     <div class="blog-post-date">
                                         <p><i class="fa-solid fa-clock"></i>18 Feb, 2022</p>
-                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3 Comments</a> </p>
+                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3
+                                                Comments</a> </p>
                                     </div>
-                                    <h6><a href="blog-details.html">Donation Is Hope For The Poor Helpless Children</a></h6>
-                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, magni eos qui ratione voluptatem  aspernatur aut odit aut</p>
+                                    <h6><a href="blog-details.html">Donation Is Hope For The Poor Helpless Children</a>
+                                    </h6>
+                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                        aut odit aut fugit, magni eos qui ratione voluptatem aspernatur aut odit aut</p>
                                     <a href="blog-details.html" class="read-more">
                                         Read More
                                         <i class="fa-solid fa-angles-right"></i>
@@ -41,10 +44,13 @@
                                 <div class="blog-area__single-content">
                                     <div class="blog-post-date">
                                         <p><i class="fa-solid fa-clock"></i>18 Feb, 2022</p>
-                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3 Comments</a></p>
+                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3
+                                                Comments</a></p>
                                     </div>
-                                    <h6><a href="blog-details.html">Don’t Do This Activity After You Donating Your Blood</a></h6>
-                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, magni eos qui ratione voluptatem  aspernatur aut odit aut</p>
+                                    <h6><a href="blog-details.html">Don’t Do This Activity After You Donating Your
+                                            Blood</a></h6>
+                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                        aut odit aut fugit, magni eos qui ratione voluptatem aspernatur aut odit aut</p>
                                     <a href="blog-details.html" class="read-more">
                                         Read More
                                         <i class="fa-solid fa-angles-right"></i>
@@ -63,10 +69,13 @@
                                 <div class="blog-area__single-content">
                                     <div class="blog-post-date">
                                         <p><i class="fa-solid fa-clock"></i>18 Feb, 2022</p>
-                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3 Comments</a></p>
+                                        <p><a href="blog-details.html"><i class="fa-solid fa-comments"></i>3
+                                                Comments</a></p>
                                     </div>
-                                    <h6><a href="blog-details.html">Donation Is Hope For The Poor Helpless Children</a></h6>
-                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, magni eos qui ratione voluptatem  aspernatur aut odit aut</p>
+                                    <h6><a href="blog-details.html">Donation Is Hope For The Poor Helpless Children</a>
+                                    </h6>
+                                    <p class="neutral-bottom">Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                        aut odit aut fugit, magni eos qui ratione voluptatem aspernatur aut odit aut</p>
                                     <a href="blog-details.html" class="read-more">
                                         Read More
                                         <i class="fa-solid fa-angles-right"></i>

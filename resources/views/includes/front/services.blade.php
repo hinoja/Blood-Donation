@@ -39,7 +39,7 @@
                             <div class="col-lg-6 row-item">
                                 <div class="service-area__single-thumb">
                                     <a href="service-details.html">
-                                        <img src="assets/images/services/health-check.png" alt="Health Check">
+                                        <img src="{{ asset('assets/front/images/services/health-check.png') }}" alt="Health Check">
                                     </a>
                                 </div>
                             </div>

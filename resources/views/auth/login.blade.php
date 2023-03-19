@@ -21,24 +21,22 @@
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">
-            <h1 class="title"><span>Swift Hospital</span>Locked</h1>
+            <h1 class="title"> @lang('Login') <span class="msg">@lang('Sign In a  membership')</span></h1>
             <div class="d-flex">
-                <div class="thumb">
-                    <img class="media-object" src="assets/images/random-avatar7.jpg" class="rounded" alt="">
+                <div class="thumb" style="margin:auto;">
+                    <a href="{{ route('home') }}"> <img class="media-object" src="{{ asset('assets/back/images/bg2.jpg') }}" class="rounded"
+                        alt="logo"></a>
                 </div>
-                <div>
-                    <h6 class="media-heading">Dr. John Smith</h6>
-                    <p>ENT Specialist</p>
-                </div>
+
             </div>
             <div class="body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
 
                     <!-- Email Address -->
-                    <div class="input-group icon before_span">
+                    <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error': '' }}">
                         {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
-                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <span class="input-group-addon"> <i class="zmdi zmdi-email"></i> </span>
                         <div class="form-line">
                             <input id="email" type="email"
                                 class="form-control @error('email') is-invalid @enderror" name="email"
@@ -51,7 +49,7 @@
                     </div>
 
                     <!-- Password -->
-                    <div class="input-group icon before_span">
+                    <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error': '' }}">
                         <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                         <div class="form-line">
                             <input type="password" required autocomplete="current-password" class="form-control"
@@ -61,18 +59,35 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    <br>
                     <!-- Remember Me -->
-                    <div class="block mt-4">
+                    <div>
+                        <input class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember"  id="remember_me" type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
+                        <label for="remember_me"><span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                        </label>
+                    </div>
+
+                    {{-- <div class="block mt-4">
                         <label for="remember_me" class="inline-flex items-center">
                             <input id="remember_me" type="checkbox"
                                 class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
                                 name="remember">
                             <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                         </label>
+                    </div> --}}
+                    <div class="align-center">
+
+                        @if (Route::has('password.request'))
+                            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
                     </div>
+                    <br>
                     <div class="text-center">
-                        <button type="submit" style="background: #ef4444;" class="btn btn-raised waves-effect ">@lang('Login')</button>
+                        <button type="submit" style="background: #ea3d3d;"
+                            class="btn btn-raised waves-effect ">@lang('Login')</button>
                     </div>
                     {{-- <div class="text-center"><a href="sign-in.html">@lang('Sign In!')</a></div> --}}
                 </form>
@@ -91,6 +106,7 @@
 <!-- Mirrored from thememakker.com/templates/swift/hospital/locked.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2023 08:01:25 GMT -->
 
 </html>
+
 
 
 {{--

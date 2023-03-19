@@ -22,16 +22,15 @@ Route::middleware('auth')->group(function () {
 });
 
 //FRONT
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 //home
-Route::view('/home','layouts.front');
-
+Route::view('/', 'layouts.front')->name('home');
 
 //ADMIN
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {

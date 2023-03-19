@@ -35,6 +35,6 @@ class UserManage extends Component
 
     public function render()
     {
-        return view('livewire.admin.users.user-manage', ['users' => User::query()->with('role')->latest()->paginate(5)]);
+        return view('livewire.admin.users.user-manage', ['users' => User::query()->with('role')->paginate(5)]);
     }
 }

@@ -1,4 +1,5 @@
 ﻿@extends('layouts.admin')
+@section('signleTitle', __('Dashboard'))
 @section('title', 'Dashboard')
 @section('sub-title', 'Welcome to Swift applicatio')
 @section('content')
