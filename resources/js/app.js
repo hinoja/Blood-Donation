@@ -1,4 +1,6 @@
-import './bootstrap';
+const { default: axios } = require('axios');
+
+require('./bootstrap');
 
 import Alpine from 'alpinejs';
 
