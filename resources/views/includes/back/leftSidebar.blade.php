@@ -6,7 +6,7 @@
     <!-- User Info -->
     <div class="user-info">
         <div class="admin-image "> <img src="{{ asset('assets/front/images/avatars/niro.png') }}" alt=""> </div>
-        <div class="admin-action-info"> <span>Welcome</span>
+        <div class="admin-action-info"> <span>@lang('welcome')</span>
             <h3>{{ auth()->user()->name }}</h3>
             <ul>
                 <li><a href="{{ route('home') }}" class="text-success" title="Go to WelcomePage"><i
@@ -85,6 +85,10 @@
             <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
                     <span>@lang('All Users')</span></a>
+            </li>
+            <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.contacts') }}"><i class="fa fa-comment"></i>
+                    <span>@lang('All Messages')</span></a>
             </li>
 
         </ul>

@@ -104,20 +104,20 @@
 
      =========================
 ============== */
-/* ==== 
+/* ====
  --------- (1.1) mixins start ---------
  ==== */
-/* ==== 
+/* ====
    --------- (1.1) mixins end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (1.2) variables start ---------
  ==== */
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&amp;display=swap");
-/* ==== 
+/* ====
  --------- (1.2) variables end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (2.1) reset styles start ---------
  ==== */
 * {
@@ -255,10 +255,10 @@ main {
   padding-right: 15px;
 }
 
-/* ==== 
+/* ====
    --------- (2.1) reset styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (2.2) typography styles start ---------
  ==== */
 p,
@@ -1210,10 +1210,10 @@ button:hover {
   outline: 0px;
 }
 
-/* ==== 
+/* ====
  --------- (2.2) typography styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (2.3) global styles start ---------
  ==== */
 @media (max-width: 767px) {
@@ -2292,10 +2292,10 @@ span {
   color: #ffffff;
 }
 
-/* ==== 
+/* ====
    --------- (2.3) global styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (3.1) button styles start ---------
  ==== */
 .button {
@@ -2484,10 +2484,10 @@ span {
   }
 }
 
-/* ==== 
+/* ====
    --------- (3.1) button styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (3.2) form styles start ---------
  ==== */
 .input {
@@ -2871,7 +2871,7 @@ span {
   }
 }
 
-/* ==== 
+/* ====
  --------- (3.2) form styles end ---------
  ==== */
 /*
@@ -2907,7 +2907,7 @@ Preloader Area Style*/
   visibility: hidden;
 }
 
-/* ==== 
+/* ====
  --------- (4.1) header styles start ---------
  ==== */
 .topbar {
@@ -3696,10 +3696,10 @@ Preloader Area Style*/
   color: #ffffff;
 }
 
-/* ==== 
+/* ====
  --------- (4.1) header styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (4.2) hero section styles start ---------
  ==== */
 .hero-slider-item {
@@ -4019,10 +4019,10 @@ Preloader Area Style*/
   }
 }
 
-/* ==== 
+/* ====
  --------- (4.2) hero section styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (4.3) banner styles start ---------
  ==== */
 .banner {
@@ -4063,10 +4063,10 @@ Preloader Area Style*/
   padding-right: 10px;
 }
 
-/* ==== 
+/* ====
  --------- (4.3) banner styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (4.4) all sections styles start ---------
  ==== */
 .overview {
@@ -7265,7 +7265,7 @@ Preloader Area Style*/
 .contact form .input textarea {
   background-color: #f1f1f1;
   border: 1px solid transparent;
-  margin-bottom: 0px !important;
+  margin-bottom: 7px !important;
   padding-top: 13px;
   padding-bottom: 13px;
 }
@@ -7510,10 +7510,10 @@ Preloader Area Style*/
   }
 }
 
-/* ==== 
+/* ====
  --------- (4.4) all sections styles end ---------
  ==== */
-/* ==== 
+/* ====
  --------- (4.5) footer styles start ---------
  ==== */
 .footer {
@@ -7879,6 +7879,6 @@ Preloader Area Style*/
   }
 }
 
-/* ==== 
+/* ====
  --------- (4.5) footer styles end ---------
  ==== *//*# sourceMappingURL=style.css.map */

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->integer('userable_id');
-            $table->string('userable_type');
+            $table->integer('userable_id')->nullable();
+            $table->string('userable_type')->nullable();
             $table->string('name');
             $table->foreignId('role_id')->constrained();
             $table->string('location')->nullable();

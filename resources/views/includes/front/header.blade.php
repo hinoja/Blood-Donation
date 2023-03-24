@@ -1,24 +1,17 @@
 <header class="header">
     <nav class="navbar navbar-expand-xl">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/">
                 <img src="{{ asset('assets/front/images/logo-light.png') }}" alt="Logo" class="logo">
             </a>
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="javascript:void(0)" id="navbarHomeDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Home
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarHomeDropdown">
-                            <li><a class="dropdown-item active" href="index.html">Home One</a></li>
-                            <li><a class="dropdown-item" href="index-two.html">Home Two</a></li>
-                            <li><a class="dropdown-item" href="index-three.html">Home Three</a></li>
-                        </ul>
-                    </li>
+                    <a class="nav-link  active" href="/" id="navbarHomeDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        @lang('Home')
+                    </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="about-us.html">About Us</a>
+                        <a class="nav-link" href="about-us.html">@lang('About')</a>
                     </li>
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
@@ -48,7 +41,7 @@
                             <li><a class="dropdown-item" href="404.html">Error</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item dropdown">
+                    {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarBlogDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Blog
@@ -61,28 +54,26 @@
                             <li><a class="dropdown-item" href="blog-details-two.html">Blog Details Two</a></li>
                             <li><a class="dropdown-item" href="blog-details-three.html">Blog Details Three</a></li>
                         </ul>
-                    </li>
+                    </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="contact-us.html">Contact Us</a>
+                        <a class="nav-link" href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
                     @if (Route::has('login'))
-                        {{-- <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right"> --}}
                         @auth
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a>
+                                <a class="nav-link" href="{{ url('/dashboard') }}">@lang('Dashboard')</a>
                             </li>
                         @else
                             <li class="nav-item">
 
-                                <a class="nav-link" href="{{ route('login') }}">Log in</a>
+                                <a class="nav-link" href="{{ route('login') }}">@lang('Log in')</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                    <a class="nav-link" href="{{ route('register') }}">@lang('Register')</a>
                                 @endif
                             </li>
                         @endauth
-                        {{-- </div> --}}
                     @endif
 
                     </li>
@@ -94,10 +85,20 @@
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <select class="select-language">
-                        <option value="spanish">Français</option>
-                        <option value="english">English</option>
-                    </select>
+                    @livewire('front.lang.change')
+
+
+                    {{-- <div class="dropdown d-inline">
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-globe"></i>
+                            @if (app()->getLocale() === 'fr') Fr @else En @endif
+                        </button>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item has-icon" href="{{ route('lang', 'fr') }}"> Fr</a>
+                          <a class="dropdown-item has-icon" href="{{ route('lang', 'en') }}"> En</a>
+                        </div>
+                      </div> --}}
+
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
                         <span class="icon-bar top-bar"></span>
                         <span class="icon-bar middle-bar"></span>

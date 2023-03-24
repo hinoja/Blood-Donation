@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <!-- Mirrored from croptheme.com/blad-ai-ltr/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 18 Feb 2023 11:37:47 GMT -->
 
@@ -12,13 +12,13 @@
     <link rel="shortcut icon" href="{{ asset('assets/front/images/favicon.png') }}" type="image/x-icon">
     <!-- #title -->
     {{-- <title> Blood Donation Activism | @yield('signleTitle') </title> --}}
-    <title> Blood Donation | Acceuil </title>
+    <title> {{ config('app.name','Blood Donation')  }} | @yield('title') </title>
     <!-- #keywords -->
-    <meta name="keywords" content="blood, blood activism campaign, blood campaign, Blood Donation, Medical, Hospital">
+    <meta name="keywords" content="blood, blood donation, donatioin, Blood Donation, Medical, Hospital">
     <!-- #description -->
-    <meta name="description" content="Blood Donation Activism & Campaign HTML Template">
+    <meta name="description" content="Blood Donation Activism & Campaign ">
     <!-- #author -->
-    <meta name="author" content="CropTheme">
+    <meta name="author" content="janohicorporation">
 
     <!-- ==== css dependencies start ==== -->
 
@@ -40,9 +40,9 @@
     <link rel="stylesheet" href="{{ asset('assets/front/vendor/odometer/css/odometer.css') }}">
     <!-- animate css -->
     <link rel="stylesheet" href="{{ asset('assets/front/vendor/animate/animate.css') }}">
-
+    @stack('css')
     <!-- ==== css dependencies end ==== -->
-
+    @livewireStyles()
     <!-- main css -->
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
 </head>
@@ -64,58 +64,7 @@
     @include('includes.front.sideNav')
     <!-- ==== sidenav end ==== -->
 
-    <!-- ==== hero section start ==== -->
-    @include('includes.front.Hero')
-    <!-- ==== #hero section end ==== -->
-
-    <!-- ==== overview section start ==== -->
-    @include('includes.front.overview')
-    <!-- ==== #overview section end ==== -->
-
-    <!-- ==== organization section start ==== -->
-    @include('includes.front.organization')
-    <!-- ==== #organization section end ==== -->
-
-    <!-- ==== counter start ==== -->
-    @include('includes.front.counter')
-    <!-- ==== #counter end ==== -->
-
-    <!-- ==== service section start ==== -->
-    @include('includes.front.services')
-    <!-- ==== #service section end ==== -->
-
-    <!-- ==== call now section start ==== -->
-    @include('includes.front.callNow')
-    <!-- ==== #call now section end ==== -->
-
-    <!-- ==== campaign section start ==== -->
-    @include('includes.front.campaign')
-    <!-- ==== #camapign section end ==== -->
-
-    <!-- ==== testimonial section start ==== -->
-    @include('includes.front.testimonial')
-    <!-- ==== testimonial section end ==== -->
-
-    <!-- ==== donor section end ==== -->
-    @include('includes.front.donor')
-    <!-- ==== #donor section end ==== -->
-
-    <!-- ==== appointment section start ==== -->
-    @include('includes.front.appointement')
-    <!-- ==== #appointment section end ==== -->
-
-    <!-- ==== team section start ==== -->
-    @include('includes.front.teamSection')
-    <!-- ==== #team section end ==== -->
-
-    <!-- ==== blog section start ==== -->
-    @include('includes.front.blogSection')
-    <!-- ==== #blog section end ==== -->
-
-    <!-- ==== cta section start ==== -->
-    @include('includes.front.cta')
-    <!-- ==== #cta section end ==== -->
-
+    @yield('content')
     <!-- ==== footer start ==== -->
     @include('includes.front.footer')
     <!-- ==== #footer end ==== -->
@@ -151,7 +100,8 @@
     <script src="{{ asset('assets/front/vendor/wow/wow.min.js') }}"></script>
 
     <!-- ==== js dependencies end ==== -->
-
+    @stack('js')
+    @livewireScripts()
     <!-- plugin js -->
     <script src="{{ asset('assets/front/js/plugin.js') }}"></script>
     <!-- main js -->

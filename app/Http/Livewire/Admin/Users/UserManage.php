@@ -14,10 +14,6 @@ class UserManage extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    //  $this->alert('success', 'Basic Alert');
-    // $this->alert('info', 'Centering alert', [
-    //     'position' => 'bottom-end'
-    // ]);
     public function UpdateStatusUser(User $user)
     {
         if ($user->is_active) {
@@ -28,9 +24,7 @@ class UserManage extends Component
             $message = trans('Account has been successfully unblocked.');
         }
         $user->save();
-        $this->alert('success', $message, [
-            'position' => 'bottom-end',
-        ]);
+        $this->alert('success', $message);
     }
 
     public function render()

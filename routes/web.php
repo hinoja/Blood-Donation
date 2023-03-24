@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Extra\LangController;
+use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,21 +23,36 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-//FRONT
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+//----------------------------FRONT------------------------------
+
 Route::get('dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-//home
-Route::view('/', 'layouts.front')->name('home');
+// Home
+Route::get('/', [HomerController::class, 'index'])->name('home');
+// Contact-us
+Route::view('contact-us', 'front.contact-us')->name('front.contact');
 
-//ADMIN
-Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
+
+
+
+
+
+
+// --------------------------ADMIN--------------------------
+Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
+    Route::view('contacts/index', 'admin.contacts.index')->name('contacts');
     Route::view('users/index', 'admin.users.index')->name('users.index');
 });
+
+
+
+
+
+// ----------------------GENERAL------------------------------------
+ROute::get('/lang{locale}', LangController::class)->name('lang');
+
 
 require __DIR__.'/auth.php';

@@ -16,7 +16,7 @@
             <li><a href="campaign.html"><i class="fa-solid fa-angle-right"></i> Campaign</a></li>
             <li><a href="blog.html"><i class="fa-solid fa-angle-right"></i> Blog</a></li>
             <li><a href="blog-details.html"><i class="fa-solid fa-angle-right"></i> Blog Details</a></li>
-            <li><a href="contact-us.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+            {{-- <li><a href="{{ route('') }}"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li> --}}
         </ul>
         <form action="#" method="post">
             <div class="input-group-btn input-group-btn--secondary">
