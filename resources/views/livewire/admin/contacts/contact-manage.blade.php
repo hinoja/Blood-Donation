@@ -54,25 +54,25 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label style="font-weight:bold;float:left;" class="control-label">@lang('Name')</label>
-                            <div style="float:right;">{{ $name }}</div>
+                            <div style="float:right;">{{ $displayContact?->name }}</div>
                             <br>
                             <hr>
                             <div><label for="control-label" style="font-weight:bold;float:left;">Email</label>
-                                <a style="float:right;" href="">{{ $email }}</a>
+                                <a style="float:right;" href="">{{ $displayContact?->email }}</a>
                             </div>
                         </div>
                         <br>
                         <hr>
                         <div class="form-group">
                             <label style="font-weight:bold;float:left;" class="control-label">@lang('Subject')</label>
-                            <div style="float:right;">{{ $subject }}</div>
+                            <div style="float:right;">{{ $displayContact?->subject }}</div>
                         </div>
                         <br>
                         <hr>
                         <div class="form-group">
                             <label style="font-weight:bold;float:left;" class="control-label">@lang('Message')</label>
                             <br>
-                            <div style="text-align:justify;">{{ $messageModal }}</div>
+                            <div style="text-align:justify;">{{ $displayContact?->message }}</div>
                         </div>
                         <form wire:submit.prevent="replyMessage({{ $displayContact }})" id="InputRepyForm"
                             style="display:none;">
@@ -101,12 +101,12 @@
                             </div>
                         </form>
 
-                        @if (isset($displayContact->response))
+                        @if ($displayContact?->response)
                             <div class="form-group">
                                 <label style="font-weight:bold;float:left;"
                                     class="control-label">@lang('Response')</label>
                                 <br>
-                                <div style="text-align:justify; color:rgb(6, 179, 6);">{{ $response }}</div>
+                                <div style="text-align:justify; color:rgb(6, 179, 6);">{{ $displayContact->response }}</div>
                             </div>
                         @endif
                     </div>
@@ -116,7 +116,7 @@
                         <div>
 
 
-                            @if (!isset($displayContact->response))
+                            @if (!$displayContact?->response)
                                 <button style="display: block;" type="button" id="buttonReply"
                                     wire:click="{{ $showForm ? 'closeReply()' : 'showReplyInput()' }}"
                                     class="btn btn-primary">

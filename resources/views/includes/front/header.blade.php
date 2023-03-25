@@ -1,3 +1,7 @@
+@php
+    $currentUri = Route::current()->uri;
+@endphp
+
 <header class="header">
     <nav class="navbar navbar-expand-xl">
         <div class="container">
@@ -6,10 +10,12 @@
             </a>
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
-                    <a class="nav-link  active" href="/" id="navbarHomeDropdown" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        @lang('Home')
-                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link @if (Str::contains($currentUri, '/')) active @endif"   href="{{ route('home') }}" id="navbarHomeDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            @lang('Home')
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about-us.html">@lang('About')</a>
                     </li>
@@ -56,7 +62,7 @@
                         </ul>
                     </li> --}}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('front.contact') }}">@lang('Contact us')</a>
+                        <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"   href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
                     @if (Route::has('login'))
                         @auth

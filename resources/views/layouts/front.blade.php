@@ -12,13 +12,17 @@
     <link rel="shortcut icon" href="{{ asset('assets/front/images/favicon.png') }}" type="image/x-icon">
     <!-- #title -->
     {{-- <title> Blood Donation Activism | @yield('signleTitle') </title> --}}
-    <title> {{ config('app.name','Blood Donation')  }} | @yield('title') </title>
+    <title> {{ config('app.name', 'Blood Donation') }} | @yield('title') </title>
     <!-- #keywords -->
     <meta name="keywords" content="blood, blood donation, donatioin, Blood Donation, Medical, Hospital">
     <!-- #description -->
     <meta name="description" content="Blood Donation Activism & Campaign ">
     <!-- #author -->
-    <meta name="author" content="janohicorporation">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.12/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+        integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 
     <!-- ==== css dependencies start ==== -->
 
@@ -42,12 +46,14 @@
     <link rel="stylesheet" href="{{ asset('assets/front/vendor/animate/animate.css') }}">
     @stack('css')
     <!-- ==== css dependencies end ==== -->
-    @livewireStyles()
+    {{-- @livewireStyles() --}}
     <!-- main css -->
+
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <!-- ==== topbar start ==== -->
     @include('includes.front.topBar')
     <!-- ==== #topbar end ==== -->
@@ -81,6 +87,24 @@
     <!-- ==== js dependencies start ==== -->
 
     <!-- jquery -->
+    @if (session()->has('success'))
+        <script>
+            swal("Success", "{!! Session::get('success') !!}", "success", {
+                button: "ok",
+                timer: 7000
+            });
+        </script>
+    @elseif (session()->has('danger'))
+        <script>
+            swal("Error", "{!! Session::get('error') !!}", "error", {
+                button: "ok"
+            });
+        </script>
+    @endif
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- @include('sweetalert::alert', ['cdn' => 'https://cdn.jsdelivr.net/npm/sweetalert2@9']) --}}
+
     <script src="{{ asset('assets/front/vendor/jquery/jquery-3.6.0.min.js') }}"></script>
     <!-- bootstrap five js -->
     <script src="{{ asset('assets/front/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -101,7 +125,7 @@
 
     <!-- ==== js dependencies end ==== -->
     @stack('js')
-    @livewireScripts()
+    {{-- @livewireScripts() --}}
     <!-- plugin js -->
     <script src="{{ asset('assets/front/js/plugin.js') }}"></script>
     <!-- main js -->
