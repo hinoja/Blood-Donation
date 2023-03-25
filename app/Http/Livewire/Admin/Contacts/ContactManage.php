@@ -43,17 +43,13 @@ class ContactManage extends Component
         $contact->response = $response['reply'];
         $contact->save();
 
-        // Notification::send($contact, new ContactNotification($response['reply'], $contact->subject));
+        Notification::send($contact, new ContactNotification($response['reply'], $contact->subject));
 
         $this->closeModal();
-        alert('success', trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'), 'success')->autoclose(7000);
-
 
         $this->alert('success', trans('The response was successfully sent to ') . $contact->name);
-        toast(trans('The response was successfully sent to ') . $contact->name,'success');
-        // toast(trans('The response was successfully sent to ') . $contact->name, 'success');
 
-        return redirect()->route('admin.contacts');
+        return redirect()->back();
     }
 
     public function showReplyInput()
@@ -71,7 +67,7 @@ class ContactManage extends Component
     public function render()
     {
         return view('livewire.admin.contacts.contact-manage', ['messages' => Contact::query()
-            ->latest()
-            ->paginate(5)]);
+                                                                                                        ->latest()
+                                                                                                        ->paginate(5)]);
     }
 }

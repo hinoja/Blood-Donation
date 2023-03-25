@@ -1,9 +1,9 @@
 <div>
     <div class="row clearfix jsdemo-notification-button">
         <div class="col-sm-12">
-            <button type="button" class="btn btn-raised bg-pink waves-effect" data-placement-from="top"
+            {{-- <button type="button" class="btn btn-raised bg-pink waves-effect" data-placement-from="top"
                 data-placement-align="left" data-animate-enter="animated fadeIn" data-animate-exit="animated fadeOut"
-                data-color-name="bg-black"> FADE IN/OUT </button>
+                data-color-name="bg-black"> FADE IN/OUT </button> --}}
         </div>
     </div>
     <div class="table-responsive">
@@ -13,6 +13,7 @@
                     <th>#</th>
                     <th>@lang('First Name')</th>
                     <th>@lang('Subject')</th>
+                    <th>@lang('Receipt_at')</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -23,7 +24,11 @@
                         <td>{{ $message->name }}</td>
                         <td>{{ $message->subject }}</td>
                         <td>
-                            <button type="button" class="btn btn-primary"
+                            <span class="badge badge-info">{{ $message->created_at->diffForHumans() }}</span>
+                        </td>
+                        <td>
+                            <button type="button"
+                                class="@if ($message->response) btn btn-primary @else btn btn-danger @endif"
                                 wire:click="showModalForm({{ $message }})" class="btn bg-grey waves-effect"> <i
                                     class="fas fa-eye"></i></button>
                         </td>
@@ -106,7 +111,8 @@
                                 <label style="font-weight:bold;float:left;"
                                     class="control-label">@lang('Response')</label>
                                 <br>
-                                <div style="text-align:justify; color:rgb(6, 179, 6);">{{ $displayContact->response }}</div>
+                                <div style="text-align:justify; color:rgb(6, 179, 6);">{{ $displayContact->response }}
+                                </div>
                             </div>
                         @endif
                     </div>

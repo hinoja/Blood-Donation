@@ -10,7 +10,7 @@
         </div>
 
 
-        {{ app()->getLocale() }}
+        {{-- {{ app()->getLocale() }} --}}
         {{-- @if ()
          <i class="fas fa-globe"></i>
         @else

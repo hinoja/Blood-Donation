@@ -1,8 +1,8 @@
 <x-mail::message>
     {{-- <div>
-    <img src="{{ asset('assets/back/images/bg2.jpg') }}" alt="" height="70px;" width="80px;">
-    <img src="public_path('assets/back/images/bg2.jpg')" height="70px;" width="80px;" alt="test">
-   </div> --}}
+        <img src="public_path('assets/back/images/bg2.jpg')" height="70px;" width="80px;" alt="test">
+    </div> --}}
+    {{-- <img src="{{ asset('assets/back/images/bg2.jpg') }}" alt="" height="70px;" width="80px;"> --}}
     {{-- Greeting --}}
     @if (!empty($greeting))
         # {{ $greeting }}

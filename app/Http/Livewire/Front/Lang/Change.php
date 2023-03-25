@@ -22,7 +22,7 @@ class Change extends Component
         session()->put('locale', $local);
         // dd($locale);
 
-        return redirect()->back();
+        // return redirect()->back();
     }
     public function render()
     {
