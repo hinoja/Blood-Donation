@@ -41,19 +41,16 @@
                     </li>
                     <?php if(Route::has('login')): ?>
                         <?php if(auth()->guard()->check()): ?>
-                            <li class="nav-item">
-                                <a class="nav-link" href="<?php echo e(url('/dashboard')); ?>"><?php echo app('translator')->get('Dashboard'); ?></a>
+                            
+                             <li class="nav-item">
+                                <a class="nav-link" href="<?php echo e(route('admin.dashboard')); ?>"><?php echo e(Auth::user()->name); ?></a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item">
 
                                 <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo app('translator')->get('Log in'); ?></a>
                             </li>
-                            <li class="nav-item">
-                                <?php if(Route::has('register')): ?>
-                                    <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo app('translator')->get('Register'); ?></a>
-                                <?php endif; ?>
-                            </li>
+                            
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -69,15 +66,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.lang.change')->html();
-} elseif ($_instance->childHasBeenRendered('JcYqVLg')) {
-    $componentId = $_instance->getRenderedChildComponentId('JcYqVLg');
-    $componentTag = $_instance->getRenderedChildComponentTagName('JcYqVLg');
+} elseif ($_instance->childHasBeenRendered('ihxZ2JF')) {
+    $componentId = $_instance->getRenderedChildComponentId('ihxZ2JF');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ihxZ2JF');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('JcYqVLg');
+    $_instance->preserveRenderedChild('ihxZ2JF');
 } else {
     $response = \Livewire\Livewire::mount('front.lang.change');
     $html = $response->html();
-    $_instance->logRenderedChild('JcYqVLg', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ihxZ2JF', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

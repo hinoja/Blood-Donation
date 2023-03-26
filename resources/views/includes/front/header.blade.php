@@ -66,19 +66,22 @@
                     </li>
                     @if (Route::has('login'))
                         @auth
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/dashboard') }}">@lang('Dashboard')</a>
+                            </li> --}}
+                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
                             </li>
                         @else
                             <li class="nav-item">
 
                                 <a class="nav-link" href="{{ route('login') }}">@lang('Log in')</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 @if (Route::has('register'))
                                     <a class="nav-link" href="{{ route('register') }}">@lang('Register')</a>
                                 @endif
-                            </li>
+                            </li> --}}
                         @endauth
                     @endif
 
