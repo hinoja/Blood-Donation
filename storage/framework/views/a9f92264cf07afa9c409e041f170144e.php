@@ -11,8 +11,8 @@
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link <?php if(Str::contains($currentUri, '/')): ?> active <?php endif; ?>"   href="<?php echo e(route('home')); ?>" id="navbarHomeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link <?php if(Str::contains($currentUri, '/')): ?> active <?php endif; ?>"   href="<?php echo e(route('home')); ?>"
+                            >
                             <?php echo app('translator')->get('Home'); ?>
                         </a>
                     </li>
@@ -66,15 +66,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.lang.change')->html();
-} elseif ($_instance->childHasBeenRendered('ihxZ2JF')) {
-    $componentId = $_instance->getRenderedChildComponentId('ihxZ2JF');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ihxZ2JF');
+} elseif ($_instance->childHasBeenRendered('ZyXgeuX')) {
+    $componentId = $_instance->getRenderedChildComponentId('ZyXgeuX');
+    $componentTag = $_instance->getRenderedChildComponentTagName('ZyXgeuX');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ihxZ2JF');
+    $_instance->preserveRenderedChild('ZyXgeuX');
 } else {
     $response = \Livewire\Livewire::mount('front.lang.change');
     $html = $response->html();
-    $_instance->logRenderedChild('ihxZ2JF', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('ZyXgeuX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

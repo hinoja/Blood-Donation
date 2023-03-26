@@ -11,8 +11,8 @@
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, '/')) active @endif"   href="{{ route('home') }}" id="navbarHomeDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link @if (Str::contains($currentUri, '/')) active @endif"   href="{{ route('home') }}"
+                            >
                             @lang('Home')
                         </a>
                     </li>
