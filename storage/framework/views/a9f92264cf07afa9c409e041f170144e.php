@@ -66,15 +66,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.lang.change')->html();
-} elseif ($_instance->childHasBeenRendered('ZyXgeuX')) {
-    $componentId = $_instance->getRenderedChildComponentId('ZyXgeuX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ZyXgeuX');
+} elseif ($_instance->childHasBeenRendered('8vGIhXm')) {
+    $componentId = $_instance->getRenderedChildComponentId('8vGIhXm');
+    $componentTag = $_instance->getRenderedChildComponentTagName('8vGIhXm');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ZyXgeuX');
+    $_instance->preserveRenderedChild('8vGIhXm');
 } else {
     $response = \Livewire\Livewire::mount('front.lang.change');
     $html = $response->html();
-    $_instance->logRenderedChild('ZyXgeuX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('8vGIhXm', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
