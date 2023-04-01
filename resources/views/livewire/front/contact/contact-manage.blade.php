@@ -4,10 +4,10 @@
         <div class="input-group-column">
             <div class="input">
                 <input type="text" wire:model.defender="name" name="name" id="contactFName"
-                    placeholder="{{ __('First Name') }}" class="input">
+                    placeholder={{ __('First Name') }} class="input">
 
                 @error('name')
-                    <span class="text-danger text-center"> <small>{{ $message }}</small></span>
+                   <span class="text-danger text-center text"> <small>{{ $message }}</small></span>
                 @enderror
             </div>
             <br>

@@ -34,25 +34,19 @@ Route::get('/', [HomerController::class, 'index'])->name('home');
 // Contact-us
 Route::view('contact-us', 'front.contact-us')->name('front.contact');
 
-
-
-
-
-
-
 // --------------------------ADMIN--------------------------
 Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
+    // CONTACTS
     Route::view('contacts/index', 'admin.contacts.index')->name('contacts');
+    // USERS
     Route::view('users/index', 'admin.users.index')->name('users.index');
+    // POSTS
+    Route::view('posts/index', 'admin.posts.index')->name('posts.index');
+
 });
-
-
-
-
 
 // ----------------------GENERAL------------------------------------
 Route::get('lang/{locale?}', LangController::class)->name('lang');
-
 
 require __DIR__.'/auth.php';

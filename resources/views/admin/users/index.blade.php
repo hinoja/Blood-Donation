@@ -3,15 +3,13 @@
 @section('title', 'All Users')
 @section('sub-title', 'Description text here...')
 @push('css')
-    <link rel="stylesheet" href="{{ asset('assets/back/modules/datatables/datatables.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('assets/back/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
     @livewireStyles()
 @endpush
 @push('js')
     @livewireScripts()
-    <script src="{{ asset('assets/back/modules/datatables/datatables.min.js') }}"></script>
-    <script src="{{ asset('assets/back/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('assets/back/js/pages/tables/jquery-datatable.js') }}"></script>
+    <script src="{{ asset('assets/back/bundles/datatablescripts.bundle.js') }}"></script>
     <!-- Page Specific JS File -->
     <script src="{{ asset('assets/back/js/page/modules-datatables.js') }}"></script>
 @endpush

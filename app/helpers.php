@@ -12,7 +12,3 @@ if (! function_exists('formatedLocaleDate')) {
         return $date ? Carbon::parse($date)->translatedFormat($format) : null;
     }
 }
-
-
-
-

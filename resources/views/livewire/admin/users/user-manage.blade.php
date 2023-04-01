@@ -1,9 +1,9 @@
 <div>
     <div class="table-responsive">
-        <table class="table table-striped" id="table-1">
+        <table class="table table-striped table table-bordered table-striped table-hover js-basic-example dataTable">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th class="text-center">#</th>
                     <th>@lang('First Name')</th>
                     <th>@lang('Email')</th>
                     <th>@lang('Active')</th>
@@ -14,7 +14,7 @@
             <tbody>
                 @foreach ($users as $user)
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
+                        <td class="text-center">{{ $loop->iteration }}</td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
@@ -30,7 +30,7 @@
                             {{ $user->role->name }}
                         </td>
                         <td>
-                            @if ($user->role_id !== 1)
+                            @if ($user->role_id > 1)
                                 @if ($user->is_active)
                                     <button wire:click="UpdateStatusUser({{ $user }})" class="btn btn-danger"><i
                                             class="fa fa-lock"></i> </button>

@@ -2,17 +2,15 @@
 <?php $__env->startSection('title', 'All Users'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
 <?php $__env->startPush('css'); ?>
-    <link rel="stylesheet" href="<?php echo e(asset('assets/back/modules/datatables/datatables.min.css')); ?>">
-    <link rel="stylesheet"
-        href="<?php echo e(asset('assets/back/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css')); ?>">
     <?php echo \Livewire\Livewire::styles(); ?>
 
 <?php $__env->stopPush(); ?>
 <?php $__env->startPush('js'); ?>
     <?php echo \Livewire\Livewire::scripts(); ?>
 
-    <script src="<?php echo e(asset('assets/back/modules/datatables/datatables.min.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/back/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/back/js/pages/tables/jquery-datatable.js')); ?>"></script>
+    <script src="<?php echo e(asset('assets/back/bundles/datatablescripts.bundle.js')); ?>"></script>
     <!-- Page Specific JS File -->
     <script src="<?php echo e(asset('assets/back/js/page/modules-datatables.js')); ?>"></script>
 <?php $__env->stopPush(); ?>
@@ -45,15 +43,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.users.user-manage')->html();
-} elseif ($_instance->childHasBeenRendered('l1GFBMa')) {
-    $componentId = $_instance->getRenderedChildComponentId('l1GFBMa');
-    $componentTag = $_instance->getRenderedChildComponentTagName('l1GFBMa');
+} elseif ($_instance->childHasBeenRendered('sQd4L8i')) {
+    $componentId = $_instance->getRenderedChildComponentId('sQd4L8i');
+    $componentTag = $_instance->getRenderedChildComponentTagName('sQd4L8i');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('l1GFBMa');
+    $_instance->preserveRenderedChild('sQd4L8i');
 } else {
     $response = \Livewire\Livewire::mount('admin.users.user-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('l1GFBMa', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('sQd4L8i', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

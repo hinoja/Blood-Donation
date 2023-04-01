@@ -1,9 +1,9 @@
 <div>
     <div class="table-responsive">
-        <table class="table table-striped" id="table-1">
+        <table class="table table-striped table table-bordered table-striped table-hover js-basic-example dataTable">
             <thead>
                 <tr>
-                    <th>#</th>
+                    <th class="text-center">#</th>
                     <th><?php echo app('translator')->get('First Name'); ?></th>
                     <th><?php echo app('translator')->get('Email'); ?></th>
                     <th><?php echo app('translator')->get('Active'); ?></th>
@@ -14,7 +14,7 @@
             <tbody>
                 <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                        <td><?php echo e($loop->iteration); ?></td>
+                        <td class="text-center"><?php echo e($loop->iteration); ?></td>
                         <td><?php echo e($user->name); ?></td>
                         <td><?php echo e($user->email); ?></td>
                         <td>
@@ -31,7 +31,7 @@
 
                         </td>
                         <td>
-                            <?php if($user->role_id !== 1): ?>
+                            <?php if($user->role_id > 1): ?>
                                 <?php if($user->is_active): ?>
                                     <button wire:click="UpdateStatusUser(<?php echo e($user); ?>)" class="btn btn-danger"><i
                                             class="fa fa-lock"></i> </button>

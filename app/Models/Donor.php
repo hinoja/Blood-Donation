@@ -14,6 +14,7 @@ class Donor extends Model
     {
         return $this->morphOne(User::class, 'userable');
     }
+
     const TYPES = [
         1 => 'A+',
         2 => 'A-',

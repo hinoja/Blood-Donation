@@ -13,9 +13,7 @@ class ContactManage extends Component
 {
     use LivewireAlert, WithPagination;
 
-    public $name, $reply;
-
-    public $response, $displayContact, $showForm;
+    public $name,$reply, $response,$displayContact, $showForm;
 
     protected $paginationTheme = 'bootstrap';
 
@@ -47,7 +45,7 @@ class ContactManage extends Component
 
         $this->closeModal();
 
-        $this->alert('success', trans('The response was successfully sent to ') . $contact->name);
+        $this->alert('success', trans('The response was successfully sent to ').$contact->name);
 
         return redirect()->back();
     }
@@ -68,6 +66,6 @@ class ContactManage extends Component
     {
         return view('livewire.admin.contacts.contact-manage', ['messages' => Contact::query()
                                                                                                         ->latest()
-                                                                                                        ->paginate(5)]);
+                                                                                                        ->paginate(7)]);
     }
 }

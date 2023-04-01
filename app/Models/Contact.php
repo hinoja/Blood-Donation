@@ -12,4 +12,10 @@ class Contact extends Model
     use  HasFactory, Notifiable;
 
     protected $fillable = ['name', 'email', 'subject', 'message'];
+
+    // ACCESSORS
+    public function getDatelineAttribute($dateline)
+    {
+        return formatedLocaleDate($dateline);
+    }
 }

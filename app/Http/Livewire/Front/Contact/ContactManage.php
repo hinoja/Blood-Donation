@@ -2,21 +2,26 @@
 
 namespace App\Http\Livewire\Front\Contact;
 
-
 use App\Models\Contact;
-use Livewire\Component;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\Notification;
 use App\Notifications\front\Contact\ContactConfirmationNotification;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Request;
+use Livewire\Component;
 
 class ContactManage extends Component
 {
-    public $name, $subject, $message, $email;
+    public $name;
+
+    public $subject;
+
+    public $message;
+
+    public $email;
+
     public function store(Request $request)
     {
-        $apiKey = "Q0b2xqmiV0Uya2ISFqPzG5yuNvcEUJ";
+        $apiKey = 'Q0b2xqmiV0Uya2ISFqPzG5yuNvcEUJ';
 
         $data = $this->validate([
             'email' => ['required', 'email'],
@@ -25,9 +30,8 @@ class ContactManage extends Component
             'name' => ['required', 'string', 'max:255'],
         ]);
         // Api de verification des emails existantes
-        $reponse = Http::get('https://app.shakelist.io/api/1.0/check.php?apikey=' . $apiKey . '&email=' . $data['email'])->json();
-        if ($reponse['result'] == "OK") {
-
+        $reponse = Http::get('https://app.shakelist.io/api/1.0/check.php?apikey='.$apiKey.'&email='.$data['email'])->json();
+        if ($reponse['result'] == 'OK') {
             $contact = Contact::create($data);
 
             Notification::send($contact, new ContactConfirmationNotification($data['name']));
@@ -39,6 +43,7 @@ class ContactManage extends Component
 
         return redirect()->back();
     }
+
     public function render()
     {
         return view('livewire.front.contact.contact-manage');

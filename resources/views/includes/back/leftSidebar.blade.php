@@ -84,13 +84,16 @@
 
             <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
-                    <span>@lang('All Users')</span></a>
+                    <span>@lang('Users')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.contacts') }}"><i class="fa fa-comment"></i>
-                    <span>@lang('All Messages')</span></a>
+                    <span>@lang('Messages')</span></a>
             </li>
-
+            <li class="@if (Str::contains($currentUri, 'posts')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
+                    <span>@lang('Posts')</span></a>
+            </li>
         </ul>
     </div>
     <!-- #Menu -->
