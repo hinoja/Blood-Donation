@@ -94,19 +94,18 @@
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    @livewire('front.lang.change')
-
-
-                    {{-- <div class="dropdown d-inline">
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <ul class="nav-item dropdown navbar-nav">
+                        {{-- <button type="button" wire:click="ChangeLang('fr')">Value</button> --}}
+                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
-                            @if (app()->getLocale() === 'fr') Fr @else En @endif
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item has-icon" href="{{ route('lang', 'fr') }}"> Fr</a>
-                          <a class="dropdown-item has-icon" href="{{ route('lang', 'en') }}"> En</a>
+                            @if (app()->getLocale() === 'fr') @lang('Français') @else @lang('English') @endif
+                        </a>
+                        <div class="dropdown-menu nav-item ">
+                            <a  href="{{ route('lang', 'fr') }}" class="dropdown-item  has-icon">@lang('Français')</a>
+                            <a  href="{{ route('lang', 'en') }}" class="dropdown-item has-icon">@lang('English')</a>
                         </div>
-                      </div> --}}
+                    </ul>
+
 
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
                         <span class="icon-bar top-bar"></span>

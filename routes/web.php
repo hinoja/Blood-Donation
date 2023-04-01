@@ -52,7 +52,7 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
 
 
 // ----------------------GENERAL------------------------------------
-ROute::get('/lang{locale}', LangController::class)->name('lang');
+Route::get('lang/{locale?}', LangController::class)->name('lang');
 
 
 require __DIR__.'/auth.php';

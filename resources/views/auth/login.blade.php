@@ -95,7 +95,7 @@
         </div>
     </div>
 
-    <div class="theme-bg"></div>
+    {{-- <div class="theme-bg"></div> --}}
     <!-- Jquery Core Js -->
     <script src="{{ asset('assets/back/bundles/libscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
     <script src="{{ asset('assets/back/bundles/vendorscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->

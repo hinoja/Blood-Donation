@@ -63,24 +63,18 @@
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <?php
-if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('front.lang.change')->html();
-} elseif ($_instance->childHasBeenRendered('ZyXgeuX')) {
-    $componentId = $_instance->getRenderedChildComponentId('ZyXgeuX');
-    $componentTag = $_instance->getRenderedChildComponentTagName('ZyXgeuX');
-    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('ZyXgeuX');
-} else {
-    $response = \Livewire\Livewire::mount('front.lang.change');
-    $html = $response->html();
-    $_instance->logRenderedChild('ZyXgeuX', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
-}
-echo $html;
-?>
+                    <ul class="nav-item dropdown navbar-nav">
+                        
+                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe"></i>
+                            <?php if(app()->getLocale() === 'fr'): ?> <?php echo app('translator')->get('Français'); ?> <?php else: ?> <?php echo app('translator')->get('English'); ?> <?php endif; ?>
+                        </a>
+                        <div class="dropdown-menu nav-item ">
+                            <a  href="<?php echo e(route('lang', 'fr')); ?>" class="dropdown-item  has-icon"><?php echo app('translator')->get('Français'); ?></a>
+                            <a  href="<?php echo e(route('lang', 'en')); ?>" class="dropdown-item has-icon"><?php echo app('translator')->get('English'); ?></a>
+                        </div>
+                    </ul>
 
-
-                    
 
                     <a href="javascript:void(0)" class="d-none d-xl-block open-sidenav">
                         <span class="icon-bar top-bar"></span>

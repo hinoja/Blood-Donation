@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Extra;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class LangController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, string $locale)
+    public function __invoke(string $locale): RedirectResponse
     {
-        app()->setlocale($locale);
+        // dd($locale);
+        app()->setLocale($locale);
         session()->put('locale', $locale);
 
         return redirect()->back();

@@ -37,7 +37,7 @@ class ContactManage extends Component
             alert('warning', trans('Your message has not been sent to the platform administrator. Because your email address does not exist'), 'warning')->autoclose(7000);
         }
 
-        return redirect('/');
+        return redirect()->back();
     }
     public function render()
     {

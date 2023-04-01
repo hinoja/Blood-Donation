@@ -110,7 +110,7 @@ unset($__errorArgs, $__bag); ?>
         </div>
     </div>
 
-    <div class="theme-bg"></div>
+    
     <!-- Jquery Core Js -->
     <script src="<?php echo e(asset('assets/back/bundles/libscripts.bundle.js')); ?>"></script> <!-- Lib Scripts Plugin Js -->
     <script src="<?php echo e(asset('assets/back/bundles/vendorscripts.bundle.js')); ?>"></script> <!-- Lib Scripts Plugin Js -->
