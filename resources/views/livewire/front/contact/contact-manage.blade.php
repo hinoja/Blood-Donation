@@ -4,10 +4,10 @@
         <div class="input-group-column">
             <div class="input">
                 <input type="text" wire:model.defender="name" name="name" id="contactFName"
-                    placeholder={{ __('First Name') }} class="input">
+                    placeholder={{ __('Name') }} class="input">
 
                 @error('name')
-                   <span class="text-danger text-center text"> <small>{{ $message }}</small></span>
+                    <span class="text-danger text-center text"> <small>{{ $message }}</small></span>
                 @enderror
             </div>
             <br>
@@ -57,8 +57,8 @@
     </button> --}}
 
         {{-- <div class="col-12"> --}}
-        <button type="submit" class="button button--effect">Submit
-            Request<i class="fa-solid fa-arrow-right-long"></i></button>
+        <button type="submit" class="button button--effect">@lang('Submit Request')<i
+                class="fa-solid fa-arrow-right-long"></i></button>
 
         {{-- <button wire:click.prevent="store()" wire:loading.remove class="button button--effect" type="submit">
                 @lang('Submit  Request')<i class="fa-solid fa-arrow-right-long"></i> </button> --}}

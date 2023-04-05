@@ -50,20 +50,17 @@ integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="ano
                                 </div>
                                 <div class="col-lg-5 row-item">
                                     <div class="contact-area-single contact-area__sidebar wow fadeInUp">
-                                        <p class="secondary">Blood Excellence!</p>
-                                        <h4>Expanded Blood Donate
-                                            Services Here</h4>
-                                        <p class="neutral-bottom">The enquiry service answers all the questions it receives </p>
+                                        <p class="secondary">@lang('Blood Excellence')!</p>
+                                        <h4>@lang('Expanded Blood Donate Services Here')</h4>
+                                        {{-- <p class="neutral-bottom">@lang('The enquiry service answers all the questions it receives') </p> --}}
                                         <div class="group">
-                                            <p class="secondary"><i class="fa-solid fa-phone"></i>Emergency Line:
+                                            <p class="secondary"><i class="fa-solid fa-phone"></i>@lang('Emergency Line'):
                                                +(237) 688 88 88 88
                                             </p>
-                                            <p class="secondary"><i class="fa-solid fa-location-dot"></i>Location:
+                                            <p class="secondary"><i class="fa-solid fa-location-dot"></i>@lang('Location') :
                                                 Douala
-                                               Cameroun</p>
-                                            <p class="secondary"><i class="fa-solid fa-clock"></i>Mon - Fri: 8:00 am -
-                                                7:00 pm
-                                            </p>
+                                               @lang('Cameroon')</p>
+
                                         </div>
                                     </div>
                                 </div>

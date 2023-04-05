@@ -13,7 +13,15 @@ class ContactManage extends Component
 {
     use LivewireAlert, WithPagination;
 
-    public $name,$reply, $response,$displayContact, $showForm;
+    public $name;
+
+    public $reply;
+
+    public $response;
+
+    public $displayContact;
+
+    public $showForm;
 
     protected $paginationTheme = 'bootstrap';
 

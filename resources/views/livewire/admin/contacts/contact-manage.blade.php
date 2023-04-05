@@ -120,8 +120,6 @@
                         <button type="reset" class="btn btn-secondary" wire:click="closeModal()"
                             data-dismiss="modal">@lang('Cancel') </button>
                         <div>
-
-
                             @if (!$displayContact?->response)
                                 <button style="display: block;" type="button" id="buttonReply"
                                     wire:click="{{ $showForm ? 'closeReply()' : 'showReplyInput()' }}"

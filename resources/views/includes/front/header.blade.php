@@ -11,14 +11,13 @@
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, '/')) active @endif"   href="{{ route('home') }}"
-                            >
+                        <a class="nav-link @if (request()->routeIs('home')) active @endif" href="{{ route('home') }}">
                             @lang('Home')
                         </a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="about-us.html">@lang('About')</a>
-                    </li>
+                    </li> --}}
                     {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,29 +46,30 @@
                             <li><a class="dropdown-item" href="404.html">Error</a></li>
                         </ul>
                     </li>
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarBlogDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link @if (request()->routeIs('front.blog.index') || request()->routeIs('front.blog.show')) active @endif"
+                            href="{{ route('front.blog.index') }}">
                             Blog
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
+                        {{-- <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
                             <li><a class="dropdown-item" href="blog.html">Blog</a></li>
                             <li><a class="dropdown-item" href="blog-two.html">Blog Two</a></li>
                             <li><a class="dropdown-item" href="blog-three.html">Blog Three</a></li>
                             <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
                             <li><a class="dropdown-item" href="blog-details-two.html">Blog Details Two</a></li>
                             <li><a class="dropdown-item" href="blog-details-three.html">Blog Details Three</a></li>
-                        </ul>
-                    </li> --}}
+                        </ul> --}}
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"   href="{{ route('front.contact') }}">@lang('Contact us')</a>
+                        <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
+                            href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
                     @if (Route::has('login'))
                         @auth
                             {{-- <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/dashboard') }}">@lang('Dashboard')</a>
                             </li> --}}
-                             <li class="nav-item">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
                             </li>
                         @else
@@ -96,13 +96,17 @@
                     </a>
                     <ul class="nav-item dropdown navbar-nav">
                         {{-- <button type="button" wire:click="ChangeLang('fr')">Value</button> --}}
-                        <a  class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
-                            @if (app()->getLocale() === 'fr') @lang('Français') @else @lang('English') @endif
+                            @if (app()->getLocale() === 'fr')
+                                @lang('Français')
+                            @else
+                                @lang('English')
+                            @endif
                         </a>
                         <div class="dropdown-menu nav-item ">
-                            <a  href="{{ route('lang', 'fr') }}" class="dropdown-item  has-icon">@lang('Français')</a>
-                            <a  href="{{ route('lang', 'en') }}" class="dropdown-item has-icon">@lang('English')</a>
+                            <a href="{{ route('lang', 'fr') }}" class="dropdown-item  has-icon">@lang('Français')</a>
+                            <a href="{{ route('lang', 'en') }}" class="dropdown-item has-icon">@lang('English')</a>
                         </div>
                     </ul>
 

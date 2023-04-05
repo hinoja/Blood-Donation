@@ -9,6 +9,6 @@ class PostsManage extends Component
 {
     public function render()
     {
-        return view('livewire.admin.posts.posts-manage',['posts' => Post::query()->with('user')->paginate(1000)]);
+        return view('livewire.admin.posts.posts-manage', ['posts' => Post::query()->with('user')->paginate(1000)]);
     }
 }

@@ -23,10 +23,11 @@ class AuthentificationController extends Controller
                 Auth::login($user);
                 $data = [
                     'status' => 'true',
-                    'message' => 'Hello '.$user->name,
+                    'name' =>  $user->name,
+                    'role' =>  $user->role->name,
                     'token' => $token,
                 ];
-            } elseif (Hash::check($request->password, $user->password) && ! $user->is_active) {
+            } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {
                 $data = [
                     'status' => 'false',
                     'message' => 'Your account is disable, Please contact administrator',

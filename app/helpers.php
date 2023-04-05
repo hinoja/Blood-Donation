@@ -1,14 +1,14 @@
 <?php
 
-use Carbon\Carbon;
+// use Carbon\Carbon;
 
-if (! function_exists('formatedLocaleDate')) {
-    function formatedLocaleDate(?string $date)
-    {
-        $locale = app()->getLocale();
-        Carbon::setLocale($locale);
-        $format = $locale === 'en' ? 'F d, Y' : 'd M Y';
+// if (! function_exists('formatedLocaleDate')) {
+//     function formatedLocaleDate(?string $date)
+//     {
+//         $locale = app()->getLocale();
+//         Carbon::setLocale($locale);
+//         $format = $locale === 'en' ? 'F d, Y' : 'd M Y';
 
-        return $date ? Carbon::parse($date)->translatedFormat($format) : null;
-    }
-}
+//         return $date ? Carbon::parse($date)->translatedFormat($format) : null;
+//     }
+// }

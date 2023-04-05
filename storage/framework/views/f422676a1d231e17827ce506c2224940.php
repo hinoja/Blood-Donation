@@ -1,4 +1,7 @@
 <div>
+    <div class="mr-4">
+        <a href="<?php echo e(route('admin.posts.add')); ?>"  class="btn btn-primary btn-md float-right mr-3"> <i class="fa fa-plus"></i> <span class="text-sm">  <?php echo app('translator')->get('Add Post'); ?></span></a>
+    </div>
     <div class="body table-responsive">
         <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
             <thead>
@@ -16,13 +19,13 @@
                 <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
                         <td class="text-center"><?php echo e($loop->iteration); ?></td>
-                        <td> <img src="<?php echo e(asset('assets/front/images/logo.png')); ?>" alt=""></td>
+                        <td> <img src="<?php echo e(asset('assets/front/images/news/helpless-two.png')); ?>" class="col-3" alt=""></td>
                         <td><?php echo e($post->title); ?></td>
                         <td> <?php echo e($post->user->name); ?> </td>
                         <td>
                             <?php if($post->published_at): ?>
                                 <span class="badge badge-pill badge-sm badge-success  waves-effect">
-                                    <?php echo app('translator')->get('Yes'); ?></span>
+                                    <?php echo e($post->FormatDate($post->published_at)); ?></span>
                             <?php else: ?>
                                 <span class="badge badge-pill badge-sm badge-dark   waves-effect">
                                     <?php echo app('translator')->get('No'); ?></span>
@@ -39,8 +42,6 @@
                         </td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-
             </tbody>
         </table>
     </div>

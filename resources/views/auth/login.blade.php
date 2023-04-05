@@ -21,11 +21,13 @@
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">
-            <h1 class="title"> @lang('Login') <span class="msg">@lang('Sign In a  membership')</span></h1>
+            <h1 class="title"> @lang('Login')
+                {{-- <span class="msg">@lang('Sign In a  membership')</span> --}}
+            </h1>
             <div class="d-flex">
                 <div class="thumb" style="margin:auto;">
-                    <a href="{{ route('home') }}"> <img class="media-object" src="{{ asset('assets/back/images/bg2.jpg') }}" class="rounded"
-                        alt="logo"></a>
+                    <a href="{{ route('home') }}"> <img class="media-object"
+                            src="{{ asset('assets/back/images/bg2.jpg') }}" class="rounded" alt="logo"></a>
                 </div>
 
             </div>
@@ -34,13 +36,14 @@
                     @csrf
 
                     <!-- Email Address -->
-                    <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error': '' }}">
+                    <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error' : '' }}">
                         {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
                         <span class="input-group-addon"> <i class="zmdi zmdi-email"></i> </span>
                         <div class="form-line">
                             <input id="email" type="email"
                                 class="form-control @error('email') is-invalid @enderror" name="email"
-                                value="{{ old('email') }}" tabindex="1" required autofocus>
+                                placeholder="xyz@mail.com" value="{{ old('email') }}" tabindex="1" required
+                                autofocus>
                             {{-- <input type="password" class="form-control" name="email" placeholder="Password" required> --}}
                         </div>
                         @error('email')
@@ -49,7 +52,7 @@
                     </div>
 
                     <!-- Password -->
-                    <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error': '' }}">
+                    <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error' : '' }}">
                         <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                         <div class="form-line">
                             <input type="password" required autocomplete="current-password" class="form-control"
@@ -62,8 +65,11 @@
                     <br>
                     <!-- Remember Me -->
                     <div>
-                        <input class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember"  id="remember_me" type="checkbox" name="terms" id="terms" class="filled-in chk-col-pink">
-                        <label for="remember_me"><span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                        <input class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                            name="remember" id="remember_me" type="checkbox" name="terms" id="terms"
+                            class="filled-in chk-col-pink">
+                        <label for="remember_me"><span
+                                class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                         </label>
                     </div>
 

@@ -127,8 +127,6 @@ unset($__errorArgs, $__bag); ?>
                         <button type="reset" class="btn btn-secondary" wire:click="closeModal()"
                             data-dismiss="modal"><?php echo app('translator')->get('Cancel'); ?> </button>
                         <div>
-
-
                             <?php if(!$displayContact?->response): ?>
                                 <button style="display: block;" type="button" id="buttonReply"
                                     wire:click="<?php echo e($showForm ? 'closeReply()' : 'showReplyInput()'); ?>"

@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\Extra\LangController;
+use App\Models\Post;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Extra\LangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,12 @@ Route::get('dashboard', function () {
 Route::get('/', [HomerController::class, 'index'])->name('home');
 // Contact-us
 Route::view('contact-us', 'front.contact-us')->name('front.contact');
+// Blog
+Route::view('blog/index', 'front.blog.index')->name('front.blog.index');
+Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blog.show');
+
+
+
 
 // --------------------------ADMIN--------------------------
 Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {
@@ -43,10 +51,10 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     Route::view('users/index', 'admin.users.index')->name('users.index');
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
-
+    Route::view('posts/add', 'admin.posts.add')->name('posts.add');
 });
 
 // ----------------------GENERAL------------------------------------
 Route::get('lang/{locale?}', LangController::class)->name('lang');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

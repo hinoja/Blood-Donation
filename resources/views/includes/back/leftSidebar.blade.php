@@ -29,7 +29,7 @@
                 </li>
             </ul>
         </div>
-        <div class="quick-stats">
+        <div class="quick-stats mt--6">
             <h5>Today Report</h5>
             <ul>
                 <li><span>16<i>Patient</i></span></li>
@@ -39,7 +39,7 @@
 
         </div>
         <div class="row"></div>
-        <hr>
+
     </div>
     <br>
     <!-- #User Info -->
