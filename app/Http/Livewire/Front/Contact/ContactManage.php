@@ -11,13 +11,7 @@ use Livewire\Component;
 
 class ContactManage extends Component
 {
-    public $name;
-
-    public $subject;
-
-    public $message;
-
-    public $email;
+    public $name, $subject, $message, $email;
 
     public function store(Request $request)
     {
