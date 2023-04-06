@@ -22,18 +22,17 @@ class PostController extends Controller
             $formattedPost = [
                 'title' => $post->title,
                 'slug' => $post->slug,
-                'image' => $post->image,
+                'image' => env('APP_URL') . '/' . $post->image,
                 'content' => $post->content,
                 'published_at' => $post->FormatDate($post->published_at),
                 'Author' => $post->user->name,
-                // 'role' => $post->user->role->name,
                 'created_at' => $post->FormatDate($post->created_at),
             ];
             array_push($formattedPosts, $formattedPost);
         }
         return response()->json([
             'status' => "true",
-            'posts' => $formattedPost,
+            'posts' => $formattedPosts,
         ]);
     }
 }

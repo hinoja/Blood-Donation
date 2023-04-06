@@ -20,21 +20,12 @@
     <script type="text/javascript">
         // close message  modal
         window.livewire.on('closeModal', () => {
-            $('#MessageModal').modal('hide');
-            $('#InputRepyForm').modal('hide');
+            $('#DeleteModal').modal('hide');
+            // $('#DeleteModal').modal('hide');
         });
-        window.livewire.on('openModal', () => {
+        window.livewire.on('openDeleteModal', () => {
             //show modal details
-            $('#MessageModal').modal('show');
-        });
-        window.livewire.on('closeFormReply', () => {
-            // Close Input Reply and replyButton
-            document.getElementById('InputRepyForm').style.display = 'none';
-        });
-        window.livewire.on('showFormReply', () => {
-            // Show input reply
-            document.getElementById('InputRepyForm').style.display = 'block';
-            // document.getElementById('buttonReply').style.display = 'none';
+            $('#DeleteModal').modal('show');
         });
     </script>
 @endpush

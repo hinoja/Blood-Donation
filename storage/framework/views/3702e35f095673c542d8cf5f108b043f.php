@@ -3,7 +3,6 @@
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
 <?php $__env->startPush('css'); ?>
     
-    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('assets/back/summernote/css/vendors.css')); ?>" />
     
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css')); ?>">
     <?php echo \Livewire\Livewire::styles(); ?>
@@ -13,8 +12,6 @@
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     
-    
-    <script src="<?php echo e(asset('assets/back/summernote/js/app.js')); ?>"></script>
     
     <script src="<?php echo e(asset('assets/back/js/pages/tables/jquery-datatable.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/back/bundles/datatablescripts.bundle.js')); ?>"></script>
@@ -29,22 +26,22 @@
     <script type="text/javascript">
         // close message  modal
         window.livewire.on('closeModal', () => {
-            $('#MessageModal').modal('hide');
-            $('#InputRepyForm').modal('hide');
+            $('#DeleteModal').modal('hide');
+            // $('#DeleteModal').modal('hide');
         });
-        window.livewire.on('openModal', () => {
+        window.livewire.on('openDeleteModal', () => {
             //show modal details
-            $('#MessageModal').modal('show');
+            $('#DeleteModal').modal('show');
         });
-        window.livewire.on('closeFormReply', () => {
-            // Close Input Reply and replyButton
-            document.getElementById('InputRepyForm').style.display = 'none';
-        });
-        window.livewire.on('showFormReply', () => {
-            // Show input reply
-            document.getElementById('InputRepyForm').style.display = 'block';
-            // document.getElementById('buttonReply').style.display = 'none';
-        });
+        // window.livewire.on('closeFormReply', () => {
+        //     // Close Input Reply and replyButton
+        //     document.getElementById('InputRepyForm').style.display = 'none';
+        // });
+        // window.livewire.on('showFormReply', () => {
+        //     // Show input reply
+        //     document.getElementById('InputRepyForm').style.display = 'block';
+        //     // document.getElementById('buttonReply').style.display = 'none';
+        // });
     </script>
 <?php $__env->stopPush(); ?>
 
@@ -67,18 +64,18 @@
 <?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
 <?php endif; ?>
     <section class="  profile-page">
-            <?php
+        <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.add-post')->html();
-} elseif ($_instance->childHasBeenRendered('Xo7R4Ue')) {
-    $componentId = $_instance->getRenderedChildComponentId('Xo7R4Ue');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Xo7R4Ue');
+} elseif ($_instance->childHasBeenRendered('VkwLXyO')) {
+    $componentId = $_instance->getRenderedChildComponentId('VkwLXyO');
+    $componentTag = $_instance->getRenderedChildComponentTagName('VkwLXyO');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Xo7R4Ue');
+    $_instance->preserveRenderedChild('VkwLXyO');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.add-post');
     $html = $response->html();
-    $_instance->logRenderedChild('Xo7R4Ue', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('VkwLXyO', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -4,7 +4,6 @@
 @section('sub-title', 'Description text here...')
 @push('css')
     {{-- summernote --}}
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/back/summernote/css/vendors.css') }}" />
     {{-- sumernote --}}
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
     @livewireStyles()
@@ -12,8 +11,6 @@
 @push('js')
     @livewireScripts()
     {{-- summernote --}}
-    {{-- <script src="{{ asset('assets/back/summernote/js/vendors.js') }}"></script> --}}
-    <script src="{{ asset('assets/back/summernote/js/app.js') }}"></script>
     {{-- summernote --}}
     <script src="{{ asset('assets/back/js/pages/tables/jquery-datatable.js') }}"></script>
     <script src="{{ asset('assets/back/bundles/datatablescripts.bundle.js') }}"></script>
@@ -28,22 +25,22 @@
     <script type="text/javascript">
         // close message  modal
         window.livewire.on('closeModal', () => {
-            $('#MessageModal').modal('hide');
-            $('#InputRepyForm').modal('hide');
+            $('#DeleteModal').modal('hide');
+            // $('#DeleteModal').modal('hide');
         });
-        window.livewire.on('openModal', () => {
+        window.livewire.on('openDeleteModal', () => {
             //show modal details
-            $('#MessageModal').modal('show');
+            $('#DeleteModal').modal('show');
         });
-        window.livewire.on('closeFormReply', () => {
-            // Close Input Reply and replyButton
-            document.getElementById('InputRepyForm').style.display = 'none';
-        });
-        window.livewire.on('showFormReply', () => {
-            // Show input reply
-            document.getElementById('InputRepyForm').style.display = 'block';
-            // document.getElementById('buttonReply').style.display = 'none';
-        });
+        // window.livewire.on('closeFormReply', () => {
+        //     // Close Input Reply and replyButton
+        //     document.getElementById('InputRepyForm').style.display = 'none';
+        // });
+        // window.livewire.on('showFormReply', () => {
+        //     // Show input reply
+        //     document.getElementById('InputRepyForm').style.display = 'block';
+        //     // document.getElementById('buttonReply').style.display = 'none';
+        // });
     </script>
 @endpush
 
@@ -52,6 +49,6 @@
 
     <x-livewire-alert::scripts />
     <section class="  profile-page">
-            @livewire('admin.posts.add-post')
+        @livewire('admin.posts.add-post')
     </section>
 @endsection

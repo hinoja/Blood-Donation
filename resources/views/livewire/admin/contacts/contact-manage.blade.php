@@ -44,7 +44,7 @@
 
 
 
-    {{--   For Material Design Colors --}}
+    {{-- Modal:   For Material Design Colors --}}
     <div style="background:rgba(0, 0, 0, 0.3)" wire:ignore.self class="modal fade" id="MessageModal" tabindex="-1"
         role="dialog" aria-labelledby="EditCategoryLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

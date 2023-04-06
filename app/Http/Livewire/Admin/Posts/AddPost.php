@@ -27,8 +27,8 @@ class AddPost extends Component
         $post = Post::create([
             'title' => $data['title'],
             'slug' => Str::slug($data['title']),
-            'image' => "filename",
-            // 'image' => $filename,
+            // 'image' => "filename",
+            'image' => $filename,
             'content' => $data['content'],
             'user_id' => Auth::user()->id,
             'pusblished_at' => now(),

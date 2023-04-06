@@ -49,7 +49,7 @@ class ContactManage extends Component
         $contact->response = $response['reply'];
         $contact->save();
 
-        Notification::send($contact, new ContactNotification($response['reply'], $contact->subject));
+        // Notification::send($contact, new ContactNotification($response['reply'], $contact->subject));
 
         $this->closeModal();
 

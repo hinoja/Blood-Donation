@@ -21,21 +21,12 @@
     <script type="text/javascript">
         // close message  modal
         window.livewire.on('closeModal', () => {
-            $('#MessageModal').modal('hide');
-            $('#InputRepyForm').modal('hide');
+            $('#DeleteModal').modal('hide');
+            // $('#DeleteModal').modal('hide');
         });
-        window.livewire.on('openModal', () => {
+        window.livewire.on('openDeleteModal', () => {
             //show modal details
-            $('#MessageModal').modal('show');
-        });
-        window.livewire.on('closeFormReply', () => {
-            // Close Input Reply and replyButton
-            document.getElementById('InputRepyForm').style.display = 'none';
-        });
-        window.livewire.on('showFormReply', () => {
-            // Show input reply
-            document.getElementById('InputRepyForm').style.display = 'block';
-            // document.getElementById('buttonReply').style.display = 'none';
+            $('#DeleteModal').modal('show');
         });
     </script>
 <?php $__env->stopPush(); ?>
@@ -69,15 +60,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.posts-manage')->html();
-} elseif ($_instance->childHasBeenRendered('3bp2Z3R')) {
-    $componentId = $_instance->getRenderedChildComponentId('3bp2Z3R');
-    $componentTag = $_instance->getRenderedChildComponentTagName('3bp2Z3R');
+} elseif ($_instance->childHasBeenRendered('18foE2w')) {
+    $componentId = $_instance->getRenderedChildComponentId('18foE2w');
+    $componentTag = $_instance->getRenderedChildComponentTagName('18foE2w');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('3bp2Z3R');
+    $_instance->preserveRenderedChild('18foE2w');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.posts-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('3bp2Z3R', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('18foE2w', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

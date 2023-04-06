@@ -126,7 +126,7 @@
                                 <div role="tabpanel" class="tab-pane in active" id="usersettings">
                                     <div class="body">
                                         <div class="col-12">
-                                            <textarea name="content" name="content" wire:model.defer="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
+                                            <textarea name="content" name="content" wire:model.defer="content"  {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
                                                 id="" cols="30" rows="20"></textarea>
                                             @error('content')
                                                 <span class="text-danger">{{ $message }}</span>

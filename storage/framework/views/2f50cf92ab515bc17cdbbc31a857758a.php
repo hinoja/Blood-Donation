@@ -133,7 +133,7 @@ unset($__errorArgs, $__bag); ?>
                                 <div role="tabpanel" class="tab-pane in active" id="usersettings">
                                     <div class="body">
                                         <div class="col-12">
-                                            <textarea name="content" name="content" wire:model.defer="content"  class="form-control col-12"
+                                            <textarea name="content" name="content" wire:model.defer="content"   class="form-control col-12"
                                                 id="" cols="30" rows="20"></textarea>
                                             <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
