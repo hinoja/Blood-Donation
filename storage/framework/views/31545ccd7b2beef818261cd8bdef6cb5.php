@@ -11,8 +11,9 @@
                         <div class="blog-area__single img-effect">
                             <div class="poster">
                                 <a href="<?php echo e(route('front.blog.show', $post)); ?>">
-                                    <img src="<?php echo e(asset('assets/front/images/news/helpless.png')); ?>" alt="Helpless">
+                                    <img src="<?php if($post->image): ?><?php echo e(asset('storage/posts/'.$post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?>   <?php endif; ?>" alt="Helpless">
                                 </a>
+
                                 <a href="<?php echo e(route('front.blog.show', $post)); ?>" class="expand"><i
                                         class="fa-solid fa-plus"></i></a>
                             </div>
@@ -25,7 +26,7 @@
                                     </p>
                                 </div>
                                 <h6><a href="<?php echo e(route('front.blog.show', $post)); ?>"><?php echo e($post->title); ?></a></h6>
-                                <p class="neutral-bottom" style="text-align:justify;"><?php echo Str::limit($post->content, 200, '...'); ?></p>
+                                <p class="neutral-bottom" style="text-align:justify;"><?php echo e(Str::limit($post->content, 200, '...')); ?></p>
                                 <a href="<?php echo e(route('front.blog.show', $post)); ?>" class="read-more">
                                     Read More
                                     <i class="fa-solid fa-angles-right"></i>

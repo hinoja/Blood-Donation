@@ -57,7 +57,7 @@
                 <a class="nav-link" href="<?php echo e(route('admin.contacts')); ?>"><i class="fa fa-comment"></i>
                     <span><?php echo app('translator')->get('Messages'); ?></span></a>
             </li>
-            <li class="<?php if(Str::contains($currentUri, 'posts')): ?> active open <?php endif; ?>">
+            <li class="<?php if(Str::contains($currentUri, 'post')): ?> active open <?php endif; ?>">
                 <a class="nav-link" href="<?php echo e(route('admin.posts.index')); ?>"><i class="fa fa-newspaper"></i>
                     <span><?php echo app('translator')->get('Posts'); ?></span></a>
             </li>

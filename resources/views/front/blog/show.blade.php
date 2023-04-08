@@ -18,7 +18,7 @@
                             <div class="col-lg-8 row-item">
                                 <div class="blog-default-area__content blog-details blog-default-area__content-alt-two">
                                     <div class="details-poster">
-                                        <img src="{{ asset('assets/front/images/news/blog-default-poster.png') }}"
+                                        <img src="@if ($post->image){{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
                                             alt="Blog">
                                     </div>
                                     <div class="blog-post-date">
@@ -27,7 +27,7 @@
                                     <br>
                                     <h2>{{ $post->title }}</h2>
 
-                                    <p  style="text-align:justify;">{!! $post->content !!} </p>
+                                    <p style="text-align:justify;">{!! $post->content !!} </p>
 
                                     <div class="img-group">
                                         <img src="{{ asset('assets/front/images/campaigns/campaign-details-slider-one.png') }}"

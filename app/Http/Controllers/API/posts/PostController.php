@@ -14,15 +14,16 @@ class PostController extends Controller
     public function __invoke(Request $request)
     {
         $posts = Post::whereNotNull('published_at')
-            ->with('user')
-            ->get();
+                        ->with('user')
+                        ->latest()
+                        ->get();
         $formattedPosts = [];
         foreach ($posts as $post) {
 
             $formattedPost = [
                 'title' => $post->title,
                 'slug' => $post->slug,
-                'image' => env('APP_URL') . '/' . $post->image,
+                'image' => public_path('storage/posts/' . $post->image),
                 'content' => $post->content,
                 'published_at' => $post->FormatDate($post->published_at),
                 'Author' => $post->user->name,

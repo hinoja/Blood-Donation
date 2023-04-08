@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('signleTitle', __('Posts list')); ?>
 <?php $__env->startSection('title', 'All Posts'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
@@ -60,15 +61,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.posts-manage')->html();
-} elseif ($_instance->childHasBeenRendered('18foE2w')) {
-    $componentId = $_instance->getRenderedChildComponentId('18foE2w');
-    $componentTag = $_instance->getRenderedChildComponentTagName('18foE2w');
+} elseif ($_instance->childHasBeenRendered('EZtHVfi')) {
+    $componentId = $_instance->getRenderedChildComponentId('EZtHVfi');
+    $componentTag = $_instance->getRenderedChildComponentTagName('EZtHVfi');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('18foE2w');
+    $_instance->preserveRenderedChild('EZtHVfi');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.posts-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('18foE2w', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('EZtHVfi', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

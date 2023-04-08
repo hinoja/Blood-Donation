@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('signleTitle', __('Add Post')); ?>
 <?php $__env->startSection('title', 'Add Post'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
@@ -67,15 +68,15 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.add-post')->html();
-} elseif ($_instance->childHasBeenRendered('VkwLXyO')) {
-    $componentId = $_instance->getRenderedChildComponentId('VkwLXyO');
-    $componentTag = $_instance->getRenderedChildComponentTagName('VkwLXyO');
+} elseif ($_instance->childHasBeenRendered('iVbsebM')) {
+    $componentId = $_instance->getRenderedChildComponentId('iVbsebM');
+    $componentTag = $_instance->getRenderedChildComponentTagName('iVbsebM');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('VkwLXyO');
+    $_instance->preserveRenderedChild('iVbsebM');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.add-post');
     $html = $response->html();
-    $_instance->logRenderedChild('VkwLXyO', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('iVbsebM', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

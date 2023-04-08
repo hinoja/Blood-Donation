@@ -51,10 +51,14 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     Route::view('users/index', 'admin.users.index')->name('users.index');
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
-    Route::view('posts/add', 'admin.posts.add')->name('posts.add');
+    Route::view('post/add', 'admin.posts.add')->name('post.add');
+    Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
+    // Route::patch('post/update/{post}', [PostController::class, 'update'])->name('post.update');
+    // Route::patch('post/update', 'admin.posts.edit')->name('post.update2');
 });
 
 // ----------------------GENERAL------------------------------------
 Route::get('lang/{locale?}', LangController::class)->name('lang');
+// Route::get('lang/{locale?}', LangController::class)->name('lang');
 
 require __DIR__ . '/auth.php';

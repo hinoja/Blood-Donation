@@ -2,49 +2,55 @@
 
 namespace App\Http\Livewire\Admin\Posts;
 
+
+
 use App\Models\Post;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PostsManage extends Component
 {
-    use LivewireAlert,WithPagination;
+    use LivewireAlert, WithPagination;
     protected $paginationTheme = 'bootstrap';
     public $deleteId, $post, $nameDelete;
-
+    // edit fields
+    public $tag, $title, $image, $content, $published_at;
     public function closeModal()
     {
-        // $this->reset();
-        // $this->resetErrorBag();
-        // $this->resetValidation();
         $this->emit('closeModal');
     }
     public function showDeleteForm(Post $post)
     {
-        // $this->resetErrorBag();
         $this->emit('openDeleteModal');
         $this->deleteId = $post->id;
         $this->nameDelete = $post->title;
-        // dd($post);
     }
     public function destroyPost()
     {
-        // select sub-category
         $post = Post::query()->find($this->deleteId);
+        // unlink(public_path('storage/posts' . $post->image));
+        File::delete('storage/posts' . $post->image);
         $post->tags()->detach();
-        // $post->subCategories()->delete();
+
         $post->delete();
-        // dd('test');
+
         $this->closeModal();
-        toast(trans('The post has been successfully deleted'),'success');
-        // return redirect()->route('admin.posts.index');
+        $this->alert('success', trans('The post has been successfully deleted'));
 
         // toast(trans('Job has been successfully created.'), 'success');
 
     }
+    public function editPost(Post $post)
+    {
+        // $name=$post->
+    }
     public function render()
     {
-        return view('livewire.admin.posts.posts-manage', ['posts' => Post::query()->with('user')->paginate(7)]);
+        return view('livewire.admin.posts.posts-manage', ['posts' => Post::query()
+                                                                                ->with('user')
+                                                                                ->latest()
+                                                                                ->paginate(7)]);
     }
 }

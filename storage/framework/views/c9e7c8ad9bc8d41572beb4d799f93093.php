@@ -1,4 +1,4 @@
-<?php $__env->startSection('title', __('Contact us')); ?>
+<?php $__env->startSection('title', __('Blog')); ?>
 <?php $__env->startPush('css'); ?>
     <?php echo \Livewire\Livewire::styles(); ?>
 
@@ -17,15 +17,15 @@
                 <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.posts.list-post')->html();
-} elseif ($_instance->childHasBeenRendered('nXNmhFu')) {
-    $componentId = $_instance->getRenderedChildComponentId('nXNmhFu');
-    $componentTag = $_instance->getRenderedChildComponentTagName('nXNmhFu');
+} elseif ($_instance->childHasBeenRendered('fA02YqG')) {
+    $componentId = $_instance->getRenderedChildComponentId('fA02YqG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('fA02YqG');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('nXNmhFu');
+    $_instance->preserveRenderedChild('fA02YqG');
 } else {
     $response = \Livewire\Livewire::mount('front.posts.list-post');
     $html = $response->html();
-    $_instance->logRenderedChild('nXNmhFu', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('fA02YqG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -69,15 +69,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.contacts.contact-manage')->html();
-} elseif ($_instance->childHasBeenRendered('miaKG6S')) {
-    $componentId = $_instance->getRenderedChildComponentId('miaKG6S');
-    $componentTag = $_instance->getRenderedChildComponentTagName('miaKG6S');
+} elseif ($_instance->childHasBeenRendered('0U3goPf')) {
+    $componentId = $_instance->getRenderedChildComponentId('0U3goPf');
+    $componentTag = $_instance->getRenderedChildComponentTagName('0U3goPf');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('miaKG6S');
+    $_instance->preserveRenderedChild('0U3goPf');
 } else {
     $response = \Livewire\Livewire::mount('admin.contacts.contact-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('miaKG6S', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('0U3goPf', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

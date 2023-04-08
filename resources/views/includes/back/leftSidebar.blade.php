@@ -90,7 +90,7 @@
                 <a class="nav-link" href="{{ route('admin.contacts') }}"><i class="fa fa-comment"></i>
                     <span>@lang('Messages')</span></a>
             </li>
-            <li class="@if (Str::contains($currentUri, 'posts')) active open @endif">
+            <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
                     <span>@lang('Posts')</span></a>
             </li>

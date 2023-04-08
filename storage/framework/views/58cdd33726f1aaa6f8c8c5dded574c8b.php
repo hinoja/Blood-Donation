@@ -19,7 +19,7 @@
                             <div class="col-lg-8 row-item">
                                 <div class="blog-default-area__content blog-details blog-default-area__content-alt-two">
                                     <div class="details-poster">
-                                        <img src="<?php echo e(asset('assets/front/images/news/blog-default-poster.png')); ?>"
+                                        <img src="<?php if($post->image): ?><?php echo e(asset('storage/posts/' . $post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>"
                                             alt="Blog">
                                     </div>
                                     <div class="blog-post-date">
@@ -28,7 +28,7 @@
                                     <br>
                                     <h2><?php echo e($post->title); ?></h2>
 
-                                    <p  style="text-align:justify;"><?php echo $post->content; ?> </p>
+                                    <p style="text-align:justify;"><?php echo $post->content; ?> </p>
 
                                     <div class="img-group">
                                         <img src="<?php echo e(asset('assets/front/images/campaigns/campaign-details-slider-one.png')); ?>"

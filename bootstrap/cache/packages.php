@@ -10,6 +10,13 @@
       'LivewireAlert' => 'Jantinnerezo\\LivewireAlert\\LivewireAlertFacade',
     ),
   ),
+  'kitloong/laravel-app-logger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'KitLoong\\AppLogger\\AppLoggerServiceProvider',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 
@@ -70,6 +77,17 @@
       0 => 'Termwind\\Laravel\\TermwindServiceProvider',
     ),
   ),
+  'rakutentech/laravel-request-docs' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'LaravelRequestDocs' => 'Rakutentech\\LaravelRequestDocs\\LaravelRequestDocsFacade',
+    ),
+  ),
   'realrashid/sweet-alert' => 
   array (
     'providers' => 
@@ -79,6 +97,13 @@
     'aliases' => 
     array (
       'Alert' => 'RealRashid\\SweetAlert\\Facades\\Alert',
+    ),
+  ),
+  'spatie/laravel-http-logger' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Spatie\\HttpLogger\\HttpLoggerServiceProvider',
     ),
   ),
   'spatie/laravel-ignition' => 

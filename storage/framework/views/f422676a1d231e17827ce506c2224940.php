@@ -1,7 +1,7 @@
 <div>
     <div>
         <div class="mr-4">
-            <a href="<?php echo e(route('admin.posts.add')); ?>" class="btn btn-primary btn-md float-right mr-3"> <i
+            <a href="<?php echo e(route('admin.post.add')); ?>" class="btn btn-primary btn-md float-right mr-3"> <i
                     class="fa fa-plus"></i> <span class="text-sm"> <?php echo app('translator')->get('Add Post'); ?></span></a>
         </div>
         <div class="body table-responsive">
@@ -24,7 +24,7 @@
                     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td class="text-center"><?php echo e($loop->iteration); ?></td>
-                            <td> <img src="<?php echo e(asset('assets/front/images/news/helpless-two.png')); ?>" class="col-3"
+                            <td class="col-2"> <img width="100%" src="<?php if($post->image): ?> <?php echo e(asset('storage/posts/'.$post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>" class="col-7"
                                     alt=""></td>
                             <td><?php echo e($post->title); ?></td>
                             <td> <?php echo e($post->user->name); ?> </td>
@@ -39,13 +39,9 @@
                             </td>
                             <td>
                                 
-                                <button wire:click="showDeleteForm(<?php echo e($post); ?>)"
-                                    class="btn btn-danger  waves-effect"><i class="fa fa-trash"></i> </button>
-                                <button  class="btn btn-info"><i class="fa fa-edit"></i> </button>
-                                
-                                <button  class="btn btn-primary"><i class="fa fa-eye"></i>
-                                </button>
-                                
+                                <button  wire:click="showDeleteForm(<?php echo e($post); ?>)"
+                                    class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
+                                <a href="<?php echo e(route('admin.post.edit',$post)); ?>"  class="btn btn-info"><i class="fa fa-edit"></i> </a>
 
                             </td>
                         </tr>

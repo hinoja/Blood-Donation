@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title', __('Contact us'))
+@section('title', __('Blog'))
 @push('css')
     @livewireStyles()
 @endpush
