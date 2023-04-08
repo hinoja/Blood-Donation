@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <p>Please wait...</p>
+            <p>Please tttwait...</p>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 <?php
-    $currentUri = Route::current()->uri;
+      $currentUri = Route::current()->uri;
 ?>
 
 <header class="header">
@@ -15,10 +15,10 @@
                             <?php echo app('translator')->get('Home'); ?>
                         </a>
                     </li>
-                    
-                    
+
+
                     <li class="nav-item dropdown">
-                        
+
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="services.html">Our Services</a></li>
                             <li><a class="dropdown-item" href="service-details.html">Service Details</a></li>
@@ -37,7 +37,7 @@
                             href="<?php echo e(route('front.blog.index')); ?>">
                             Blog
                         </a>
-                        
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if(Str::contains($currentUri, 'contact-us')): ?> active <?php endif; ?>"
@@ -45,7 +45,7 @@
                     </li>
                     <?php if(Route::has('login')): ?>
                         <?php if(auth()->guard()->check()): ?>
-                            
+
                             <li class="nav-item">
                                 <a class="nav-link" href="<?php echo e(route('admin.dashboard')); ?>"><?php echo e(Auth::user()->name); ?></a>
                             </li>
@@ -54,7 +54,7 @@
 
                                 <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo app('translator')->get('Log in'); ?></a>
                             </li>
-                            
+
                         <?php endif; ?>
                     <?php endif; ?>
 
@@ -68,7 +68,7 @@
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                     <ul class="nav-item dropdown navbar-nav">
-                        
+
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
                             <?php if(app()->getLocale() === 'fr'): ?>
@@ -101,3 +101,5 @@
     </nav>
 </header>
 <?php /**PATH E:\Laravel Projet\Blood_Donation\resources\views/includes/front/header.blade.php ENDPATH**/ ?>
+
+use Illuminate\Support\Facades\Route;
