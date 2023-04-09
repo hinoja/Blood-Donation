@@ -1,7 +1,9 @@
 <div>
     <div>
         <div class="mr-4">
-            <a href="<?php echo e(route('admin.post.add')); ?>" class="btn btn-primary btn-md float-right mr-3"> <i
+            <a
+             href="<?php echo e(route('admin.post.add')); ?>"
+             class="btn btn-primary btn-md float-right mr-3"> <i
                     class="fa fa-plus"></i> <span class="text-sm"> <?php echo app('translator')->get('Add Post'); ?></span></a>
         </div>
         <div class="body table-responsive">
@@ -24,8 +26,9 @@
                     <?php $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <tr>
                             <td class="text-center"><?php echo e($loop->iteration); ?></td>
-                            <td class="col-2"> <img width="100%" src="<?php if($post->image): ?> <?php echo e(asset('storage/posts/'.$post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>" class="col-7"
-                                    alt=""></td>
+                            <td class="col-2"> <img width="100%"
+                                    src="<?php if($post->image): ?> <?php echo e(asset('storage/posts/' . $post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>"
+                                    class="col-7" alt=""></td>
                             <td><?php echo e($post->title); ?></td>
                             <td> <?php echo e($post->user->name); ?> </td>
                             <td>
@@ -38,11 +41,16 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                
-                                <button  wire:click="showDeleteForm(<?php echo e($post); ?>)"
+                                <button wire:click="showDeleteForm(<?php echo e($post); ?>)"
                                     class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
-                                <a href="<?php echo e(route('admin.post.edit',$post)); ?>"  class="btn btn-info"><i class="fa fa-edit"></i> </a>
-
+                                <a
+                                 
+                                     wire:click="editPost(<?php echo e($post); ?>)"
+                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                                    
+                                    
+                                <a href="#"  class="btn btn-default"><i
+                                        class="fas fa-cloud-upload-alt"></i> </a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -62,7 +70,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="DeleteModalLabel"><?php echo app('translator')->get('Delete Post'); ?>:  <?php echo e($nameDelete); ?></h5>
+                    <h5 class="modal-title" id="DeleteModalLabel"><?php echo app('translator')->get('Delete Post'); ?>: <?php echo e($nameDelete); ?></h5>
                     <button type="button" class="close" wire:click="closeModal()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

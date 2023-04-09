@@ -4,6 +4,8 @@
 @section('sub-title', 'Description text here...')
 @push('css')
     {{-- summernote --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
     {{-- sumernote --}}
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
     @livewireStyles()
@@ -11,6 +13,33 @@
 @push('js')
     @livewireScripts()
     {{-- summernote --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+    <script>
+        //   <script>
+        $('#description').summernote({
+            placeholder: 'Enter description',
+            height: 300,
+            focus: true,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    this.set('description', contents);
+                }
+            }
+        });
+    </script>
+
+
+
     {{-- summernote --}}
     <script src="{{ asset('assets/back/js/pages/tables/jquery-datatable.js') }}"></script>
     <script src="{{ asset('assets/back/bundles/datatablescripts.bundle.js') }}"></script>
@@ -50,5 +79,7 @@
     <x-livewire-alert::scripts />
     <section class="  profile-page">
         @livewire('admin.posts.add-post')
+
+
     </section>
 @endsection

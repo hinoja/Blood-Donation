@@ -96,11 +96,11 @@ unset($__errorArgs, $__bag); ?>
                         <div class="body">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 
-                                <div class="container row">
+                                <div class=" row">
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
-                                            <select class="form-control show-tick" wire:model="tag" name="tag"
-                                                id="" multiple>
+                                            <select class="form-select form-control show-tick" wire:model="tags_name"
+                                                name="tags_name" id="" multiple>
                                                 <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option class=" " value="<?php echo e($tag->id); ?>">
                                                         <?php echo e($tag->name); ?></option>
@@ -140,24 +140,23 @@ unset($__errorArgs, $__bag); ?>
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-
-
-                                <div role="tabpanel" class="tab-pane in active" id="usersettings">
+                                <div role="tabpanel" class="tab-pane in active"  >
                                     <div class="body">
-                                        <div class="col-12">
-                                            <textarea name="content" name="content" wire:model.defer="content"  class="form-control col-12"
-                                                id="" cols="30" rows="20"></textarea>
-                                            <?php $__errorArgs = ['content'];
+                                        <div  wire:ignore class="col-12" >
+                                            <textarea name="content" id="description" wire:model="content"  class="form-control col-12"
+                                                 cols="40" rows="50"></textarea>
+
+                                        </div>
+                                        <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                                <span class="text-danger"><?php echo e($message); ?></span>
-                                            <?php unset($message);
+                                        <span class="text-danger"><?php echo e($message); ?></span>
+                                    <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-                                        </div>
                                     </div>
                                 </div>
                             </div>

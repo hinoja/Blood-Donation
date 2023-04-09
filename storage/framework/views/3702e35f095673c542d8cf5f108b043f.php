@@ -1,9 +1,10 @@
-
 <?php $__env->startSection('signleTitle', __('Add Post')); ?>
 <?php $__env->startSection('title', 'Add Post'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
 <?php $__env->startPush('css'); ?>
     
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
     
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css')); ?>">
     <?php echo \Livewire\Livewire::styles(); ?>
@@ -13,6 +14,33 @@
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
+    <script>
+        //   <script>
+        $('#description').summernote({
+            placeholder: 'Enter description',
+            height: 300,
+            focus: true,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    this.set('description', contents);
+                }
+            }
+        });
+    </script>
+
+
+
     
     <script src="<?php echo e(asset('assets/back/js/pages/tables/jquery-datatable.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/back/bundles/datatablescripts.bundle.js')); ?>"></script>
@@ -68,18 +96,20 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.add-post')->html();
-} elseif ($_instance->childHasBeenRendered('iVbsebM')) {
-    $componentId = $_instance->getRenderedChildComponentId('iVbsebM');
-    $componentTag = $_instance->getRenderedChildComponentTagName('iVbsebM');
+} elseif ($_instance->childHasBeenRendered('2IomePe')) {
+    $componentId = $_instance->getRenderedChildComponentId('2IomePe');
+    $componentTag = $_instance->getRenderedChildComponentTagName('2IomePe');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('iVbsebM');
+    $_instance->preserveRenderedChild('2IomePe');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.add-post');
     $html = $response->html();
-    $_instance->logRenderedChild('iVbsebM', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('2IomePe', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
+
+
     </section>
 <?php $__env->stopSection(); ?>
 

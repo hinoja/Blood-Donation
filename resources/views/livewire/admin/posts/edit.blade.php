@@ -61,7 +61,8 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" name="title" wire:model.defer="title"
-                                            value="{{ $post->title }}" class="form-control"
+                                            {{-- value="{{ $post->title }}" --}}
+                                             class="form-control"
                                             placeholder="title of post ...">
                                     </div>
                                     @error('title')
@@ -102,8 +103,13 @@
                                 <div class="container row">
                                     <div class="form-group col-10">
                                         <div class="form-line">
-                                            <input type="text" value="{{ $post->tag }}" class="form-control"
-                                                name="name" wire:model.defer="name" placeholder="new tag...">
+                                            <select name="" id="">
+                                                @foreach ($tags as $tag)
+
+                                                @endforeach
+                                            </select>
+                                            {{-- <input type="text" value="{{ $post->tag }}" class="form-control"
+                                                name="name" wire:model.defer="name" placeholder="new tag..."> --}}
                                         </div>
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>

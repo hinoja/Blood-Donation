@@ -1,7 +1,9 @@
 <div>
     <div>
         <div class="mr-4">
-            <a href="{{ route('admin.post.add') }}" class="btn btn-primary btn-md float-right mr-3"> <i
+            <a
+             href="{{ route('admin.post.add') }}"
+             class="btn btn-primary btn-md float-right mr-3"> <i
                     class="fa fa-plus"></i> <span class="text-sm"> @lang('Add Post')</span></a>
         </div>
         <div class="body table-responsive">
@@ -24,8 +26,9 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
-                            <td class="col-2"> <img width="100%" src="@if($post->image) {{ asset('storage/posts/'.$post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif" class="col-7"
-                                    alt=""></td>
+                            <td class="col-2"> <img width="100%"
+                                    src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                                    class="col-7" alt=""></td>
                             <td>{{ $post->title }}</td>
                             <td> {{ $post->user->name }} </td>
                             <td>
@@ -38,12 +41,17 @@
                                 @endif
                             </td>
                             <td>
-                                {{-- @if ($post->role_id > 1)
-                                @if ($post->is_active) --}}
-                                <button  wire:click="showDeleteForm({{ $post }})"
+                                <button wire:click="showDeleteForm({{ $post }})"
                                     class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
-                                <a href="{{ route('admin.post.edit',$post) }}" {{-- wire:click="UpdateStatusUser({{ $post }})" --}} class="btn btn-info"><i class="fa fa-edit"></i> </a>
-
+                                <a
+                                 {{-- href="{{ route('admin.post.edit', $post) }}" --}}
+                                     wire:click="editPost({{ $post }})"
+                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>
+                                    {{-- <a    href="{{ route('admin.post.edit', $post) }}" --}}
+                                    {{-- wire:click="UpdateStatusUser({{ $post }})"
+                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>--}}
+                                <a href="#" {{-- wire:click="UpdateStatusUser({{ $post }})" --}} class="btn btn-default"><i
+                                        class="fas fa-cloud-upload-alt"></i> </a>
                             </td>
                         </tr>
                     @endforeach
@@ -62,7 +70,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="DeleteModalLabel">@lang('Delete Post'):  {{ $nameDelete  }}</h5>
+                    <h5 class="modal-title" id="DeleteModalLabel">@lang('Delete Post'): {{ $nameDelete }}</h5>
                     <button type="button" class="close" wire:click="closeModal()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

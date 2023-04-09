@@ -13,16 +13,17 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 class AddPost extends Component
 {
     use WithFileUploads, LivewireAlert;
-    public $tag, $image, $title, $content;
+    public $tags_name, $image, $title, $content;
     public function storePost()
     {
+
         $data = $this->validate([
-            'tag' => ['exists:tags,id'],
+            'tags_name' => ['exists:tags,id'],
             'image' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:1500'],
             'title' => ['required', 'max:255', 'string', 'unique:posts,title'],
-            'content' => ['required', 'string', 'min:255']
+            'content' => [ 'required']
         ]);
-        // dd($data['name']);
+        dd($data);
         $filename = (Str::slug($data['title'])) . '.' . $this->image->extension();
         // dd('test');
         $post = Post::create([
@@ -53,6 +54,6 @@ class AddPost extends Component
     }
     public function render()
     {
-        return view('livewire.admin.posts.add-post', ['tags' => Tag::query()->get()]);
+        return view('livewire.admin.posts.add-post', ['tags' => Tag::all()]);
     }
 }

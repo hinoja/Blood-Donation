@@ -105,11 +105,11 @@
                         <div class="body">
                             <div class="col-lg-12 col-md-12 col-sm-12">
                                 {{-- foreach --}}
-                                <div class="container row">
+                                <div class=" row">
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
-                                            <select class="form-control show-tick" wire:model="tag" name="tag"
-                                                id="" multiple>
+                                            <select class="form-select form-control show-tick" wire:model="tags_name"
+                                                name="tags_name" id="" multiple>
                                                 @foreach ($tags as $tag)
                                                     <option class=" " value="{{ $tag->id }}">
                                                         {{ $tag->name }}</option>
@@ -143,17 +143,16 @@
 
                             <!-- Tab panes -->
                             <div class="tab-content">
-
-
                                 <div role="tabpanel" class="tab-pane in active" id="usersettings">
                                     <div class="body">
-                                        <div class="col-12">
-                                            <textarea name="content" name="content" wire:model.defer="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
-                                                id="" cols="30" rows="20"></textarea>
-                                            @error('content')
-                                                <span class="text-danger">{{ $message }}</span>
-                                            @enderror
+                                        <div  wire:ignore class="col-12" >
+                                            <textarea name="content" id="description" wire:model="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
+                                                 cols="40" rows="50"></textarea>
+
                                         </div>
+                                        @error('content')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                     </div>
                                 </div>
                             </div>

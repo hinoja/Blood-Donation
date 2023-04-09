@@ -11,7 +11,8 @@
                         <div class="blog-area__single img-effect">
                             <div class="poster">
                                 <a href="{{ route('front.blog.show', $post) }}">
-                                    <img src="@if ($post->image){{ asset('storage/posts/'.$post->image) }} @else {{ asset('storage/posts/noImage.png') }}   @endif" alt="Helpless">
+                                    <img src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                                        alt="Helpless">
                                 </a>
 
                                 <a href="{{ route('front.blog.show', $post) }}" class="expand"><i
@@ -26,9 +27,10 @@
                                     </p>
                                 </div>
                                 <h6><a href="{{ route('front.blog.show', $post) }}">{{ $post->title }}</a></h6>
-                                <p class="neutral-bottom" style="text-align:justify;">{{  Str::limit($post->content, 200, '...')  }}</p>
+                                <p class="neutral-bottom" style="text-align:justify;">
+                                    {{ Str::limit($post->content, 200, '...') }}</p>
                                 <a href="{{ route('front.blog.show', $post) }}" class="read-more">
-                                    Read More
+                                    @lang('Read More')
                                     <i class="fa-solid fa-angles-right"></i>
                                 </a>
                             </div>

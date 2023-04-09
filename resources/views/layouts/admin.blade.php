@@ -86,13 +86,13 @@
     <!-- Jquery Core Js -->
     <script src="{{ asset('assets/back/bundles/libscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
     <script src="{{ asset('assets/back/bundles/vendorscripts.bundle.js') }}"></script> <!-- Lib Scripts Plugin Js -->
-    @stack('js')
     <script src="{{ asset('assets/back/bundles/chartscripts.bundle.js') }}"></script> <!-- Chart Plugins Js -->
     <script src="{{ asset('assets/back/bundles/sparklinescripts.bundle.js') }}"></script> <!-- Chart Plugins Js -->
 
     <script src="{{ asset('assets/back/bundles/mainscripts.bundle.js') }}"></script><!-- Custom Js -->
     <script src="{{ asset('assets/back/js/pages/index.js') }}"></script>
     <script src="{{ asset('assets/back/js/pages/charts/sparkline.min.js') }}"></script>
+    @stack('js')
 </body>
 
 <!-- Mirrored from thememakker.com/templates/swift/hospital/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 25 Feb 2023 08:01:08 GMT -->

@@ -1,11 +1,13 @@
 <?php
 
-use App\Models\Post;
+
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Extra\LangController;
+use App\Http\Controllers\Admin\posts\PostController;
+use App\Http\Controllers\Admin\posts\PostAdminController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -51,10 +53,12 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     Route::view('users/index', 'admin.users.index')->name('users.index');
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
-    Route::view('post/add', 'admin.posts.add')->name('post.add');
-    Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
+    Route::view('post/add','admin.posts.add')->name('post.add');
+    // Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
+    Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
+    // Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
     // Route::patch('post/update/{post}', [PostController::class, 'update'])->name('post.update');
-    // Route::patch('post/update', 'admin.posts.edit')->name('post.update2');
+    Route::view('post/edit/{post}', 'admin.posts.edit')->name('post.edit');
 });
 
 // ----------------------GENERAL------------------------------------

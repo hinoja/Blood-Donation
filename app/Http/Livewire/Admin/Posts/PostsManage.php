@@ -44,7 +44,11 @@ class PostsManage extends Component
     }
     public function editPost(Post $post)
     {
-        // $name=$post->
+        // dd('test');
+        return view('admin.posts.edit',['title'=>$post->title,
+                                                    'image'=>$post->image,
+                                                    'content'=>$post->content,
+                                                    'tags'=>$post->tags]);
     }
     public function render()
     {

@@ -49,10 +49,9 @@
 
     <x-livewire-alert::scripts />
     <section class="  profile-page">
-
-
-
-
-        @livewire('admin.posts.edit')
+        @livewire('admin.posts.edit',['tags'=>$tags,
+                                    'content'=>$content,
+                                    'title'=>$title,
+                                    'image'=>$image])
     </section>
 @endsection
