@@ -44,7 +44,7 @@
                                     <button wire:click="showPublishForm(<?php echo e($post); ?>)"
                                     class="btn btn-<?php echo e($post->published_at ? 'success' : 'warning'); ?> "><i
                                     class="fas fa-cloud-upload-alt"></i> </button>
-                                    <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
+                                    <a  href="<?php echo e(route('admin.post.edit',['post'=>$post])); ?>" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

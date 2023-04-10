@@ -44,7 +44,7 @@
                                     <button wire:click="showPublishForm({{ $post }})"
                                     class="btn btn-{{ $post->published_at ? 'success' : 'warning' }} "><i
                                     class="fas fa-cloud-upload-alt"></i> </button>
-                                    <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
+                                    <a  href="{{ route('admin.post.edit',['post'=>$post]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
                             </td>
                         </tr>
                     @endforeach

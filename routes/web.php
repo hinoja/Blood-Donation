@@ -7,7 +7,7 @@ use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Extra\LangController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
-
+use App\Http\Livewire\Admin\Posts\EditComponentPost;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +58,8 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     // Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
     // Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
     // Route::patch('post/update/{post}', [PostController::class, 'update'])->name('post.update');
-    Route::view('post/edit/{post}', 'admin.posts.edit')->name('post.edit');
+    // Route::view('post/edit/{post}', 'admin.posts.edit')->name('post.edit');
+    Route::get('post/edit/{post:slug}', EditComponentPost::class)->name('post.edit');
 });
 
 // ----------------------GENERAL------------------------------------
