@@ -37,7 +37,7 @@ class ContactConfirmationNotification extends Notification
         return (new MailMessage)
             ->greeting(trans('Hello ') . $this->name)
             ->action(trans('Go to website'), url('/'))
-            ->line(trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'))
+            ->line(trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'));
             // ->line('Thank you for using our application!');
     }
 

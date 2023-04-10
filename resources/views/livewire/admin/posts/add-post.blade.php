@@ -7,7 +7,6 @@
                     <section class="boxs-simple">
                         <div class="profile-header">
                             <div class="profile_info">
-
                                 @if ($image)
                                     <div class="profile-image ">
                                         <img src="{{ $image->temporaryUrl() }}" class="col-3" height="120px"
@@ -142,19 +141,19 @@
                             </ul>
 
                             <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane in active" id="usersettings">
+                            <div class=" ">
+                                <div class="tab-pane in active">
                                     <div class="body">
-                                        <div  wire:ignore class="col-12" >
-                                            <textarea name="content" id="description" wire:model="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
-                                                 cols="40" rows="50"></textarea>
-
+                                        <div wire:ignore class="col-12">
+                                            <textarea   id="description" wire:model="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
+                                                cols="40" rows="50">{{ $content }}</textarea>
                                         </div>
                                         @error('content')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -170,3 +169,36 @@
     </div>
 
 </div>
+@push('js')
+
+    @livewireScripts()
+    {{-- summernote --}}
+    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script> --}}
+    <script src="{{ asset('assets/back/summernote/summernote-bs4.js') }}"></script>
+    <script>
+        $('#description').summernote({
+            height: 300,
+            focus: true,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    @this.set('content', contents);
+                }
+            }
+
+        });
+    </script>
+
+
+
+    {{-- summernote --}}
+    {{-- <script src="{{ asset('assets/front/vendor/jquery/jquery-3.6.0.min.js') }}"></script> --}}
+@endpush

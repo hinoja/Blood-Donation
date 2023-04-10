@@ -4,74 +4,10 @@
 <?php $__env->startPush('css'); ?>
     
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="<?php echo e(asset('assets/back/summernote/summernote-bs4.css')); ?>">
     
-    <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css')); ?>">
-    <?php echo \Livewire\Livewire::styles(); ?>
+     <?php echo \Livewire\Livewire::styles(); ?>
 
-<?php $__env->stopPush(); ?>
-<?php $__env->startPush('js'); ?>
-    <?php echo \Livewire\Livewire::scripts(); ?>
-
-    
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
-
-    <script>
-        //   <script>
-        $('#description').summernote({
-            placeholder: 'Enter description',
-            height: 300,
-            focus: true,
-            toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'underline', 'clear']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table', ['table']],
-                ['insert', ['link', 'picture', 'video']],
-                ['view', ['fullscreen', 'codeview', 'help']]
-            ],
-            callbacks: {
-                onChange: function(contents, $editable) {
-                    this.set('description', contents);
-                }
-            }
-        });
-    </script>
-
-
-
-    
-    <script src="<?php echo e(asset('assets/back/js/pages/tables/jquery-datatable.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/back/bundles/datatablescripts.bundle.js')); ?>"></script>
-    <!-- Page Specific JS File -->
-    <script src="<?php echo e(asset('assets/back/js/page/modules-datatables.js')); ?>"></script>
-
-    <script src="<?php echo e(asset('assets/back/js/pages/ui/modals.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/back/plugins/bootstrap-notify/bootstrap-notify.js')); ?>"></script>
-    <script src="<?php echo e(asset('assets/back/js/pages/ui/notifications.js')); ?>"></script>
-
-
-    <script type="text/javascript">
-        // close message  modal
-        window.livewire.on('closeModal', () => {
-            $('#DeleteModal').modal('hide');
-            // $('#DeleteModal').modal('hide');
-        });
-        window.livewire.on('openDeleteModal', () => {
-            //show modal details
-            $('#DeleteModal').modal('show');
-        });
-        // window.livewire.on('closeFormReply', () => {
-        //     // Close Input Reply and replyButton
-        //     document.getElementById('InputRepyForm').style.display = 'none';
-        // });
-        // window.livewire.on('showFormReply', () => {
-        //     // Show input reply
-        //     document.getElementById('InputRepyForm').style.display = 'block';
-        //     // document.getElementById('buttonReply').style.display = 'none';
-        // });
-    </script>
 <?php $__env->stopPush(); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -96,15 +32,15 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.add-post')->html();
-} elseif ($_instance->childHasBeenRendered('2IomePe')) {
-    $componentId = $_instance->getRenderedChildComponentId('2IomePe');
-    $componentTag = $_instance->getRenderedChildComponentTagName('2IomePe');
+} elseif ($_instance->childHasBeenRendered('Y4YdlGH')) {
+    $componentId = $_instance->getRenderedChildComponentId('Y4YdlGH');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Y4YdlGH');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('2IomePe');
+    $_instance->preserveRenderedChild('Y4YdlGH');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.add-post');
     $html = $response->html();
-    $_instance->logRenderedChild('2IomePe', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Y4YdlGH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

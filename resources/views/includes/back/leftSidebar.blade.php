@@ -91,8 +91,17 @@
                     <span>@lang('Messages')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
+                <a class="nav-link" 
+                href="{{ route('admin.posts.index') }}"
+                ><i class="fa fa-newspaper"></i>
                     <span>@lang('Posts')</span></a>
+            </li>
+            <li>
+                <a class="nav-link" 
+                href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
+                {{-- href="{{ route('l5-swagger.default.api') }}" --}}
+                ><i class="fas fa-book-reader"></i>
+                    <span>@lang('Api Docs')</span></a>
             </li>
         </ul>
     </div>

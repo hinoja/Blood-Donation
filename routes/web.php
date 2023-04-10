@@ -2,10 +2,10 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Extra\LangController;
-use App\Http\Controllers\Admin\posts\PostController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
 
 

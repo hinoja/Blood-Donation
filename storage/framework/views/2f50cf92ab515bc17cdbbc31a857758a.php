@@ -7,7 +7,6 @@
                     <section class="boxs-simple">
                         <div class="profile-header">
                             <div class="profile_info">
-
                                 <?php if($image): ?>
                                     <div class="profile-image ">
                                         <img src="<?php echo e($image->temporaryUrl()); ?>" class="col-3" height="120px"
@@ -139,26 +138,26 @@ unset($__errorArgs, $__bag); ?>
                             </ul>
 
                             <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane in active"  >
+                            <div class=" ">
+                                <div class="tab-pane in active">
                                     <div class="body">
-                                        <div  wire:ignore class="col-12" >
-                                            <textarea name="content" id="description" wire:model="content"  class="form-control col-12"
-                                                 cols="40" rows="50"></textarea>
-
+                                        <div wire:ignore class="col-12">
+                                            <textarea   id="description" wire:model="content"  class="form-control col-12"
+                                                cols="40" rows="50"><?php echo e($content); ?></textarea>
                                         </div>
                                         <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                        <span class="text-danger"><?php echo e($message); ?></span>
-                                    <?php unset($message);
+                                            <span class="text-danger"><?php echo e($message); ?></span>
+                                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -174,4 +173,38 @@ unset($__errorArgs, $__bag); ?>
     </div>
 
 </div>
+<?php $__env->startPush('js'); ?>
+
+    <?php echo \Livewire\Livewire::scripts(); ?>
+
+    
+    
+    <script src="<?php echo e(asset('assets/back/summernote/summernote-bs4.js')); ?>"></script>
+    <script>
+        $('#description').summernote({
+            height: 300,
+            focus: true,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video']],
+                ['view', ['fullscreen', 'codeview', 'help']]
+            ],
+            callbacks: {
+                onChange: function(contents, $editable) {
+                    window.livewire.find('<?php echo e($_instance->id); ?>').set('content', contents);
+                }
+            }
+
+        });
+    </script>
+
+
+
+    
+    
+<?php $__env->stopPush(); ?>
 <?php /**PATH E:\Laravel Projet\Blood_Donation\resources\views/livewire/admin/posts/add-post.blade.php ENDPATH**/ ?>

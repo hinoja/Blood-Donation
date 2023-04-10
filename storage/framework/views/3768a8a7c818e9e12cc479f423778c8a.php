@@ -58,8 +58,17 @@
                     <span><?php echo app('translator')->get('Messages'); ?></span></a>
             </li>
             <li class="<?php if(Str::contains($currentUri, 'post')): ?> active open <?php endif; ?>">
-                <a class="nav-link" href="<?php echo e(route('admin.posts.index')); ?>"><i class="fa fa-newspaper"></i>
+                <a class="nav-link" 
+                href="<?php echo e(route('admin.posts.index')); ?>"
+                ><i class="fa fa-newspaper"></i>
                     <span><?php echo app('translator')->get('Posts'); ?></span></a>
+            </li>
+            <li>
+                <a class="nav-link" 
+                href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
+                
+                ><i class="fas fa-book-reader"></i>
+                    <span><?php echo app('translator')->get('Api Docs'); ?></span></a>
             </li>
         </ul>
     </div>

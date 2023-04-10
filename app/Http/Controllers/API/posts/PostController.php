@@ -8,15 +8,13 @@ use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
+
     public function __invoke(Request $request)
     {
         $posts = Post::whereNotNull('published_at')
-                        ->with('user')
-                        ->latest()
-                        ->get();
+            ->with('user')
+            ->latest()
+            ->get();
         $formattedPosts = [];
         foreach ($posts as $post) {
 

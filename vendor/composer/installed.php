@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'cd8609f75122617aec14fc5ee97f73855abf6ca5',
+        'reference' => '495711cb352fe67c7ca3acb21120233afa4fb0ae',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -364,15 +364,6 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'kitloong/laravel-app-logger' => array(
-            'pretty_version' => 'v1.2.1',
-            'version' => '1.2.1.0',
-            'reference' => '9f62604dacc1f185ae76ddc5d2488d030792f639',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../kitloong/laravel-app-logger',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -400,7 +391,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'cd8609f75122617aec14fc5ee97f73855abf6ca5',
+            'reference' => '495711cb352fe67c7ca3acb21120233afa4fb0ae',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -779,15 +770,6 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'rakutentech/laravel-request-docs' => array(
-            'pretty_version' => '2.14',
-            'version' => '2.14.0.0',
-            'reference' => 'a0279379e3c8f81685ec11f7e78e09d749a329d0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../rakutentech/laravel-request-docs',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'ralouphie/getallheaders' => array(
             'pretty_version' => '3.0.3',
             'version' => '3.0.3.0',
@@ -992,15 +974,6 @@
             'aliases' => array(),
             'dev_requirement' => true,
         ),
-        'spatie/laravel-http-logger' => array(
-            'pretty_version' => '1.10.1',
-            'version' => '1.10.1.0',
-            'reference' => '446f88e3f80cce93392db9a9c6278af234b9e01e',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../spatie/laravel-http-logger',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'spatie/laravel-ignition' => array(
             'pretty_version' => '2.0.0',
             'version' => '2.0.0.0',
@@ -1009,15 +982,6 @@
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'spatie/laravel-package-tools' => array(
-            'pretty_version' => '1.14.2',
-            'version' => '1.14.2.0',
-            'reference' => 'bab62023a4745a61170ad5424184533685e73c2d',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../spatie/laravel-package-tools',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.2.7',

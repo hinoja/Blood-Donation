@@ -10,6 +10,46 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthentificationController extends Controller
 {
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    /**
+     * @OA\Post(
+     * path="/api/login",
+     * summary="Sign in",
+     * description="Login by email and  password",
+     * operationId="authLogin",
+     * tags={"login"},
+     *    description="Pass user credentials",
+     * @OA\RequestBody(
+     *   required=true,
+     *    description="login here",
+     *    @OA\Schema(
+     *    required={"email","password"},
+     *    @OA\Property(property="email", type="string", format="email", example="user1@mail.com"),
+     *    @OA\Property(property="password", type="string", format="password", example="PassWord12345"),
+     * ),
+     *    @OA\JsonContent(
+     *       required={"email","password"},
+     *       @OA\Property(property="email", type="string", format="email", example="user1@mail.com"),
+     *       @OA\Property(property="password", type="string", format="password", example="PassWord12345"),
+     *    ),
+     *
+     * ),
+     * @OA\Response(
+     *    response=422,
+     *    description="good back response of server",
+     *    @OA\JsonContent(
+     *       @OA\Property(property="status", type="string", example="true"),
+     *       @OA\Property(property="message", type="string", example="Hello username"),
+     *       @OA\Property(property="token", type="string", example="5|fka5ZOLVgnKRsY4UsMChFDGsdGlLzJYUOlQ8D0Vh"),
+  ),
+     *     ),
+     * )
+     */
     public function login(Request $request)
     {
         $request->validate([
@@ -47,6 +87,13 @@ class AuthentificationController extends Controller
 
         return response()->json($data);
     }
+
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
 
     public function logout(Request $request)
     {
