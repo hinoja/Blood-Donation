@@ -4,7 +4,8 @@
 @section('sub-title', 'Description text here...')
 @push('css')
     {{-- summernote --}}
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+  
     <link rel="stylesheet" href="{{ asset('assets/back/summernote/summernote-bs4.css') }}">
     {{-- sumernote --}}
      @livewireStyles()

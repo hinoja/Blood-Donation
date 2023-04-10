@@ -3,7 +3,8 @@
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
 <?php $__env->startPush('css'); ?>
     
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+  
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/summernote/summernote-bs4.css')); ?>">
     
      <?php echo \Livewire\Livewire::styles(); ?>
@@ -32,15 +33,15 @@
         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.add-post')->html();
-} elseif ($_instance->childHasBeenRendered('Y4YdlGH')) {
-    $componentId = $_instance->getRenderedChildComponentId('Y4YdlGH');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Y4YdlGH');
+} elseif ($_instance->childHasBeenRendered('1lxFYma')) {
+    $componentId = $_instance->getRenderedChildComponentId('1lxFYma');
+    $componentTag = $_instance->getRenderedChildComponentTagName('1lxFYma');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Y4YdlGH');
+    $_instance->preserveRenderedChild('1lxFYma');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.add-post');
     $html = $response->html();
-    $_instance->logRenderedChild('Y4YdlGH', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('1lxFYma', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

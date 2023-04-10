@@ -11,8 +11,8 @@
                         <div class="blog-area__single img-effect">
                             <div class="poster">
                                 <a href="<?php echo e(route('front.blog.show', $post)); ?>">
-                                    <img src="<?php if($post->image): ?> <?php echo e(asset('storage/posts/' . $post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>"
-                                        alt="Helpless">
+                                    <img  src="<?php if($post->image): ?> <?php echo e(asset('storage/posts/' . $post->image)); ?> <?php else: ?> <?php echo e(asset('storage/posts/noImage.png')); ?> <?php endif; ?>"
+                                        alt="Helpless" width="352px" height="264px">
                                 </a>
 
                                 <a href="<?php echo e(route('front.blog.show', $post)); ?>" class="expand"><i

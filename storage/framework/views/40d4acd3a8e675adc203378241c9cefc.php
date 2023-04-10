@@ -1,4 +1,3 @@
-
 <?php $__env->startSection('signleTitle', __('Posts list')); ?>
 <?php $__env->startSection('title', 'All Posts'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
@@ -23,11 +22,16 @@
         // close message  modal
         window.livewire.on('closeModal', () => {
             $('#DeleteModal').modal('hide');
+            $('#PublishModal').modal('hide');
             // $('#DeleteModal').modal('hide');
         });
         window.livewire.on('openDeleteModal', () => {
             //show modal details
             $('#DeleteModal').modal('show');
+        });
+        window.livewire.on('openPublishModal', () => {
+            //show modal details
+            $('#PublishModal').modal('show');
         });
     </script>
 <?php $__env->stopPush(); ?>
@@ -61,15 +65,15 @@
                     <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.posts.posts-manage')->html();
-} elseif ($_instance->childHasBeenRendered('EZtHVfi')) {
-    $componentId = $_instance->getRenderedChildComponentId('EZtHVfi');
-    $componentTag = $_instance->getRenderedChildComponentTagName('EZtHVfi');
+} elseif ($_instance->childHasBeenRendered('dFbsJHT')) {
+    $componentId = $_instance->getRenderedChildComponentId('dFbsJHT');
+    $componentTag = $_instance->getRenderedChildComponentTagName('dFbsJHT');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('EZtHVfi');
+    $_instance->preserveRenderedChild('dFbsJHT');
 } else {
     $response = \Livewire\Livewire::mount('admin.posts.posts-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('EZtHVfi', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('dFbsJHT', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

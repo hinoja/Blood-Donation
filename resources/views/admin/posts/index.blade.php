@@ -21,11 +21,16 @@
         // close message  modal
         window.livewire.on('closeModal', () => {
             $('#DeleteModal').modal('hide');
+            $('#PublishModal').modal('hide');
             // $('#DeleteModal').modal('hide');
         });
         window.livewire.on('openDeleteModal', () => {
             //show modal details
             $('#DeleteModal').modal('show');
+        });
+        window.livewire.on('openPublishModal', () => {
+            //show modal details
+            $('#PublishModal').modal('show');
         });
     </script>
 @endpush

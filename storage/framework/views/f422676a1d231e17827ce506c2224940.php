@@ -1,9 +1,7 @@
 <div>
     <div>
         <div class="mr-4">
-            <a
-             href="<?php echo e(route('admin.post.add')); ?>"
-             class="btn btn-primary btn-md float-right mr-3"> <i
+            <a href="<?php echo e(route('admin.post.add')); ?>" class="btn btn-primary btn-md float-right mr-3"> <i
                     class="fa fa-plus"></i> <span class="text-sm"> <?php echo app('translator')->get('Add Post'); ?></span></a>
         </div>
         <div class="body table-responsive">
@@ -43,14 +41,10 @@
                             <td>
                                 <button wire:click="showDeleteForm(<?php echo e($post); ?>)"
                                     class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
-                                <a
-                                 
-                                     wire:click="editPost(<?php echo e($post); ?>)"
-                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>
-                                    
-                                    
-                                <a href="#"  class="btn btn-default"><i
-                                        class="fas fa-cloud-upload-alt"></i> </a>
+                                    <button wire:click="showPublishForm(<?php echo e($post); ?>)"
+                                    class="btn btn-<?php echo e($post->published_at ? 'success' : 'warning'); ?> "><i
+                                    class="fas fa-cloud-upload-alt"></i> </button>
+                                    <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
                             </td>
                         </tr>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -98,7 +92,57 @@
     
 
 
+    
+    <div style="background:rgba(0, 0, 0, 0.3)" wire:ignore.self class="modal fade" id="PublishModal" tabindex="-1"
+        role="dialog" aria-labelledby="EditCategoryLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">
+                        <?php if($publishPost): ?>
+                            <?php if($publishPost->published_at): ?>
+                                <?php echo app('translator')->get('Unpublish Post'); ?>: <?php echo e($publishPost->title); ?>
 
+                    </h5>
+                <?php else: ?>
+                    <?php echo app('translator')->get('Publish Post'); ?>: <?php echo e($publishPost->title); ?></h5>
+                    <?php endif; ?>
+
+                    <?php endif; ?>
+                    <button type="button" class="close" wire:click="closeModal()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="modal-body">
+                        <p class="text-danger font-weight-bold"><?php echo app('translator')->get('Are you sure you want to publish this post?'); ?>
+                            <br>
+                            
+                        </p>
+                        </span>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-success" wire:click="closeModal()"
+                            data-dismiss="modal"><?php echo app('translator')->get('Cancel'); ?></button>
+                        <button type="button" wire:click="PublishPost()" class="btn btn-danger">
+                            <?php if($publishPost): ?>
+                                <?php if($publishPost->published_at): ?>
+                                    <?php echo app('translator')->get('Yes! Unpublish'); ?>
+                                <?php else: ?>
+                                    <?php echo app('translator')->get('Yes! Publish'); ?>
+                                <?php endif; ?>
+
+                            <?php endif; ?>
+
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
 
 </div>
 <?php /**PATH E:\Laravel Projet\Blood_Donation\resources\views/livewire/admin/posts/posts-manage.blade.php ENDPATH**/ ?>

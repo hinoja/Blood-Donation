@@ -1,9 +1,7 @@
 <div>
     <div>
         <div class="mr-4">
-            <a
-             href="{{ route('admin.post.add') }}"
-             class="btn btn-primary btn-md float-right mr-3"> <i
+            <a href="{{ route('admin.post.add') }}" class="btn btn-primary btn-md float-right mr-3"> <i
                     class="fa fa-plus"></i> <span class="text-sm"> @lang('Add Post')</span></a>
         </div>
         <div class="body table-responsive">
@@ -43,15 +41,10 @@
                             <td>
                                 <button wire:click="showDeleteForm({{ $post }})"
                                     class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
-                                <a
-                                 {{-- href="{{ route('admin.post.edit', $post) }}" --}}
-                                     wire:click="editPost({{ $post }})"
-                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>
-                                    {{-- <a    href="{{ route('admin.post.edit', $post) }}" --}}
-                                    {{-- wire:click="UpdateStatusUser({{ $post }})"
-                                    class="btn btn-info"><i class="fa fa-edit"></i> </a>--}}
-                                <a href="#" {{-- wire:click="UpdateStatusUser({{ $post }})" --}} class="btn btn-default"><i
-                                        class="fas fa-cloud-upload-alt"></i> </a>
+                                    <button wire:click="showPublishForm({{ $post }})"
+                                    class="btn btn-{{ $post->published_at ? 'success' : 'warning' }} "><i
+                                    class="fas fa-cloud-upload-alt"></i> </button>
+                                    <button class="btn btn-primary"><i class="fa fa-edit"></i> </button>
                             </td>
                         </tr>
                     @endforeach
@@ -98,6 +91,55 @@
     {{--  --}}
 
 
+    {{-- Modal:   Publish --}}
+    <div style="background:rgba(0, 0, 0, 0.3)" wire:ignore.self class="modal fade" id="PublishModal" tabindex="-1"
+        role="dialog" aria-labelledby="EditCategoryLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">
+                        @if ($publishPost)
+                            @if ($publishPost->published_at)
+                                @lang('Unpublish Post'): {{ $publishPost->title }}
+                    </h5>
+                @else
+                    @lang('Publish Post'): {{ $publishPost->title }}</h5>
+                    @endif
 
+                    @endif
+                    <button type="button" class="close" wire:click="closeModal()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div>
+                    <div class="modal-body">
+                        <p class="text-danger font-weight-bold">@lang('Are you sure you want to publish this post?')
+                            <br>
+                            {{-- @lang('This will also remove all subcategories and jobs linked to that category.') --}}
+                        </p>
+                        </span>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="reset" class="btn btn-success" wire:click="closeModal()"
+                            data-dismiss="modal">@lang('Cancel')</button>
+                        <button type="button" wire:click="PublishPost()" class="btn btn-danger">
+                            @if ($publishPost)
+                                @if ($publishPost->published_at)
+                                    @lang('Yes! Unpublish')
+                                @else
+                                    @lang('Yes! Publish')
+                                @endif
+
+                            @endif
+
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{--  --}}
 
 </div>

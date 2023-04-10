@@ -11,8 +11,8 @@
                         <div class="blog-area__single img-effect">
                             <div class="poster">
                                 <a href="{{ route('front.blog.show', $post) }}">
-                                    <img src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
-                                        alt="Helpless">
+                                    <img  src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                                        alt="Helpless" width="352px" height="264px">
                                 </a>
 
                                 <a href="{{ route('front.blog.show', $post) }}" class="expand"><i

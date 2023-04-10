@@ -173,11 +173,14 @@
 
     @livewireScripts()
     {{-- summernote --}}
-    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script> --}}
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+    {{-- <script src="{{ asset('assets/front/vendor/jquery/jquery-3.6.0.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
     <script src="{{ asset('assets/back/summernote/summernote-bs4.js') }}"></script>
     <script>
         $('#description').summernote({
-            height: 300,
+            height: 500,
             focus: true,
             toolbar: [
                 ['style', ['style']],

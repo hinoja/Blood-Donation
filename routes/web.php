@@ -54,8 +54,8 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
     Route::view('post/add','admin.posts.add')->name('post.add');
-    // Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
-    Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
+    Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
+    // Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
     // Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
     // Route::patch('post/update/{post}', [PostController::class, 'update'])->name('post.update');
     Route::view('post/edit/{post}', 'admin.posts.edit')->name('post.edit');

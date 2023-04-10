@@ -25,7 +25,6 @@ class AddPost extends Component
         ]);
         // dd($data);
         $filename = (Str::slug($data['title'])) . '.' . $this->image->extension();
-        // dd('test');
         $post = Post::create([
             'title' => $data['title'],
             'slug' => Str::slug($data['title']),

@@ -178,11 +178,14 @@ unset($__errorArgs, $__bag); ?>
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
     
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+
     <script src="<?php echo e(asset('assets/back/summernote/summernote-bs4.js')); ?>"></script>
     <script>
         $('#description').summernote({
-            height: 300,
+            height: 500,
             focus: true,
             toolbar: [
                 ['style', ['style']],

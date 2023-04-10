@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <p>Please tttwait...</p>
+            <p>Blood Donation loading...</p>
         </div>
     </div>
 
