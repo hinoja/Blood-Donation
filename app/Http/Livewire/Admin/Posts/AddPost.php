@@ -19,7 +19,7 @@ class AddPost extends Component
 
         $data = $this->validate([
             'content' => ['required', 'string', 'min:500'],
-            'tags_name' => ['exists:tags,id'],
+            'tags_name' => ['nullable', 'exists:tags,id', 'distinct'],
             'image' => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:1500'],
             'title' => ['required', 'max:255', 'string', 'unique:posts,title'],
         ]);
@@ -29,18 +29,17 @@ class AddPost extends Component
             'title' => $data['title'],
             'slug' => Str::slug($data['title']),
             'content' => $data['content'],
-            // 'image' => "posts",
             // 'image' => "public/posts/" . $slug,
             'user_id' => Auth::user()->id,
             // 'published_at' => now()
         ]);
-
-        foreach ($data['tags_name'] as $tag) {
-            $post->tags()->attach($tag);
+        if ($data['tags_name']) {
+            foreach ($data['tags_name'] as $tag) {
+                $post->tags()->attach($tag);
+            }
         }
-        // $post->tags->attach($data['name']);
         $post->image =  $filename;
-        $post->published_at = now();
+        $post->published_at = null;
         $post->save();
         $this->image->storeAs('public/posts', $filename);
         $this->alert('success', trans('The post has been successfully created'));
