@@ -7,5 +7,6 @@
   'admin.users.user-manage' => 'App\\Http\\Livewire\\Admin\\Users\\UserManage',
   'front.contact.contact-manage' => 'App\\Http\\Livewire\\Front\\Contact\\ContactManage',
   'front.posts.list-post' => 'App\\Http\\Livewire\\Front\\Posts\\ListPost',
+  'front.register-hospital' => 'App\\Http\\Livewire\\Front\\RegisterHospital',
   'layouts.base' => 'App\\Http\\Livewire\\Layouts\\Base',
 );

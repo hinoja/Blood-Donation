@@ -64,6 +64,10 @@
                         <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
                             href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
+                            href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
+                    </li>
                     @if (Route::has('login'))
                         @auth
                             {{-- <li class="nav-item">

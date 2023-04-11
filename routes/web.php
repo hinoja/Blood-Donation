@@ -35,6 +35,8 @@ Route::get('dashboard', function () {
 
 // Home
 Route::get('/', [HomerController::class, 'index'])->name('home');
+//registerHospital
+Route::view('register/Hospital', 'auth.registerHospital')->name('front.register.hospital');
 // Contact-us
 Route::view('contact-us', 'front.contact-us')->name('front.contact');
 // Blog
