@@ -27,13 +27,13 @@ class ContactManage extends Component
         // Api de verification des emails existantes
         // $reponse = Http::get('https://app.shakelist.io/api/1.0/check.php?apikey=' . $apiKey . '&email=' . $data['email'])->json();
         // if ($reponse['result'] == 'OK') {
-            $contact = Contact::create($data);
+        $contact = Contact::create($data);
 
-            Notification::send($contact, new ContactConfirmationNotification($contact));
+        Notification::send($contact, new ContactConfirmationNotification($contact));
 
-            Alert::alert('success', trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'), 'success')->autoclose(7000);
+        Alert::alert('success', trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'), 'success')->autoclose(7000);
         // } else {
-            // Alert::alert('warning', trans('Your message has not been sent to the platform administrator. Because your email address does not exist'), 'warning')->autoclose(7000);
+        // Alert::alert('warning', trans('Your message has not been sent to the platform administrator. Because your email address does not exist'), 'warning')->autoclose(7000);
         // }
 
         // return redirect()->back();
