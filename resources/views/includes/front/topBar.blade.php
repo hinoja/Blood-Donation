@@ -9,17 +9,17 @@
                                 <ul>
                                     <li class="neutral-bottom">
                                         <a href="tel:+01(977)259912">
-                                            <i class="fa-solid fa-phone"></i>+01 (977) 2599 12
+                                            {{-- <i class="fa-solid fa-phone"></i>+3 (977) 2599 12 --}}
                                         </a>
                                     </li>
                                     <li class="neutral-bottom">
                                         <a href="mailto:company@domin.com">
-                                            <i class="fa-solid fa-envelope"></i>company@domin.com
+                                            <i class="fa-solid fa-envelope"></i>blood@donation.com
                                         </a>
                                     </li>
                                     <li class="neutral-bottom">
                                         <a href="contact-us.html">
-                                            <i class="fa-solid fa-location-dot"></i>3146 Koontz Lane, USA
+                                            {{-- <i class="fa-solid fa-location-dot"></i>3146 Koontz Lane, USA --}}
                                         </a>
                                     </li>
                                 </ul>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="topbar-area__right">
-                                <p class="neutral-bottom">Follow Now</p>
+                                <p class="neutral-bottom">@lang('Follow Now')</p>
                                 <div class="social">
                                     <a href="https://www.facebook.com/" target="_blank">
                                         <i class="fa-brands fa-facebook-f"></i>

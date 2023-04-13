@@ -6,8 +6,9 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Extra\LangController;
-use App\Http\Controllers\Admin\posts\PostAdminController;
 use App\Http\Livewire\Admin\Posts\EditComponentPost;
+use App\Http\Controllers\Admin\users\UsersController;
+use App\Http\Controllers\Admin\posts\PostAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,10 +53,15 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     // CONTACTS
     Route::view('contacts/index', 'admin.contacts.index')->name('contacts');
     // USERS
-    Route::view('users/index', 'admin.users.index')->name('users.index');
+    Route::prefix('users')->name('users.')->controller(UsersController::class)->group(function () {
+        Route::get('', 'index')->name('index');
+        Route::patch('status/{user}', 'updateStatus')->name('status');
+    });
+    // Route::view('users/index', 'admin.users.index')->name('users.index');
+    // Route::get('users/index', 'admin.users.index')->name('users.index');
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
-    Route::view('post/add','admin.posts.add')->name('post.add');
+    Route::view('post/add', 'admin.posts.add')->name('post.add');
     Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
     // Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
     // Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');

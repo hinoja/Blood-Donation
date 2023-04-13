@@ -21,6 +21,9 @@
 </head>
 
 <body class="theme-cyan">
+    @include('sweetalert::alert')
+
+
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -34,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <p>Blood Donation loading...</p>
+            <p>Blood Donation...</p>
         </div>
     </div>
 

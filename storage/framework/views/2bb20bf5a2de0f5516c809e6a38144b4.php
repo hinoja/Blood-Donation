@@ -40,21 +40,65 @@
 
                     </div>
                     <div class="body">
-                        <?php
-if (! isset($_instance)) {
-    $html = \Livewire\Livewire::mount('admin.users.user-manage')->html();
-} elseif ($_instance->childHasBeenRendered('1NBXxkF')) {
-    $componentId = $_instance->getRenderedChildComponentId('1NBXxkF');
-    $componentTag = $_instance->getRenderedChildComponentTagName('1NBXxkF');
-    $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('1NBXxkF');
-} else {
-    $response = \Livewire\Livewire::mount('admin.users.user-manage');
-    $html = $response->html();
-    $_instance->logRenderedChild('1NBXxkF', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
-}
-echo $html;
-?>
+                        
+                        <div class="table-responsive">
+                            <table
+                                class="table table-striped table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">#</th>
+                                        <th><?php echo app('translator')->get('First Name'); ?></th>
+                                        <th><?php echo app('translator')->get('Email'); ?></th>
+                                        <th><?php echo app('translator')->get('Active'); ?></th>
+                                        <th><?php echo app('translator')->get('Role'); ?></th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <tr>
+                                            <td class="text-center"><?php echo e($loop->iteration); ?></td>
+                                            <td><?php echo e($user->name); ?></td>
+                                            <td><?php echo e($user->email); ?></td>
+                                            <td>
+                                                <?php if($user->is_active): ?>
+                                                    <span class="badge badge-pill badge-sm badge-success  waves-effect">
+                                                        <?php echo app('translator')->get('Yes'); ?></span>
+                                                <?php else: ?>
+                                                    <span class="badge badge-pill badge-sm badge-dark   waves-effect">
+                                                        <?php echo app('translator')->get('No'); ?></span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo e($user->role->name); ?>
+
+                                            </td>
+                                            <td>
+                                                <form method="POST"
+                                                        action="<?php echo e(route('admin.users.status', $user->id)); ?>">
+                                                        <?php echo csrf_field(); ?>
+                                                        <?php echo method_field('PATCH'); ?>
+                                                        <a href="<?php echo e(route('admin.users.status', $user->id)); ?>"
+                                                            onclick="event.preventDefault();
+                                                            this.closest('form').submit();"
+                                                            class="btn btn-<?php echo e($user->is_active ? 'danger' : 'primary'); ?>">
+                                                            <?php if($user->is_active): ?>
+                                                                <i class="fa fa-lock"></i>
+                                                            <?php else: ?>
+                                                                <i class="fa fa-lock-open"></i>
+                                                            <?php endif; ?>
+                                                        </a>
+                                                    </form>
+                                                
+
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+                                </tbody>
+                            </table>
+                            
+                        </div>
                     </div>
                 </div>
             </div>

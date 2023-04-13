@@ -145,8 +145,8 @@
                                 <div class="tab-pane in active">
                                     <div class="body">
                                         <div wire:ignore class="col-12">
-                                            <textarea   id="description" wire:model="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12"
-                                                cols="40" rows="50">{{ $content }}</textarea>
+                                            <textarea id="description" wire:model="content" {{-- id="summernote" class="card-body summernote" --}} class="form-control col-12" cols="40"
+                                                rows="50">{{ $content }}</textarea>
                                         </div>
                                         @error('content')
                                             <span class="text-danger">{{ $message }}</span>
@@ -170,7 +170,6 @@
 
 </div>
 @push('js')
-
     @livewireScripts()
     {{-- summernote --}}
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">

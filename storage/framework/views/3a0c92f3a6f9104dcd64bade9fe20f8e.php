@@ -21,6 +21,9 @@
 </head>
 
 <body class="theme-cyan">
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+
+
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -34,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <p>Blood Donation loading...</p>
+            <p>Blood Donation...</p>
         </div>
     </div>
 

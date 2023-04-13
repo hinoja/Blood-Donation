@@ -42,8 +42,8 @@ class AddPost extends Component
         $post->published_at = null;
         $post->save();
         $this->image->storeAs('public/posts', $filename);
-        $this->alert('success', trans('The post has been successfully created'));
-        // toast(trans('Post has been successfully created.'), 'success');
+        // $this->alert('success', trans('The post has been successfully created'));
+        toast(trans('Post has been successfully created.'), 'success');
         return redirect()->route('admin.posts.index');
     }
     public function render()

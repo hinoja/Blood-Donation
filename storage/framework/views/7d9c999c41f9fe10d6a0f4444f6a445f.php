@@ -1,5 +1,5 @@
 <div>
-    <div class="table-responsive">
+    <div class="table-responsive" wire:ignore>
         <table class="table table-striped table table-bordered table-striped table-hover js-basic-example dataTable">
             <thead>
                 <tr>

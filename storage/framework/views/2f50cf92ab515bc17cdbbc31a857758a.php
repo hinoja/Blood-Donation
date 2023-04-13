@@ -142,8 +142,8 @@ unset($__errorArgs, $__bag); ?>
                                 <div class="tab-pane in active">
                                     <div class="body">
                                         <div wire:ignore class="col-12">
-                                            <textarea   id="description" wire:model="content"  class="form-control col-12"
-                                                cols="40" rows="50"><?php echo e($content); ?></textarea>
+                                            <textarea id="description" wire:model="content"  class="form-control col-12" cols="40"
+                                                rows="50"><?php echo e($content); ?></textarea>
                                         </div>
                                         <?php $__errorArgs = ['content'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
@@ -174,7 +174,6 @@ unset($__errorArgs, $__bag); ?>
 
 </div>
 <?php $__env->startPush('js'); ?>
-
     <?php echo \Livewire\Livewire::scripts(); ?>
 
     

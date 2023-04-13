@@ -54,8 +54,8 @@ class EditComponentPost extends Component
       }
        $this->post->published_at = null;
        $this->post->save();
-        $this->alert('success', trans('The post has been successfully Updated'));
-        // toast(trans('Post has been successfully created.'), 'success');
+        // $this->alert('success', trans('The post has been successfully Updated'));
+        toast(trans('The post has been successfully Updated.'), 'success');
         return redirect()->route('admin.posts.index');
     }
     public function render()
