@@ -58,6 +58,7 @@
                                                 {{ $user->role->name }}
                                             </td>
                                             <td>
+                                                @if ($user->role_id > 1)
                                                 <form method="POST"
                                                         action="{{ route('admin.users.status', $user->id) }}">
                                                         @csrf
@@ -71,26 +72,17 @@
                                                             @else
                                                                 {{-- @lang('Unblock') --}}<i class="fa fa-lock-open"></i>
                                                             @endif
+
                                                         </a>
                                                     </form>
-                                                {{-- @if ($user->role_id > 1)
-                                                    @if ($user->is_active)
-                                                        <a class="btn btn-danger"><i class="fa fa-lock"></i> </a>
-                                                    @else
-                                                        <a href="{{ route('admin.users.status', $user->id) }}"
-                                                            class="btn btn-info"><i class="fa fa-lock-open"></i> </a>
                                                     @endif
-                                                @endif --}}
-
                                             </td>
                                         </tr>
                                     @endforeach
 
                                 </tbody>
                             </table>
-                            {{-- <ul class="header-dropdown" style="float: right;">
-                                {{ $users->links() }}
-                            </ul> --}}
+
                         </div>
                     </div>
                 </div>

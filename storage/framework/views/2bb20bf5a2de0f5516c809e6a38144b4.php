@@ -74,6 +74,7 @@
 
                                             </td>
                                             <td>
+                                                <?php if($user->role_id > 1): ?>
                                                 <form method="POST"
                                                         action="<?php echo e(route('admin.users.status', $user->id)); ?>">
                                                         <?php echo csrf_field(); ?>
@@ -87,17 +88,17 @@
                                                             <?php else: ?>
                                                                 <i class="fa fa-lock-open"></i>
                                                             <?php endif; ?>
+
                                                         </a>
                                                     </form>
-                                                
-
+                                                    <?php endif; ?>
                                             </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                                 </tbody>
                             </table>
-                            
+
                         </div>
                     </div>
                 </div>

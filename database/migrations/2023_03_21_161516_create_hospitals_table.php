@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('logo');
             $table->longText('description')->nullable();
             $table->string('descriptionFile')->nullable();
-            $table->foreignId('user_id')->constrained();
+            // $table->foreignId('user_id')->constrained();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
