@@ -7,7 +7,6 @@
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
@@ -15,7 +14,7 @@
                                 <strong>Account</strong>
                             </li>
                             <li id="personal" class="@if ($step === 2 || $step === 3 || $step === 4) active @endif ">
-                                <strong>Personal</strong>
+                                <strong>Manager</strong>
                             </li>
                             <li id="payment" class="@if ($step === 3 || $step === 4) active @endif ">
                                 <strong>Image</strong>
@@ -80,9 +79,13 @@
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="nameHos"> @lang('Full Name')</label>
-                                <input name="nameHos" class="form-control" type="text" required>
+                                <label for="hospital_name"> @lang('Full Name')</label>
+                                <input name="hospital_name" wire:model.defer="hospital_name" class="form-control"
+                                    type="text" required>
                             </div>
+                            @error('hospital_name')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
 
                         </div>
                     </div>
@@ -92,9 +95,13 @@
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="regiNumber">Birth Date</label>
-                                <input class="form-control" type="date" name="regi_number" required>
+                                <label for="birth_date">Birth Date</label>
+                                <input wire:model.defer="birth_date" class="form-control" type="date"
+                                    name="birth_date" required>
                             </div>
+                            @error('birth_date')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
 
                         </div>
                     </div>
@@ -105,9 +112,13 @@
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="regiNumber">Number</label>
-                                <input class="form-control" type="number" name="regi_number" required>
+                                <label for="urgency_number">Number</label>
+                                <input wire:model.defer="urgency_number" class="form-control" type="number"
+                                    name="urgency_number" required>
                             </div>
+                            @error('urgency_number')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
                         </div>
                     </div>
                 </div>
@@ -116,9 +127,14 @@
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="regiNumber">text</label>
-                                <textarea class="form-control" type="number" name="regi_number" cols="30" rows="10"></textarea>
+                                <label for="description">text</label>
+                                <textarea wire:model.defer="description" class="form-control" type="number" name="description" cols="30"
+                                    rows="10"></textarea>
                             </div>
+                            @error('description')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
+
                         </div>
                     </div>
                 </div>
@@ -145,93 +161,108 @@
             @if ($step === 2)
                 {{-- director --}}
                 <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Manager Name') <span class="text-danger">*</span></p>
+                    <p class="secondary">@lang('Name') <span class="text-danger">*</span></p>
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="regiNumber">Full Name</label>
-                                <input class="form-control" type="text" name="regi_number" required>
+                                <label for="manager_name">Full Name</label>
+                                <input wire:model.defer="manager_name" class="form-control" type="text"
+                                    name="manager_name" required>
                             </div>
+                            @error('manager_name')
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
                 <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Manager Number') <span class="text-danger">*</span></p>
+                    <p class="secondary">@lang('Call Number') <span class="text-danger">*</span></p>
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="regiNumber">number</label>
-                                <input class="form-control" type="number" name="regi_number" required>
+                                <label for="call_number">number</label>
+                                <input wire:model.defer="call_number" class="form-control" type="number"
+                                    name="call_number" required>
                             </div>
+                            @error('call_number')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-area__form-single">
+                    <p class="secondary">@lang('Email') <span class="text-danger">*</span></p>
+                    <div class="registration-area__form-single__inner">
+                        <div class="input-group-column">
+                            <div class="input">
+                                <label for="manager_email">text</label>
+                                <input wire:model.defer="manager_email" class="form-control" type="email"
+                                    name="manager_email" required>
+                            </div>
+                            @error('manager_email')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
+
+                        </div>
+                    </div>
+                </div>
+                <div class="registration-area__form-single">
+                    <p class="secondary">@lang('Password') <span class="text-danger">*</span></p>
+                    <div class="registration-area__form-single__inner">
+                        <div class="input-group-column">
+                            <div class="input">
+                                <label for="password">@lang('password')</label>
+                                <input wire:model.defer="password" class="form-control" type="password"
+                                    name="password" required>
+                            </div>
+                            @error('password')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
                         </div>
                     </div>
                 </div>
             @endif
 
             @if ($step === 3)
-                    <div>
-                        <div class="registration-area__form-single">
-                            <p class="secondary">@lang('Add a logo') <span class="text-danger">*</span></p>
-                            <div class="registration-area__form-single__inner">
-                                <div class="input-group-column">
-                                    <div class="input">
-                                        <label for="regiNumber">@lang('image')>
-                                            <input class="form-control" type="file" name="regi_number" required>
-                                    </div>
+                <div>
+                    <div class="registration-area__form-single">
+                        <p class="secondary">@lang('Add a logo') <span class="text-danger">*</span></p>
+                        <div class="registration-area__form-single__inner">
+                            <div class="input-group-column">
+                                <div class="input">
+                                    <label for="logo">@lang('Image')>
+                                        <input wire:model.defer="logo" class="form-control" type="file"
+                                            name="logo" required>
                                 </div>
-                            </div>
-                        </div>
-                        <br> <hr>
-                        <div class="registration-area__form-single">
-                            <p class="secondary">@lang(' description') </p>
-                            <div class="registration-area__form-single__inner">
-                                <div class="input-group-column">
-                                    <div class="input">
-                                        <label for="regiNumber">@lang('File')</label>
-                                        <input class="form-control" type="file" name="regi_number" required>
-                                    </div>
-                                </div>
+                                @error('logo')
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
                             </div>
                         </div>
                     </div>
+                    <br>
+                    <hr>
+
+                    <div class="registration-area__form-single">
+                        <p class="secondary">@lang('Description') </p>
+                        <div class="registration-area__form-single__inner">
+                            <div class="input-group-column">
+                                <div class="input">
+                                    <label for="description_file">@lang('File')</label>
+                                    <input wire:model.defer="description_file" class="form-control" type="file"
+                                        name="description_file" required>
+                                </div>
+                                @error('description_file')
+                            <span class="text-center">{{ $message }}</span>
+                        @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             @endif
 
-            {{-- <div class="registration-area__form-single">
-                <p class="secondary">Address *</p>
-                <div class="registration-area__form-single__inner mb-0">
-                    <div class="input-group-column input-group-column--secondary">
-                        <div class="input">
-                            <label for="regiAddress">Street Address</label>
-                            <input class="form-control" type="text" name="regi_address" id="regiAddress" required>
-                        </div>
-                        <div class="input">
-                            <label for="regiCity">City</label>
-                            <input class="form-control" type="text" name="regi_city" id="regiCity" required>
-                        </div>
-                        <div class="input">
-                            <label for="regiState">State / Province</label>
-                            <input class="form-control" type="text" name="regi_state" id="regiState" required>
-                        </div>
-                        <div class="input">
-                            <label for="regiCountry">Country</label>
-                            <select class="select-regi-country" id="regiCountry">
-                                <option label="none" selected></option>
-                                <option value="usa">United State</option>
-                                <option value="japan">Japan</option>
-                                <option value="brazil">Brazil</option>
-                                <option value="australia">Australia</option>
-                                <option value="canada">Canada</option>
-                                <option value="china">China</option>
-                            </select>
-                        </div>
-                        <div class="input registration-input-button mb-0">
-                            <button type="submit" class="button button--effect">Submit<i
-                                    class="fa-solid fa-arrow-right-long"></i></button>
 
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
 
             @if ($step === 4)
                 <div class="registration-area__form-single " style="display: block;">
@@ -239,27 +270,33 @@
                     <div class="registration-area__form-single__inner ">
                         <div class="input-group-column ">
                             <div class="input">
-                                <label for="services1">text</label>
+                                <label for="services.0">text</label>
                                 <input class="form-control" type="text" name="services1" required>
+                                @error('services.0')
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
                             </div>
                             <div class="input-group-column ">
-                                <div class="btn btn-primary btn-lg">+</div>
+                                <div wire:click.prevent="add({{ $i }})" class="btn btn-primary btn-lg">+
+                                </div>
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="registration-area__form-single__inner"> --}}
-                    <div class="input-group-column ">
-                        <div class="input">
-                            <label for="regiNumber">text</label>
-                            <input class="form-control" type="text" name="regi_number" required>
+                    @foreach ($servicesInput as $key => $index)
+                        {{-- <div class="registration-area__form-single__inner"> --}}
+                        <div class="input-group-column" wire:key="{{ $index }}">
+                            <div class="input">
+                                <label for="regiNumber">text</label>
+                                <input class="form-control" type="text" name="regi_number" required>
+                            </div>
+                            <div class="input-group-column ">
+                                <div wire:click.prevent="remove({{ $key }})" class="btn btn-danger btn-lg">
+                                    ---
+                                </div>
+                            </div>
                         </div>
-                        <div class="input-group-column ">
-                            <div class="btn btn-danger btn-lg">---</div>
-                        </div>
-                    </div>
-                    {{-- </div> --}}
-
-
+                        {{-- </div> --}}
+                    @endforeach
 
                 </div>
             @endif

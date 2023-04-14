@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('birth');
-
+            $table->string('logo');
+            $table->longText('description')->nullable();
+            $table->string('descriptionFile')->nullable();
             $table->foreignId('user_id')->constrained();
-
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
