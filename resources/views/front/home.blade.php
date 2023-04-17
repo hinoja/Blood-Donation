@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title',__('Welcome'))
+@section('title',__('Welome'))
 @section('content')
     <!-- ==== hero section start ==== -->
     @include('includes.front.Hero')

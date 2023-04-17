@@ -99,7 +99,7 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
                                             <select class="form-select form-control show-tick" wire:model="tags_name"
-                                                name="tags_name" id="" multiple>
+                                                name="tags_name" data-placeholder="Choose Categories" multiple class="chosen-select">
                                                 <?php $__currentLoopData = $tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option class=" " value="<?php echo e($tag->id); ?>">
                                                         <?php echo e($tag->name); ?></option>

@@ -14,10 +14,11 @@
 <tr>
 <td class="header">
 <a href="<?php echo e($url); ?>" style="display: inline-block;">
-<?php if(trim($slot) === 'Laravel'): ?>
-<img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo">
+<?php if(trim($slot) === "Blood Donation"): ?>
+<img src="<?php echo e(asset('assets/back/images/bg2.jpg')); ?>" class="logo" alt="<?php echo e(config('app.name')); ?> Logo">
 <?php else: ?>
-<span style="color:#ea062b;"> <?php echo e($slot); ?></span>
+<?php echo e($slot); ?>
+
 <?php endif; ?>
 </a>
 </td>

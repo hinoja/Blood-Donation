@@ -1,4 +1,4 @@
-<?php $__env->startSection('title',__('Welcome')); ?>
+<?php $__env->startSection('title',__('Welome')); ?>
 <?php $__env->startSection('content'); ?>
     <!-- ==== hero section start ==== -->
     <?php echo $__env->make('includes.front.Hero', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

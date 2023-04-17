@@ -21,7 +21,7 @@ class PostController extends Controller
             $formattedPost = [
                 'title' => $post->title,
                 'slug' => $post->slug,
-                'image' => public_path('storage/posts/' . $post->image),
+                'image' => env('APP_URL').'/storage/posts/'. $post->image,
                 'content' => $post->content,
                 'published_at' => $post->FormatDate($post->published_at),
                 'Author' => $post->user->name,

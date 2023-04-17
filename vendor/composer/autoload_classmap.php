@@ -33,7 +33,6 @@ return array(
     'App\\Http\\Livewire\\Admin\\Posts\\Edit' => $baseDir . '/app/Http/Livewire/Admin/Posts/Edit.php',
     'App\\Http\\Livewire\\Admin\\Posts\\EditComponentPost' => $baseDir . '/app/Http/Livewire/Admin/Posts/EditComponentPost.php',
     'App\\Http\\Livewire\\Admin\\Posts\\PostsManage' => $baseDir . '/app/Http/Livewire/Admin/Posts/PostsManage.php',
-    'App\\Http\\Livewire\\Admin\\Users\\UserManage' => $baseDir . '/app/Http/Livewire/Admin/Users/UserManage.php',
     'App\\Http\\Livewire\\Front\\Contact\\ContactManage' => $baseDir . '/app/Http/Livewire/Front/Contact/ContactManage.php',
     'App\\Http\\Livewire\\Front\\Posts\\ListPost' => $baseDir . '/app/Http/Livewire/Front/Posts/ListPost.php',
     'App\\Http\\Livewire\\Front\\RegisterHospital' => $baseDir . '/app/Http/Livewire/Front/RegisterHospital.php',

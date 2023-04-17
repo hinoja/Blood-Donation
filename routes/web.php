@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\HomerController;
 use App\Http\Controllers\ProfileController;
@@ -45,7 +46,9 @@ Route::view('blog/index', 'front.blog.index')->name('front.blog.index');
 Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blog.show');
 
 
-
+// Route::get('/linkstorage', function () {
+//     Artisan::call('storage:link');
+// });
 
 // --------------------------ADMIN--------------------------
 Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {

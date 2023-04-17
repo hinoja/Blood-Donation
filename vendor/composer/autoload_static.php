@@ -557,7 +557,6 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         'App\\Http\\Livewire\\Admin\\Posts\\Edit' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/Edit.php',
         'App\\Http\\Livewire\\Admin\\Posts\\EditComponentPost' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/EditComponentPost.php',
         'App\\Http\\Livewire\\Admin\\Posts\\PostsManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/PostsManage.php',
-        'App\\Http\\Livewire\\Admin\\Users\\UserManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Users/UserManage.php',
         'App\\Http\\Livewire\\Front\\Contact\\ContactManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/Contact/ContactManage.php',
         'App\\Http\\Livewire\\Front\\Posts\\ListPost' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/Posts/ListPost.php',
         'App\\Http\\Livewire\\Front\\RegisterHospital' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/RegisterHospital.php',

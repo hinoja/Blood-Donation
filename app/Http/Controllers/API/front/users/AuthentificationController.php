@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthentificationController extends Controller
 {
-   
+
     public function login(Request $request)
     {
         $request->validate([
@@ -26,6 +26,7 @@ class AuthentificationController extends Controller
                     'status' => 'true',
                     'name' =>  $user->name,
                     'role' =>  $user->role->name,
+                    'id' =>  $user->id,
                     'token' => $token,
                 ];
             } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {

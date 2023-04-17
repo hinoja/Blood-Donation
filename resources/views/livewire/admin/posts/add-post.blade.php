@@ -108,7 +108,7 @@
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
                                             <select class="form-select form-control show-tick" wire:model="tags_name"
-                                                name="tags_name" id="" multiple>
+                                                name="tags_name" data-placeholder="Choose Categories" multiple class="chosen-select">
                                                 @foreach ($tags as $tag)
                                                     <option class=" " value="{{ $tag->id }}">
                                                         {{ $tag->name }}</option>
