@@ -143,29 +143,7 @@ unset($__errorArgs, $__bag); ?>
                         </div>
                     </div>
                 </div>
-                <div class="registration-area__form-single">
-                    <p class="secondary"><?php echo app('translator')->get('Description '); ?> </p>
-                    <div class="registration-area__form-single__inner">
-                        <div class="input-group-column">
-                            <div class="input">
-                                <label for="description">text</label>
-                                <textarea wire:model.defer="description" class="form-control" type="number" name="description" cols="30"
-                                    rows="10"></textarea>
-                            </div>
-                            <?php $__errorArgs = ['description'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-                            <span class="text-center"><?php echo e($message); ?></span>
-                        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
-
-                        </div>
-                    </div>
-                </div>
+                
             <?php endif; ?>
             
             <?php if($step === 2): ?>

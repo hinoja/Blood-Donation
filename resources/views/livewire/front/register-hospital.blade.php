@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="registration-area__form-single">
+                {{-- <div class="registration-area__form-single">
                     <p class="secondary">@lang('Description ') </p>
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
@@ -137,7 +137,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
             @endif
             {{-- <div class="registration-area__form-single">
                 <p class="secondary">Blood Group *</p>
