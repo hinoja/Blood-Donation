@@ -3,16 +3,22 @@
 namespace App\Http\Livewire\Front\Contact;
 
 use App\Models\Contact;
-use Livewire\Component;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Request;
-use RealRashid\SweetAlert\Facades\Alert;
-use Illuminate\Support\Facades\Notification;
 use App\Notifications\front\Contact\ContactConfirmationNotification;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Request;
+use Livewire\Component;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ContactManage extends Component
 {
-    public $name, $subject, $message, $email;
+    public $name;
+
+    public $subject;
+
+    public $message;
+
+    public $email;
 
     public function store(Request $request)
     {

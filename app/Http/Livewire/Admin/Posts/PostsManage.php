@@ -2,45 +2,54 @@
 
 namespace App\Http\Livewire\Admin\Posts;
 
-
-
 use App\Models\Post;
 use Illuminate\Support\Facades\File;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithPagination;
-use Jantinnerezo\LivewireAlert\LivewireAlert;
 
 class PostsManage extends Component
 {
     use LivewireAlert, WithPagination;
+
     protected $paginationTheme = 'bootstrap';
-    public $deleteId, $post, $nameDelete;
+
+    public $deleteId;
+
+    public $post;
+
+    public $nameDelete;
+
     // edit fields
     public $publishPost; //publish
+
     public function closeModal()
     {
         $this->emit('closeModal');
     }
+
     public function showDeleteForm(Post $post)
     {
         $this->emit('openDeleteModal');
         $this->deleteId = $post->id;
         $this->nameDelete = $post->title;
     }
+
     public function showPublishForm(Post $post)
     {
         $this->emit('openPublishModal');
         $this->publishPost = $post;
     }
+
     public function PublishPost()
     {
         $post = Post::find($this->publishPost->id);
         if ($post->published_at) {
             $post->published_at = null;
-            $message = "The post has been successfully unpublished";
+            $message = 'The post has been successfully unpublished';
         } else {
             $post->published_at = now();
-            $message = "The post has been successfully published";
+            $message = 'The post has been successfully published';
         }
         $post->save();
 
@@ -54,7 +63,7 @@ class PostsManage extends Component
     {
         $post = Post::query()->find($this->deleteId);
         // unlink(public_path('storage/posts' . $post->image));
-        File::delete('storage/posts' . $post->image);
+        File::delete('storage/posts'.$post->image);
         $post->tags()->detach();
 
         $post->delete();
@@ -64,6 +73,7 @@ class PostsManage extends Component
 
         // toast(trans('Job has been successfully created.'), 'success');
     }
+
     public function editPost(Post $post)
     {
         // dd('test');
@@ -71,9 +81,10 @@ class PostsManage extends Component
             'title' => $post->title,
             'image' => $post->image,
             'content' => $post->content,
-            'tags' => $post->tags
+            'tags' => $post->tags,
         ]);
     }
+
     public function render()
     {
         return view('livewire.admin.posts.posts-manage', ['posts' => Post::query()

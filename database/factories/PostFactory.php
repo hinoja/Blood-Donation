@@ -19,7 +19,7 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $data = fake()->unique()->realText(50,2),
+            'title' => $data = fake()->unique()->realText(50, 2),
             'user_id' => User::factory(),
             'slug' => Str::slug($data),
             'content' => fake()->paragraph(50),

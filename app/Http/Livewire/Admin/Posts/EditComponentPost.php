@@ -3,16 +3,30 @@
 namespace App\Http\Livewire\Admin\Posts;
 
 use App\Models\Post;
-use Livewire\Component;
-use Illuminate\Support\Str;
-use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditComponentPost extends Component
 {
     use WithFileUploads, LivewireAlert;
-    public $content, $title, $image, $tags_name, $tags, $post, $imageDispay;
+
+    public $content;
+
+    public $title;
+
+    public $image;
+
+    public $tags_name;
+
+    public $tags;
+
+    public $post;
+
+    public $imageDispay;
+
     public function mount(Post $post)
     {
         // $student = Post::where('id', $id)->first();
@@ -24,14 +38,14 @@ class EditComponentPost extends Component
 
         // $this->student_edit_id = $student->id;
     }
+
     public function UpdatePost()
     {
-
         $data = $this->validate([
             'content' => ['required', 'string', 'min:500'],
             'tags_name' => ['nullable', 'exists:tags,id', 'distinct'],
             'image' => ['nullable', 'image', 'mimes:png,jpg,jpeg,gif', 'max:1500'],
-            'title' => ['required', 'max:255', 'unique:posts,title,' . $this->post->id . '', 'string'],
+            'title' => ['required', 'max:255', 'unique:posts,title,'.$this->post->id.'', 'string'],
         ]);
         $postUpdate = Post::find($this->post->id)
         ->Update([
@@ -47,17 +61,19 @@ class EditComponentPost extends Component
                 $this->post->tags()->attach($tag);
             }
         }
-        if($this->image){
-          $filename = (Str::slug($data['title'])) . '.' . $this->image->extension();
-        $this->image->storeAs('public/posts', $filename);
-        $this->post->image =  $filename;
-      }
-       $this->post->published_at = null;
-       $this->post->save();
+        if ($this->image) {
+            $filename = (Str::slug($data['title'])).'.'.$this->image->extension();
+            $this->image->storeAs('public/posts', $filename);
+            $this->post->image = $filename;
+        }
+        $this->post->published_at = null;
+        $this->post->save();
         // $this->alert('success', trans('The post has been successfully Updated'));
         toast(trans('The post has been successfully Updated.'), 'success');
+
         return redirect()->route('admin.posts.index');
     }
+
     public function render()
     {
         return view('livewire.admin.posts.edit-component-post', ['tags' => $this->tags])->layout('livewire.layouts.base');

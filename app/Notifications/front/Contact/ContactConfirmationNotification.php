@@ -4,7 +4,6 @@ namespace App\Notifications\front\Contact;
 
 use App\Models\Contact;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -36,7 +35,7 @@ class ContactConfirmationNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->greeting(trans('Hello  ') . $this->contact->name)
+            ->greeting(trans('Hello  ').$this->contact->name)
             ->when(
                 $notifiable->role_id === 1,
                 fn ($mail) => $mail->subject(trans('New Message')),
@@ -50,11 +49,11 @@ class ContactConfirmationNotification extends Notification
             // )
             ->lineIf(
                 $notifiable->role_id === 1,
-                trans('The content of the message: ') . $this->contact->message
+                trans('The content of the message: ').$this->contact->message
             )
             ->lineIf(
                 $notifiable->role_id !== 1,
-                trans('Your message for: ') . $this->contact->subject . trans(' has been successfully sent to the administrator. You will receive a response as soon as possible.')
+                trans('Your message for: ').$this->contact->subject.trans(' has been successfully sent to the administrator. You will receive a response as soon as possible.')
             )
             ->when(
                 $notifiable->role_id === 1,

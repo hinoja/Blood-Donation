@@ -1,15 +1,14 @@
 <?php
 
-
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\HomerController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\Extra\LangController;
-use App\Http\Livewire\Admin\Posts\EditComponentPost;
-use App\Http\Controllers\Admin\users\UsersController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
+use App\Http\Controllers\Admin\users\UsersController;
+use App\Http\Controllers\Extra\LangController;
+use App\Http\Controllers\HomerController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\Admin\Posts\EditComponentPost;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +44,6 @@ Route::view('contact-us', 'front.contact-us')->name('front.contact');
 Route::view('blog/index', 'front.blog.index')->name('front.blog.index');
 Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blog.show');
 
-
 // Route::get('/linkstorage', function () {
 //     Artisan::call('storage:link');
 // });
@@ -77,4 +75,4 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
 Route::get('lang/{locale?}', LangController::class)->name('lang');
 // Route::get('lang/{locale?}', LangController::class)->name('lang');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

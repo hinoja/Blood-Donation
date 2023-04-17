@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\API\posts;
 
+use App\Http\Controllers\Controller;
 use App\Models\Post;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class PostController extends Controller
 {
-
     public function __invoke(Request $request)
     {
         $posts = Post::whereNotNull('published_at')
@@ -17,11 +16,10 @@ class PostController extends Controller
             ->get();
         $formattedPosts = [];
         foreach ($posts as $post) {
-
             $formattedPost = [
                 'title' => $post->title,
                 'slug' => $post->slug,
-                'image' => env('APP_URL').'/storage/posts/'. $post->image,
+                'image' => env('APP_URL').'/storage/posts/'.$post->image,
                 'content' => $post->content,
                 'published_at' => $post->FormatDate($post->published_at),
                 'Author' => $post->user->name,
@@ -29,8 +27,9 @@ class PostController extends Controller
             ];
             array_push($formattedPosts, $formattedPost);
         }
+
         return response()->json([
-            'status' => "true",
+            'status' => 'true',
             'posts' => $formattedPosts,
         ]);
     }

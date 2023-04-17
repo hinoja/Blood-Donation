@@ -40,9 +40,9 @@ class ResetPasswordNotification extends Notification
             // ->line(trans('We have received your request to reset your account password.'))
             ->line(trans('You can use the following code to recover your account'))
             // You can use the following code to recover your account:
-            ->line('CODE  :  ' . $this->code)
+            ->line('CODE  :  '.$this->code)
             ->action(trans('Go to website'), url('/'))
-            ->line(trans('This password reset link will expire in ') . config('auth.passwords.users.expire') . 'minutes.')
+            ->line(trans('This password reset link will expire in ').config('auth.passwords.users.expire').'minutes.')
             ->line(trans('If you did not request a password reset, no further action is required.'));
     }
 

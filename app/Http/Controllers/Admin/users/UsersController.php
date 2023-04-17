@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Admin\users;
 
-use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -34,7 +33,6 @@ class UsersController extends Controller
         $user->save();
         // Alert::success('Success Registered', $message);
         toast($message, 'success');
-
 
         return back();
     }

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tag;
 use App\Models\Post;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -44,12 +41,12 @@ class PostController extends Controller
             ->latest()
             ->limit(5)
             ->get();
+
         return view('front.blog.show', [
             'post' => $post,
-            'recentsPost' => $recent
+            'recentsPost' => $recent,
         ]);
     }
-
 
     /**
      * Remove the specified resource from storage.

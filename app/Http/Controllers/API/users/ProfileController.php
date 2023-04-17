@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Api\users;
 
-use App\Models\User;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Support\Facades\Request;
 
 class ProfileController extends Controller
@@ -12,6 +12,7 @@ class ProfileController extends Controller
     {
         try {
             $user = User::find($id);
+
             return response()->json([
                 'Staus' => 'true',
                 'User' => $user,
@@ -23,8 +24,23 @@ class ProfileController extends Controller
             ]);
         }
     }
-    public function updateProfile(Request $request ,$id)
-    {
-        
-    }
+
+    // public function updateProfile(Request $request, $id)
+    // {
+    //     $user = User::find($id);
+    //     if ($user) {
+    //         $user->name= $request->name;
+    //         $user->email= $request->email;
+    //         $user->location= $request->location;
+    //         $status = "true";
+    //         $message = trans('User data has been successfully updated.');
+    //     } else {
+    //         $status = "false";
+    //         $message = trans('This user don\'t exist in database');
+    //     }
+    //     return response()->json([
+    //         'Staus' => $status,
+    //         'message' => $message,
+    //     ]);
+    // }
 }

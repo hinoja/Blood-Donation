@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthentificationController extends Controller
 {
-
     public function login(Request $request)
     {
         $request->validate([
@@ -24,12 +23,12 @@ class AuthentificationController extends Controller
                 Auth::login($user);
                 $data = [
                     'status' => 'true',
-                    'name' =>  $user->name,
-                    'role' =>  $user->role->name,
-                    'id' =>  $user->id,
+                    'name' => $user->name,
+                    'role' => $user->role->name,
+                    'id' => $user->id,
                     'token' => $token,
                 ];
-            } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {
+            } elseif (Hash::check($request->password, $user->password) && ! $user->is_active) {
                 $data = [
                     'status' => 'false',
                     'message' => 'Your account is disable, Please contact administrator',
@@ -53,10 +52,8 @@ class AuthentificationController extends Controller
     /**
      * Handle the incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
     public function logout(Request $request)
     {
         try {

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Api\users;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 
 class updatePasswordController extends Controller
@@ -27,23 +27,24 @@ class updatePasswordController extends Controller
         // check if it does not expired: the time is one hour
         if ($password_reset_request->created_at > now()->addHour()) {
             $password_reset_request->delete();
-            $status = "false";
+            $status = 'false';
             $message = trans('passwords.code_is_expire');
-        } elseif (!$password_reset_request) {
-            $status = "false";
+        } elseif (! $password_reset_request) {
+            $status = 'false';
             $message = trans('Invalid Code');
         }
-        $email= $password_reset_request->email;
+        $email = $password_reset_request->email;
         User::where('email', $password_reset_request->email)->update([
-            'password' => Hash::make($data['password'])
+            'password' => Hash::make($data['password']),
         ]);
         DB::table('password_reset_tokens')->where('token', $email)->delete();
 
-        $status = "true";
+        $status = 'true';
         $message = trans('Password has been successfully updated.');
+
         return response()->json([
             'status' => $status,
-            'message' => $message
+            'message' => $message,
         ]);
     }
 }
