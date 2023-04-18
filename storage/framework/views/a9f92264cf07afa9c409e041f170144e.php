@@ -71,7 +71,7 @@
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <ul class="nav-item dropdown navbar-nav">
+                    <ul class="nav-item dropdown navbar-nav " class="input mb-0">
                         
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
@@ -81,7 +81,7 @@
                                 <?php echo app('translator')->get('English'); ?>
                             <?php endif; ?>
                         </a>
-                        <div class="dropdown-menu nav-item ">
+                        <div class="dropdown-menu nav-item  ">
                             <a href="<?php echo e(route('lang', 'fr')); ?>" class="dropdown-item  has-icon"><?php echo app('translator')->get('Français'); ?></a>
                             <a href="<?php echo e(route('lang', 'en')); ?>" class="dropdown-item has-icon"><?php echo app('translator')->get('English'); ?></a>
                         </div>

@@ -260,24 +260,24 @@
     <!-- ==== #banner section end ==== -->
 
     <!-- ==== registration section start ==== -->
-    <section class="registration section-space">
+    <section class="registration ">
         <div class="container">
-            <div class="row">
+            
                 <div class="col-lg-12">
                     <div class="registration-area wow fadeInUp">
                         
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.register-hospital')->html();
-} elseif ($_instance->childHasBeenRendered('fSe523G')) {
-    $componentId = $_instance->getRenderedChildComponentId('fSe523G');
-    $componentTag = $_instance->getRenderedChildComponentTagName('fSe523G');
+} elseif ($_instance->childHasBeenRendered('Mi7i05I')) {
+    $componentId = $_instance->getRenderedChildComponentId('Mi7i05I');
+    $componentTag = $_instance->getRenderedChildComponentTagName('Mi7i05I');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('fSe523G');
+    $_instance->preserveRenderedChild('Mi7i05I');
 } else {
     $response = \Livewire\Livewire::mount('front.register-hospital');
     $html = $response->html();
-    $_instance->logRenderedChild('fSe523G', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('Mi7i05I', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>
@@ -286,6 +286,7 @@ echo $html;
             </div>
         </div>
     </section>
+    <div class="section-space"></div>
     <!-- ==== #registration section end ==== -->
 
     <!-- ==== footer start ==== -->

@@ -58,15 +58,21 @@
                                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                         <tr>
                                             <td class="text-center"><?php echo e($loop->iteration); ?></td>
-                                            <td><?php echo e($user->name); ?></td>
-                                            <td><?php echo e($user->email); ?></td>
+                                            <td><?php echo e($user->name); ?>   <?php if($user->last_seen >= now()->subMinutes(2) ): ?>
+                                                 
+                                                <i class="badge badge-pill badge-success"> Online </i>        <?php endif; ?></td>
+                                            <td><?php echo e($user->email); ?> </td>
                                             <td>
                                                 <?php if($user->is_active): ?>
-                                                    <span class="badge badge-pill badge-sm badge-success  waves-effect">
+                                                   <div class="py-2 px-2">
+                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-info ">
                                                         <?php echo app('translator')->get('Yes'); ?></span>
+                                                   </div>
                                                 <?php else: ?>
-                                                    <span class="badge badge-pill badge-sm badge-dark   waves-effect">
+                                                <div class="py-2 px-2">
+                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-dark ">
                                                         <?php echo app('translator')->get('No'); ?></span>
+                                                   </div>
                                                 <?php endif; ?>
                                             </td>
                                             <td>

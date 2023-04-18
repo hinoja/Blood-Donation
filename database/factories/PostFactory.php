@@ -22,9 +22,10 @@ class PostFactory extends Factory
             'title' => $data = fake()->unique()->realText(50, 2),
             'user_id' => User::factory(),
             'slug' => Str::slug($data),
-            'content' => fake()->paragraph(50),
+            'content' => fake()->paragraph(40),
             'published_at' => fake()->randomElement([now(), null]),
             // 'image' => fake()->sentence(3, true),
+            // 'image' => fake()->imageUrl(),
         ];
     }
 }

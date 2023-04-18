@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-lg-4">
                             <div class="topbar-area__right">
-                                <p class="neutral-bottom"><?php echo app('translator')->get('Follow Now'); ?></p>
+                                <p class="neutral-bottom"><?php echo app('translator')->get('Follow us'); ?></p>
                                 <div class="social">
                                     <a href="https://www.facebook.com/" target="_blank">
                                         <i class="fa-brands fa-facebook-f"></i>

@@ -2,7 +2,7 @@
 
 
     <!-- start step indicators -->
-    <div class="container-fluid multi-step">
+    <div class=" multi-step">
         <div class="row justify-content-center">
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
@@ -14,10 +14,10 @@
                                 <strong>Account</strong>
                             </li>
                             <li id="personal" class="@if ($step === 2 || $step === 3 || $step === 4) active @endif ">
-                                <strong>Manager</strong>
+                                <strong>files</strong>
                             </li>
                             <li id="payment" class="@if ($step === 3 || $step === 4) active @endif ">
-                                <strong>Image</strong>
+                                <strong>Services</strong>
                             </li>
                             <li id="confirm" class="@if ($step === 4) active @endif ">
                                 <strong>Finish</strong>
@@ -84,8 +84,8 @@
                                     type="text" required>
                             </div>
                             @error('hospital_name')
-                            <span class="text-center">{{ $message }}</span>
-                        @enderror
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
 
                         </div>
                     </div>
@@ -100,8 +100,8 @@
                                     name="birth_date" required>
                             </div>
                             @error('birth_date')
-                            <span class="text-center">{{ $message }}</span>
-                        @enderror
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
 
                         </div>
                     </div>
@@ -117,19 +117,19 @@
                                     name="urgency_number" required>
                             </div>
                             @error('urgency_number')
-                            <span class="text-center">{{ $message }}</span>
-                        @enderror
+                                <span class="text-center">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                 </div>
-                {{-- <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Description ') </p>
+                <div class="registration-area__form-single">
+                    <p class="secondary">@lang('Email') </p>
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
-                                <label for="description">text</label>
-                                <textarea wire:model.defer="description" class="form-control" type="number" name="description" cols="30"
-                                    rows="10"></textarea>
+                                <label for="description">email</label>
+                                   <input wire:model.defer="email" class="form-control" type="email"
+                                    name="urgency_email" required>
                             </div>
                             @error('description')
                             <span class="text-center">{{ $message }}</span>
@@ -137,7 +137,7 @@
 
                         </div>
                     </div>
-                </div> --}}
+                </div>
             @endif
             {{-- <div class="registration-area__form-single">
                 <p class="secondary">Blood Group *</p>
@@ -158,8 +158,9 @@
                     </div>
                 </div>
             </div> --}}
-            @if ($step === 2)
-                {{-- director --}}
+
+            {{-- manager --}}
+            {{-- @if ($step === 2)
                 <div class="registration-area__form-single">
                     <p class="secondary">@lang('Name') <span class="text-danger">*</span></p>
                     <div class="registration-area__form-single__inner">
@@ -221,9 +222,9 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            @endif --}}
 
-            @if ($step === 3)
+            @if ($step === 2)
                 <div>
                     <div class="registration-area__form-single">
                         <p class="secondary">@lang('Add a logo') <span class="text-danger">*</span></p>
@@ -235,8 +236,8 @@
                                             name="logo" required>
                                 </div>
                                 @error('logo')
-                                <span class="text-center">{{ $message }}</span>
-                            @enderror
+                                    <span class="text-center">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -253,8 +254,8 @@
                                         name="description_file" required>
                                 </div>
                                 @error('description_file')
-                            <span class="text-center">{{ $message }}</span>
-                        @enderror
+                                    <span class="text-center">{{ $message }}</span>
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -264,17 +265,18 @@
 
 
 
-            @if ($step === 4)
-                <div class="registration-area__form-single " style="display: block;">
+            @if ($step === 3)
+                <div class="  contact-area__content " style="display: block;">
                     <p class="secondary">@lang('Services ') <span class="text-danger">*</span></p>
-                    <div class="registration-area__form-single__inner ">
+                    <div class="registration-area__form-single__innercontact-area-single contact-area__content-form">
                         <div class="input-group-column ">
                             <div class="input">
                                 <label for="services.0">text</label>
-                                <input class="form-control" type="text" name="services1" required>
+                                <input class="input-lg input-control" type="text" name="services1" required>
+                                {{-- <textarea class="input-lg" name="" id="" cols="30" rows="10"></textarea> --}}
                                 @error('services.0')
-                                <span class="text-center">{{ $message }}</span>
-                            @enderror
+                                    <span class="text-center">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="input-group-column ">
                                 <div wire:click.prevent="add({{ $i }})" class="btn btn-primary btn-lg">+
@@ -287,7 +289,7 @@
                         <div class="input-group-column" wire:key="{{ $index }}">
                             <div class="input">
                                 <label for="regiNumber">text</label>
-                                <input class="form-control" type="text" name="regi_number" required>
+                                <input class="input" type="text" name="regi_number" required>
                             </div>
                             <div class="input-group-column ">
                                 <div wire:click.prevent="remove({{ $key }})" class="btn btn-danger btn-lg">
@@ -300,20 +302,55 @@
 
                 </div>
             @endif
+            {{-- position --}}
+            @if ($step === 4)
+                <h3 class="text-center"> @lang('Localisation')</h3>
+                <div class=" ">
+                    <div class=" text-center">
+                        <span style="text-align: center;"> <b>@lang('Country')</b>  {{ $location->countryName }}
+                        </span>
+                    </div>
+                </div>
+                <hr style="color: white">
+                <hr style="color: white">
+                <div class="registration-area__form-single">
+                    <div class="registration-area__form-single">
+                        <span> <b class="px-4">@lang('Region')</b> {{ $location->regionName }} </span>
+                    </div>
+                    <div class="">
+                        <span> <b class="px-1"> @lang('Town')</b> {{ $location->cityName }} </span>
+                    </div>
 
-        </form>
+                </div>
+                <hr style="color: white">
+                <hr style="color: white">
+                <div class="registration-area__form-single">
+                    <div class="registration-area__form-single">
+                        <span> <b class="px-2">@lang('Longitude')</b> {{ $location->longitude }} </span>
+                    </div>
+                    <div class="registration-area__form-single">
+                        <span> <b class="px-1">@lang('Latitude')</b>{{ $location->latitude }} </span>
+                    </div>
+                </div>
     </div>
-    <div class="row"></div>
-    <hr style="color:white;">
+    @endif
 
-    <div class="form-footer donate-area">
-        @if ($step > 1)
-            <button wire:click="previous()" style="float: left;" class="button button--effect">
-                @lang('Previous')</button>
-        @endif
+    </form>
+</div>
+<div class="row"></div>
+<hr style="color:white;">
 
-        <button wire:click="next()" style="float: right;" class="button button--effect">
-            @lang('Next')</button>
+<div class="form-footer donate-area">
+    @if ($step > 1)
+        <button wire:click="previous()" style="float: left;" class="button button--effect">
+            @lang('Previous')</button>
+    @endif
 
-    </div>
+    <button wire:click="next()" style="float: right;" class="button button--effect">
+        @lang('Next')</button>
+    {{--
+            <button wire:click="position()"  class="button button--effect">
+                @lang('location')</button> --}}
+
+</div>
 </div>

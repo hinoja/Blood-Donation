@@ -98,7 +98,7 @@
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
-                    <ul class="nav-item dropdown navbar-nav">
+                    <ul class="nav-item dropdown navbar-nav " class="input mb-0">
                         {{-- <button type="button" wire:click="ChangeLang('fr')">Value</button> --}}
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
@@ -108,7 +108,7 @@
                                 @lang('English')
                             @endif
                         </a>
-                        <div class="dropdown-menu nav-item ">
+                        <div class="dropdown-menu nav-item  ">
                             <a href="{{ route('lang', 'fr') }}" class="dropdown-item  has-icon">@lang('Français')</a>
                             <a href="{{ route('lang', 'en') }}" class="dropdown-item has-icon">@lang('English')</a>
                         </div>

@@ -259,9 +259,9 @@
     <!-- ==== #banner section end ==== -->
 
     <!-- ==== registration section start ==== -->
-    <section class="registration section-space">
+    <section class="registration ">
         <div class="container">
-            <div class="row">
+            {{-- <div class="row"> --}}
                 <div class="col-lg-12">
                     <div class="registration-area wow fadeInUp">
                         {{-- <div class="section-header section-inner-space">
@@ -273,6 +273,7 @@
             </div>
         </div>
     </section>
+    <div class="section-space"></div>
     <!-- ==== #registration section end ==== -->
 
     <!-- ==== footer start ==== -->

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Hospital;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class ServicesFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => fake()->unique()->realText(70, 2),
+            'hospital_id' => Hospital::factory(),
         ];
     }
 }

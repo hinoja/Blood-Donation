@@ -16,11 +16,13 @@ return new class extends Migration
             $table->integer('userable_id')->nullable();
             $table->string('userable_type')->nullable();
             $table->string('name');
+            $table->ipAddress('ip')->default('127.0.0.1');
             $table->foreignId('role_id')->constrained();
             $table->string('location')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->timestamp('last_seen')->nullable();
             $table->string('phone_number')->nullable();
             $table->string('birth_date')->nullable();
             $table->boolean('is_active')->default(true);

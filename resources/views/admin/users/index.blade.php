@@ -43,15 +43,21 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
+                                            <td>{{ $user->name }}   @if ($user->last_seen >= now()->subMinutes(2) )
+                                                 {{-- <i class="fas fa-circle  text-success"></i> --}}
+                                                <i class="badge badge-pill badge-success"> Online </i>        @endif</td>
+                                            <td>{{ $user->email }} </td>
                                             <td>
                                                 @if ($user->is_active)
-                                                    <span class="badge badge-pill badge-sm badge-success  waves-effect">
+                                                   <div class="py-2 px-2">
+                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-info ">
                                                         @lang('Yes')</span>
+                                                   </div>
                                                 @else
-                                                    <span class="badge badge-pill badge-sm badge-dark   waves-effect">
+                                                <div class="py-2 px-2">
+                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-dark ">
                                                         @lang('No')</span>
+                                                   </div>
                                                 @endif
                                             </td>
                                             <td>
