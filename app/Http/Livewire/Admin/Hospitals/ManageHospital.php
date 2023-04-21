@@ -19,9 +19,6 @@ class ManageHospital extends Component
 
     public function closeModal()
     {
-        // $this->reset('reply');
-        // $this->resetErrorBag();
-        // $this->resetValidation();
         $this->emit('closeModal');
     }
 
@@ -42,10 +39,9 @@ class ManageHospital extends Component
     public function ConfirmationActivate()
     {
         $this->closeModal();
-        // $this->emit('closeModal');
         $this->data->is_active = 1;
         $this->data->save();
-        // Notification::send($this->data, new ActivateHospitalNotification($this->data['name']));
+        Notification::send($this->data, new ActivateHospitalNotification($this->data['name']));
         $this->emit('closeModalConfirmation');
         $this->alert('success', trans('The account has been approved and a confirmation email has been sent to the said Hospital'));
 
