@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         try {
             $user = User::find($id);
-
+                // dd($user);
             return response()->json([
                 'Staus' => 'true',
                 'User' => $user,
@@ -24,8 +24,7 @@ class ProfileController extends Controller
             ]);
         }
     }
-
-    // public function updateProfile(Request $request, $id)
+        // public function updateProfile(Request $request, $id)
     // {
     //     $user = User::find($id);
     //     if ($user) {

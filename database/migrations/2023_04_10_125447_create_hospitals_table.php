@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('region')->nullable();
             $table->string('logo');
             $table->longText('description')->nullable();
-            $table->string('descriptionFile')->nullable();
+            $table->string('siteInternet')->nullable();
             // $table->foreignId('user_id')->constrained();
             $table->boolean('is_active')->default(false);
             $table->timestamps();

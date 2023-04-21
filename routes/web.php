@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\posts\PostAdminController;
-use App\Http\Controllers\Admin\users\UsersController;
-use App\Http\Controllers\Extra\LangController;
-use App\Http\Controllers\HomerController;
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Livewire\Admin\Posts\EditComponentPost;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomerController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Extra\LangController;
+use App\Http\Livewire\Admin\Posts\EditComponentPost;
+use App\Http\Controllers\Admin\users\UsersController;
+use App\Http\Controllers\Admin\posts\PostAdminController;
+use App\Http\Controllers\Auth\Customize\GetEmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,8 +42,9 @@ Route::view('register/Hospital', 'auth.registerHospital')->name('front.register.
 // Contact-us
 Route::view('contact-us', 'front.contact-us')->name('front.contact');
 // Blog
-Route::view('blog/index', 'front.blog.index')->name('front.blog.index');
+Route::view('blog', 'front.blog.index')->name('front.blog.index');
 Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blog.show');
+Route::post('get/Email', GetEmailController::class)->name('resetPassword.email');
 
 // Route::get('/linkstorage', function () {
 //     Artisan::call('storage:link');
@@ -52,22 +54,18 @@ Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blo
 Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
     // CONTACTS
-    Route::view('contacts/index', 'admin.contacts.index')->name('contacts');
+    Route::view('contacts', 'admin.contacts.index')->name('contacts');
     // USERS
     Route::prefix('users')->name('users.')->controller(UsersController::class)->group(function () {
         Route::get('', 'index')->name('index');
         Route::patch('status/{user}', 'updateStatus')->name('status');
     });
-    // Route::view('users/index', 'admin.users.index')->name('users.index');
-    // Route::get('users/index', 'admin.users.index')->name('users.index');
+    // HOSPITALS
+    Route::view('hospitals', 'admin.hospitals.index')->name('hospitals');
     // POSTS
     Route::view('posts/index', 'admin.posts.index')->name('posts.index');
     Route::view('post/add', 'admin.posts.add')->name('post.add');
     Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
-    // Route::post('post/store', [PostAdminController::class, 'store'])->name('post.store');
-    // Route::get('post/edit/{post:slug}', [PostController::class, 'edit'])->name('post.edit');
-    // Route::patch('post/update/{post}', [PostController::class, 'update'])->name('post.update');
-    // Route::view('post/edit/{post}', 'admin.posts.edit')->name('post.edit');
     Route::get('post/edit/{post:slug}', EditComponentPost::class)->name('post.edit');
 });
 
@@ -75,4 +73,4 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
 Route::get('lang/{locale?}', LangController::class)->name('lang');
 // Route::get('lang/{locale?}', LangController::class)->name('lang');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

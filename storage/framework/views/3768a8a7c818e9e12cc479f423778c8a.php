@@ -48,26 +48,27 @@
             <li class="<?php if(Str::contains($currentUri, 'dashboard')): ?> active open <?php endif; ?>"><a href="<?php echo e(route('admin.dashboard')); ?>"><i
                         class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
             
-
+            <li class="<?php if(Str::contains($currentUri, 'hospitals')): ?> active open <?php endif; ?>">
+                <a class="nav-link" href="<?php echo e(route('admin.hospitals')); ?>"><i class="fas fa-hospital-symbol"></i>
+                    <span><?php echo app('translator')->get('Hospitals'); ?></span></a>
+            </li>
             <li class="<?php if(Str::contains($currentUri, 'users')): ?> active open <?php endif; ?>">
                 <a class="nav-link" href="<?php echo e(route('admin.users.index')); ?>"><i class="zmdi zmdi-account-o"></i>
                     <span><?php echo app('translator')->get('Users'); ?></span></a>
+            </li>
+            <li class="<?php if(Str::contains($currentUri, 'post')): ?> active open <?php endif; ?>">
+                <a class="nav-link" href="<?php echo e(route('admin.posts.index')); ?>"><i class="fa fa-newspaper"></i>
+                    <span><?php echo app('translator')->get('Posts'); ?></span></a>
             </li>
             <li class="<?php if(Str::contains($currentUri, 'contacts')): ?> active open <?php endif; ?>">
                 <a class="nav-link" href="<?php echo e(route('admin.contacts')); ?>"><i class="fa fa-comment"></i>
                     <span><?php echo app('translator')->get('Messages'); ?></span></a>
             </li>
-            <li class="<?php if(Str::contains($currentUri, 'post')): ?> active open <?php endif; ?>">
-                <a class="nav-link" 
-                href="<?php echo e(route('admin.posts.index')); ?>"
-                ><i class="fa fa-newspaper"></i>
-                    <span><?php echo app('translator')->get('Posts'); ?></span></a>
-            </li>
+
             <li>
-                <a class="nav-link" 
-                href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
-                
-                ><i class="fas fa-book-reader"></i>
+                <a class="nav-link"
+                    href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
+                    ><i class="fas fa-book-reader"></i>
                     <span><?php echo app('translator')->get('Api Docs'); ?></span></a>
             </li>
         </ul>

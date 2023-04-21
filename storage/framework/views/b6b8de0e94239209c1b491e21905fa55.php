@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>:: Swift - Hospital Admin ::</title>
+    <title>Blood Donation | <?php echo app('translator')->get('Login'); ?></title>
     <link rel="icon" href="<?php echo e(asset('assets/front/images/favicon.png')); ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/bootstrap/css/bootstrap.min.css')); ?>" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="theme-cyan authentication">
+<body  class="theme-cyan authentication">
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">

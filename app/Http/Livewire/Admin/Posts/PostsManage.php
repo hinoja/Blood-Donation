@@ -14,11 +14,7 @@ class PostsManage extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $deleteId;
-
-    public $post;
-
-    public $nameDelete;
+    public $deleteId,$post, $nameDelete;
 
     // edit fields
     public $publishPost; //publish
@@ -71,7 +67,7 @@ class PostsManage extends Component
         $this->closeModal();
         $this->alert('success', trans('The post has been successfully deleted'));
 
-        // toast(trans('Job has been successfully created.'), 'success');
+        toast(trans('The post has been successfully deleted'), 'success');
     }
 
     public function editPost(Post $post)

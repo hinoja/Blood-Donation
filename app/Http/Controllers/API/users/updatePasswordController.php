@@ -18,7 +18,7 @@ class updatePasswordController extends Controller
         $data = $request->validate([
             'token' => 'required|exists:password_reset_tokens',
             'password' => ['min:8',  'string', 'required'],
-            'password_confirmation' => ['required'],
+            // 'password_confirmation' => ['required'],
         ]);
         $password_reset_request = DB::table('password_reset_tokens')->where([
             'token' => $data['token'],

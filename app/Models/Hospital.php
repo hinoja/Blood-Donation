@@ -5,12 +5,13 @@ namespace App\Models;
 use Carbon\Carbon;
 use App\Models\Services;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Hospital extends Model
 {
-    use HasFactory;
+    use  HasFactory, Notifiable;
 
     public function services(): HasMany
     {

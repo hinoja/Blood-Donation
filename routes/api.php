@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [AuthentificationController::class, 'login']);
 // reset password
 Route::post('forgotpassword/get/email', GetEmailController::class);
-Route::patch('reset-password', updatePasswordController::class);
+Route::post('reset-password', updatePasswordController::class);
 
 //all posts
 Route::get('posts', PostController::class);

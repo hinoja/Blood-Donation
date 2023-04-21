@@ -29,9 +29,12 @@ class HospitalFactory extends Factory
             'country' => fake()->country(),
             'region' => fake()->address(),
             'birth' =>  fake()->dateTime(),
-            'logo' =>  fake()->imageUrl(),
-            'descriptionFile' => fake()->mimeType(),
-            'is_active' => fake()->boolean(60),
+            // 'logo' =>  fake()->imageUrl(),storage/hospitals/logo/no-logo.png
+            'logo' =>  "no-logo.png",
+            // 'descriptionFile' => fake()->mimeType(),
+            'siteInternet' => fake()->url(),
+            'description' => fake()->unique()->realText(25, 2),
+            'is_active' => fake()->boolean(50),
         ];
     }
 }
