@@ -171,8 +171,22 @@
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-success" wire:click="closeModal()"
                             data-dismiss="modal">@lang('Cancel')</button>
-                        <button type="button" wire:click="ConfirmationActivate()" class="btn btn-danger">
-                            @lang('Yes! active')</button>
+                        {{-- <button type="button" wire:click="ConfirmationActivate()" class="btn btn-danger">
+                            @lang('Yes! active')</button> --}}
+
+                        <div>
+                            <button wire:click="ConfirmationActivate()" style="float: right;" wire:loading.remove type="button"
+                                class="btn btn-danger">
+                                {{-- <i class="fa fa-paper-plane"></i> --}}
+                                @lang('Yes,active')
+                            </button>
+                            <button wire:loading style="float: right;" class="btn btn-danger" >
+                                <span class="spinner-border spinner-border-sm" role="status"
+                                    aria-hidden="true"></span>
+                                @lang('Loading')...
+                            </button>
+                        </div>
+
                     </div>
                 </div>
 
