@@ -28,11 +28,22 @@ class GetEmailController extends Controller
         //  $code = Str::random(64);
         $code = mt_rand(100000, 999999);
 
-        DB::table('password_reset_tokens')->insert([
-            'email' => $data['email'],
-            'token' => $code,
-            'created_at' => Carbon::now(),
-        ]);
+        $exists = DB::table('password_reset_tokens')->where(
+            'email',
+            $data['email']
+        )->first();
+        if ($exists) {
+            $exists->email = $data['email'];
+            $exists->token = $code;
+            $exists->created_at = Carbon::now();
+        } else {
+            DB::table('password_reset_tokens')->insert([
+                'email' => $data['email'],
+                'token' => $code,
+                'created_at' => Carbon::now(),
+            ]);
+        }
+
         $user = User::where('email', $data['email'])->first();
         if ($user) {
             $status = 'true';

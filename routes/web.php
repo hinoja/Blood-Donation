@@ -10,6 +10,8 @@ use App\Http\Livewire\Admin\Posts\EditComponentPost;
 use App\Http\Controllers\Admin\users\UsersController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
 use App\Http\Controllers\Auth\Customize\GetEmailController;
+use App\Http\Controllers\Auth\Customize\updatePasswordController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +48,13 @@ Route::view('blog', 'front.blog.index')->name('front.blog.index');
 Route::get('blog/{post:slug}', [PostController::class, 'show'])->name('front.blog.show');
 Route::post('get/Email', GetEmailController::class)->name('resetPassword.email');
 
-// Route::get('/linkstorage', function () {
-//     Artisan::call('storage:link');
-// });
+// -----------------password get
+Route::get('reset-password/{token}', [NewPasswordController::class, 'create'])
+    ->name('password.reset');
+
+// // reset password post
+Route::post('reset-password', [updatePasswordController::class, 'updating'])
+    ->name('password.store');
 
 // --------------------------ADMIN--------------------------
 Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {

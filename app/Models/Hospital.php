@@ -13,6 +13,7 @@ class Hospital extends Model
 {
     use  HasFactory, Notifiable;
 
+    protected $fillable = ['name', 'email', 'slug', 'birth', 'urgencyNumber', 'longitude', 'latitude', 'town', 'region', 'country'];
     public function services(): HasMany
     {
         return $this->hasMany(Services::class);

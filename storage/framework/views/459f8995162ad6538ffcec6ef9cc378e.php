@@ -18,6 +18,7 @@
 </head>
 
 <body class="theme-cyan authentication">
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">

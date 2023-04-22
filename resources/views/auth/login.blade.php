@@ -18,6 +18,7 @@
 </head>
 
 <body  class="theme-cyan authentication">
+    @include('sweetalert::alert')
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">

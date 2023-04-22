@@ -18,6 +18,7 @@
 </head>
 
 <body class="theme-cyan authentication">
+    @include('sweetalert::alert')
     <div class="container">
         <div class="card-top"></div>
         <div class="card locked">
@@ -31,15 +32,19 @@
                 </div>
             </div>
             <div class="body">
-                <div class="mb-4 text-sm text-gray-600 text-justify" style="font-weight:bold;">
+                {{-- <div class="mb-4 text-sm text-gray-600 text-justify" style="font-weight:bold;">
                     {{ __('Fill your email address in this form and we will send you a link to reset your password.') }}
-                </div>
+                </div> --}}
 
-                <form method="POST" action="{{ route('resetPassword.email') }}">
+                <form method="POST" action="{{ route('password.store') }}">
                     @csrf
-                    @method('PATCH')
+                    {{-- @method('PATCH') --}}
+
+                    <!-- Password Reset Token -->
+                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
                     <!-- Email Address -->
+                    <span class="input-group-addon">Email </span>
                     <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error' : '' }}">
                         {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
                         <span class="input-group-addon"> <i class="zmdi zmdi-email"></i> </span>
@@ -56,20 +61,46 @@
                     </div>
 
                     <!-- PASSWORD -->
+                    <span class="input-group-addon">Password </span>
                     <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error' : '' }}">
                         {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
-                        <span class="input-group-addon"> <i class="zmdi zmdi-password"></i> </span>
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                         <div class="form-line">
                             <input id="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="email"
-                                placeholder="xyz@mail.com" value="{{ old('password') }}" tabindex="1" required
-                                autofocus>
+                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                tabindex="1" required autofocus>
                             {{-- <input type="password" class="form-control" name="email" placeholder="Password" required> --}}
                         </div>
                         @error('password')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    <br>
+                    <!-- PASSWORD COnfirmation -->
+                    <span class="input-group-addon">Password Confirmation</span>
+                    <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error' : '' }}">
+                        {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <div class="form-line">
+                            <input id="password" type="password"
+                                class="form-control @error('password_confirmation') is-invalid @enderror"
+                                name="password_confirmation" tabindex="1" required autofocus>
+                            {{-- <input type="password" class="form-control" name="email" placeholder="Password" required> --}}
+                        </div>
+                        @error('password_confirmation')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    {{-- <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error' : '' }}">
+                        <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+                        <div class="form-line">
+                            <input type="password" required autocomplete="current-password" class="form-control"
+                                name="password" placeholder="Password" required>
+                        </div>
+                        @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div> --}}
 
 
                     <div class="align-center">
@@ -82,7 +113,7 @@
                     <br>
                     <div class="text-center">
                         <button type="submit" style="background: #ea3d3d;"
-                            class="btn btn-raised waves-effect ">@lang('Send the link')</button>
+                            class="btn btn-raised waves-effect ">@lang('Submit Request')</button>
                     </div>
                     {{-- <div class="text-center"><a href="sign-in.html">@lang('Sign In!')</a></div> --}}
                 </form>

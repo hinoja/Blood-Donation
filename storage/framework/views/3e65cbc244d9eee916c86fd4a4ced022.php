@@ -4,29 +4,29 @@
     <!-- start step indicators -->
     <div class=" multi-step">
         <div class="row justify-content-center">
-            <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2">
+            <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-danger p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
                     <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
-                            <li class="<?php if($step === 1 || $step === 2 || $step === 3 || $step === 4): ?> active <?php endif; ?>" id="account">
+                            <li class="<?php if($step === 0 || $step === 1 || $step === 2 || $step === 3): ?> active <?php endif; ?>" id="account">
                                 <strong>Account</strong>
                             </li>
-                            <li id="personal" class="<?php if($step === 2 || $step === 3 || $step === 4): ?> active <?php endif; ?> ">
+                            <li id="personal" class="<?php if($step === 1 || $step === 2 || $step === 3): ?> active <?php endif; ?> ">
                                 <strong>files</strong>
                             </li>
-                            <li id="payment" class="<?php if($step === 3 || $step === 4): ?> active <?php endif; ?> ">
+                            <li id="payment" class="<?php if($step === 2 || $step === 3): ?> active <?php endif; ?> ">
                                 <strong>Services</strong>
                             </li>
-                            <li id="confirm" class="<?php if($step === 4): ?> active <?php endif; ?> ">
+                            <li id="confirm" class="<?php if($step === 3): ?> active <?php endif; ?> ">
                                 <strong>Finish</strong>
                             </li>
                         </ul>
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
                                 aria-valuemin="0"
-                                style="width:<?php if($step === 1): ?> 25% <?php elseif($step === 2): ?> 50% <?php elseif($step === 3): ?> 75% <?php elseif($step === 4): ?> 100% ; <?php endif; ?>"
+                                style="width:<?php if($step === 0): ?> 25% <?php elseif($step === 1): ?> 50% <?php elseif($step === 2): ?> 75% <?php elseif($step === 4): ?> 100% ; <?php endif; ?>"
                                 aria-valuemax="100"></div>
                         </div>
                         <br>
@@ -72,8 +72,8 @@
 
     <!-- end step indicators -->
     <div class="registration-area__form">
-        <form action="#" method="post" name="registration__form">
-            <?php if($step === 1): ?>
+        <form action="#" method="post" wire:submit.prevent="submit()">
+            <?php if($step === 0): ?>
                 <div class="registration-area__form-single">
                     <p class="secondary"><?php echo app('translator')->get('Name Hospital'); ?> <span class="text-danger">*</span></p>
                     <div class="registration-area__form-single__inner">
@@ -83,18 +83,20 @@
                                 <input name="hospital_name" wire:model.defer="hospital_name" class="form-control"
                                     type="text" required>
                             </div>
-                            <?php $__errorArgs = ['hospital_name'];
+                        </div>
+                        <?php $__errorArgs = ['hospital_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="text-center"><?php echo e($message); ?></span>
-                            <?php unset($message);
+                            <div class="input">
+                                <span class="text-danger"><small><?php echo e($message); ?></small></span>
+                                <br>
+                            </div>
+                        <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-
-                        </div>
                     </div>
                 </div>
                 <div class="registration-area__form-single">
@@ -111,7 +113,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="text-center"><?php echo e($message); ?></span>
+                                <span class="text-danger"><?php echo e($message); ?></span>
                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -135,7 +137,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                <span class="text-center"><?php echo e($message); ?></span>
+                                <span class="text-danger"><?php echo e($message); ?></span>
                             <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -149,16 +151,16 @@ unset($__errorArgs, $__bag); ?>
                         <div class="input-group-column">
                             <div class="input">
                                 <label for="description">email</label>
-                                   <input wire:model.defer="email" class="form-control" type="email"
-                                    name="urgency_email" required>
+                                <input wire:model.defer="email" class="form-control" type="email" name="email"
+                                    required>
                             </div>
-                            <?php $__errorArgs = ['description'];
+                            <?php $__errorArgs = ['Email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                            <span class="text-center"><?php echo e($message); ?></span>
-                        <?php unset($message);
+                                <span class="text-danger"><?php echo e($message); ?></span>
+                            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
@@ -172,7 +174,7 @@ unset($__errorArgs, $__bag); ?>
             
             
 
-            <?php if($step === 2): ?>
+            <?php if($step === 1): ?>
                 <div>
                     <div class="registration-area__form-single">
                         <p class="secondary"><?php echo app('translator')->get('Add a logo'); ?> <span class="text-danger">*</span></p>
@@ -188,11 +190,36 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-center"><?php echo e($message); ?></span>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <div class="registration-area__form-single">
+                        <p class="secondary"><?php echo app('translator')->get('Website'); ?> </p>
+                        <div class="registration-area__form-single__inner">
+                            <div class="input-group-column">
+                                <div class="input">
+                                    <label for="website">url</label>
+                                    <input wire:model.defer="website" class="form-control" type="url"
+                                        name="website" required>
+                                </div>
+                                <?php $__errorArgs = ['website'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
+                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
                             </div>
                         </div>
                     </div>
@@ -213,7 +240,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-center"><?php echo e($message); ?></span>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -227,7 +254,7 @@ unset($__errorArgs, $__bag); ?>
 
 
 
-            <?php if($step === 3): ?>
+            <?php if($step === 2): ?>
                 <div class="  contact-area__content " style="display: block;">
                     <p class="secondary"><?php echo app('translator')->get('Services '); ?> <span class="text-danger">*</span></p>
                     <div class="registration-area__form-single__innercontact-area-single contact-area__content-form">
@@ -241,7 +268,7 @@ $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-                                    <span class="text-center"><?php echo e($message); ?></span>
+                                    <span class="text-danger"><?php echo e($message); ?></span>
                                 <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
@@ -272,11 +299,11 @@ unset($__errorArgs, $__bag); ?>
                 </div>
             <?php endif; ?>
             
-            <?php if($step === 4): ?>
-                <h3 class="text-center"> <?php echo app('translator')->get('Localisation'); ?></h3>
+            <?php if($step === 3): ?>
+                <h3 class="text-danger"> <?php echo app('translator')->get('Localisation'); ?></h3>
                 <div class=" ">
-                    <div class=" text-center">
-                        <span style="text-align: center;"> <b><?php echo app('translator')->get('Country'); ?></b>  <?php echo e($location->countryName); ?>
+                    <div class=" text-danger">
+                        <span style="text-align: center;"> <b><?php echo app('translator')->get('Country'); ?></b> <?php echo e($location->countryName); ?>
 
                         </span>
                     </div>
@@ -311,12 +338,12 @@ unset($__errorArgs, $__bag); ?>
 <hr style="color:white;">
 
 <div class="form-footer donate-area">
-    <?php if($step > 1): ?>
+    <?php if($step > 0): ?>
         <button wire:click="previous()" style="float: left;" class="button button--effect">
             <?php echo app('translator')->get('Previous'); ?></button>
     <?php endif; ?>
 
-    <button wire:click="next()" style="float: right;" class="button button--effect">
+    <button wire:click="submit()" style="float: right;" class="button button--effect">
         <?php echo app('translator')->get('Next'); ?></button>
     
 

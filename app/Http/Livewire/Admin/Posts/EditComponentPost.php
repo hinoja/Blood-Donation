@@ -13,19 +13,7 @@ class EditComponentPost extends Component
 {
     use WithFileUploads, LivewireAlert;
 
-    public $content;
-
-    public $title;
-
-    public $image;
-
-    public $tags_name;
-
-    public $tags;
-
-    public $post;
-
-    public $imageDispay;
+    public $content, $title, $image,$tags_name,$tags,$post, $imageDispay;
 
     public function mount(Post $post)
     {
