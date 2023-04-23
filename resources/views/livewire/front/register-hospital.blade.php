@@ -101,13 +101,13 @@
                                 <input wire:model.defer="birth_date" class="form-control" type="date"
                                     name="birth_date" required>
                             </div>
-                            @error('birth_date')
-                                <div class="input">
-                                    <small> <span class="text-danger">{{ $message }}</span></small>
-                                </div>
-                            @enderror
 
                         </div>
+                        @error('birth_date')
+                            <div class="input">
+                                <small> <span class="text-danger">{{ $message }}</span></small>
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 {{-- urgence --}}
@@ -120,10 +120,12 @@
                                 <input wire:model.defer="urgency_number" class="form-control" type="number"
                                     name="urgency_number" required>
                             </div>
-                            @error('urgency_number')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
                         </div>
+                        @error('urgency_number')
+                            <div class="input">
+                                <small class="text-left text-danger"> {{ $message }}</small>
+                            </div>
+                        @enderror
                     </div>
                 </div>
                 <div class="registration-area__form-single">
@@ -135,13 +137,13 @@
                                 <input wire:model.defer="email" class="form-control" type="email" name="email"
                                     required>
                             </div>
-                            @error('Email')
-                                <div class="input">
-                                    <small><span class="text-danger">{{ $message }}</span></small>
-                                </div>
-                            @enderror
 
                         </div>
+                        @error('email')
+                            <div class="input">
+                                <small><span class="text-danger">{{ $message }}</span></small>
+                            </div>
+                        @enderror
                     </div>
                 </div>
             @endif
@@ -241,12 +243,13 @@
                                         <input wire:model.defer="logo" class="form-control" type="file"
                                             name="logo" required>
                                 </div>
-                                @error('logo')
-                                    <div class="input">
-                                        <small> <span class="text-danger">{{ $message }}</span></small>
-                                    </div>
-                                @enderror
+
                             </div>
+                            @error('logo')
+                                <div class="input">
+                                    <small> <span class="text-danger">{{ $message }}</span></small>
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <br>
@@ -260,12 +263,13 @@
                                     <input wire:model.defer="website" class="form-control" type="url"
                                         name="website" required>
                                 </div>
-                                @error('website')
-                                    <div class="input">
-                                        <small> <span class="text-danger">{{ $message }}</span></small>
-                                    </div>
-                                @enderror
+
                             </div>
+                            @error('website')
+                                <div class="input">
+                                    <small> <span class="text-danger">{{ $message }}</span></small>
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <br>
@@ -280,12 +284,13 @@
                                     <input wire:model.defer="description_file" class="form-control" type="file"
                                         name="description_file" required>
                                 </div>
-                                @error('description_file')
-                                    <div class="input">
-                                        <span class="text-danger">{{ $message }}</span>
-                                    </div>
-                                @enderror
+
                             </div>
+                            @error('description_file')
+                                <div class="input">
+                                    <span class="text-danger">{{ $message }}</span>
+                                </div>
+                            @enderror
                         </div>
                     </div>
 
@@ -300,94 +305,105 @@
                     <div class="registration-area__form-single__innercontact-area-single contact-area__content-form">
                         <div class="input-group-column ">
                             <div class="input">
-                                <label for="services.0">text</label>
-                                <input class="input-lg input-control" type="text" name="services1" required>
+                                <label for=" ">text</label>
+                                <input wire.model.defer="services.0" class="input-lg input-control" type="text"
+                                    name="services.0" required>
                                 {{-- <textarea class="input-lg" name="" id="" cols="30" rows="10"></textarea> --}}
-                                @error('services.0')
-                                    <div class="input">
-                                        <small><span class="text-danger">{{ $message }}</span></small>
-                                    </div>
-                                @enderror
+
                             </div>
+
                             <div class="input-group-column ">
                                 <div wire:click.prevent="add({{ $i }})" class="btn btn-primary btn-lg">+
                                 </div>
                             </div>
                         </div>
+                        @error('services.0')
+                            <div class="input">
+                                <small><span class="text-danger">{{ $message }}</span></small>
+                            </div>
+                        @enderror
                     </div>
                     @foreach ($servicesInput as $key => $index)
-                        {{-- <div class="registration-area__form-single__inner"> --}}
-                        <div class="input-group-column" wire:key="{{ $index }}">
-                            <div class="input">
-                                <label for="regiNumber">text</label>
-                                <input class="input" type="text" name="regi_number" required>
-                                @error('services.0')
-                                    <div class="input">
-                                        <small><span class="text-danger">{{ $message }}</span></small>
-                                    </div>
-                                @enderror
-                            </div>
+                        <div class="registration-area__form-single__inner">
+                            <div class="input-group-column" wire:key="{{ $index }}">
+                                <div class="input">
+                                    <label for="">text</label>
+                                    {{-- <input    class="input" type="text"  required> --}}
+                                    <input wire:model.defer="services.{{ $index + 1 }}"
+                                        class="input-lg input-control" type="text" required>
 
-                            <div class="input-group-column ">
-                                <div wire:click.prevent="remove({{ $key }})" class="btn btn-danger btn-lg">
-                                    ---
+                                </div>
+
+                                <div class="input-group-column ">
+                                    <div wire:click.prevent="remove({{ $key }})"
+                                        class="btn btn-danger btn-lg">
+                                        ___
+                                    </div>
                                 </div>
                             </div>
+                            @error('services.' . $index)
+                                <div class="input">
+                                    <small><span class="text-danger">{{ $message }}</span></small>
+                                </div>
+                            @enderror
                         </div>
-                        {{-- </div> --}}
                     @endforeach
 
                 </div>
             @endif
             {{-- position --}}
             @if ($step === 3)
-                <h3 class="text-danger"> @lang('Localisation')</h3>
-                <div class=" ">
-                    <div class=" text-danger">
-                        <span style="text-align: center;"> <b>@lang('Country')</b> {{ $location->countryName }}
-                        </span>
+                <div>
+                    <h3 class="text-danger"> @lang('Localisation')</h3>
+                    <div class=" ">
+                        <div class=" text-danger">
+                            <span style="text-align: center;"> <b>@lang('Country')</b> {{ $location->countryName }}
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <hr style="color: white">
-                <hr style="color: white">
-                <div class="registration-area__form-single">
+                    <hr style="color: white">
+                    <hr style="color: white">
                     <div class="registration-area__form-single">
-                        <span> <b class="px-4">@lang('Region')</b> {{ $location->regionName }} </span>
-                    </div>
-                    <div class="">
-                        <span> <b class="px-1"> @lang('Town')</b> {{ $location->cityName }} </span>
-                    </div>
+                        <div class="registration-area__form-single">
+                            <span> <b class="px-4">@lang('Region')</b> {{ $location->regionName }} </span>
+                        </div>
+                        <div class="">
+                            <span> <b class="px-1"> @lang('Town')</b> {{ $location->cityName }} </span>
+                        </div>
 
-                </div>
-                <hr style="color: white">
-                <hr style="color: white">
-                <div class="registration-area__form-single">
-                    <div class="registration-area__form-single">
-                        <span> <b class="px-2">@lang('Longitude')</b> {{ $location->longitude }} </span>
                     </div>
+                    <hr style="color: white">
+                    <hr style="color: white">
                     <div class="registration-area__form-single">
-                        <span> <b class="px-1">@lang('Latitude')</b>{{ $location->latitude }} </span>
+                        <div class="registration-area__form-single">
+                            <span> <b class="px-2">@lang('Longitude')</b> {{ $location->longitude }} </span>
+                        </div>
+                        <div class="registration-area__form-single">
+                            <span> <b class="px-1">@lang('Latitude')</b>{{ $location->latitude }} </span>
+                        </div>
                     </div>
+                    {{-- </div> --}}
                 </div>
+            @endif
+
+        </form>
     </div>
-    @endif
+    <div class="row"></div>
+    <hr style="color:white;">
 
-    </form>
-</div>
-<div class="row"></div>
-<hr style="color:white;">
+    <div class="form-footer donate-area">
+        @if ($step > 0)
+            <button wire:click="previous()" style="float: left;" class="button button--effect">
+                @lang('Previous')</button>
+        @endif
 
-<div class="form-footer donate-area">
-    @if ($step > 0)
-        <button wire:click="previous()" style="float: left;" class="button button--effect">
-            @lang('Previous')</button>
-    @endif
-
-    <button wire:click="submit()" style="float: right;" class="button button--effect">
-        @lang('Next')</button>
-    {{--
+        <button
+            wire:click="@if ($step === 0) submit1()@elseif($step === 1)submit2()@elseif($step === 2)submit3() @elseif($step === 3)submit4() @endif"
+            style="float: right;" class="button button--effect">
+            @lang('Next')</button>
+        {{--
             <button wire:click="position()"  class="button button--effect">
                 @lang('location')</button> --}}
 
-</div>
+    </div>
 </div>

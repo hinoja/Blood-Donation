@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Services extends Model
 {
     use HasFactory;
+    protected $fillable = ['name'];
+
 
     public function job(): BelongsTo
     {
