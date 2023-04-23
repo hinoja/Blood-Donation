@@ -57,6 +57,7 @@
 
 
 <body>
+    @include('sweetalert::alert')
     <style>
         .multi-step {
             margin: 0;

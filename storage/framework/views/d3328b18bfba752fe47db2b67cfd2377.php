@@ -58,6 +58,7 @@
 
 
 <body>
+    <?php echo $__env->make('sweetalert::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <style>
         .multi-step {
             margin: 0;
@@ -269,15 +270,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.register-hospital')->html();
-} elseif ($_instance->childHasBeenRendered('Mi7i05I')) {
-    $componentId = $_instance->getRenderedChildComponentId('Mi7i05I');
-    $componentTag = $_instance->getRenderedChildComponentTagName('Mi7i05I');
+} elseif ($_instance->childHasBeenRendered('TZ6HI1d')) {
+    $componentId = $_instance->getRenderedChildComponentId('TZ6HI1d');
+    $componentTag = $_instance->getRenderedChildComponentTagName('TZ6HI1d');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('Mi7i05I');
+    $_instance->preserveRenderedChild('TZ6HI1d');
 } else {
     $response = \Livewire\Livewire::mount('front.register-hospital');
     $html = $response->html();
-    $_instance->logRenderedChild('Mi7i05I', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('TZ6HI1d', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

@@ -124,11 +124,10 @@ class RegisterHospital extends Component
                 $hospital->services()->create(['name' => $service]);
             }
         }
-        $message= trans('Your Hospital has been successfully registered. It will be studied and you will be informed of its publication or not as soon as possible');
+        $message = trans('Your Hospital has been successfully registered. It will be studied and you will be informed of its publication or not as soon as possible');
         // Alert::alert('success', trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'), 'success')->autoclose(7000);
-        toast($message, 'success');
-        Alert::alert('success', trans('Your Hospital has been successfully registered. It will be studied and you will be informed of its publication or not as soon as possible'), 'success')->autoclose(8000);
-        Alert::toast('success', trans('Your Hospital has been successfully registered. It will be studied and you will be informed of its publication or not as soon as possible'), 'success')->autoclose(8000);
+        Alert::success('Good job', trans('Your Hospital has been successfully registered. It will be studied and you will be informed of its publication or not as soon as possible'))->autoclose(7000);
+        // return redirect()->route('front.register.hospital');
         $this->redirectRoute('front.register.hospital');
     }
 

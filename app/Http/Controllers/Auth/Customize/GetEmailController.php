@@ -44,9 +44,12 @@ class GetEmailController extends Controller
             $user = User::where('email', $data['email'])->first();
             // Mail::send('','');
             Notification::send($user, new ResetPasswordNotification($token));
-            Alert::alert('success', trans('Your have received a email on your mailBox,Please verify'))->autoclose(7000);
+            Alert::success('Good job',trans('Your have received a email on your mailBox,Please verify'))->autoclose(7000);
+
+            // Alert::alert('success', trans('Your have received a email on your mailBox,Please verify'))->autoclose(7000);
         } else {
-            Alert::alert('error', trans('We can\'t find a user with that email address.'))->autoclose(7000);
+            // Alert::alert('error', trans('We can\'t find a user with that email address.'))->autoclose(7000);
+            Alert::warning('Error',  trans('We can\'t find a user with that email address.'))->autoclose(7000);
         }
 
         // Alert::alert('success', trans('Your message has been successfully sent to the platform administrator. You will receive an email as soon as possible.'), 'success')->autoclose(7000);
