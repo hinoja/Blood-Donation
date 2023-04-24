@@ -14,7 +14,7 @@
 <tr>
 <td class="header">
 <a href="<?php echo e($url); ?>" style="display: inline-block;">
-<?php if(trim($slot) === "Blood Donation"): ?>
+<?php if(trim($slot) === 'Blood Donation'): ?>
 <img src="<?php echo e(asset('assets/back/images/bg2.jpg')); ?>" class="logo" alt="<?php echo e(config('app.name')); ?> Logo">
 <?php else: ?>
 <?php echo e($slot); ?>
@@ -23,4 +23,5 @@
 </a>
 </td>
 </tr>
+
 <?php /**PATH E:\Laravel Projet\Blood_Donation\resources\views/vendor/mail/html/header.blade.php ENDPATH**/ ?>

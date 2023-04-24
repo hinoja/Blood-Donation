@@ -27,6 +27,19 @@ class DatabaseSeeder extends Seeder
                 'name' => 'Super Admin',
                 'email' => 'blood@donation.com',
                 'role_id' => 1,
+                'is_active'=> true,
+            ]);
+            User::factory() ->create([
+                'name' => 'AdminValdez',
+                'email' => 'Valdez1997tsangue@gmail.com',
+                'role_id' => 1,
+                'is_active'=> true,
+            ]);
+            User::factory() ->create([
+                'name' => 'AdminJoel',
+                'email' => 'hinoja2@gmail.com',
+                'role_id' => 1,
+                'is_active'=> true,
             ]);
         User::factory(10)->create();
         Contact::factory(10)->create();

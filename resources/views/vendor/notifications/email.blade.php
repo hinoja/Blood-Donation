@@ -24,7 +24,7 @@
         default => 'primary',
     };
 ?>
-<x-mail::button :url="$actionUrl" :color="$color">
+<x-mail::button :url="$actionUrl" color="red">
 {{ $actionText }}
 </x-mail::button>
 @endisset
