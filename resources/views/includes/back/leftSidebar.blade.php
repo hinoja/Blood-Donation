@@ -29,7 +29,7 @@
                 </li>
             </ul>
         </div>
-        <div class="quick-stats mt--6">
+        <div class="quick-stats mt-6">
             <h5>Today Report</h5>
             <ul>
                 <li><span>16<i>Patient</i></span></li>
@@ -88,6 +88,11 @@
             <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
                     <span>@lang('Users')</span></a>
+            </li>
+            <li class="@if (Str::contains($currentUri, 'appointments')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.appointements.index') }}"><i
+                        class="zmdi zmdi-calendar-check"></i>
+                    <span>@lang('Appointments')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>

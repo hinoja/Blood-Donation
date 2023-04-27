@@ -40,12 +40,12 @@
                         
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(Str::contains($currentUri, 'contact-us')): ?> active <?php endif; ?>"
-                            href="<?php echo e(route('front.contact')); ?>"><?php echo app('translator')->get('Contact us'); ?></a>
+                        <a class="nav-link <?php if(Str::contains($currentUri, 'Hospital')): ?> active <?php endif; ?>"
+                        href="<?php echo e(route('front.register.hospital')); ?>"><?php echo app('translator')->get('Register Hospital'); ?></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(Str::contains($currentUri, 'Hospital')): ?> active <?php endif; ?>"
-                            href="<?php echo e(route('front.register.hospital')); ?>"><?php echo app('translator')->get('Register Hospital'); ?></a>
+                        <a class="nav-link <?php if(Str::contains($currentUri, 'contact-us')): ?> active <?php endif; ?>"
+                            href="<?php echo e(route('front.contact')); ?>"><?php echo app('translator')->get('Contact us'); ?></a>
                     </li>
                     <?php if(Route::has('login')): ?>
                         <?php if(auth()->guard()->check()): ?>
@@ -59,14 +59,14 @@
                                 <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo app('translator')->get('Log in'); ?></a>
                             </li>
                             
-                        <?php endif; ?>
-                    <?php endif; ?>
+                            <?php endif; ?>
+                            <?php endif; ?>
 
-                    </li>
+                        </li>
 
-                </ul>
-            </div>
-            <div class="navbar-out order-2 order-xl-3">
+                    </ul>
+                </div>
+                <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>

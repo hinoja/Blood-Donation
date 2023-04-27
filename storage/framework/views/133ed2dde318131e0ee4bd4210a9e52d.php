@@ -47,15 +47,15 @@
                                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.contact.contact-manage')->html();
-} elseif ($_instance->childHasBeenRendered('SZGkGd4')) {
-    $componentId = $_instance->getRenderedChildComponentId('SZGkGd4');
-    $componentTag = $_instance->getRenderedChildComponentTagName('SZGkGd4');
+} elseif ($_instance->childHasBeenRendered('5eKyHXG')) {
+    $componentId = $_instance->getRenderedChildComponentId('5eKyHXG');
+    $componentTag = $_instance->getRenderedChildComponentTagName('5eKyHXG');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('SZGkGd4');
+    $_instance->preserveRenderedChild('5eKyHXG');
 } else {
     $response = \Livewire\Livewire::mount('front.contact.contact-manage');
     $html = $response->html();
-    $_instance->logRenderedChild('SZGkGd4', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('5eKyHXG', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

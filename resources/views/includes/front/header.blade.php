@@ -61,12 +61,12 @@
                         </ul> --}}
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
-                            href="{{ route('front.contact') }}">@lang('Contact us')</a>
+                        <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
+                        href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
-                            href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
+                        <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
+                            href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
                     @if (Route::has('login'))
                         @auth
@@ -86,14 +86,14 @@
                                     <a class="nav-link" href="{{ route('register') }}">@lang('Register')</a>
                                 @endif
                             </li> --}}
-                        @endauth
-                    @endif
+                            @endauth
+                            @endif
 
-                    </li>
+                        </li>
 
-                </ul>
-            </div>
-            <div class="navbar-out order-2 order-xl-3">
+                    </ul>
+                </div>
+                <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>

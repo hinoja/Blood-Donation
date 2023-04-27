@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Appointement;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -51,6 +52,11 @@ class User extends Authenticatable
     {
         return $this->morphTo();
     }
+    public function appointements()
+    {
+        return $this->hasMany( Appointement::class);
+    }
+
 
     public function role(): BelongsTo
     {

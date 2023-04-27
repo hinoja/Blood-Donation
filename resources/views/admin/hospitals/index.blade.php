@@ -16,6 +16,7 @@
     <script src="{{ asset('assets/back/plugins/bootstrap-notify/bootstrap-notify.js') }}"></script>
     <script src="{{ asset('assets/back/js/pages/ui/notifications.js') }}"></script>
 
+
     <script type="text/javascript">
         // close message  modal
         window.livewire.on('closeModal', () => {

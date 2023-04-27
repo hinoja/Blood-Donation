@@ -1,6 +1,7 @@
 <?php return array (
   'admin.contacts.contact-manage' => 'App\\Http\\Livewire\\Admin\\Contacts\\ContactManage',
   'admin.hospitals.manage-hospital' => 'App\\Http\\Livewire\\Admin\\Hospitals\\ManageHospital',
+  'admin.manage-appointment' => 'App\\Http\\Livewire\\Admin\\ManageAppointment',
   'admin.posts.add-post' => 'App\\Http\\Livewire\\Admin\\Posts\\AddPost',
   'admin.posts.edit' => 'App\\Http\\Livewire\\Admin\\Posts\\Edit',
   'admin.posts.edit-component-post' => 'App\\Http\\Livewire\\Admin\\Posts\\EditComponentPost',

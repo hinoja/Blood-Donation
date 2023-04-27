@@ -14,8 +14,8 @@ class Contact extends Model
     protected $fillable = ['name', 'email', 'subject', 'message'];
 
     // ACCESSORS
-    public function getDatelineAttribute($dateline)
-    {
-        return formatedLocaleDate($dateline);
-    }
+    // public function getDatelineAttribute($dateline)
+    // {
+    //     return formatedLocaleDate($dateline);
+    // }
 }

@@ -15,7 +15,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="cta-area__btn text-start text-md-end">
-                                <a href="contact-us.html" class="button button--quaternary button--effect">Contact
+                                <a href="{{ route('front.contact') }}" class="button button--quaternary button--effect">Contact
                                     Us</a>
                             </div>
                         </div>

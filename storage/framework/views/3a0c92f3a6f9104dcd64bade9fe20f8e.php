@@ -11,13 +11,13 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/bootstrap/css/bootstrap.min.css')); ?>" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css">
+    <?php echo $__env->yieldPushContent('css'); ?>
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/morrisjs/morris.css')); ?>" />
     <!-- Custom Css -->
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/css/main.css')); ?>" />
     <!-- Fontawesome Css -->
 
     <link rel="stylesheet" href="<?php echo e(asset('assets/back/modules/fontawesome/css/all.min.css')); ?>">
-    <?php echo $__env->yieldPushContent('css'); ?>
 </head>
 
 <body class="theme-cyan">

@@ -27,7 +27,10 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->longText('description_file')->nullable();
             $table->string('siteInternet')->nullable();
-            // $table->foreignId('user_id')->constrained();
+            $table->time('ends_at')->nullable();
+            // $table->foreignId('daysHospital_id')->constrained();
+            $table->time('starts_at')->nullable();
+            // $table->string('day')->nullable();
             $table->boolean('is_active')->default(false);
             $table->timestamps();
         });

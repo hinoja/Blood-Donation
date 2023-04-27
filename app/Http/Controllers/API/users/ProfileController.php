@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\users;
+namespace App\Http\Controllers\Api\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -12,11 +12,18 @@ class ProfileController extends Controller
     {
         try {
             $user = User::find($id);
-                // dd($user);
-            return response()->json([
-                'Staus' => 'true',
-                'User' => $user,
-            ]);
+            // dd($user);
+            if (!$user) {
+                return response()->json([
+                    'Staus' => 'false',
+                    'message' => "Any User",
+                ]);
+            } else {
+                return response()->json([
+                    'Staus' => 'true',
+                    'User' => $user,
+                ]);
+            }
         } catch (\Exception $e) {
             return response()->json([
                 'Staus' => 'false',
@@ -24,7 +31,7 @@ class ProfileController extends Controller
             ]);
         }
     }
-        // public function updateProfile(Request $request, $id)
+    // public function updateProfile(Request $request, $id)
     // {
     //     $user = User::find($id);
     //     if ($user) {

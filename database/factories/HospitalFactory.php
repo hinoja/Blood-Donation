@@ -20,15 +20,16 @@ class HospitalFactory extends Factory
         return [
             'name' => $data = fake()->unique()->company(),
             'slug' => Str::slug($data),
-            // 'urgenceNumber' => mt_rand(650000000, 690000000),
             'urgenceNumber' => fake()->e164PhoneNumber(),
             'latitude' =>  fake()->latitude(0),
             'email' =>  fake()->unique()->email(),
             'longitude' =>  fake()->longitude(-10),
-            'town' => fake()->city(),
+            'town'  => fake('it_IT')->city(),
             'country' => fake()->country(),
             'region' => fake()->address(),
             'birth' =>  fake()->dateTime(),
+            // 'dayHospital_id' =>  fake()->,
+
             // 'logo' =>  fake()->imageUrl(),storage/hospitals/logo/no-logo.png
             'logo' =>  "no-logo.png",
             // 'descriptionFile' => fake()->mimeType(),

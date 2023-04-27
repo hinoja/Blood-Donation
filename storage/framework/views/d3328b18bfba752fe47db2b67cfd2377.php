@@ -270,15 +270,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('front.register-hospital')->html();
-} elseif ($_instance->childHasBeenRendered('TZ6HI1d')) {
-    $componentId = $_instance->getRenderedChildComponentId('TZ6HI1d');
-    $componentTag = $_instance->getRenderedChildComponentTagName('TZ6HI1d');
+} elseif ($_instance->childHasBeenRendered('1iZbMjk')) {
+    $componentId = $_instance->getRenderedChildComponentId('1iZbMjk');
+    $componentTag = $_instance->getRenderedChildComponentTagName('1iZbMjk');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('TZ6HI1d');
+    $_instance->preserveRenderedChild('1iZbMjk');
 } else {
     $response = \Livewire\Livewire::mount('front.register-hospital');
     $html = $response->html();
-    $_instance->logRenderedChild('TZ6HI1d', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('1iZbMjk', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

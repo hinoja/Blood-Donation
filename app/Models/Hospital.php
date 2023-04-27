@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use App\Models\Services;
+use App\Models\Appointement;
+use App\Models\DaysHospital;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -13,10 +15,20 @@ class Hospital extends Model
 {
     use  HasFactory, Notifiable;
 
-    protected $fillable = ['name', 'email','logo', 'slug', 'birth', 'urgenceNumber', 'longitude', 'latitude', 'town', 'region', 'country'];
+
+
+    protected $fillable = ['name', 'email', 'logo', 'slug', 'birth', 'urgenceNumber', 'longitude', 'latitude', 'town', 'region', 'country'];
     public function services(): HasMany
     {
         return $this->hasMany(Services::class);
+    }
+    public function appointements()
+    {
+        return $this->hasMany(Appointement::class);
+    }
+    public function dayHospitals()
+    {
+        return $this->belongsToMany(DaysHospital::class);
     }
     // ACCESSORS
     public function FormatDate($dateline)

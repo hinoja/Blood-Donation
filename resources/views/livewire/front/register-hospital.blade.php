@@ -7,7 +7,7 @@
             <div class="col-11 col-sm-9 col-md-7 col-lg-6 col-xl-5 text-danger p-0 mt-3 mb-2">
                 <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
 
-                    <form id="msform"  >
+                    <form id="msform">
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="@if ($step === 0 || $step === 1 || $step === 2 || $step === 3) active @endif" id="account">
@@ -114,9 +114,16 @@
                     <div class="registration-area__form-single__inner">
                         <div class="input-group-column">
                             <div class="input">
+                                <style>
+
+                                </style>
                                 <label for="urgency_number">Number</label>
-                                <input wire:model.defer="urgency_number" class="form-control" type="number"
-                                    name="urgency_number" required>
+                                {{-- <input wire:model.defer="urgency_number" class="form-control" type="number"
+                                    name="urgency_number" required> --}}
+                                <input type="tel" wire:model.defer="urgency_number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    required>
+
+                                <small>Format: 123-456-7890</small>
                             </div>
                         </div>
                         @error('urgency_number')
@@ -304,7 +311,7 @@
                         <div class="input-group-column ">
                             <div class="input">
                                 <label for=" ">text</label>
-                                <input wire.model.defer="services.0" class="input-lg input-control" type="text"
+                                <input wire.model.defer="services.0" class="form-control form-control-lg" type="text"
                                     name="services.0" required>
                                 {{-- <textarea class="input-lg" name="" id="" cols="30" rows="10"></textarea> --}}
 
@@ -328,14 +335,14 @@
                                     <label for="">text</label>
                                     {{-- <input    class="input" type="text"  required> --}}
                                     <input wire:model.defer="services.{{ $index + 1 }}"
-                                        class="input-lg input-control" type="text" required>
+                                        class="form-control form-control-lg" type="text" required>
 
                                 </div>
 
                                 <div class="input-group-column ">
                                     <div wire:click.prevent="remove({{ $key }})"
                                         class="btn btn-danger btn-lg">
-                                        ___
+                                       <i class="fa fa-minus"></i> 
                                     </div>
                                 </div>
                             </div>

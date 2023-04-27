@@ -2,7 +2,8 @@
 <?php $__env->startSection('title', 'All Hospitals'); ?>
 <?php $__env->startSection('sub-title', 'Description text here...'); ?>
 <?php $__env->startPush('css'); ?>
-    <link rel="stylesheet" href="<?php echo e(asset('assets/back/modules/datatables/datatables.min.css')); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/back/plugins/fullcalendar/fullcalendar.min.css')); ?>">
+    
     <link rel="stylesheet"
         href="<?php echo e(asset('assets/back/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css')); ?>">
     <?php echo \Livewire\Livewire::styles(); ?>
@@ -16,6 +17,8 @@
     <script src="<?php echo e(asset('assets/back/js/pages/ui/modals.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/back/plugins/bootstrap-notify/bootstrap-notify.js')); ?>"></script>
     <script src="<?php echo e(asset('assets/back/js/pages/ui/notifications.js')); ?>"></script>
+    
+    <script src="<?php echo e(asset('assets/back/js/pages/calendar/calendar.js')); ?>"></script>
 
     <script type="text/javascript">
         // close message  modal
@@ -66,15 +69,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.hospitals.manage-hospital')->html();
-} elseif ($_instance->childHasBeenRendered('3PMpBl7')) {
-    $componentId = $_instance->getRenderedChildComponentId('3PMpBl7');
-    $componentTag = $_instance->getRenderedChildComponentTagName('3PMpBl7');
+} elseif ($_instance->childHasBeenRendered('4Xnng3o')) {
+    $componentId = $_instance->getRenderedChildComponentId('4Xnng3o');
+    $componentTag = $_instance->getRenderedChildComponentTagName('4Xnng3o');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('3PMpBl7');
+    $_instance->preserveRenderedChild('4Xnng3o');
 } else {
     $response = \Livewire\Livewire::mount('admin.hospitals.manage-hospital');
     $html = $response->html();
-    $_instance->logRenderedChild('3PMpBl7', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('4Xnng3o', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

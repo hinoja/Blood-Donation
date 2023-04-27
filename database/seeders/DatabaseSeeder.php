@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Appointement;
 use App\Models\Contact;
 use App\Models\Hospital;
 use App\Models\Post;
@@ -22,25 +23,28 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
         ]);
+        $this->call([
+            DaysHospitalSeeder::class,
+        ]);
         User::factory()
             ->create([
                 'name' => 'Super Admin',
                 'email' => 'blood@donation.com',
                 'role_id' => 1,
-                'is_active'=> true,
+                'is_active' => true,
             ]);
-            User::factory() ->create([
-                'name' => 'AdminValdez',
-                'email' => 'Valdez1997tsangue@gmail.com',
-                'role_id' => 1,
-                'is_active'=> true,
-            ]);
-            User::factory() ->create([
-                'name' => 'AdminJoel',
-                'email' => 'hinoja2@gmail.com',
-                'role_id' => 1,
-                'is_active'=> true,
-            ]);
+        User::factory()->create([
+            'name' => 'AdminValdez',
+            'email' => 'Valdez1997tsangue@gmail.com',
+            'role_id' => 1,
+            'is_active' => true,
+        ]);
+        User::factory()->create([
+            'name' => 'AdminJoel',
+            'email' => 'hinoja2@gmail.com',
+            'role_id' => 1,
+            'is_active' => true,
+        ]);
         User::factory(10)->create();
         Contact::factory(10)->create();
         Tag::factory(10)->create();
@@ -52,5 +56,6 @@ class DatabaseSeeder extends Seeder
             ->count(15)
             ->has(Services::factory(rand(1, 5)))
             ->create();
+        Appointement::factory(10)->create();
     }
 }

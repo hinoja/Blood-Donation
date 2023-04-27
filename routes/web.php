@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Extra\LangController;
 use App\Http\Livewire\Admin\Posts\EditComponentPost;
 use App\Http\Controllers\Admin\users\UsersController;
+use App\Http\Controllers\Admin\AppointmentsController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
 use App\Http\Controllers\Auth\Customize\GetEmailController;
 use App\Http\Controllers\Auth\Customize\updatePasswordController;
@@ -73,6 +74,8 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     Route::view('post/add', 'admin.posts.add')->name('post.add');
     Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
     Route::get('post/edit/{post:slug}', EditComponentPost::class)->name('post.edit');
+    // APPOINTMENT
+    Route::get('appointments', [AppointmentsController::class,'create'])->name('appointements.index');
 });
 
 // ----------------------GENERAL------------------------------------

@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\API\front\users\AuthentificationController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\HospitalsController;
 use App\Http\Controllers\API\posts\PostController;
-use App\Http\Controllers\Api\users\GetEmailController;
-use App\Http\Controllers\Api\users\ProfileController;
-use App\Http\Controllers\Api\users\updatePasswordController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Users\ProfileController;
+use App\Http\Controllers\Api\Users\GetEmailController;
+use App\Http\Controllers\Api\Users\updatePasswordController;
+use App\Http\Controllers\API\front\users\AuthentificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,9 +33,9 @@ Route::get('posts', PostController::class);
 // Hospitals
 Route::get('hospitals', HospitalsController::class);
 
+Route::get('/user/{id}', [ProfileController::class, 'getProfile']);
 Route::middleware('auth:sanctum')->group(function () {
     // logout
     Route::post('/logout', [AuthentificationController::class, 'logout']);
     // Profile
-    Route::get('/user/{id}', [ProfileController::class, 'getProfile']);
 });
