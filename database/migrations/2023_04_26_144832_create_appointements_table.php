@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained();
             $table->dateTime('start');
             $table->dateTime('end')->nullable();
+            $table->boolean('is_validated')->default(0);
             $table->timestamps();
         });
     }

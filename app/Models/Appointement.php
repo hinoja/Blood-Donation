@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Donor;
+use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -27,4 +29,14 @@ class Appointement extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
+    // ACCESSORS
+    public function FormatDate($dateline)
+    {
+        $locale = app()->getLocale();
+        Carbon::setLocale($locale);
+        $format = $locale === 'en' ? 'F d, Y' : 'd M Y';
+
+        return $dateline ? Carbon::parse($dateline)->translatedFormat($format) : null;
+    }
+     
 }
