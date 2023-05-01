@@ -4,14 +4,15 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\Appointement;
+use App\Models\Tag;
+use App\Models\Post;
+use App\Models\User;
 use App\Models\Contact;
 use App\Models\Hospital;
-use App\Models\Post;
 use App\Models\Services;
-use App\Models\Tag;
-use App\Models\User;
+use App\Models\Appointement;
 use Illuminate\Database\Seeder;
+use Database\Seeders\EventSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RoleSeeder::class,
         ]);
+        // $this->call([EventSeeder::class,]);
         $this->call([
             DaysHospitalSeeder::class,
         ]);
@@ -56,6 +58,6 @@ class DatabaseSeeder extends Seeder
             ->count(15)
             ->has(Services::factory(rand(1, 5)))
             ->create();
-        Appointement::factory(10)->create();
+        Appointement::factory(30)->create();
     }
 }

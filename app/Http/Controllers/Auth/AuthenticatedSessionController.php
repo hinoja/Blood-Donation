@@ -29,7 +29,7 @@ class AuthenticatedSessionController extends Controller
     {
         $remember = (bool) $request->remember;
         // $route="/";
-        if (! Auth::attempt(['email' => $request->email, 'password' => $request->password, 'is_active' => true], $remember)) {
+        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password, 'is_active' => true], $remember)) {
             $user = User::where('email', $request->email)->first();
             if ($user) {
                 if (Hash::check($request->password, $user->password)) {
@@ -54,7 +54,7 @@ class AuthenticatedSessionController extends Controller
 
         return redirect()->intended($redirect);
     }
-
+   
     /**
      * Destroy an authenticated session.
      */

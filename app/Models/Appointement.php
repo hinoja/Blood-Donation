@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Appointement extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'hospital_id', 'day'];
+    protected $fillable = ['user_id', 'hospital_id', 'start'];
     // public function appointements()
     // {
     //     return $this->hasMany(Appointement::class);

@@ -22,7 +22,7 @@
     <!-- ==== #service section end ==== -->
 
     <!-- ==== call now section start ==== -->
-    @include('includes.front.callNow')
+    {{-- @include('includes.front.callNow') --}}
     <!-- ==== #call now section end ==== -->
 
     <!-- ==== campaign section start ==== -->
@@ -30,7 +30,7 @@
     <!-- ==== #camapign section end ==== -->
 
     <!-- ==== testimonial section start ==== -->
-    @include('includes.front.testimonial')
+    {{-- @include('includes.front.testimonial') --}}
     <!-- ==== testimonial section end ==== -->
 
     <!-- ==== donor section end ==== -->

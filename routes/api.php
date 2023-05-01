@@ -33,7 +33,11 @@ Route::get('posts', PostController::class);
 // Hospitals
 Route::get('hospitals', HospitalsController::class);
 
-Route::get('/user/{id}', [ProfileController::class, 'getProfile']);
+// Normaly requiert to authentificate
+Route::get('user/{id}', [ProfileController::class, 'getProfile']);
+Route::delete('delete/user/{id}', [AuthentificationController::class, 'destroy']);
+
+
 Route::middleware('auth:sanctum')->group(function () {
     // logout
     Route::post('/logout', [AuthentificationController::class, 'logout']);

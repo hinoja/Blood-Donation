@@ -77,7 +77,7 @@
     </section>
 
     <section class="content home">
-        <div class="block-header text-center" >
+        <div class="block-header text-center">
             <h2>@yield('title')</h2>
             <small class="text-muted">@yield('sub-title')</small>
         </div>

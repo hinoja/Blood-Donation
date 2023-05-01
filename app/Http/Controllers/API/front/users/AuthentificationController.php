@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\API\front\users;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -28,7 +29,7 @@ class AuthentificationController extends Controller
                     'id' => $user->id,
                     'token' => $token,
                 ];
-            } elseif (Hash::check($request->password, $user->password) && ! $user->is_active) {
+            } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {
                 $data = [
                     'status' => 'false',
                     'message' => 'Your account is disable, Please contact administrator',
@@ -48,6 +49,47 @@ class AuthentificationController extends Controller
 
         return response()->json($data);
     }
+    /**
+     * detroy  user account
+     */
+
+    public function destroy(Request $request, $id)
+    {
+        try {
+
+            $user = User::find($id);
+
+            // $user = $request->user();
+            if (!$user) {
+                $staus = "false";
+                $message = trans("We can't find this user in Database.");
+            } else {
+                Auth::logout();
+                $token = DB::table('personal_access_tokens')->where('tokenable_id', $user->id)->first();
+                if ($token) {
+                    $token->delete();
+                }
+                $user->appointements()->delete();
+                foreach ($user->posts as  $post) {
+                    $post->tags()->detach();
+                }
+                $user->posts()->delete();
+                $user->delete();
+                // $request->session()->invalidate();
+                // $request->session()->regenerateToken();
+                $staus = "true";
+                $message = trans("The account has been deleted");
+            }
+        } catch (\Exception $e) {
+            $staus = "true";
+            $message =  $e->getMessage();
+        }
+        return response()->json([
+            'Staus' => $staus,
+            'message' => $message
+        ]);
+    }
+
 
     /**
      * Handle the incoming request.
