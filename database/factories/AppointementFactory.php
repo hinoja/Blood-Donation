@@ -21,7 +21,7 @@ class AppointementFactory extends Factory
         return [
             'hospital_id' => Hospital::factory(),
             'user_id' => User::factory(),
-            'start' => fake()->dateTime(now()),
+            'start' => fake()->dateTime(now()->addWeek()),
             'end' => fake()->dateTime(now()),
             //  $dateTime->format('d m,Y'),
         ];

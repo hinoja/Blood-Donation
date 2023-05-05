@@ -29,15 +29,15 @@
                         <?php
 if (! isset($_instance)) {
     $html = \Livewire\Livewire::mount('admin.manage-appointment')->html();
-} elseif ($_instance->childHasBeenRendered('vbjep3A')) {
-    $componentId = $_instance->getRenderedChildComponentId('vbjep3A');
-    $componentTag = $_instance->getRenderedChildComponentTagName('vbjep3A');
+} elseif ($_instance->childHasBeenRendered('YKgQlIe')) {
+    $componentId = $_instance->getRenderedChildComponentId('YKgQlIe');
+    $componentTag = $_instance->getRenderedChildComponentTagName('YKgQlIe');
     $html = \Livewire\Livewire::dummyMount($componentId, $componentTag);
-    $_instance->preserveRenderedChild('vbjep3A');
+    $_instance->preserveRenderedChild('YKgQlIe');
 } else {
     $response = \Livewire\Livewire::mount('admin.manage-appointment');
     $html = $response->html();
-    $_instance->logRenderedChild('vbjep3A', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
+    $_instance->logRenderedChild('YKgQlIe', $response->id(), \Livewire\Livewire::getRootElementTagName($html));
 }
 echo $html;
 ?>

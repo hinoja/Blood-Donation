@@ -12,7 +12,6 @@ class ProfileController extends Controller
     {
         try {
             $user = User::find($id);
-            // dd($user);
             if (!$user) {
                 return response()->json([
                     'Staus' => 'false',

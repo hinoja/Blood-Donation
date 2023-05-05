@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\Users\ProfileController;
 use App\Http\Controllers\Api\Users\GetEmailController;
 use App\Http\Controllers\Api\Users\updatePasswordController;
 use App\Http\Controllers\API\front\users\AuthentificationController;
+use App\Http\Controllers\API\UserAppointmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,7 @@ Route::get('hospitals', HospitalsController::class);
 
 // Normaly requiert to authentificate
 Route::get('user/{id}', [ProfileController::class, 'getProfile']);
+Route::get('user/appointments/{id}', [UserAppointmentsController::class, 'appointments']);
 Route::delete('delete/user/{id}', [AuthentificationController::class, 'destroy']);
 
 
