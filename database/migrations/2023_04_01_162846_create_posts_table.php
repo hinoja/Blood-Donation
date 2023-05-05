@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->foreignId('user_id')->constrained();
             $table->longText('content');
-            $table->string('image')->nullable();
+            $table->string('image')->default('noImage.png');
             $table->date('published_at')->nullable();
             $table->timestamps();
         });

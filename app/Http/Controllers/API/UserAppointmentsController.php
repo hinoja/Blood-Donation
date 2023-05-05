@@ -28,7 +28,7 @@ class UserAppointmentsController extends Controller
                         'start' => $date = $appointment->FormatDate($appointment->start),
                         // 'HourBegin' => $appointment->start->Carbon::format('H:i:s'),
                         'end' => $appointment->end ? $appointment->FormatDate($appointment->end) : null,
-                        'validated' => ( $appointment->start < now()->addDay()) ? "no-validated" : $appointment->is_validated,
+                        'validated' => ($appointment->start < now()->addDay()) ? "no-validated" : $appointment->is_validated,
                     ];
                     array_push($formattedAppointments, $formattedAppointment);
                 }

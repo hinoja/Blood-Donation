@@ -16,11 +16,11 @@ class HospitalsController extends Controller
         try {
             $Hospitals = Hospital::where('is_active', true)
                 ->with('services')
-                ->latest()
+                ->orderBy('name','asc')
                 ->get();
             $formattedHospitals = [];
             foreach ($Hospitals as $Hospital) {
-                // get all services foreeach Hospitals
+                // get all services foreach Hospitals
                 $servicesHospitals = [];
                 $services = $Hospital->services;
                 foreach ($services as $service) {
