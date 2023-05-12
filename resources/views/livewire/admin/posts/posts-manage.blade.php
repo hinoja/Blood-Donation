@@ -24,7 +24,7 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
-                            <td class="col-2"> <img width="100%"
+                            <td class="col-2"> <img width="100"
                                     src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
                                     class="col-7" alt=""></td>
                             <td>{{ $post->title }}</td>

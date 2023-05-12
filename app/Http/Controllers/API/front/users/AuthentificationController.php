@@ -23,10 +23,12 @@ class AuthentificationController extends Controller
                 $token = $user->createToken('auth_token')->plainTextToken;
                 Auth::login($user);
                 $data = [
-                    'status' => 'true',
-                    'name' => $user->name,
-                    'role' => $user->role->name,
                     'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'role' => $user->role->name,
+                    'avatar' =>  $user->avatar,
+                    'status' => 'true',
                     'token' => $token,
                 ];
             } elseif (Hash::check($request->password, $user->password) && !$user->is_active) {

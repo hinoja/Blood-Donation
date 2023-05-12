@@ -33,7 +33,7 @@ class Edit extends Component
             'content' => ['required', 'string', 'min:255'],
         ]);
         // dd($data);
-        $filename = (Str::slug($data['title'])).'.'.$this->image->extension();
+        $filename = (Str::slug($data['title'])) . '.' . $this->image->extension();
         // dd('test');
         $post = Post::create([
             'title' => $data['title'],
@@ -49,6 +49,9 @@ class Edit extends Component
         $post->save();
 
         // dd($post);
+        // $this->image->resize(100, 100, function ($constrained) {
+        //     $constrained->aspectRatio();
+        // })->save();
         $this->image->storeAs('public/posts', $filename);
         $tag = Tag::create([
             'name' => $data['name'],
@@ -61,7 +64,9 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.admin.posts.edit', ['post' => $this->post]
+        return view(
+            'livewire.admin.posts.edit',
+            ['post' => $this->post]
         );
     }
 }

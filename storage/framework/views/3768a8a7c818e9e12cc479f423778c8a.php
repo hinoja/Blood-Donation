@@ -5,7 +5,9 @@
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
     <div class="user-info">
-        <div class="admin-image "> <img src="<?php echo e(asset('assets/front/images/avatars/niro.png')); ?>" alt=""> </div>
+        <div class="admin-image "> <img
+                src="<?php if(!Auth()->user()->avatar): ?> <?php echo e(asset('assets/front/images/avatars/niro.png')); ?>  <?php else: ?>  <?php echo e(Auth()->user()->avatar); ?> <?php endif; ?>"
+                alt="avatar"> </div>
         <div class="admin-action-info"> <span><?php echo app('translator')->get('welcome'); ?></span>
             <h3><?php echo e(auth()->user()->name); ?></h3>
             <ul>

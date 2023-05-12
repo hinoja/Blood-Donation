@@ -5,7 +5,9 @@
 <aside id="leftsidebar" class="sidebar">
     <!-- User Info -->
     <div class="user-info">
-        <div class="admin-image "> <img src="{{ asset('assets/front/images/avatars/niro.png') }}" alt=""> </div>
+        <div class="admin-image "> <img
+                src="@if (!Auth()->user()->avatar) {{ asset('assets/front/images/avatars/niro.png') }}  @else  {{ Auth()->user()->avatar }} @endif"
+                alt="avatar"> </div>
         <div class="admin-action-info"> <span>@lang('welcome')</span>
             <h3>{{ auth()->user()->name }}</h3>
             <ul>
@@ -107,7 +109,10 @@
                 <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
                     <span>@lang('Posts')</span></a>
             </li>
-
+            <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
+                    <span>@lang('Alert')</span></a>
+            </li>
             {{--  Admin  --}}
             @if (Auth()->user()->role_id === 1)
                 <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">

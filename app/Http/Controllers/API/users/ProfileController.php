@@ -20,7 +20,14 @@ class ProfileController extends Controller
             } else {
                 return response()->json([
                     'Staus' => 'true',
-                    'User' => $user,
+                    // 'User' => $user,
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'role' => $user->role->name,
+                    'avatar' =>  $user->avatar,
+                    'status' => 'true',
+
                 ]);
             }
         } catch (\Exception $e) {

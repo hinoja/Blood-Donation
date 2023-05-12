@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Appointement;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -28,9 +29,17 @@ class User extends Authenticatable
         'password',
         'role_id',
     ];
+    // ACCESSORS
+    public function avatar(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($avatar) => asset("storage/users/avatars/{$avatar}")
+        );
+    }
 
     /**
-     * The attributes that should be hidden for serialization.
+
+    * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */
@@ -54,7 +63,7 @@ class User extends Authenticatable
     }
     public function appointements()
     {
-        return $this->hasMany( Appointement::class);
+        return $this->hasMany(Appointement::class);
     }
 
 

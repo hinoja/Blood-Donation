@@ -10,6 +10,8 @@ use App\Models\User;
 use App\Models\Contact;
 use App\Models\Hospital;
 use App\Models\Services;
+use Illuminate\Support\Str;
+use Laravolt\Avatar\Avatar;
 use App\Models\Appointement;
 use Illuminate\Database\Seeder;
 use Database\Seeders\EventSeeder;
@@ -29,34 +31,43 @@ class DatabaseSeeder extends Seeder
             DaysHospitalSeeder::class,
         ]);
         User::factory()->create([
-            'name' => 'peronal1',
+            'name' => $name =  'peronal1',
             'email' => 'tateon@artfact.com',
             'role_id' => 4,
+            'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $name, false),
             'is_active' => true,
         ]);
+
+
         User::factory()->create([
-            'name' => 'peronal1',
+            'name' => $name = 'peronal1',
             'email' => 'mailtor@artfact.com',
             'role_id' => 4,
+            'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $name, false),
             'is_active' => true,
         ]);
-        User::factory()
+
+        $user1 = User::factory()
             ->create([
-                'name' => 'Super Admin',
+                'name' => $name1 = 'Super Admin',
                 'email' => 'blood@donation.com',
+                'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $name1, false),
                 'role_id' => 1,
                 'is_active' => true,
             ]);
-        User::factory()->create([
-            'name' => 'AdminValdez',
+        $user2 = User::factory()->create([
+            'name' => $name2 = 'AdminValdez',
             'email' => 'Valdez1997tsangue@gmail.com',
             'role_id' => 1,
+            'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $name2, false),
             'is_active' => true,
         ]);
-        User::factory()->create([
-            'name' => 'AdminJoel',
+
+        $user3 =  User::factory()->create([
+            'name' => $name3 = 'AdminJoel',
             'email' => 'hinoja2@gmail.com',
             'role_id' => 1,
+            'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $name3, false),
             'is_active' => true,
         ]);
 
@@ -72,5 +83,8 @@ class DatabaseSeeder extends Seeder
             ->has(Services::factory(rand(1, 5)))
             ->create();
         Appointement::factory(30)->create();
+        // User::find(3)->avatar = Avatar::create(Str::slug($name1))->save("storage/users/avatars/" . Str::slug($name1) . '.png', 500);
+        // $user2->avatar = Avatar::create(Str::slug($name2))->save("storage/users/avatars/" . Str::slug($name2) . '.png', 500);
+        // $user3->avatar = Avatar::create(Str::slug($name3))->save("storage/users/avatars/" . Str::slug($name3) . '.png', 500);
     }
 }
