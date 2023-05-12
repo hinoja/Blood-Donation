@@ -33,11 +33,11 @@
                         </td>
                         <td>
                             
-                            <button type="button"
-                                class="<?php if($appointment->is_validated): ?> btn btn-primary <?php else: ?> btn btn-danger <?php endif; ?>"
-                                
-                                class="btn bg-grey waves-effect">
-                                <?php if($appointment->is_validated): ?>  <i class="fas fa-times"></i> <?php else: ?> <i class="fas fa-check"></i> <?php endif; ?> </button>
+                            <?php if(!$appointment->is_validated): ?>
+                                <button type="button" class=" btn btn-primary " 
+                                    class="btn bg-grey waves-effect"> <i class="fas fa-check"></i>  <?php echo app('translator')->get('Validated'); ?>
+                                </button>
+                            <?php endif; ?>
                         </td>
                     </tr>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

@@ -40,11 +40,11 @@
                         </td>
                         <td>
                             {{-- <button class="btn btn-primary">@lang('Validated')</button> --}}
-                            <button type="button"
-                                class="@if ($appointment->is_validated) btn btn-primary @else btn btn-danger @endif"
-                                {{-- wire:click="showModalForm({{ $appointment }})" --}}
-                                class="btn bg-grey waves-effect">
-                                @if ($appointment->is_validated)  <i class="fas fa-times"></i> @else <i class="fas fa-check"></i> @endif </button>
+                            @if (!$appointment->is_validated)
+                                <button type="button" class=" btn btn-primary " {{-- wire:click="showModalForm({{ $appointment }})" --}}
+                                    class="btn bg-grey waves-effect"> <i class="fas fa-check"></i>  @lang('Validated')
+                                </button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

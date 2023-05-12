@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\Users\ProfileController;
 use App\Http\Controllers\Api\Users\GetEmailController;
 use App\Http\Controllers\Api\Users\updatePasswordController;
 use App\Http\Controllers\API\front\users\AuthentificationController;
+use App\Http\Controllers\API\front\users\RegisterController;
 use App\Http\Controllers\API\UserAppointmentsController;
 
 /*
@@ -23,7 +24,10 @@ use App\Http\Controllers\API\UserAppointmentsController;
 // });
 
 // login
+// Route::post('register', [AuthentificationController::class, 'login']);
 Route::post('login', [AuthentificationController::class, 'login']);
+// register
+// Route::get('register/cities', [RegisterController::class, 'index']);
 // reset password
 Route::post('forgotpassword/get/email', GetEmailController::class);
 Route::post('reset-password', updatePasswordController::class);
@@ -38,6 +42,7 @@ Route::get('hospitals', HospitalsController::class);
 Route::get('user/{id}', [ProfileController::class, 'getProfile']);
 Route::get('user/appointments/{id}', [UserAppointmentsController::class, 'appointments']);
 Route::delete('delete/user/{id}', [AuthentificationController::class, 'destroy']);
+
 
 
 Route::middleware('auth:sanctum')->group(function () {

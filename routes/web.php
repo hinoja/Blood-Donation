@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\users\UsersController;
 use App\Http\Controllers\Admin\AppointmentsController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
 use App\Http\Controllers\Auth\Customize\GetEmailController;
+use App\Http\Controllers\API\front\users\RegisterController;
 use App\Http\Controllers\Auth\Customize\updatePasswordController;
 
 
@@ -33,6 +34,8 @@ Route::middleware('auth')->group(function () {
 });
 
 //----------------------------FRONT------------------------------
+
+Route::get('register/cities', [RegisterController::class, 'index']);
 
 Route::get('dashboard', function () {
     return view('dashboard');
@@ -58,8 +61,20 @@ Route::post('reset-password', [updatePasswordController::class, 'updating'])
     ->name('password.store');
 
 // --------------------------ADMIN--------------------------
-Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(function () {
+// Role Admin+ Hospital(Admin+ Staff)
+Route::middleware(['auth','checkRole:2','checkRole:1','checkRole:4'])->prefix('admin')->name('admin.')->group(function () {
+
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
+    // StaffHospitals
+    Route::prefix('personnal')->name('staffHospitals')->controller(UsersController::class)->group(function () {
+        Route::get('', 'indexStaffHospitals')->name('index');
+        // Route::patch('status/{user}', 'updateStatus')->name('status');
+    });
+    // APPOINTMENT
+    Route::get('appointments', [AppointmentsController::class, 'create'])->name('appointements.index');
+});
+
+Route::middleware('auth', 'checkRole:1')->prefix('admin')->name('admin.')->group(function () {
     // CONTACTS
     Route::view('contacts', 'admin.contacts.index')->name('contacts');
     // USERS
@@ -67,6 +82,7 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
         Route::get('', 'index')->name('index');
         Route::patch('status/{user}', 'updateStatus')->name('status');
     });
+
     // HOSPITALS
     Route::view('hospitals', 'admin.hospitals.index')->name('hospitals');
     // POSTS
@@ -74,8 +90,6 @@ Route::middleware('auth', 'admin')->prefix('admin')->name('admin.')->group(funct
     Route::view('post/add', 'admin.posts.add')->name('post.add');
     Route::get('post/add', [PostAdminController::class, 'index'])->name('post.add');
     Route::get('post/edit/{post:slug}', EditComponentPost::class)->name('post.edit');
-    // APPOINTMENT
-    Route::get('appointments', [AppointmentsController::class,'create'])->name('appointements.index');
 });
 
 // ----------------------GENERAL------------------------------------

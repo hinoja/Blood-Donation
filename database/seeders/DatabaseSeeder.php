@@ -28,6 +28,18 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DaysHospitalSeeder::class,
         ]);
+        User::factory()->create([
+            'name' => 'peronal1',
+            'email' => 'tateon@artfact.com',
+            'role_id' => 4,
+            'is_active' => true,
+        ]);
+        User::factory()->create([
+            'name' => 'peronal1',
+            'email' => 'mailtor@artfact.com',
+            'role_id' => 4,
+            'is_active' => true,
+        ]);
         User::factory()
             ->create([
                 'name' => 'Super Admin',
@@ -47,7 +59,8 @@ class DatabaseSeeder extends Seeder
             'role_id' => 1,
             'is_active' => true,
         ]);
-        User::factory(10)->create();
+
+        User::factory(5)->create();
         Contact::factory(10)->create();
         Tag::factory(10)->create();
         Tag::factory(10)->create();

@@ -15,10 +15,11 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ((int) $request->user()->role_id !== (int) 1) {
-            abort(403, trans('You don\'t have the right  to access this dashborad'));
-        }
-
+        // if ((int) $request->user()->role_id !== (int) 1) {
+        //     abort(403, trans('You don\'t have the right  to access this dashborad'));
+        // }
         return $next($request);
+
+
     }
 }

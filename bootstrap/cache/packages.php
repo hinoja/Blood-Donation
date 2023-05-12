@@ -56,6 +56,17 @@
       0 => 'Carbon\\Laravel\\ServiceProvider',
     ),
   ),
+  'nnjeim/world' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Nnjeim\\World\\WorldServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Country' => 'Nnjeim\\World\\World',
+    ),
+  ),
   'nunomaduro/collision' => 
   array (
     'providers' => 

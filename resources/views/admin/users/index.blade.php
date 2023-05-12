@@ -43,21 +43,25 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td>{{ $user->name }}   @if ($user->last_seen >= now()->subMinutes(2) )
-                                                 {{-- <i class="fas fa-circle  text-success"></i> --}}
-                                                <i class="badge badge-pill badge-success"> Online </i>        @endif</td>
+                                            <td>{{ $user->name }} @if ($user->last_seen >= now()->subMinutes(2))
+                                                    {{-- <i class="fas fa-circle  text-success"></i> --}}
+                                                    <i class="badge badge-pill badge-success"> Online </i>
+                                                @endif
+                                            </td>
                                             <td>{{ $user->email }} </td>
                                             <td>
                                                 @if ($user->is_active)
-                                                   <div class="py-2 px-2">
-                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-info ">
-                                                        @lang('Yes')</span>
-                                                   </div>
+                                                    <div class="py-2 px-2">
+                                                        <span
+                                                            class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-info ">
+                                                            @lang('Yes')</span>
+                                                    </div>
                                                 @else
-                                                <div class="py-2 px-2">
-                                                    <span class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-dark ">
-                                                        @lang('No')</span>
-                                                   </div>
+                                                    <div class="py-2 px-2">
+                                                        <span
+                                                            class="py-1 px-3 rounded-full text-white badge-pill waves-effect text-lg bg-dark ">
+                                                            @lang('No')</span>
+                                                    </div>
                                                 @endif
                                             </td>
                                             <td>
@@ -65,11 +69,12 @@
                                             </td>
                                             <td>
                                                 @if ($user->role_id > 1)
-                                                <form method="POST"
+                                                    <form method="POST"
                                                         action="{{ route('admin.users.status', $user->id) }}">
                                                         @csrf
                                                         @method('PATCH')
                                                         <a href="{{ route('admin.users.status', $user->id) }}"
+                                                            title="{{ $user->is_active ? __('Block') : __('Unblock') }}"
                                                             onclick="event.preventDefault();
                                                             this.closest('form').submit();"
                                                             class="btn btn-{{ $user->is_active ? 'danger' : 'primary' }}">
@@ -81,7 +86,7 @@
 
                                                         </a>
                                                     </form>
-                                                    @endif
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

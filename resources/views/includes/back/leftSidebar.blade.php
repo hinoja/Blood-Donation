@@ -81,13 +81,22 @@
             </li>
             <li> <a href="javascript:void(0);"><i class="zmdi zmdi-chart-donut col-blue"></i><span>Information</span>
                 </a> </li>   --}}
-            <li class="@if (Str::contains($currentUri, 'hospitals')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.hospitals') }}"><i class="fas fa-hospital-symbol"></i>
-                    <span>@lang('Hospitals')</span></a>
-            </li>
-            <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
-                    <span>@lang('Users')</span></a>
+
+            {{--  Admin  --}}
+            @if (Auth()->user()->role_id === 1)
+                <li class="@if (Str::contains($currentUri, 'hospitals')) active open @endif">
+                    <a class="nav-link" href="{{ route('admin.hospitals') }}"><i class="fas fa-hospital-symbol"></i>
+                        <span>@lang('Hospitals')</span></a>
+                </li>
+                <li class="@if (Str::contains($currentUri, 'users')) active open @endif">
+                    <a class="nav-link" href="{{ route('admin.users.index') }}"><i class="zmdi zmdi-account-o"></i>
+                        <span>@lang('Users')</span></a>
+                </li>
+            @endif
+
+            <li class="@if (Str::contains($currentUri, 'personnal')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.staffHospitalsindex') }}"><i class="zmdi zmdi-account-o"></i>
+                    <span>@lang('StaffHospitals')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'appointments')) active open @endif">
                 <a class="nav-link" href="{{ route('admin.appointements.index') }}"><i
@@ -98,17 +107,21 @@
                 <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
                     <span>@lang('Posts')</span></a>
             </li>
-            <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.contacts') }}"><i class="fa fa-comment"></i>
-                    <span>@lang('Messages')</span></a>
-            </li>
 
-            <li>
-                <a class="nav-link"
-                    href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
-                    {{-- href="{{ route('l5-swagger.default.api') }}" --}}><i class="fas fa-book-reader"></i>
-                    <span>@lang('Api Docs')</span></a>
-            </li>
+            {{--  Admin  --}}
+            @if (Auth()->user()->role_id === 1)
+                <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">
+                    <a class="nav-link" href="{{ route('admin.contacts') }}"><i class="fa fa-comment"></i>
+                        <span>@lang('Messages')</span></a>
+                </li>
+
+                <li>
+                    <a class="nav-link"
+                        href="https://documenter.getpostman.com/view/23861571/2s93XsYSBu#0ff25755-500a-494c-ae27-136d2c5947bc"
+                        {{-- href="{{ route('l5-swagger.default.api') }}" --}}><i class="fas fa-book-reader"></i>
+                        <span>@lang('Api Docs')</span></a>
+                </li>
+            @endif
         </ul>
     </div>
     <!-- #Menu -->
