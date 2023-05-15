@@ -62,7 +62,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
-                        href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
+                            href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
@@ -86,18 +86,19 @@
                                     <a class="nav-link" href="{{ route('register') }}">@lang('Register')</a>
                                 @endif
                             </li> --}}
-                            @endauth
-                            @endif
+                        @endauth
+                    @endif
 
-                        </li>
+                    </li>
 
-                    </ul>
-                </div>
-                <div class="navbar-out order-2 order-xl-3">
+                </ul>
+            </div>
+            <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
+
                     <ul class="nav-item dropdown navbar-nav " class="input mb-0">
                         {{-- <button type="button" wire:click="ChangeLang('fr')">Value</button> --}}
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

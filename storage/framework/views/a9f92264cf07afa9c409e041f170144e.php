@@ -41,7 +41,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if(Str::contains($currentUri, 'Hospital')): ?> active <?php endif; ?>"
-                        href="<?php echo e(route('front.register.hospital')); ?>"><?php echo app('translator')->get('Register Hospital'); ?></a>
+                            href="<?php echo e(route('front.register.hospital')); ?>"><?php echo app('translator')->get('Register Hospital'); ?></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if(Str::contains($currentUri, 'contact-us')): ?> active <?php endif; ?>"
@@ -59,18 +59,19 @@
                                 <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo app('translator')->get('Log in'); ?></a>
                             </li>
                             
-                            <?php endif; ?>
-                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
 
-                        </li>
+                    </li>
 
-                    </ul>
-                </div>
-                <div class="navbar-out order-2 order-xl-3">
+                </ul>
+            </div>
+            <div class="navbar-out order-2 order-xl-3">
                 <div class="navbar-out__group">
                     <a href="javascript:void(0)" class="search-icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
+
                     <ul class="nav-item dropdown navbar-nav " class="input mb-0">
                         
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

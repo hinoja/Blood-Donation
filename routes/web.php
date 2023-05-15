@@ -93,7 +93,8 @@ Route::middleware('auth', 'checkRole:1')->prefix('admin')->name('admin.')->group
 });
 
 // ----------------------GENERAL------------------------------------
-Route::get('lang/{locale}', LangController::class)->name('lang');
+// Route::get('lang/{locale}', LangController::class)->name('lang');
+Route::get('lang/{locale?}', LangController::class)->name('lang');
 // Route::get('lang/{locale?}', LangController::class)->name('lang');
 
 require __DIR__ . '/auth.php';

@@ -1,3 +1,4 @@
+
 <?php $__env->startSection('title',__('Welome')); ?>
 <?php $__env->startSection('content'); ?>
     <!-- ==== hero section start ==== -->
