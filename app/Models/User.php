@@ -26,8 +26,14 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'avatar',
         'password',
+        'last_seen',
+        'phone_number',
+        'birth_date',
+        'is_active',
         'role_id',
+        'device_key',
     ];
     // ACCESSORS
     public function avatar(): Attribute
@@ -39,7 +45,7 @@ class User extends Authenticatable
 
     /**
 
-    * The attributes that should be hidden for serialization.
+     * The attributes that should be hidden for serialization.
      *
      * @var array<int, string>
      */

@@ -76,7 +76,10 @@
                 <a class="nav-link" href="<?php echo e(route('admin.posts.index')); ?>"><i class="fa fa-newspaper"></i>
                     <span><?php echo app('translator')->get('Posts'); ?></span></a>
             </li>
-
+            <li class="<?php if(Str::contains($currentUri, 'post')): ?> active open <?php endif; ?>">
+                <a class="nav-link" href="<?php echo e(route('admin.posts.index')); ?>"><i class="fa fa-newspaper"></i>
+                    <span><?php echo app('translator')->get('Alert'); ?></span></a>
+            </li>
             
             <?php if(Auth()->user()->role_id === 1): ?>
                 <li class="<?php if(Str::contains($currentUri, 'contacts')): ?> active open <?php endif; ?>">

@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('birth_date')->nullable();
             $table->boolean('is_active')->default(true);
             $table->rememberToken();
+            $table->string('device_key')->nullable();
             $table->timestamps();
         });
     }
