@@ -40,8 +40,9 @@ Route::get('hospitals', HospitalsController::class);
 
 // Normaly requiert to authentificate
 Route::get('user/{id}', [ProfileController::class, 'getProfile']);
-Route::get('user/appointments/{id}', [UserAppointmentsController::class, 'appointments']);
+Route::get('user/appointments/{userid}', [UserAppointmentsController::class, 'appointments']);
 Route::delete('delete/user/{id}', [AuthentificationController::class, 'destroy']);
+Route::post('appointment/store', [UserAppointmentsController::class, 'store']);
 
 
 

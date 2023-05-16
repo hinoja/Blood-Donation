@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Appointement extends Model
 {
     use HasFactory;
-    protected $fillable = ['user_id', 'hospital_id', 'start'];
+    protected $fillable = ['user_id', 'hospital_id', 'start','is_validated'];
     // public function appointements()
     // {
     //     return $this->hasMany(Appointement::class);
@@ -38,5 +38,5 @@ class Appointement extends Model
 
         return $dateline ? Carbon::parse($dateline)->translatedFormat($format) : null;
     }
-     
+
 }
