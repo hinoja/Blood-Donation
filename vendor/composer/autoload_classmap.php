@@ -65,6 +65,7 @@ return array(
     'App\\Models\\Tag' => $baseDir . '/app/Models/Tag.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Notifications\\Admin\\Contact\\ContactNotification' => $baseDir . '/app/Notifications/Admin/Contact/ContactNotification.php',
+    'App\\Notifications\\Amin\\Hospitals\\ActivateHospitalNotification' => $baseDir . '/app/Notifications/Amin/Hospitals/ActivateHospitalNotification.php',
     'App\\Notifications\\front\\Contact\\ContactConfirmationNotification' => $baseDir . '/app/Notifications/front/Contact/ContactConfirmationNotification.php',
     'App\\Notifications\\password\\Front\\ResetPasswordNotification' => $baseDir . '/app/Notifications/password/Front/ResetPasswordNotification.php',
     'App\\Notifications\\password\\ResetPasswordNotification' => $baseDir . '/app/Notifications/password/ResetPasswordNotification.php',

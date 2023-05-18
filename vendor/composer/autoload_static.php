@@ -619,6 +619,7 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         'App\\Models\\Tag' => __DIR__ . '/../..' . '/app/Models/Tag.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Notifications\\Admin\\Contact\\ContactNotification' => __DIR__ . '/../..' . '/app/Notifications/Admin/Contact/ContactNotification.php',
+        'App\\Notifications\\Amin\\Hospitals\\ActivateHospitalNotification' => __DIR__ . '/../..' . '/app/Notifications/Amin/Hospitals/ActivateHospitalNotification.php',
         'App\\Notifications\\front\\Contact\\ContactConfirmationNotification' => __DIR__ . '/../..' . '/app/Notifications/front/Contact/ContactConfirmationNotification.php',
         'App\\Notifications\\password\\Front\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/password/Front/ResetPasswordNotification.php',
         'App\\Notifications\\password\\ResetPasswordNotification' => __DIR__ . '/../..' . '/app/Notifications/password/ResetPasswordNotification.php',
