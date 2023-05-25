@@ -35,7 +35,8 @@ Route::middleware('auth')->group(function () {
 
 //----------------------------FRONT------------------------------
 
-Route::get('register/cities', [RegisterController::class, 'index']);
+// Route::get('register/cities', [RegisterController::class, 'index']);
+// Route::get('register/states', [RegisterController::class, 'index']);
 
 Route::get('dashboard', function () {
     return view('dashboard');
@@ -62,7 +63,7 @@ Route::post('reset-password', [updatePasswordController::class, 'updating'])
 
 // --------------------------ADMIN--------------------------
 // Role Admin+ Hospital(Admin+ Staff)
-Route::middleware(['auth','checkRole:2','checkRole:1','checkRole:4'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth', 'checkRole:2', 'checkRole:1', 'checkRole:4'])->prefix('admin')->name('admin.')->group(function () {
 
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
     // StaffHospitals

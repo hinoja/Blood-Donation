@@ -27,7 +27,10 @@ use App\Http\Controllers\API\UserAppointmentsController;
 // Route::post('register', [AuthentificationController::class, 'login']);
 Route::post('login', [AuthentificationController::class, 'login']);
 // register
-// Route::get('register/cities', [RegisterController::class, 'index']);
+Route::post('register/donor', [AuthentificationController::class, 'register']);
+
+Route::get('register/cities', [AuthentificationController::class, 'cities']);
+Route::get('register/states', [AuthentificationController::class, 'states']);
 // reset password
 Route::post('forgotpassword/get/email', GetEmailController::class);
 Route::post('reset-password', updatePasswordController::class);

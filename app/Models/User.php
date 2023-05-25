@@ -18,6 +18,17 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    const GROUPBLOOD = [
+        1 => 'AB+',
+        2 => 'AB-',
+        3 => 'O+',
+        4 => 'O-',
+        5 => 'A+',
+        6 => 'A-',
+        7 => 'B+',
+        8 => 'B-',
+
+    ];
     /**
      * The attributes that are mass assignable.
      *

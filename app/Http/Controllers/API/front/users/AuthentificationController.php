@@ -2,15 +2,24 @@
 
 namespace App\Http\Controllers\API\front\users;
 
+
+
 use App\Models\User;
+use Laravolt\Avatar\Facade as Avatar;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\front\RegisterUserNotification;
 
 class AuthentificationController extends Controller
 {
+    /**
+     * function to login
+     */
     public function login(Request $request)
     {
         $request->validate([
@@ -50,6 +59,103 @@ class AuthentificationController extends Controller
         }
 
         return response()->json($data);
+    }
+
+    /**
+     *
+     */
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:8'],
+            'birth_date' => ['nullable', 'date', 'before:now()'],
+            'phone_number' => ['nullable', 'unique:user,phone_number'],
+            'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
+            'location' => ['nullable', 'exists:cities,id'],
+        ]);
+
+        try {
+
+            if (User::where('email', $request->email)->first()) {
+                return response()->json([
+                    'Staus' => 'exist',
+                    'message' => 'User already exists',
+
+                ]);
+            } else {
+                $data = [
+                    'name' => $request->name,
+                    'password' => Hash::make($request->password),
+                    'email' => $request->email,
+                    'location' => $request->location ? $request->location : null,
+                    'phone_number' => $request->phone_number  ? $request->phone_number : null,
+                    'groupBlood' => $request->type ? $request->type : null,
+                    'birth_date' => $request->birth_date ? $request->birth_date : null,
+                    'role_id' => 3, //donor
+                    // 'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $request->name, false),
+                    'avatar' => $request->name,
+                ];
+                Avatar::create($request->name)->save(storage_path('app/public/storage/users/avatars/avatar-' . $request->id . '.png', $quality = 90));
+
+                // Avatar::create( $request->name)->setDimension(500, 500)->save('public/storage/users/avatars/');
+                $user = User::create($data);
+                $token = $user->createToken('auth_token')->plainTextToken;
+                Notification::send($user, RegisterUserNotification::class);
+                Auth::login($user);
+                return response()->json([
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'Staus' => 'true',
+                    'email' => $user->email,
+                    'role' => $user->role->name,
+                    'avatar' =>  $user->avatar,
+                    'token' => $token,
+                    'message' => 'User successfully registered',
+
+                ]);
+            }
+        } catch (\Exception $e) {
+            return response()->json([
+                'Staus' => 'false',
+                'message' => $e->getMessage(),
+            ]);
+        }
+    }
+    /**
+     *
+     */
+    public function cities()
+    {
+        try {
+
+            return response()->json([
+                'Staus' => 'true',
+                'cities' => DB::table('cities')->where('country_id', 38)->orderBy('name', 'asc')->get(),
+                // return all cities
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Staus' => 'false',
+                'message' => $e->getMessage(),
+            ]);
+        }
+    }
+    public function states()
+    {
+        try {
+            return response()->json([
+                'Staus' => 'true',
+                'cities' => DB::table('states')->where('country_id', 38)->orderBy('name', 'asc')->get(),
+
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'Staus' => 'false',
+                'message' => $e->getMessage(),
+            ]);
+        }
     }
     /**
      * detroy  user account
