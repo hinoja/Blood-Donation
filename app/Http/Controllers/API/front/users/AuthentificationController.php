@@ -72,7 +72,7 @@ class AuthentificationController extends Controller
             'password' => ['required', 'min:8'],
             'birth_date' => ['nullable', 'date', 'before:now()'],
             'phone_number' => ['nullable', 'unique:user,phone_number'],
-            'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
+            // 'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
             'location' => ['nullable', 'exists:cities,id'],
         ]);
 
@@ -85,25 +85,27 @@ class AuthentificationController extends Controller
 
                 ]);
             } else {
+                // $avatarImage=fake()->image('public/storage/users/avatars/', 500, 500, $request->name, false);
                 $data = [
                     'name' => $request->name,
                     'password' => Hash::make($request->password),
                     'email' => $request->email,
                     'location' => $request->location ? $request->location : null,
                     'phone_number' => $request->phone_number  ? $request->phone_number : null,
-                    'groupBlood' => $request->type ? $request->type : null,
+                    // 'groupBlood' => $request->type ? $request->type : null,
                     'birth_date' => $request->birth_date ? $request->birth_date : null,
                     'role_id' => 3, //donor
-                    // 'avatar' => fake()->image('public/storage/users/avatars/', 500, 500, $request->name, false),
-                    'avatar' => $request->name,
+                    'avatar' => fake()->image(storage_path('app/public/users/avatars/'), 500, 500, $request->name, false),
+                    // 'avatar' => $avatarImage,
                 ];
-                Avatar::create($request->name)->save(storage_path('app/public/storage/users/avatars/avatar-' . $request->id . '.png', $quality = 90));
+                // Avatar::create($request->name)->save(storage_path('app/public/storage/users/avatars/avatar-' . $request->id . '.png', $quality = 90));
 
                 // Avatar::create( $request->name)->setDimension(500, 500)->save('public/storage/users/avatars/');
                 $user = User::create($data);
                 $token = $user->createToken('auth_token')->plainTextToken;
-                Notification::send($user, RegisterUserNotification::class);
+                Notification::send($user, new RegisterUserNotification() );
                 Auth::login($user);
+
                 return response()->json([
                     'id' => $user->id,
                     'name' => $user->name,

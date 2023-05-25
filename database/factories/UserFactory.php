@@ -3,7 +3,6 @@
 namespace Database\Factories;
 
 use Illuminate\Support\Str;
-use Laravolt\Avatar\Avatar;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
