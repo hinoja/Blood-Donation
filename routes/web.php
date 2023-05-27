@@ -10,6 +10,7 @@ use App\Http\Livewire\Admin\Posts\EditComponentPost;
 use App\Http\Controllers\Admin\users\UsersController;
 use App\Http\Controllers\Admin\AppointmentsController;
 use App\Http\Controllers\Admin\posts\PostAdminController;
+use App\Http\Controllers\Admin\WebNotificationController;
 use App\Http\Controllers\Auth\Customize\GetEmailController;
 use App\Http\Controllers\API\front\users\RegisterController;
 use App\Http\Controllers\Auth\Customize\updatePasswordController;
@@ -98,4 +99,8 @@ Route::middleware('auth', 'checkRole:1')->prefix('admin')->name('admin.')->group
 Route::get('lang/{locale}', LangController::class)->name('lang');
 // Route::get('lang/{locale?}', LangController::class)->name('lang');
 
+Route::patch('/fcm-token', [WebNotificationController::class, 'updateToken'])->name('fcmTokenPushNotification');
+Route::view('/admin/alert','admin.Alert', )->name('admin.alertNotification');
+
+Route::post('/send-notification',[WebNotificationController::class,'notification'])->name('notification');
 require __DIR__ . '/auth.php';

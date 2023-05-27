@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'acc71adeb61ab1b7fbdcc3de1039905ae7d46326',
+        'reference' => '48add3ff44edea0e27e9fe1dcf6fe30eedae20ec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -397,6 +397,15 @@
                 0 => '*',
             ),
         ),
+        'kutia-software-company/larafirebase' => array(
+            'pretty_version' => '1.3.7',
+            'version' => '1.3.7.0',
+            'reference' => 'c25c1e9f422e16b50d2c625b0a5d80ba50af03fc',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../kutia-software-company/larafirebase',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'laravel/breeze' => array(
             'pretty_version' => 'v1.19.2',
             'version' => '1.19.2.0',
@@ -418,7 +427,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'acc71adeb61ab1b7fbdcc3de1039905ae7d46326',
+            'reference' => '48add3ff44edea0e27e9fe1dcf6fe30eedae20ec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -45,6 +45,7 @@ class User extends Authenticatable
         'is_active',
         'role_id',
         'device_key',
+        'fcm_token',
     ];
     // ACCESSORS
     public function avatar(): Attribute

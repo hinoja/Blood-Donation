@@ -32,6 +32,7 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '86b1a3c81386576820df6ff03395c2c7' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Helpers/All.php',
         'a1cfe24d14977df6878b9bf804af2d1c' => __DIR__ . '/..' . '/nunomaduro/collision/src/Adapters/Phpunit/Autoload.php',
         'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '6b34c85f7b1ad6faa15aa12109e030f2' => __DIR__ . '/..' . '/realrashid/sweet-alert/src/functions.php',
@@ -133,6 +134,10 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
             'Laravel\\Breeze\\' => 15,
+        ),
+        'K' => 
+        array (
+            'Kutia\\Larafirebase\\' => 19,
         ),
         'J' => 
         array (
@@ -462,6 +467,10 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         array (
             0 => __DIR__ . '/..' . '/laravel/breeze/src',
         ),
+        'Kutia\\Larafirebase\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src',
+        ),
         'Jantinnerezo\\LivewireAlert\\' => 
         array (
             0 => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src',
@@ -655,6 +664,7 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         'App\\Notifications\\Admin\\Contact\\ContactNotification' => __DIR__ . '/../..' . '/app/Notifications/Admin/Contact/ContactNotification.php',
         'App\\Notifications\\Admin\\ValidateAppointmentNotification' => __DIR__ . '/../..' . '/app/Notifications/Admin/ValidateAppointmentNotification.php',
         'App\\Notifications\\Amin\\Hospitals\\ActivateHospitalNotification' => __DIR__ . '/../..' . '/app/Notifications/Amin/Hospitals/ActivateHospitalNotification.php',
+        'App\\Notifications\\SendPushNotification' => __DIR__ . '/../..' . '/app/Notifications/SendPushNotification.php',
         'App\\Notifications\\front\\Contact\\ContactConfirmationNotification' => __DIR__ . '/../..' . '/app/Notifications/front/Contact/ContactConfirmationNotification.php',
         'App\\Notifications\\front\\RegisterNotification' => __DIR__ . '/../..' . '/app/Notifications/front/RegisterNotification.php',
         'App\\Notifications\\front\\RegisterUserNotification' => __DIR__ . '/../..' . '/app/Notifications/front/RegisterUserNotification.php',
@@ -3004,6 +3014,12 @@ class ComposerStaticInit48ec1af5e7ff8edb2f1938944f522cb0
         'Jantinnerezo\\LivewireAlert\\Exceptions\\AlertException' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/Exceptions/AlertException.php',
         'Jantinnerezo\\LivewireAlert\\LivewireAlert' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/LivewireAlert.php',
         'Jantinnerezo\\LivewireAlert\\LivewireAlertServiceProvider' => __DIR__ . '/..' . '/jantinnerezo/livewire-alert/src/LivewireAlertServiceProvider.php',
+        'Kutia\\Larafirebase\\Channels\\FirebaseChannel' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Channels/FirebaseChannel.php',
+        'Kutia\\Larafirebase\\Exceptions\\UnsupportedTokenFormat' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Exceptions/UnsupportedTokenFormat.php',
+        'Kutia\\Larafirebase\\Facades\\Larafirebase' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Facades/Larafirebase.php',
+        'Kutia\\Larafirebase\\Messages\\FirebaseMessage' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Messages/FirebaseMessage.php',
+        'Kutia\\Larafirebase\\Providers\\LarafirebaseServiceProvider' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Providers/LarafirebaseServiceProvider.php',
+        'Kutia\\Larafirebase\\Services\\Larafirebase' => __DIR__ . '/..' . '/kutia-software-company/larafirebase/src/Services/Larafirebase.php',
         'Laravel\\Breeze\\BreezeServiceProvider' => __DIR__ . '/..' . '/laravel/breeze/src/BreezeServiceProvider.php',
         'Laravel\\Breeze\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallCommand.php',
         'Laravel\\Breeze\\Console\\InstallsApiStack' => __DIR__ . '/..' . '/laravel/breeze/src/Console/InstallsApiStack.php',

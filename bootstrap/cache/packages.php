@@ -21,6 +21,13 @@
       'LivewireAlert' => 'Jantinnerezo\\LivewireAlert\\LivewireAlertFacade',
     ),
   ),
+  'kutia-software-company/larafirebase' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Kutia\\Larafirebase\\Providers\\LarafirebaseServiceProvider',
+    ),
+  ),
   'laravel/breeze' => 
   array (
     'providers' => 

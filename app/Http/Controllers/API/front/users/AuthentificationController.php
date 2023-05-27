@@ -103,7 +103,7 @@ class AuthentificationController extends Controller
                 // Avatar::create( $request->name)->setDimension(500, 500)->save('public/storage/users/avatars/');
                 $user = User::create($data);
                 $token = $user->createToken('auth_token')->plainTextToken;
-                Notification::send($user, new RegisterUserNotification() );
+                Notification::send($user, new RegisterUserNotification );
                 Auth::login($user);
 
                 return response()->json([

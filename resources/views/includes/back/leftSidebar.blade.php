@@ -110,7 +110,7 @@
                     <span>@lang('Posts')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('admin.alertNotification') }}"><i class="fa fa-newspaper"></i>
                     <span>@lang('Alert')</span></a>
             </li>
             {{--  Admin  --}}
