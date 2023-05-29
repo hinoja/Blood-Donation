@@ -85,6 +85,7 @@ class AuthentificationController extends Controller
 
                 ]);
             } else {
+
                 // $avatarImage=fake()->image('public/storage/users/avatars/', 500, 500, $request->name, false);
                 $data = [
                     'name' => $request->name,
@@ -95,15 +96,16 @@ class AuthentificationController extends Controller
                     // 'groupBlood' => $request->type ? $request->type : null,
                     'birth_date' => $request->birth_date ? $request->birth_date : null,
                     'role_id' => 3, //donor
-                    'avatar' => fake()->image(storage_path('app/public/users/avatars/'), 500, 500, $request->name, false),
-                    // 'avatar' => $avatarImage,
+                    // 'avatar' => fake()->image(storage_path('app/public/users/avatars/'), 500, 500, $request->name, false),
                 ];
                 // Avatar::create($request->name)->save(storage_path('app/public/storage/users/avatars/avatar-' . $request->id . '.png', $quality = 90));
 
                 // Avatar::create( $request->name)->setDimension(500, 500)->save('public/storage/users/avatars/');
                 $user = User::create($data);
+                Avatar::create($request->name)->save(storage_path('app/public/users/avatars/' . uniqid($request->name) . '.png', $quality = 100));
+                // $user->avatar = Avatar::create($request->name)->save(storage_path('app/public/users/avatars/' . $request->name . '.png', $quality = 100));
                 $token = $user->createToken('auth_token')->plainTextToken;
-                Notification::send($user, new RegisterUserNotification );
+                // Notification::send($user, new RegisterUserNotification );
                 Auth::login($user);
 
                 return response()->json([

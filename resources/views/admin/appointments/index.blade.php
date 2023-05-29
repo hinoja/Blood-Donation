@@ -29,10 +29,9 @@
                     <div role="tabpanel" class="tab-pane in active" id="profile">
                         @livewire('admin.manage-appointment')
                     </div>
-                    <div role="tabpanel"  id="home">
+                    <div role="tabpanel" id="home">
                         <div class="container">
                             <div id="calendar-container" wire:ignore>
-
                                 <style>
                                     #calendar {
                                         margin: 0px auto;

@@ -515,7 +515,7 @@ body {
 }
 .message-card.mc-sender .message {
   direction: ltr;
-  color: #fff !important;
+  color: black !important;
   background: var(--primary-color) !important;
 }
 .message-card.mc-sender .message .message-time {
