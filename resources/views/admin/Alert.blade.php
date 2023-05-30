@@ -27,7 +27,7 @@
                     <div class="body">
                         <style>
                             body {
-                                background: #f3c538;
+                                /* background: #f3c538; */
                             }
 
                             .forget-pwd>a {
@@ -107,7 +107,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
                                                                 class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                                        <input id="forgetAnswer" name="title" placeholder="title"
+                                                        <input  name="title" placeholder="title"
                                                             class="form-control" type="text">
                                                     </div>
                                                     @error('title')
@@ -118,7 +118,7 @@
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><i
                                                                 class="glyphicon glyphicon-envelope color-blue"></i></span>
-                                                        <input id="forgetAnswer" name="message" placeholder="message"
+                                                        <input  name="message" placeholder="message"
                                                             class="form-control" type="text">
                                                     </div>
                                                     @error('message')
