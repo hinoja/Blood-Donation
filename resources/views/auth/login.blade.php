@@ -70,7 +70,7 @@
                             name="remember" id="remember_me" type="checkbox" name="terms" id="terms"
                             class="filled-in chk-col-pink">
                         <label for="remember_me"><span
-                                class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                class="ml-2 text-sm text-gray-600">{{ __('Remember mjjke') }}</span>
                         </label>
                     </div>
 

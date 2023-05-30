@@ -67,6 +67,8 @@ return array(
     'App\\Http\\Requests\\Auth\\LoginRequest' => $baseDir . '/app/Http/Requests/Auth/LoginRequest.php',
     'App\\Http\\Requests\\ProfileUpdateRequest' => $baseDir . '/app/Http/Requests/ProfileUpdateRequest.php',
     'App\\Models\\Appointement' => $baseDir . '/app/Models/Appointement.php',
+    'App\\Models\\ChFavorite' => $baseDir . '/app/Models/ChFavorite.php',
+    'App\\Models\\ChMessage' => $baseDir . '/app/Models/ChMessage.php',
     'App\\Models\\Contact' => $baseDir . '/app/Models/Contact.php',
     'App\\Models\\DaysHospital' => $baseDir . '/app/Models/DaysHospital.php',
     'App\\Models\\Donor' => $baseDir . '/app/Models/Donor.php',
