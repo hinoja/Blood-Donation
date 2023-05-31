@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+
+use Carbon\Carbon;
 use App\Models\Event;
 use App\Models\Appointement;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\Admin\ValidateAppointmentNotification;
 
 class AppointmentsController extends Controller
 {
@@ -29,25 +32,10 @@ class AppointmentsController extends Controller
                 // 'end' => null,
             ];
         }
-
-
-        // $events=[];
-        // $events =Event::all();
-        // json_encode(Event::all());
-        // dd($events);
-        // $events = Event::get();
         return view(
             'admin.appointments.index',
             compact('events')
         );
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function validateAppointment(Appointement $appointement)
-    {
-        // $appointement->user()->email
-        $appointement->is_validate=1;
-    }
-}
+ }

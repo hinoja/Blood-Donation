@@ -41,10 +41,11 @@
                             <td>
                                 <button wire:click="showDeleteForm({{ $post }})"
                                     class="btn btn-danger  waves-effect"><i class="fa fa-trash "></i> </button>
-                                    <button wire:click="showPublishForm({{ $post }})"
+                                <button wire:click="showPublishForm({{ $post }})"
                                     class="btn btn-{{ $post->published_at ? 'success' : 'warning' }} "><i
-                                    class="fas fa-cloud-upload-alt"></i> </button>
-                                    <a  href="{{ route('admin.post.edit',['post'=>$post]) }}" class="btn btn-primary"><i class="fa fa-edit"></i> </a>
+                                        class="fas fa-cloud-upload-alt"></i> </button>
+                                <a href="{{ route('admin.post.edit', ['post' => $post]) }}" class="btn btn-primary"><i
+                                        class="fa fa-edit"></i> </a>
                             </td>
                         </tr>
                     @endforeach
@@ -58,7 +59,7 @@
 
 
     {{-- Modal:   Delete --}}
-    <div style="background:rgba(0, 0, 0, 0.3)" wire:ignore.self class="modal fade" id="DeleteModal" tabindex="-1"
+    <div style="background:rgba(246, 45, 45, 0.3)" wire:ignore.self class="modal fade" id="DeleteModal" tabindex="-1"
         role="dialog" aria-labelledby="EditCategoryLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -72,7 +73,6 @@
                     <div class="modal-body">
                         <p class="text-danger font-weight-bold">@lang('Are you sure you want to delete this post?')
                             <br>
-                            {{-- @lang('This will also remove all subcategories and jobs linked to that category.') --}}
                         </p>
                         </span>
                         <br>
@@ -115,7 +115,6 @@
                     <div class="modal-body">
                         <p class="text-danger font-weight-bold">@lang('Are you sure you want to publish this post?')
                             <br>
-                            {{-- @lang('This will also remove all subcategories and jobs linked to that category.') --}}
                         </p>
                         </span>
                         <br>

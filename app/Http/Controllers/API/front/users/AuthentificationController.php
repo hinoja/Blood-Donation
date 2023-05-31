@@ -72,7 +72,7 @@ class AuthentificationController extends Controller
             'password' => ['required', 'min:8'],
             'birth_date' => ['nullable', 'date', 'before:now()'],
             'phone_number' => ['nullable', 'unique:user,phone_number'],
-            // 'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
+            'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
             'location' => ['nullable', 'exists:cities,id'],
         ]);
 

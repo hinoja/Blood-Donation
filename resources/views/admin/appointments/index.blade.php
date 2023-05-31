@@ -30,7 +30,8 @@
                         @livewire('admin.manage-appointment')
                     </div>
                     <div role="tabpanel" id="home">
-                        <div class="container">
+                        {{-- calendar --}}
+                        {{-- <div class="container">
                             <div id="calendar-container" wire:ignore>
                                 <style>
                                     #calendar {
@@ -42,15 +43,11 @@
                                 </style>
                                 <div id='calendar'></div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
-
                 </div>
             </div>
             {{-- end Update view --}}
-
-
-
 
         </div>
     </div>
@@ -62,6 +59,16 @@
 @endpush
 @push('js')
     @livewireScripts()
+    <script type="text/javascript">
+        // close message  modal
+        window.livewire.on('closeModal', () => {
+            $('#validateAppointment').modal('hide');
+        });
+        window.livewire.on('openValidateModal', () => {
+            //show modal details
+            $('#validateAppointment').modal('show');
+        });
+    </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
 
@@ -71,20 +78,6 @@
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.6.0/main.min.css' rel='stylesheet' />
 
     <script>
-        // $(document).ready(function() {
-        //     // page is now ready, initialize the calendar...
-        //     events = {!! json_encode($events) !!};
-        //     $('#calendar').fullCalendar({
-        //         // put your options and callbacks here
-        //         headerToolbar: {
-        //             left: 'prev,next today',
-        //             center: 'title',
-        //             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-        //         },
-        //         locale: '{{ config('app.locale') }}',
-        //         events: events,
-        //     })
-        // });
         document.addEventListener('DOMContentLoaded', function() {
 
 

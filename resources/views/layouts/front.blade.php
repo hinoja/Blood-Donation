@@ -53,6 +53,7 @@
 </head>
 
 <body>
+
     @include('sweetalert::alert')
     <!-- ==== topbar start ==== -->
     @include('includes.front.topBar')

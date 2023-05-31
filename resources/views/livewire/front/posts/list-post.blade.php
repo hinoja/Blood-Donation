@@ -1,6 +1,13 @@
 @php
     use Illuminate\Support\Str;
 @endphp
+@push('css')
+    <style>
+        li.active span {
+            color: red;
+        }
+    </style>
+@endpush
 <div>
     <div class="blog-area">
         <div class="row neutral-row justify-content-center">
@@ -11,7 +18,7 @@
                         <div class="blog-area__single img-effect">
                             <div class="poster">
                                 <a href="{{ route('front.blog.show', $post) }}">
-                                    <img  src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                                    <img src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
                                         alt="Helpless" width="352px" height="264px">
                                 </a>
 
@@ -156,6 +163,7 @@
             </div> --}}
         </div>
         <div class="pagination-wrapper">
+
             <nav aria-label="Page navigation">
                 <ul class="pagination  justify-content-center  active">
 

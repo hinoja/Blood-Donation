@@ -68,10 +68,9 @@
                                                 {{ $user->role->name }}
                                             </td>
                                             <td>
-                                                <a class="btn btn-success"
-                                                href="/chatify/{{ $user->id }}"
-                                                 {{-- href="{{ route('chatify',$user->id) }}" --}}
-                                                  title="chat"><i class="fab fa-rocketchat"></i></a>
+                                                <a class="btn btn-success" href="/chatify/{{ $user->id }}"
+                                                    {{-- href="{{ route('chatify',$user->id) }}" --}} title="chat"><i
+                                                        class="fab fa-rocketchat"></i></a>
                                                 @if ($user->role_id > 1)
                                                     <form method="POST"
                                                         action="{{ route('admin.users.status', $user->id) }}">

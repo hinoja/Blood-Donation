@@ -27,7 +27,7 @@
 
             <div class="input">
                 <input type="text" wire:model.defender="subject" name="subject" id="contactSubject"
-                    placeholder="{{ __('Subject') }}" class="input">
+                    placeholder="@lang('Subject')" class="input">
 
                 @error('subject')
                     <span class="text-danger text-center text"><small>{{ $message }}</small></span>

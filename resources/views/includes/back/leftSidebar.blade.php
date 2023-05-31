@@ -97,7 +97,7 @@
             @endif
 
             <li class="@if (Str::contains($currentUri, 'personnal')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.staffHospitalsindex') }}"><i class="zmdi zmdi-account-o"></i>
+                <a class="nav-link" href="{{ route('admin.staffHospitalsindex') }}"><i class="fas fa-user-md"></i>
                     <span>@lang('StaffHospitals')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'appointments')) active open @endif">
@@ -110,7 +110,7 @@
                     <span>@lang('Posts')</span></a>
             </li>
             <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.alertNotification') }}"><i class="fa fa-newspaper"></i>
+                <a class="nav-link" href="{{ route('admin.alertNotification') }}"><i class="fas fa-broadcast-tower"></i>
                     <span>@lang('Alert')</span></a>
             </li>
             {{--  Admin  --}}

@@ -13,9 +13,10 @@ class CheckUserRole
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $role)
+    public function handle(Request $request, Closure $next, int $role)
     {
-        // if ($request->user()->role_id !== (int) $role) {
+        // dd($request->user()->role_id !=  $role, $request->user()->role_id, (int)$role);
+        // if ($request->user()->role_id !=  $role) {
         //     abort(403, 'You don\'t have the right role to access this page');
         // }
 

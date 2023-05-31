@@ -12,7 +12,7 @@ class LangController extends Controller
      */
     public function __invoke(string $locale): RedirectResponse
     {
-        // dd($locale);
+        
         app()->setLocale($locale);
         session()->put('locale', $locale);
 
