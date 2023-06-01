@@ -18,7 +18,9 @@
                             <div class="col-lg-8 row-item">
                                 <div class="blog-default-area__content blog-details blog-default-area__content-alt-two">
                                     <div class="details-poster">
-                                        <img src="@if ($post->image){{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                                        <img  style="max-width: 719px;max-height:400px;"
+                                        {{-- src="@if ($post->image){{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif" --}}
+                                        src=" {{ $post->image }}"
                                             alt="Blog">
                                     </div>
                                     <div class="blog-post-date">

@@ -70,8 +70,8 @@ class AuthentificationController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email'],
             'password' => ['required', 'min:8'],
-            'birth_date' => ['nullable', 'date', 'before:now()'],
-            'phone_number' => ['nullable', 'unique:user,phone_number'],
+            'birth_date' => 'nullable|date|before:' . now()->subYears(18)->format('d-m-Y'),
+            'phone_number' => 'nullable|numeric|unique:users,phone_number|digits:9|starts_with:65,67,68,69,66,232',
             'groupBlood' => ['nullable', Rule::in(array_keys(User::GROUPBLOOD))],
             'location' => ['nullable', 'exists:cities,id'],
         ]);
@@ -82,30 +82,26 @@ class AuthentificationController extends Controller
                 return response()->json([
                     'Staus' => 'exist',
                     'message' => 'User already exists',
-
                 ]);
             } else {
 
-                // $avatarImage=fake()->image('public/storage/users/avatars/', 500, 500, $request->name, false);
+                //    problem with groupBlood
                 $data = [
                     'name' => $request->name,
                     'password' => Hash::make($request->password),
                     'email' => $request->email,
                     'location' => $request->location ? $request->location : null,
-                    'phone_number' => $request->phone_number  ? $request->phone_number : null,
-                    // 'groupBlood' => $request->type ? $request->type : null,
+                    'phone_number' => $request->phone_number  ? "+237" . $request->phone_number : null,
+                    'groupBlood' => $request->groupBlood ? $request->groupBlood : null,
                     'birth_date' => $request->birth_date ? $request->birth_date : null,
                     'role_id' => 3, //donor
                     // 'avatar' => fake()->image(storage_path('app/public/users/avatars/'), 500, 500, $request->name, false),
                 ];
-                // Avatar::create($request->name)->save(storage_path('app/public/storage/users/avatars/avatar-' . $request->id . '.png', $quality = 90));
-
-                // Avatar::create( $request->name)->setDimension(500, 500)->save('public/storage/users/avatars/');
                 $user = User::create($data);
-                Avatar::create($request->name)->save(storage_path('app/public/users/avatars/' . uniqid($request->name) . '.png', $quality = 100));
+                $user->avatar = Avatar::create($request->name)->save(storage_path('app/public/users/avatars/' . uniqid($request->name) . '.png', $quality = 100));
                 // $user->avatar = Avatar::create($request->name)->save(storage_path('app/public/users/avatars/' . $request->name . '.png', $quality = 100));
                 $token = $user->createToken('auth_token')->plainTextToken;
-                // Notification::send($user, new RegisterUserNotification );
+                Notification::send($user, new RegisterUserNotification);
                 Auth::login($user);
 
                 return response()->json([
@@ -113,6 +109,7 @@ class AuthentificationController extends Controller
                     'name' => $user->name,
                     'Staus' => 'true',
                     'email' => $user->email,
+                    'groupBlood' => $user->groupBlood ? $request->groupBlood : null, //faire les correspondances
                     'role' => $user->role->name,
                     'avatar' =>  $user->avatar,
                     'token' => $token,

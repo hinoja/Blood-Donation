@@ -24,8 +24,7 @@
                     @foreach ($posts as $post)
                         <tr>
                             <td class="text-center">{{ $loop->iteration }}</td>
-                            <td class="col-2"> <img width="100"
-                                    src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif"
+                            <td class="col-2"> <img width="100" src="{{ $post->image }}" {{-- src="@if ($post->image) {{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif" --}}
                                     class="col-7" alt=""></td>
                             <td>{{ $post->title }}</td>
                             <td> {{ $post->user->name }} </td>
@@ -59,7 +58,7 @@
 
 
     {{-- Modal:   Delete --}}
-    <div style="background:rgba(246, 45, 45, 0.3)" wire:ignore.self class="modal fade" id="DeleteModal" tabindex="-1"
+    <div style="background:rgba(0, 0, 0, 0.3)" wire:ignore.self class="modal fade" id="DeleteModal" tabindex="-1"
         role="dialog" aria-labelledby="EditCategoryLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

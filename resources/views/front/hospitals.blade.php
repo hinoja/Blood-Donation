@@ -55,11 +55,12 @@ integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="ano
                                         {{-- <p class="neutral-bottom">@lang('The enquiry service answers all the questions it receives') </p> --}}
                                         <div class="group">
                                             <p class="secondary"><i class="fa-solid fa-phone"></i>@lang('Emergency Line'):
-                                               +(237) 688 88 88 88
+                                                +(237) 688 88 88 88
                                             </p>
-                                            <p class="secondary"><i class="fa-solid fa-location-dot"></i>@lang('Location') :
+                                            <p class="secondary"><i class="fa-solid fa-location-dot"></i>@lang('Location')
+                                                :
                                                 Douala
-                                               @lang('Cameroon')</p>
+                                                @lang('Cameroon')</p>
 
                                         </div>
                                     </div>

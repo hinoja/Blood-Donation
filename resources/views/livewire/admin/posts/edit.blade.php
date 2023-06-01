@@ -18,32 +18,16 @@
                                             alt="">
                                     </div>
                                 @endif
-                                <h4 class="mb-0"><strong>Preview Picture</strong> </h4>
-                                {{-- <span class="text-muted col-white">Dentist</span> --}}
+                                <h4 class="mb-0"><strong>@lang("Preview Picture")</strong> </h4>
                                 <div class="mt-10">
                                     <br> <br>
-                                    {{-- <button class="btn btn-raised btn-default bg-blush btn-sm">Follow</button>
-                                <button class="btn btn-raised btn-default bg-green btn-sm">Message</button> --}}
-                                </div>
+                                     </div>
 
                             </div>
                         </div>
                         <div class="profile-sub-header">
                             <div class="box-list">
-                                {{-- <ul class="text-center">
-                                <li> <a href="mail-inbox.html" class=""><i class="zmdi zmdi-email"></i>
-                                    <p>My Inbox</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-camera"></i>
-                                    <p>Gallery</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-attachment"></i>
-                                    <p>Collections</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-format-subject"></i>
-                                    <p>Tasks</p>
-                                    </a> </li>
-                            </ul> --}}
+
                             </div>
                         </div>
                     </section>
@@ -61,7 +45,6 @@
                                 <div class="form-group">
                                     <div class="form-line">
                                         <input type="text" name="title" wire:model.defer="title"
-                                            {{-- value="{{ $post->title }}" --}}
                                              class="form-control"
                                             placeholder="title of post ...">
                                     </div>
@@ -108,8 +91,7 @@
 
                                                 @endforeach
                                             </select>
-                                            {{-- <input type="text" value="{{ $post->tag }}" class="form-control"
-                                                name="name" wire:model.defer="name" placeholder="new tag..."> --}}
+
                                         </div>
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>

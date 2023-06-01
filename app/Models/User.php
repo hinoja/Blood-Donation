@@ -84,7 +84,6 @@ class User extends Authenticatable
         return $this->hasMany(Appointement::class);
     }
 
-
     public function role(): BelongsTo
     {
         return $this->belongsTo(Role::class);

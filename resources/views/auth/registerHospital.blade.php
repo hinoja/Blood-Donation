@@ -100,12 +100,14 @@
         #msform fieldset:not(:first-of-type) {
             display: none;
         }
+
         /*The background card*/
         .card {
             z-index: 0;
             border: none;
             position: relative;
         }
+
         /*FieldSet headings*/
         .fs-title {
             font-size: 25px;
@@ -114,10 +116,12 @@
             font-weight: normal;
             text-align: left;
         }
+
         .purple-text {
             color: #ea062b;
             font-weight: normal;
         }
+
         /*Step Count*/
         .steps {
             font-size: 25px;
@@ -172,6 +176,9 @@
         #progressbar #confirm:before {
             font-family: FontAwesome;
             content: "\f00c";
+            padding-right: 5px;
+            /* margin-right: 4px; */
+
         }
 
         /*Icon ProgressBar before any progress*/
@@ -185,7 +192,7 @@
             background: lightgray;
             border-radius: 50%;
             margin: 0 auto 10px auto;
-            padding: 2px;
+            padding-left: 15px;
         }
 
         /*ProgressBar connectors*/
@@ -247,8 +254,9 @@
                             <h2>Register As Hospital</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Register Now</li>
+                                    <li class="breadcrumb-item"><a href="{{ route('home') }}">@lang('Home')</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" aria-current="page">@lang('Register Now')</li>
                                 </ol>
                             </nav>
                         </div>
@@ -263,15 +271,15 @@
     <section class="registration ">
         <div class="container">
             {{-- <div class="row"> --}}
-                <div class="col-lg-12">
-                    <div class="registration-area wow fadeInUp">
-                        {{-- <div class="section-header section-inner-space">
+            <div class="col-lg-12">
+                <div class="registration-area wow fadeInUp">
+                    {{-- <div class="section-header section-inner-space">
                             <h2 class="neutral-bottom">Blad Ai Organization</h2>
                         </div> --}}
-                        @livewire('front.register-hospital')
-                    </div>
+                    @livewire('front.register-hospital')
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <div class="section-space"></div>

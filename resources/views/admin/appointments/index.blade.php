@@ -4,6 +4,9 @@
 @section('sub-title', 'Description text here...')
 
 @section('content')
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <x-livewire-alert::scripts />
 
     <h3 class="page-title">
         {{-- {{ trans('global.systemCalendar') }} --}}
@@ -29,21 +32,21 @@
                     <div role="tabpanel" class="tab-pane in active" id="profile">
                         @livewire('admin.manage-appointment')
                     </div>
-                    <div role="tabpanel" id="home">
+                    <div role="tabpanel" id="home" wire:ignore.self>
                         {{-- calendar --}}
-                        {{-- <div class="container">
+                        <div class="container">
                             <div id="calendar-container" wire:ignore>
                                 <style>
                                     #calendar {
                                         margin: 0px auto;
                                         padding: 0px;
-                                        height: 1000px;
+                                        height: 800px;
                                         max-width: 1500px;
                                     }
                                 </style>
                                 <div id='calendar'></div>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
             </div>

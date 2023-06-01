@@ -1,6 +1,4 @@
 <div>
-
-
     <!-- start step indicators -->
     <div class=" multi-step">
         <div class="row justify-content-center">
@@ -11,16 +9,16 @@
                         <!-- progressbar -->
                         <ul id="progressbar">
                             <li class="@if ($step === 0 || $step === 1 || $step === 2 || $step === 3) active @endif" id="account">
-                                <strong>Account</strong>
+                                <strong> @lang('Account')</strong>
                             </li>
                             <li id="personal" class="@if ($step === 1 || $step === 2 || $step === 3) active @endif ">
-                                <strong>files</strong>
+                                <strong>@lang('files')</strong>
                             </li>
                             <li id="payment" class="@if ($step === 2 || $step === 3) active @endif ">
                                 <strong>Services</strong>
                             </li>
                             <li id="confirm" class="@if ($step === 3) active @endif ">
-                                <strong>Finish</strong>
+                                <strong>@lang('Finish')</strong>
                             </li>
                         </ul>
                         <div class="progress">
@@ -31,7 +29,7 @@
                         </div>
                         <br>
                         <!-- fieldsets -->
-                        <fieldset>
+                        {{-- <fieldset >
                             <div class="form-card">
                                 <div class="row">
                                 </div>
@@ -43,11 +41,8 @@
                                     <div class="col-7">
                                         <h2 class="fs-title">Personal Information:</h2>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </fieldset>
                         <fieldset>
                             <div class="form-card">
@@ -60,7 +55,7 @@
 
                             </div>
 
-                        </fieldset>
+                        </fieldset> --}}
 
                     </form>
                 </div>
@@ -120,19 +115,20 @@
                                 <label for="urgency_number">Number</label>
                                 {{-- <input wire:model.defer="urgency_number" class="form-control" type="number"
                                     name="urgency_number" required> --}}
-                                <input type="tel" wire:model.defer="urgency_number" class="form-control" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    required>
-
-                                <small>Format: 123-456-7890</small>
+                                <input type="tel" wire:model.defer="urgency_number" class="form-control"
+                                    id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                             </div>
                         </div>
                         @error('urgency_number')
-                            <div class="input">
-                                <small class="text-left text-danger"> {{ $message }}</small>
+                            <div class=" mb-4">
+                                <small class="text-left text-danger mb-2"> {{ $message }}</small>
                             </div>
                         @enderror
+
                     </div>
                 </div>
+
+
                 <div class="registration-area__form-single">
                     <p class="secondary">@lang('Email') </p>
                     <div class="registration-area__form-single__inner">
@@ -152,90 +148,6 @@
                     </div>
                 </div>
             @endif
-            {{-- <div class="registration-area__form-single">
-                <p class="secondary">Blood Group *</p>
-                <div class="registration-area__form-single__inner">
-                    <div class="input-group-column">
-                        <div class="input">
-                            <label for="regiGroup">Blood Group</label>
-                            <select class="select-blood-group" id="regiGroup">
-                                <option label="none" selected></option>
-                                <option value="ab+">AB+</option>
-                                <option value="ab-">AB-</option>
-                                <option value="o+">O+</option>
-                                <option value="o-">O-</option>
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-            {{-- manager --}}
-            {{-- @if ($step === 2)
-                <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Name') <span class="text-danger">*</span></p>
-                    <div class="registration-area__form-single__inner">
-                        <div class="input-group-column">
-                            <div class="input">
-                                <label for="manager_name">Full Name</label>
-                                <input wire:model.defer="manager_name" class="form-control" type="text"
-                                    name="manager_name" required>
-                            </div>
-                            @error('manager_name')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Call Number') <span class="text-danger">*</span></p>
-                    <div class="registration-area__form-single__inner">
-                        <div class="input-group-column">
-                            <div class="input">
-                                <label for="call_number">number</label>
-                                <input wire:model.defer="call_number" class="form-control" type="number"
-                                    name="call_number" required>
-                            </div>
-                            @error('call_number')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                        </div>
-                    </div>
-                </div>
-                <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Email') <span class="text-danger">*</span></p>
-                    <div class="registration-area__form-single__inner">
-                        <div class="input-group-column">
-                            <div class="input">
-                                <label for="manager_email">text</label>
-                                <input wire:model.defer="manager_email" class="form-control" type="email"
-                                    name="manager_email" required>
-                            </div>
-                            @error('manager_email')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-
-                        </div>
-                    </div>
-                </div>
-                <div class="registration-area__form-single">
-                    <p class="secondary">@lang('Password') <span class="text-danger">*</span></p>
-                    <div class="registration-area__form-single__inner">
-                        <div class="input-group-column">
-                            <div class="input">
-                                <label for="password">@lang('password')</label>
-                                <input wire:model.defer="password" class="form-control" type="password"
-                                    name="password" required>
-                            </div>
-                            @error('password')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
-                        </div>
-                    </div>
-                </div>
-            @endif --}}
 
             @if ($step === 1)
                 <div>
@@ -265,8 +177,8 @@
                             <div class="input-group-column">
                                 <div class="input">
                                     <label for="website">url</label>
-                                    <input wire:model.defer="website" class="form-control" type="url"
-                                        name="website" required>
+                                    <input wire:model.defer="website" class="form-control" type="url" name="website"
+                                        required>
                                 </div>
 
                             </div>
@@ -311,8 +223,8 @@
                         <div class="input-group-column ">
                             <div class="input">
                                 <label for=" ">text</label>
-                                <input wire.model.defer="services.0" class="form-control form-control-lg" type="text"
-                                    name="services.0" required>
+                                <input wire.model.defer="services.0" class="form-control form-control-lg"
+                                    type="text" name="services.0" required>
                                 {{-- <textarea class="input-lg" name="" id="" cols="30" rows="10"></textarea> --}}
 
                             </div>
@@ -342,7 +254,7 @@
                                 <div class="input-group-column ">
                                     <div wire:click.prevent="remove({{ $key }})"
                                         class="btn btn-danger btn-lg">
-                                       <i class="fa fa-minus"></i> 
+                                        <i class="fa fa-minus"></i>
                                     </div>
                                 </div>
                             </div>

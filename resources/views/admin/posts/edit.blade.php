@@ -4,13 +4,11 @@
 @section('sub-title', 'Description text here...')
 @push('css')
     {{-- summernote --}}
-    {{-- sumernote --}}
     <link rel="stylesheet" href="{{ asset('assets/back/plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
     @livewireStyles()
 @endpush
 @push('js')
     @livewireScripts()
-    {{-- summernote --}}
     {{-- summernote --}}
     <script src="{{ asset('assets/back/js/pages/tables/jquery-datatable.js') }}"></script>
     <script src="{{ asset('assets/back/bundles/datatablescripts.bundle.js') }}"></script>
@@ -26,21 +24,11 @@
         // close message  modal
         window.livewire.on('closeModal', () => {
             $('#DeleteModal').modal('hide');
-            // $('#DeleteModal').modal('hide');
         });
         window.livewire.on('openDeleteModal', () => {
             //show modal details
             $('#DeleteModal').modal('show');
         });
-        // window.livewire.on('closeFormReply', () => {
-        //     // Close Input Reply and replyButton
-        //     document.getElementById('InputRepyForm').style.display = 'none';
-        // });
-        // window.livewire.on('showFormReply', () => {
-        //     // Show input reply
-        //     document.getElementById('InputRepyForm').style.display = 'block';
-        //     // document.getElementById('buttonReply').style.display = 'none';
-        // });
     </script>
 @endpush
 
@@ -49,9 +37,6 @@
 
     <x-livewire-alert::scripts />
     <section class="  profile-page">
-        @livewire('admin.posts.edit',['tags'=>$tags,
-                                    'content'=>$content,
-                                    'title'=>$title,
-                                    'image'=>$image])
+        @livewire('admin.posts.edit', ['tags' => $tags, 'content' => $content, 'title' => $title, 'image' => $image])
     </section>
 @endsection

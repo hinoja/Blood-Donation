@@ -2,11 +2,12 @@
 
 namespace App\Notifications\Admin;
 
+use Carbon\Carbon;
 use App\Models\Appointement;
 use Illuminate\Bus\Queueable;
+use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Notifications\Notification;
 
 class ValidateAppointmentNotification extends Notification
 {
@@ -16,7 +17,8 @@ class ValidateAppointmentNotification extends Notification
      * Create a new notification instance.
      */
     public function __construct(public Appointement $appointement)
-    {    }
+    {
+    }
 
     /**
      * Get the notification's delivery channels.
@@ -34,15 +36,11 @@ class ValidateAppointmentNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-        ->greeting("Hello Dear Hospital :" . $this->appointement->user->name)
-        ->subject(trans('Confirmation activate Notification'))
-
-        ->line("🍕🍕🍕"  . trans('Congratulation ') . "🍕🍕🍕")
-        ->line(
-            trans('Your account  has been successfully approuved.')
-        )
-        ->action(trans('Go to website'), url('/'));
- }
+            ->greeting(trans('Hello  ') . $notifiable->name)
+            ->subject("🍕🍕🍕" . trans('Appointment confirmation') . "🍕🍕🍕")
+            ->line(trans("Your blood donation can save a life - don't forget to attend your confirmed appointment on ") . $this->appointement->FormatDate($this->appointement->start) . trans(" at ") . Carbon::parse($this->appointement->start->format('H:i:s')) . trans(" at ") . $this->appointement->hospital->name . trans(" in and get tested so that your donation can be used to help those in need."))
+            ->action(trans('Go to website'), url('/'));
+    }
 
     /**
      * Get the array representation of the notification.

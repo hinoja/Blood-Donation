@@ -15,24 +15,26 @@
                             @lang('Home')
                         </a>
                     </li>
-                    {{-- <li class="nav-item">
-                        <a class="nav-link" href="about-us.html">@lang('About')</a>
-                    </li> --}}
-                    {{-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
+                            class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Campaign
+                            @lang('Register')
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarCampaignDropdown">
-                            <li><a class="dropdown-item" href="campaigns.html">Campaigns</a></li>
-                            <li><a class="dropdown-item" href="campaign-details.html">Campaign Details</a></li>
+                            @auth
+                            <li><a class="dropdown-item" href="{{ route('chatify') }}">@lang('Chat')</a>
+
+                            @else
+                                <li><a class="dropdown-item" href="{{ route('register.donor.view') }}">@lang('Donor')</a>
+                                </li>
+                            @endauth
+                            <li><a class="dropdown-item"
+                                    href="{{ route('front.register.hospital') }}">@lang('Hospital')</a></li>
                         </ul>
-                    </li> --}}
+                    </li>
                     <li class="nav-item dropdown">
-                        {{-- <a class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pages
-                        </a> --}}
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="services.html">Our Services</a></li>
                             <li><a class="dropdown-item" href="service-details.html">Service Details</a></li>
@@ -51,28 +53,16 @@
                             href="{{ route('front.blog.index') }}">
                             Blog
                         </a>
-                        {{-- <ul class="dropdown-menu" aria-labelledby="navbarBlogDropdown">
-                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
-                            <li><a class="dropdown-item" href="blog-two.html">Blog Two</a></li>
-                            <li><a class="dropdown-item" href="blog-three.html">Blog Three</a></li>
-                            <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
-                            <li><a class="dropdown-item" href="blog-details-two.html">Blog Details Two</a></li>
-                            <li><a class="dropdown-item" href="blog-details-three.html">Blog Details Three</a></li>
-                        </ul> --}}
+
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
-                            href="{{ route('front.register.hospital') }}">@lang('Register Hospital')</a>
-                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link @if (Str::contains($currentUri, 'contact-us')) active @endif"
                             href="{{ route('front.contact') }}">@lang('Contact us')</a>
                     </li>
                     @if (Route::has('login'))
                         @auth
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/dashboard') }}">@lang('Dashboard')</a>
-                            </li> --}}
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
                             </li>
@@ -81,11 +71,7 @@
 
                                 <a class="nav-link" href="{{ route('login') }}">@lang('Log in')</a>
                             </li>
-                            {{-- <li class="nav-item">
-                                @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">@lang('Register')</a>
-                                @endif
-                            </li> --}}
+
                         @endauth
                     @endif
 
@@ -100,7 +86,7 @@
                     </a>
 
                     <ul class="nav-item dropdown navbar-nav " class="input mb-0">
-                        {{-- <button type="button" wire:click="ChangeLang('fr')">Value</button> --}}
+
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                             <i class="fas fa-globe"></i>
                             @if (app()->getLocale() === 'fr')

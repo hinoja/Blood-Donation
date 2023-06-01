@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Http\Requests\RegisterDonorRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,6 +21,13 @@ class AuthenticatedSessionController extends Controller
     public function create(): View
     {
         return view('auth.login');
+    }
+    /**
+     * Display the register view.
+     */
+    public function createDonor(): View
+    {
+        return view('auth.registerDonor');
     }
 
     /**
@@ -54,7 +62,14 @@ class AuthenticatedSessionController extends Controller
 
         return redirect()->intended($redirect);
     }
-   
+
+    /**
+     *register donor
+     */
+    public function storeDonor(RegisterDonorRequest $request)
+    {
+        
+    }
     /**
      * Destroy an authenticated session.
      */

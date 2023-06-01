@@ -33,8 +33,8 @@ class ContactNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->greeting(trans('Hello  ').$notifiable->name)
-            ->subject(trans('Reply : '.$this->Subject))
+            ->greeting(trans('Hello  ') . $notifiable->name)
+            ->subject(trans('Reply : ' . $this->Subject))
             ->line($this->reply)
             // ->line('Thank you for using our application!')
             ->action(trans('Go to website'), url('/'));

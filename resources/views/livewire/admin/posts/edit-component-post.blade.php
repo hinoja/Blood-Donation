@@ -9,40 +9,20 @@
                             <div class="profile_info">
                                 @if ($imageDispay)
                                     <div class="profile-image ">
-                                        <img src="{{ asset('storage/posts/' . $imageDispay) }}" class="col-3" height="120px"
-                                            width="60px" alt="">
+                                        <img src="{{ asset('storage/posts/' . $imageDispay) }}" class="col-3"
+                                            height="120px" width="60px" alt="">
                                     </div>
-                                    {{-- @else
-                                    <div class="profile-image"> <img
-                                            src="{{ asset('assets/back/images/random-avatar7.jpg') }}" alt="">
-                                    </div> --}}
                                 @endif
-                                <h4 class="mb-0"><strong>Edit post Picture</strong> </h4>
-                                {{-- <span class="text-muted col-white">Dentist</span> --}}
+                                <h4 class="mb-0"><strong>@lang('Edit post Picture')</strong> </h4>
                                 <div class="mt-10">
                                     <br> <br>
-                                    {{-- <button class="btn btn-raised btn-default bg-blush btn-sm">Follow</button>
-                                <button class="btn btn-raised btn-default bg-green btn-sm">Message</button> --}}
                                 </div>
 
                             </div>
                         </div>
                         <div class="profile-sub-header">
                             <div class="box-list">
-                                {{-- <ul class="text-center">
-                                <li> <a href="mail-inbox.html" class=""><i class="zmdi zmdi-email"></i>
-                                    <p>My Inbox</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);" class=""><i class="zmdi zmdi-camera"></i>
-                                    <p>Gallery</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-attachment"></i>
-                                    <p>Collections</p>
-                                    </a> </li>
-                                <li> <a href="javascript:void(0);"><i class="zmdi zmdi-format-subject"></i>
-                                    <p>Tasks</p>
-                                    </a> </li>
-                            </ul> --}}
+
                             </div>
                         </div>
                     </section>
@@ -86,13 +66,6 @@
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    {{-- <div class="form-group col-10">
-                                        <div class="form-line">
-                                            <input type="radio" name="published" wire:model="published" class="form-control"
-                                                >
-                                        </div>
-
-                                    </div> --}}
                                 </div>
                             </div>
                         </div>
@@ -103,26 +76,21 @@
                         </div>
                         <div class="body">
                             <div class="col-lg-12 col-md-12 col-sm-12">
-                                {{-- foreach --}}
                                 <div class=" row">
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
-                                            <select class="form-select form-control show-tick" wire:model.defer="tags_name"
-                                                name="tags_name" multiple>
+                                            <select class="form-select form-control show-tick"
+                                                wire:model.defer="tags_name" name="tags_name" multiple>
                                                 @foreach ($tags as $tag)
                                                     <option class=" " value="{{ $tag->id }}">
                                                         {{ $tag->name }}</option>
                                                 @endforeach
                                             </select>
-                                            {{-- <input type="text" class="form-control" name="name"
-                                                wire:model.defer="name" placeholder="new tag..."> --}}
                                         </div>
                                         @error('tags')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
-                                    {{-- <button class="btn btn-info col-2 btn-sm mb-4"> <i class="fa fa-plus"></i></button> --}}
-
                                 </div>
                             </div>
                         </div>
@@ -159,7 +127,7 @@
                     </div>
                     <div class="mr-4" style="float: right;">
                         <button type="submit" class="btn btn-success btn-lg mr-3"> <i class="fa fa-save">
-                                @lang('Save')</i> </button>
+                                @lang('Update')</i> </button>
                         <button type="reset" class="btn btn-danger btn-lg"> <i class="fa fa-trash">
                                 @lang('Reset')</i> </button>
                     </div>
