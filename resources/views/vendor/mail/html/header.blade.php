@@ -9,10 +9,11 @@
                 {{ $slot }}
             @endif --}}
 
-            @if (trim($slot) === 'Laravel')
-                <img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo">
+            @if (trim($slot) === 'Blood Donation')
+                <img src="{{ asset('assets/front/images/bg2.jpg') }}" class="logo" alt="{{ config('app.name') }} Logo">
+                {{-- <img src="https://laravel.com/img/notification-logo.png" class="logo" alt="Laravel Logo"> --}}
             @else
-            <img src="{{ asset('assets/front/images/bg2.jpg') }}" class="logo" alt="{{ config('app.name') }} Logo">
+                <img src="{{ asset('assets/front/images/bg2.jpg') }}" class="logo" alt="{{ config('app.name') }} Logo">
             @endif
         </a>
     </td>
