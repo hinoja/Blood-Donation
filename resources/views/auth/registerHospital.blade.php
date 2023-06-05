@@ -245,7 +245,7 @@
     <!-- ==== sidenav end ==== -->
 
     <!-- ==== banner section start ==== -->
-    <section class="banner bg-img dark-overlay dark-overlay--secondary" data-background="assets/images/banner-bg.png">
+    <section class="banner bg-img dark-overlay dark-overlay--secondary" data-background="{{ asset('assets/front/images/overview/Hospital.jpeg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

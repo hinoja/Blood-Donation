@@ -1,5 +1,5 @@
 @extends('layouts.front')
-@section('title',__('Welcome'))
+@section('title', __('Welcome'))
 @section('content')
     <!-- ==== hero section start ==== -->
     @include('includes.front.Hero')
@@ -26,7 +26,7 @@
     <!-- ==== #call now section end ==== -->
 
     <!-- ==== campaign section start ==== -->
-    @include('includes.front.campaign')
+    {{-- @include('includes.front.campaign') --}}
     <!-- ==== #camapign section end ==== -->
 
     <!-- ==== testimonial section start ==== -->
@@ -46,10 +46,18 @@
     <!-- ==== #team section end ==== -->
 
     <!-- ==== blog section start ==== -->
-    @include('includes.front.blogSection')
+    @livewire('front.home.blog-section')
     <!-- ==== #blog section end ==== -->
 
     <!-- ==== cta section start ==== -->
     @include('includes.front.cta')
     <!-- ==== #cta section end ==== -->
 @endsection
+
+@push('css')
+    @livewireStyles()
+@endpush
+
+@push('js')
+    @livewireScripts()
+@endpush

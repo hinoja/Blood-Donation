@@ -58,8 +58,20 @@
                                 <div class="modal-footer">
                                     <button type="reset" class="btn btn-success" wire:click="closeModal()"
                                         data-dismiss="modal">@lang('Cancel')</button>
-                                    <button type="button" wire:click="ActiveAppointment()" class="btn btn-danger">
-                                        @lang('Yes! active')</button>
+                                    <div>
+                                        <button wire:click="ActiveAppointment()"
+                                        {{-- wire:loading.remove --}}
+                                         type="button"
+                                            class="btn btn-danger">
+                                            @lang('Yes,active')
+                                        </button>
+                                        {{-- <button  wire:loading wire:target="ActiveAppointment()"
+                                            class="btn btn-danger" disabled>
+                                            <span class="spinner-border spinner-border-sm" role="status"
+                                                aria-hidden="true"></span>
+                                            @lang('Loading')...
+                                        </button> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -46,7 +46,7 @@
     <link rel="stylesheet" href="{{ asset('assets/front/vendor/animate/animate.css') }}">
     @stack('css')
     <!-- ==== css dependencies end ==== -->
-    {{-- @livewireStyles() --}}
+  
     <!-- main css -->
 
     <link rel="stylesheet" href="{{ asset('assets/front/css/style.css') }}">

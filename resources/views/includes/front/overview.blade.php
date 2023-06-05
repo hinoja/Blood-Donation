@@ -3,11 +3,11 @@
         <div class="explore-area wow fadeInUp">
             <div class="explore-area__single">
                 <div class="explore-area__single-content">
-                    <h4><a href="register.html">Regsiter Now</a></h4>
+                    <h4><a href="{{ route('register.donor.view') }}">Regsiter Now</a></h4>
                     <p class="neutral-bottom">Nor again is there anyone who loves or pursues or desires to obtain pain of
                         itself, because it is pain,</p>
                 </div>
-                <a href="register.html"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                <a href="{{ route('register.donor.view') }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
             </div>
             <div class="explore-area__single explore-area__single--secondary">
                 <div class="explore-area__single-content">
@@ -25,7 +25,7 @@
                         <div class="overview-area__single-content">
                             <div class="poster">
                                 <a href="service-details.html">
-                                    <img src="{{ asset('assets/front/images/overview/donor.png') }}" alt="Blood Donor">
+                                    <img src="{{ asset('assets/front/images/overview/donor.jpeg') }}" alt="Blood Donor" style="height: 324px;">
                                 </a>
                             </div>
                             <div class="icon-box-wrapper">
@@ -46,7 +46,7 @@
                         <div class="overview-area__single-content">
                             <div class="poster">
                                 <a href="service-details.html">
-                                    <img src="{{ asset('assets/front/images/overview/blood.png') }}" alt="Give Blood">
+                                    <img style="max-height: 324px;" src="{{ asset('assets/front/images/overview/blood.jpg') }}"  alt="Give Blood">
                                 </a>
                             </div>
                             <div class="icon-box-wrapper">
@@ -66,7 +66,7 @@
                         <div class="overview-area__single-content">
                             <div class="poster">
                                 <a href="service-details.html">
-                                    <img src="{{ asset('assets/front/images/overview/donations.png') }}"
+                                    <img style="height: 324px;" src="{{ asset('assets/front/images/overview/donations.jpeg') }}"
                                         alt="Blood Donation">
                                 </a>
                             </div>

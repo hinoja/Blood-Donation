@@ -1,6 +1,7 @@
 <section class="hero-slider-area">
     <div class="hero-slider owl-carousel owl-theme">
-        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-slider-bg.png') }}">
+        <div class="hero-slider-item bg-img" style="max-height: 945px;max-weight:1813,13px;"
+            data-background="{{ asset('assets/front/images/hero/hero-slider-bg.jpg') }}">
             <div class="container">
                 <div class="hero-slider-content">
                     <div class="intro-video">
@@ -42,7 +43,7 @@
             </div>
         </div>
 
-        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-five.jpg') }}">
+        <div class="hero-slider-item bg-img" data-background="{{ asset('assets/front/images/hero/hero-five.jpeg') }}">
             <div class="container">
                 <div class="hero-slider-content animation-style-three">
                     <div class="intro-video">

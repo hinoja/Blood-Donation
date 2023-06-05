@@ -11,7 +11,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
                             <div class="team-area__single img-effect">
                                 <div class="poster">
-                                    <img src="{{ asset('assets/front/images/volunteers/nora.png') }}" alt="Nora">
+                                    <img src="{{ asset('assets/front/images/volunteers/nora.jpg') }}" alt="Nora">
                                     <div class="social social--secondary">
                                         <a href="https://www.facebook.com/" target="_blank">
                                             <i class="fa-brands fa-facebook-f"></i>
@@ -34,7 +34,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
                             <div class="team-area__single img-effect wow fadeInUp">
                                 <div class="poster">
-                                    <img src="{{ asset('assets/front/images/volunteers/joshi.png') }}"
+                                    <img src="{{ asset('assets/front/images/volunteers/joshi.jpg') }}"
                                         alt="Alex Joshan Deo">
                                     <div class="social social--secondary">
                                         <a href="https://www.facebook.com/" target="_blank">
@@ -58,7 +58,7 @@
                         <div class="col-sm-6 col-md-6 col-lg-4 row-item align-center">
                             <div class="team-area__single img-effect wow fadeInUp" data-wow-delay="0.2s">
                                 <div class="poster">
-                                    <img src="{{ asset('assets/front/images/volunteers/alex.png') }}"
+                                    <img src="{{ asset('assets/front/images/volunteers/alex.jpg') }}"
                                         alt="Alex Joshi Deon">
                                     <div class="social social--secondary">
                                         <a href="https://www.facebook.com/" target="_blank">

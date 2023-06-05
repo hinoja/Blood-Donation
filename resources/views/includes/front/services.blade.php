@@ -12,7 +12,7 @@
                             <div class="col-lg-6 row-item">
                                 <div class="service-area__single-thumb">
                                     <a href="service-details.html">
-                                        <img src="{{ asset('assets/front/images/services/blood-donation.png') }}" alt="Blood Donation">
+                                        <img src="{{ asset('assets/front/images/services/blood-donation.jpg') }}" alt="Blood Donation">
                                     </a>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                             <div class="col-lg-6 row-item">
                                 <div class="service-area__single-thumb">
                                     <a href="service-details.html">
-                                        <img src="{{ asset('assets/front/images/services/health-check.png') }}" alt="Health Check">
+                                        <img src="{{ asset('assets/front/images/services/health-check.jpg') }}" alt="Health Check">
                                     </a>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                             <div class="col-lg-6 row-item">
                                 <div class="service-area__single-thumb">
                                     <a href="service-details.html">
-                                        <img src="{{ asset('assets/front/images/services/blood-bank.png') }}" alt="Blood Bank">
+                                        <img src="{{ asset('assets/front/images/services/blood-bank.jpg') }}" alt="Blood Bank">
                                     </a>
                                 </div>
                             </div>

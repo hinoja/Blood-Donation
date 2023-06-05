@@ -8,7 +8,9 @@
   'admin.posts.edit-component-post' => 'App\\Http\\Livewire\\Admin\\Posts\\EditComponentPost',
   'admin.posts.posts-manage' => 'App\\Http\\Livewire\\Admin\\Posts\\PostsManage',
   'front.contact.contact-manage' => 'App\\Http\\Livewire\\Front\\Contact\\ContactManage',
+  'front.home.blog-section' => 'App\\Http\\Livewire\\Front\\Home\\BlogSection',
   'front.posts.list-post' => 'App\\Http\\Livewire\\Front\\Posts\\ListPost',
+  'front.register-donor' => 'App\\Http\\Livewire\\Front\\RegisterDonor',
   'front.register-hospital' => 'App\\Http\\Livewire\\Front\\RegisterHospital',
   'layouts.base' => 'App\\Http\\Livewire\\Layouts\\Base',
 );

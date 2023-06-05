@@ -171,8 +171,6 @@
                     <div class="modal-footer">
                         <button type="reset" class="btn btn-success" wire:click="closeModal()"
                             data-dismiss="modal">@lang('Cancel')</button>
-                        {{-- <button type="button" wire:click="ConfirmationActivate()" class="btn btn-danger">
-                            @lang('Yes! active')</button> --}}
 
                         <div>
                             <button wire:click="ConfirmationActivate()" style="float: right;" wire:loading.remove type="button"

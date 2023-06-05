@@ -18,10 +18,8 @@
                             <div class="col-lg-8 row-item">
                                 <div class="blog-default-area__content blog-details blog-default-area__content-alt-two">
                                     <div class="details-poster">
-                                        <img  style="max-width: 719px;max-height:400px;"
-                                        {{-- src="@if ($post->image){{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif" --}}
-                                        src=" {{ $post->image }}"
-                                            alt="Blog">
+                                        <img style="max-width: 719px;max-height:400px;" {{-- src="@if ($post->image){{ asset('storage/posts/' . $post->image) }} @else {{ asset('storage/posts/noImage.png') }} @endif" --}}
+                                            src=" {{ $post->image }}" alt="Blog">
                                     </div>
                                     <div class="blog-post-date">
                                         <p><i class="fa-solid fa-clock"></i>{{ $post->FormatDate($post->published_at) }}</p>
@@ -74,123 +72,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    {{-- <div class="slide__group__btn">
-                                        <div class="blog-prev-large">
-                                            <a href="javascript:void(0)"><i class="fa-solid fa-arrow-left-long"></i>Previous
-                                                Post</a>
-                                            <p class="neutral-bottom">Lorem ipsum dolor sit amet, adipiscing elit, sed
-                                                do
-                                                eiusmod tempor incididunt
-                                                utdolore magna suspendisse ultrices gravida.</p>
-                                        </div>
-                                        <div class="blog-next-large text-end">
-                                            <a href="javascript:void(0)">Next Post<i
-                                                    class="fa-solid fa-arrow-right-long"></i></a>
-                                            <p class="text-end neutral-bottom">Lorem ipsum dolor sit amet, adipiscing
-                                                elit, sed
-                                                do eiusmod
-                                                tempor incididunt utdolore magna suspendisse ultrices gravida.</p>
-                                        </div>
-                                    </div> --}}
-                                    {{-- <div class="comment-box">
-                                        <h4>3 Comments</h4>
-                                        <div class="comment-box__single">
-                                            <div class="avatar">
-                                                <img src="assets/images/avatars/comment-author.png" alt="Author">
-                                            </div>
-                                            <div class="comment-author-info">
-                                                <div class="author-info__name">
-                                                    <p class="tertiary">Robart Sony</p>
-                                                    <p class="time">Says Jul 21, 2021 at 10:00am</p>
-                                                </div>
-                                                <p>On the other hand, we denounce with righteous indignation and dislike
-                                                    men are
-                                                    so beguiled and demoralized by the charms of pleasure of the moment,
-                                                </p>
-                                                <a href="javascript:void(0)" class="open-reply">Reply</a>
-                                                <form action="#" method="post" class="reply-form">
-                                                    <div class="input">
-                                                        <textarea name="reply__one" id="replyOne" cols="30" rows="10" placeholder="Reply"></textarea>
-                                                    </div>
-                                                    <button type="submit"
-                                                        class="button button--effect button--tertiary">Reply</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="comment-box__single comment-box__single-reply wow fadeInUp">
-                                            <div class="avatar">
-                                                <img src="assets/images/avatars/comment-author-two.png" alt="Author">
-                                            </div>
-                                            <div class="comment-author-info">
-                                                <div class="author-info__name">
-                                                    <p class="tertiary">Robart Sony</p>
-                                                    <p class="time">Says Jul 21, 2021 at 10:00am</p>
-                                                </div>
-                                                <p>On the other hand, we denounce with righteous indignation and dislike
-                                                    men are
-                                                    so beguiled and demoralized by the charms of pleasure of the moment,
-                                                </p>
-                                                <a href="javascript:void(0)" class="open-reply">Reply</a>
-                                                <form action="#" method="post" class="reply-form">
-                                                    <div class="input">
-                                                        <textarea name="reply__two" id="replyTwo" cols="30" rows="10" placeholder="Reply"></textarea>
-                                                    </div>
-                                                    <button type="submit"
-                                                        class="button button--effect button--tertiary">Reply</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                        <div class="comment-box__single mb-0">
-                                            <div class="avatar">
-                                                <img src="assets/images/avatars/comment-author.png" alt="Author">
-                                            </div>
-                                            <div class="comment-author-info">
-                                                <div class="author-info__name">
-                                                    <p class="tertiary">Robart Sony</p>
-                                                    <p class="time">Says Jul 21, 2021 at 10:00am</p>
-                                                </div>
-                                                <p>On the other hand, we denounce with righteous indignation and dislike
-                                                    men are
-                                                    so beguiled and demoralized by the charms of pleasure of the moment,
-                                                </p>
-                                                <a href="javascript:void(0)" class="open-reply">Reply</a>
-                                                <form action="#" method="post" class="reply-form">
-                                                    <div class="input">
-                                                        <textarea name="reply__three" id="replyThree" cols="30" rows="10" placeholder="Reply"></textarea>
-                                                    </div>
-                                                    <button type="submit"
-                                                        class="button button--effect button--tertiary">Reply</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                      <div class="reply-box wow fadeInUp">
-                                        <h4>Leave A Reply</h4>
-                                        <div class="comment__form" id="commentForm">
-                                            <form action="#" method="post">
-                                                <div class="input-group-column">
-                                                    <div class="input">
-                                                        <input type="text" name="comment_name" id="commentName"
-                                                            placeholder="Name" required class="input">
-                                                    </div>
-                                                    <div class="input">
-                                                        <input type="email" name="comment_mail" id="commentMail"
-                                                            placeholder="Email" required class="input">
-                                                    </div>
-                                                </div>
-                                                <div class="input">
-                                                    <input type="text" name="web_address" id="webAddress"
-                                                        placeholder="Website" required class="input">
-                                                </div>
-                                                <div class="input">
-                                                    <textarea name="comment_text" id="commentText" cols="30" rows="10" class="input textarea"
-                                                        placeholder="Write Your Comments"></textarea>
-                                                </div>
-                                                <button type="submit" class="button button--effect">Post A Comment<i
-                                                        class="fa-solid fa-arrow-right-long"></i></button>
-                                            </form>
-                                        </div>
-                                    </div>   --}}
+
                                 </div>
                             </div>
                             <div class="col-lg-4 row-item">

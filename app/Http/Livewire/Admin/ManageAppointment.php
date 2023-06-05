@@ -32,7 +32,7 @@ class ManageAppointment extends Component
         $this->closeModal();
         $this->appointement->is_validated = 1;
         $this->appointement->save();
-        Notification::send($this->appointement->user->email, new ValidateAppointmentNotification($this->appointement));
+        Notification::send($this->appointement->user, new ValidateAppointmentNotification($this->appointement));
 
         $this->alert('success', trans('the appointment has been confirmed and an e-mail sent to the potential donor'));
         return redirect()->back();

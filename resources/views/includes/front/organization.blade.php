@@ -6,7 +6,7 @@
                     <div class="row d-flex align-items-center">
                         <div class="col-lg-5">
                             <div class="organization-area__thumb dir-ltr mb-30 text-center">
-                                <img src="{{ asset('assets/front/images/organization-illustration.png') }}"
+                                <img width="504px" height="564px" src="{{ asset('assets/front/images/organization-illustration.jpg') }}"
                                     alt="Organization">
                             </div>
                         </div>

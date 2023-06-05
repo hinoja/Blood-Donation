@@ -6,7 +6,8 @@
     <nav class="navbar navbar-expand-xl">
         <div class="container">
             <a class="navbar-brand" href="/">
-                <img src="{{ asset('assets/front/images/logo-light.png') }}" alt="Logo" class="logo">
+                <img width="600px" style="width: 600px;" src="{{ asset('assets/front/images/logo-light.png') }}"
+                    alt="Logo" class="logo">
             </a>
             <div class="collapse navbar-collapse justify-content-center order-3 order-xl-2" id="primaryNav">
                 <ul class="navbar-nav">
@@ -24,9 +25,8 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarCampaignDropdown">
                             @auth
-                            <li><a class="dropdown-item" href="{{ route('chatify') }}">@lang('Chat')</a>
-
-                            @else
+                                <li><a class="dropdown-item" href="{{ route('chatify') }}">@lang('Chat')</a>
+                                @else
                                 <li><a class="dropdown-item" href="{{ route('register.donor.view') }}">@lang('Donor')</a>
                                 </li>
                             @endauth

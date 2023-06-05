@@ -12,7 +12,7 @@ integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="ano
 @section('content')
     <!-- ==== banner section start ==== -->
     <section class="banner bg-img dark-overlay dark-overlay--secondary"
-        data-background="{{ asset('assets/front/images/banner-bg.png') }}">
+        data-background="{{ asset('assets/front/images/banner-bg.jpg') }}">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
