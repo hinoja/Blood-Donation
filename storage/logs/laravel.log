@@ -10101,3 +10101,11 @@ Only protected or private properties can be set as other types because JavaScrip
 #88 E:\\Laravel Projet\\Blood_Donation\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\resources\\server.php(16): require_once('E:\\\\Laravel Proj...')
 #89 {main}
 "} 
+[2023-06-05 07:44:24] local.ERROR: Cannot use App\Http\Controllers\Api\Users\GetEmailController as GetEmailController because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use App\\Http\\Controllers\\Api\\Users\\GetEmailController as GetEmailController because the name is already in use at E:\\Laravel Projet\\Blood_Donation\\routes\\api.php:9)
+[stacktrace]
+#0 {main}
+"} 
+[2023-06-05 07:44:30] local.ERROR: Cannot use App\Http\Controllers\Api\Users\GetEmailController as GetEmailController because the name is already in use {"exception":"[object] (Symfony\\Component\\ErrorHandler\\Error\\FatalError(code: 0): Cannot use App\\Http\\Controllers\\Api\\Users\\GetEmailController as GetEmailController because the name is already in use at E:\\Laravel Projet\\Blood_Donation\\routes\\api.php:10)
+[stacktrace]
+#0 {main}
+"} 

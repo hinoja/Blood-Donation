@@ -3,9 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\HospitalsController;
 use App\Http\Controllers\API\posts\PostController;
-use App\Http\Controllers\Api\Users\ProfileController;
-use App\Http\Controllers\Api\Users\GetEmailController;
-use App\Http\Controllers\Api\Users\updatePasswordController;
+use App\Http\Controllers\API\Users\ProfileController;
+use App\Http\Controllers\API\Users\GetEmailController;
+use App\Http\Controllers\API\Users\updatePasswordController;
 use App\Http\Controllers\API\front\users\AuthentificationController;
 use App\Http\Controllers\API\front\users\RegisterController;
 use App\Http\Controllers\API\UserAppointmentsController;
