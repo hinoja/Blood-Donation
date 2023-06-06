@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'BloodDonation'),
+    'name' => env('APP_NAME', 'Blood Donation'),
 
     /*
     |--------------------------------------------------------------------------

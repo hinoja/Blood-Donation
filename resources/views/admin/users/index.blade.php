@@ -68,28 +68,31 @@
                                                 {{ $user->role->name }}
                                             </td>
                                             <td>
-                                                <a class="btn btn-success" href="/chatify/{{ $user->id }}"
-                                                    {{-- href="{{ route('chatify',$user->id) }}" --}} title="chat"><i
-                                                        class="fab fa-rocketchat"></i></a>
-                                                @if ($user->role_id > 1)
-                                                    <form method="POST"
-                                                        action="{{ route('admin.users.status', $user->id) }}">
-                                                        @csrf
-                                                        @method('PATCH')
-                                                        <a href="{{ route('admin.users.status', $user->id) }}"
-                                                            title="{{ $user->is_active ? __('Block') : __('Unblock') }}"
-                                                            onclick="event.preventDefault();
-                                                            this.closest('form').submit();"
-                                                            class="btn btn-{{ $user->is_active ? 'danger' : 'primary' }}">
-                                                            @if ($user->is_active)
-                                                                {{-- @lang('Block') --}}<i class="fa fa-lock"></i>
-                                                            @else
-                                                                {{-- @lang('Unblock') --}}<i class="fa fa-lock-open"></i>
-                                                            @endif
+                                                <div style="display: inline-block;">
+                                                    @if ($user->role_id > 1)
+                                                        <form method="POST"
+                                                            action="{{ route('admin.users.status', $user->id) }}">
+                                                            @csrf
+                                                            @method('PATCH')
+                                                            <a href="{{ route('admin.users.status', $user->id) }}"
+                                                                title="{{ $user->is_active ? __('Block') : __('Unblock') }}"
+                                                                onclick="event.preventDefault();
+                                                                this.closest('form').submit();"
+                                                                class="btn-xs btn btn-{{ $user->is_active ? 'danger' : 'primary' }}">
+                                                                @if ($user->is_active)
+                                                                    {{-- @lang('Block') --}}<i class="fa fa-lock"></i>
+                                                                @else
+                                                                    {{-- @lang('Unblock') --}}<i class="fa fa-lock-open"></i>
+                                                                @endif
 
-                                                        </a>
-                                                    </form>
-                                                @endif
+                                                            </a>
+                                                        </form>
+                                                    @endif
+                                                    <a class=" btn-xs btn btn-success" href="/chatify/{{ $user->id }}"
+                                                        {{-- href="{{ route('chatify',$user->id) }}" --}} title="chat"><i
+                                                            class="fab fa-rocketchat"></i></a>
+
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

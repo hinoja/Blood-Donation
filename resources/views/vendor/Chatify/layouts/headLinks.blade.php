@@ -24,7 +24,7 @@
 
 {{-- Setting messenger primary color to css --}}
 <style>
-    /* :root {
+    :root {
         --primary-color: {{ $messengerColor }};
-    } */
+    }
 </style>

@@ -59,9 +59,7 @@
                                     <button type="reset" class="btn btn-success" wire:click="closeModal()"
                                         data-dismiss="modal">@lang('Cancel')</button>
                                     <div>
-                                        <button wire:click="ActiveAppointment()"
-                                        {{-- wire:loading.remove --}}
-                                         type="button"
+                                        <button wire:click="ActiveAppointment()" {{-- wire:loading.remove --}} type="button"
                                             class="btn btn-danger">
                                             @lang('Yes,active')
                                         </button>

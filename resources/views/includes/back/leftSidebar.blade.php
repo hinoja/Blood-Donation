@@ -109,10 +109,12 @@
                 <a class="nav-link" href="{{ route('admin.posts.index') }}"><i class="fa fa-newspaper"></i>
                     <span>@lang('Posts')</span></a>
             </li>
-            <li class="@if (Str::contains($currentUri, 'post')) active open @endif">
-                <a class="nav-link" href="{{ route('admin.alertNotification') }}"><i class="fas fa-broadcast-tower"></i>
+            {{-- a remettrre --}}
+            {{-- <li class="@if (Str::contains($currentUri, 'alert')) active open @endif">
+                <a class="nav-link" href="{{ route('admin.alertNotification') }}"><i
+                        class="fas fa-broadcast-tower"></i>
                     <span>@lang('Alert')</span></a>
-            </li>
+            </li> --}}
             {{--  Admin  --}}
             @if (Auth()->user()->role_id === 1)
                 <li class="@if (Str::contains($currentUri, 'contacts')) active open @endif">

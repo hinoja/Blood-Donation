@@ -379,8 +379,8 @@ class ComposerStaticInit77049014c2a6da96577f5a6887bb8769
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -633,6 +633,7 @@ class ComposerStaticInit77049014c2a6da96577f5a6887bb8769
         'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Livewire\\Admin\\Contacts\\ContactManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Contacts/ContactManage.php',
+        'App\\Http\\Livewire\\Admin\\Dashboard' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Dashboard.php',
         'App\\Http\\Livewire\\Admin\\Hospitals\\ManageHospital' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Hospitals/ManageHospital.php',
         'App\\Http\\Livewire\\Admin\\ManageAppointment' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/ManageAppointment.php',
         'App\\Http\\Livewire\\Admin\\Posts\\AddPost' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/AddPost.php',
@@ -640,7 +641,9 @@ class ComposerStaticInit77049014c2a6da96577f5a6887bb8769
         'App\\Http\\Livewire\\Admin\\Posts\\EditComponentPost' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/EditComponentPost.php',
         'App\\Http\\Livewire\\Admin\\Posts\\PostsManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Admin/Posts/PostsManage.php',
         'App\\Http\\Livewire\\Front\\Contact\\ContactManage' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/Contact/ContactManage.php',
+        'App\\Http\\Livewire\\Front\\Home\\BlogSection' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/Home/BlogSection.php',
         'App\\Http\\Livewire\\Front\\Posts\\ListPost' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/Posts/ListPost.php',
+        'App\\Http\\Livewire\\Front\\RegisterDonor' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/RegisterDonor.php',
         'App\\Http\\Livewire\\Front\\RegisterHospital' => __DIR__ . '/../..' . '/app/Http/Livewire/Front/RegisterHospital.php',
         'App\\Http\\Livewire\\Layouts\\Base' => __DIR__ . '/../..' . '/app/Http/Livewire/Layouts/Base.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -660,6 +663,7 @@ class ComposerStaticInit77049014c2a6da96577f5a6887bb8769
         'App\\Http\\Middleware\\setLocalization' => __DIR__ . '/../..' . '/app/Http/Middleware/setLocalization.php',
         'App\\Http\\Requests\\Auth\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Auth/LoginRequest.php',
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
+        'App\\Http\\Requests\\RegisterDonorRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegisterDonorRequest.php',
         'App\\Models\\Appointement' => __DIR__ . '/../..' . '/app/Models/Appointement.php',
         'App\\Models\\ChFavorite' => __DIR__ . '/../..' . '/app/Models/ChFavorite.php',
         'App\\Models\\ChMessage' => __DIR__ . '/../..' . '/app/Models/ChMessage.php',

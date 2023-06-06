@@ -64,7 +64,8 @@ Route::post('reset-password', [updatePasswordController::class, 'updating'])
 
 // --------------------------ADMIN--------------------------
 // Role Admin+ Hospital(Admin+ Staff)
-Route::middleware(['auth', 'checkRole:2','checkRole:1','checkRole:4'])->prefix('admin')->name('admin.')->group(function () {
+// Route::middleware(['auth', 'checkRole:2','checkRole:1','checkRole:4'])->prefix('admin')->name('admin.')->group(function () {
+    Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
 
     Route::view('dashboard', 'admin.dashboard')->name('dashboard');
     // StaffHospitals
@@ -77,7 +78,7 @@ Route::middleware(['auth', 'checkRole:2','checkRole:1','checkRole:4'])->prefix('
     Route::get('appointment/validate', [AppointmentsController::class, 'validateAppointment'])->name('appointements.validate');
 });
 
-Route::middleware('auth', 'checkRole:1')->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['auth','admin'])->prefix('admin')->name('admin.')->group(function () {
     // CONTACTS
     Route::view('contacts', 'admin.contacts.index')->name('contacts');
     // USERS

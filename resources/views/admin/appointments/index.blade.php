@@ -32,10 +32,10 @@
                     <div role="tabpanel" class="tab-pane in active" id="profile">
                         @livewire('admin.manage-appointment')
                     </div>
-                    <div role="tabpanel" id="home" wire:ignore.self>
-                        {{-- calendar --}}
-                        <div class="container">
-                            <div id="calendar-container" wire:ignore>
+                    {{-- calendar --}}
+                    {{-- <div role="tabpanel" id="home" wire:ignore>
+                        <div class="container"  >
+                            <div id="calendar-container" >
                                 <style>
                                     #calendar {
                                         margin: 0px auto;
@@ -47,7 +47,7 @@
                                 <div id='calendar'></div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             {{-- end Update view --}}
