@@ -57,23 +57,25 @@
             </label>
         </div>
 
-        <div class="align-right">
+      <span class="ml-4">
+        <span class="ml-9" >
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     href="{{ route('password.request') }}" style="text-decoration: none;">
                     {{ __('Register') }}
                 </a>
             @endif
-        </div>
+        </span>
 
-        <div class="align-left">
+        <span class=" ml-3">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     href="{{ route('password.request') }}" style="text-decoration: none;">
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-        </div>
+        </span>
+      </span>
         <br><br>
         <div class="text-center">
             <button type="submit" style="background: #ea3d3d; color: white;"

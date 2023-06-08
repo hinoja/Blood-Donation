@@ -2,37 +2,42 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\User;
+use DateTime;
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Hospital;
 use App\Models\Appointement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
-use Carbon\Carbon;
 
 class UserAppointmentsController extends Controller
 {
     public function store(Request $request)
     {
         $data = $request->validate([
-            'userId' => ['required', 'integer'],
+            'userId' => ['required', 'integer', 'exists:users,id'],
             'hospitalId' => ['required', 'integer'],
-            'start' => ['required', 'date', 'after_or_equal:now()'],
-
+            'start' => ['required', 'after_or_equal:now()'],
         ]);
+        $var = str_replace('/', '-', $data['start']);
+        $data['start'] = date('Y-m-d', strtotime($var));
+        // $newdate = date("Y/m/d H:i", $sec);
+        // $newdate = $newdate . ":00";
+        // $data['start'] = $newdate;
         $user = User::find($data['userId']);
         $hospital = Hospital::find($data['hospitalId']);
         try {
-            if (!$user || !$hospital) {
+            if (!$hospital) {
 
                 $staus = 'false';
-                $message = "User or Hospital is incorrect";
+                $message = "Hospital id  is incorrect";
             } else {
                 Appointement::create([
                     'hospital_id' => $data['hospitalId'],
                     'user_id' => $data['userId'],
-                    'start' => Carbon::parse($data['start'])
+                    'start' => $data['start']
                 ]);
                 $staus = 'true';
                 $message = "Appointment is save with successfull";
@@ -62,11 +67,13 @@ class UserAppointmentsController extends Controller
                 $formattedAppointments = [];
                 foreach (Appointement::latest()->where('user_id', $id)->with(['user', 'hospital'])->get() as  $appointment) {
                     //    if($appointment->start <= now()->addDay()){
-                    if ($appointment->start <= now()->addHours(1)) {
+                    if ($appointment->start <= now()) {
                         $data = "expired ...";
-                    } elseif (!$appointment->is_validated) {
+                    }
+                    if (!$appointment->is_validated) {
                         $data = "waiting validation ...";
-                    } else {
+                    }
+                    if ($appointment->is_validated) {
                         $data = "validated ...";
                     }
                     $formattedAppointment = [

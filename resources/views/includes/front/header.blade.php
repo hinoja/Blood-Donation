@@ -21,7 +21,7 @@
                         <a class="nav-link @if (Str::contains($currentUri, 'Hospital')) active @endif"
                             class="nav-link dropdown-toggle" href="javascript:void(0)" id="navbarCampaignDropdown"
                             role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                       @lang('Register')
+                        {{ trans('Register') }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarCampaignDropdown">
                             @auth
