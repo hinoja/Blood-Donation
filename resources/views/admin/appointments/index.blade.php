@@ -25,7 +25,7 @@
                 <ul class="nav nav-tabs">
                     <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile">@lang('TABLE')</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link " data-toggle="tab" href="#home">@lang('CALENDAR')</a></li>
+                    {{-- <li class="nav-item"><a class="nav-link " data-toggle="tab" href="#home">@lang('CALENDAR')</a></li> --}}
                 </ul>
                 <!-- Tab panes -->
                 <div class="tab-content">

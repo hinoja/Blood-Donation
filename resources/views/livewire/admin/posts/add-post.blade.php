@@ -97,7 +97,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card" >
+                    <div class="card">
                         <div class="header">
                             <h2>Tags</h2>
                         </div>
@@ -107,8 +107,9 @@
                                 <div class=" row">
                                     <div class="col-10 ">
                                         <div class=" form-group drop-custum">
-                                            <select wire:ignore.self class="form-select form-control show-tick" wire:model="tags_name"
-                                                name="tags_name" data-placeholder="Choose Categories" multiple class="chosen-select">
+                                            <select wire:ignore.self class="form-select form-control show-tick"
+                                                wire:model="tags_name" name="tags_name"
+                                                data-placeholder="Choose Categories" multiple class="chosen-select">
                                                 @foreach ($tags as $tag)
                                                     <option class=" " value="{{ $tag->id }}">
                                                         {{ $tag->name }}</option>

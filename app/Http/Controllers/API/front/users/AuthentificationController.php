@@ -175,9 +175,9 @@ class AuthentificationController extends Controller
             } else {
                 Auth::logout();
                 $token = DB::table('personal_access_tokens')->where('tokenable_id', $user->id)->first();
-                if ($token) {
-                    $token->delete();
-                }
+                // if ($token) {
+                //     $token->delete();
+                // }
                 $user->appointements()->delete();
                 foreach ($user->posts as  $post) {
                     $post->tags()->detach();

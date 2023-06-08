@@ -6,10 +6,10 @@
         <div class="input-group icon before_span {{ $errors->has('email') ? 'has-error' : '' }}"
             style="width:500px; margin-left: 9rem !important;">
             {{-- <label for="email" class="control-label">@lang('Email')</label> --}}
-            <span class="input-group-addon"> <i class="zmdi zmdi-email"></i> </span>
+            <span class="input-group-addon"> <i class="zmdi zmdi-assignment-account"></i> </span>
             <div class="form-line">
                 <input type="email" class="form-control @error('name') is-invalid @enderror" name="name"
-                    placeholder="@lang('name')" value="{{ old('email') }}" tabindex="1" required autofocus>
+                    placeholder="@lang('name')" value="{{ old('name') }}" tabindex="1" required autofocus>
                 {{-- <input type="password" class="form-control" name="email" placeholder="Password" required> --}}
             </div>
             @error('name')
@@ -52,7 +52,7 @@
         <br>
         <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error' : '' }}"
             style="width:500px; margin-left: 9rem !important;">
-            <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
+            <span class="input-group-addon"> <i class="zmdi zmdi-phone-forwarded"></i> </span>
             <div class="form-line">
                 <input type="number" required autocomplete="current-password" class="form-control" name="password"
                     placeholder="@lang('phone Number')" required>
@@ -127,12 +127,13 @@
         <!-- City -->
         <br>
         <div style="display: inline-block;">
+
             <div class="container">
                 <div class="row">
                     <div class="col-5 mt-1">
                         <div class="input-group icon before_span {{ $errors->has('password') ? 'has-error' : '' }}"
                             style="width:500px; margin-left: 9rem !important;">
-                            <span class="input-group-addon"> <i class="fas fa-birthday-cake"></i> </span>
+                            <span class="input-group-addon"> <i class="zmdi zmdi-city-alt"></i> </span>
                             <div class="form-line">
 
                                 <select class="form-control" name="" id="">

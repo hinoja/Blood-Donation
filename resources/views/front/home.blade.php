@@ -38,7 +38,7 @@
     <!-- ==== #donor section end ==== -->
 
     <!-- ==== appointment section start ==== -->
-    @include('includes.front.appointement')
+    {{-- @include('includes.front.appointement') --}}
     <!-- ==== #appointment section end ==== -->
 
     <!-- ==== team section start ==== -->

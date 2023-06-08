@@ -18,7 +18,7 @@
                         </div>
                         <div class="col-md-6 col-lg-2 col-sm-6">
                             <div class="footer-area__single">
-                                <h5>Quick Links</h5>
+                                <h5>@lang('Quick Link')</h5>
                                 <ul>
                                     <li>
                                         <a href="services.html">

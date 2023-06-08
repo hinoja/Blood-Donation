@@ -50,10 +50,10 @@
 
             <nav aria-label="Page navigation">
                 <ul class="pagination  justify-content-center  active ">
-                     {{ $posts->links() }}
+                    {{ $posts->links() }}
                 </ul>
             </nav>
         </div>
-        
+
     </div>
 </div>

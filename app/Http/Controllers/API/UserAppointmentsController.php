@@ -9,6 +9,7 @@ use App\Models\Appointement;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
+use Carbon\Carbon;
 
 class UserAppointmentsController extends Controller
 {
@@ -27,14 +28,11 @@ class UserAppointmentsController extends Controller
 
                 $staus = 'false';
                 $message = "User or Hospital is incorrect";
-                // } elseif (typeOf($start) !== date('d,m Y')) {
-                //     $staus = 'false';
-                //     $message = "incorrect format of date";
             } else {
                 Appointement::create([
                     'hospital_id' => $data['hospitalId'],
                     'user_id' => $data['userId'],
-                    'start' => $data['start'],
+                    'start' => Carbon::parse($data['start'])
                 ]);
                 $staus = 'true';
                 $message = "Appointment is save with successfull";
@@ -63,14 +61,14 @@ class UserAppointmentsController extends Controller
 
                 $formattedAppointments = [];
                 foreach (Appointement::latest()->where('user_id', $id)->with(['user', 'hospital'])->get() as  $appointment) {
-                //    if($appointment->start <= now()->addDay()){
-                    if($appointment->start <= now()->addHours(1)){
-                        $data="expired ...";
-                   }elseif(!$appointment->is_validated){
-                        $data="waiting validation ...";
-                   }else{
-                    $data="validated ...";
-                   }
+                    //    if($appointment->start <= now()->addDay()){
+                    if ($appointment->start <= now()->addHours(1)) {
+                        $data = "expired ...";
+                    } elseif (!$appointment->is_validated) {
+                        $data = "waiting validation ...";
+                    } else {
+                        $data = "validated ...";
+                    }
                     $formattedAppointment = [
                         'id' => $appointment->id,
                         'hospital' => $appointment->hospital->name,

@@ -29,6 +29,9 @@ class Appointement extends Model
     {
         return $this->belongsTo(Hospital::class);
     }
+    // protected $casts = [
+    //     'start' => 'datetime:d/m/d',
+    // ];
     // ACCESSORS
     public function FormatDate($dateline)
     {

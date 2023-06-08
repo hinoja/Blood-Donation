@@ -52,10 +52,7 @@
                                         </div>
                                         <div class="author__content">
                                             <h6>{{ $post->user->name }}</h6>
-                                            {{-- <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                                dolore
-                                                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                                            </p> --}}
+
                                             <div class="social social--secondary">
                                                 <a href="javascript:void(0)">
                                                     <i class="fa-brands fa-facebook-f"></i>
@@ -112,34 +109,7 @@
                                             </a>
                                         </div>
                                     </div>
-                                    {{-- <div class="categories sidebar-single sidebar-single-default">
-                                        <h4>Categories</h4>
-                                        <ul>
-                                            <li>
-                                                <a href="campaigns.html"><i class="fa-solid fa-arrow-right-long"></i>Blood
-                                                    Equipment</a>
-                                            </li>
-                                            <li>
-                                                <a href="campaigns.html"><i
-                                                        class="fa-solid fa-arrow-right-long"></i>Dependent
-                                                    Things</a>
-                                            </li>
-                                            <li>
-                                                <a href="campaigns.html"><i
-                                                        class="fa-solid fa-arrow-right-long"></i>Donation
-                                                    Care</a>
-                                            </li>
-                                            <li>
-                                                <a href="campaigns.html"><i
-                                                        class="fa-solid fa-arrow-right-long"></i>Donation
-                                                    News</a>
-                                            </li>
-                                            <li>
-                                                <a href="campaigns.html"><i class="fa-solid fa-arrow-right-long"></i>Help
-                                                    People</a>
-                                            </li>
-                                        </ul>
-                                    </div> --}}
+
                                     <div class="sidebar-single sidebar-single-default wow fadeInUp">
                                         <h4>@lang('Recent Posts')</h4>
                                         @foreach ($recentsPost as $recent)
@@ -157,21 +127,18 @@
                                     <div class="categories sidebar-single sidebar-single-default">
                                         <h4>@lang('Quick Link')</h4>
                                         <ul>
-                                            {{-- <li>
-                                                <a href="gallery.html"><i
-                                                        class="fa-solid fa-arrow-right-long"></i>Portfolio</a>
-                                            </li> --}}
+
                                             <li>
                                                 <a href="{{ route('front.blog.index') }}><i class="fa-solid
                                                     fa-arrow-right-long"></i>Our
                                                     Blog</a>
                                             </li>
                                             <li>
-                                                <a href="about-us.html"><i
+                                                <a href="#"><i
                                                         class="fa-solid fa-arrow-right-long"></i>@lang('About')</a>
                                             </li>
                                             <li>
-                                                <a href="team.html"><i class="fa-solid fa-arrow-right-long"></i>Our
+                                                <a href="#"><i class="fa-solid fa-arrow-right-long"></i>Our
                                                     @lang('Team')</a>
                                             </li>
                                             <li>
@@ -180,28 +147,11 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    {{-- <div class="sidebar-single sidebar-single-default sidebar-single-default-alt">
-                                        <h4>Follow Us</h4>
-                                        <div class="social social--tertiary">
-                                            <a href="javascript:void(0)">
-                                                <i class="fa-brands fa-facebook-f"></i>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa-brands fa-twitter"></i>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa-brands fa-instagram"></i>
-                                            </a>
-                                            <a href="javascript:void(0)">
-                                                <i class="fa-brands fa-pinterest-p"></i>
-                                            </a>
-                                        </div>
-                                    </div> --}}
+
                                     <div class="sidebar-single sidebar-single-default sidebar-single--secondary excellence">
                                         <h4>@lang('Blood Excellence') </h4>
                                         <p>@lang('Expanded Blood Donate Services Here')</p>
-                                        {{-- <p>There are many variations of passages Lorem Ipsum available, but the majority
-                                            suffered of alteration in some form,</p> --}}
+
                                         <a href="{{ route('front.contact') }}"
                                             class="button button--quinary button--effect">@lang('Contact us')</a>
                                     </div>
