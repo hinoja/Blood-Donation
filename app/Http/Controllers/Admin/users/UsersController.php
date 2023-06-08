@@ -19,10 +19,7 @@ class UsersController extends Controller
     }
     public function indexStaffHospitals()
     {
-        // dd(  User::where('role_id', 2)
-        // ->OrWhere('role_id', 4)
-        // ->with('role:id,name')
-        // ->get());
+       
         return view('admin.StaffHospitals.index', [
             'users' => User::query()
                 ->where('role_id', 2)

@@ -21,12 +21,11 @@ class UserAppointmentsController extends Controller
             'hospitalId' => ['required', 'integer'],
             'start' => ['required', 'after_or_equal:now()'],
         ]);
-        $var = str_replace('/', '-', $data['start']);
-        $data['start'] = date('Y-m-d', strtotime($var));
+        // $var = str_replace('/', '-', $data['start']);
+        // $data['start'] = date('Y-m-d', strtotime($var));
         // $newdate = date("Y/m/d H:i", $sec);
         // $newdate = $newdate . ":00";
         // $data['start'] = $newdate;
-        $user = User::find($data['userId']);
         $hospital = Hospital::find($data['hospitalId']);
         try {
             if (!$hospital) {
@@ -37,8 +36,9 @@ class UserAppointmentsController extends Controller
                 Appointement::create([
                     'hospital_id' => $data['hospitalId'],
                     'user_id' => $data['userId'],
-                    'start' => $data['start']
+                    'start' => Carbon::createFromFormat('d/m/Y', $data['start'])->format('Y-m-d')
                 ]);
+
                 $staus = 'true';
                 $message = "Appointment is save with successfull";
             }

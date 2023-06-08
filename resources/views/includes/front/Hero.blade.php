@@ -15,8 +15,8 @@
                             <span>Intro Video</span>
                         </div>
                     </div>
-                    <h3>Donate blood,save life !</h3>
-                    <h1>Donate Blood And Inspires Others.</h1>
+                    <h3>@lang('Donate blood,save life !')</h3>
+                    <h1>@lang('Donate Blood And Inspires Others.')</h1>
                     <a href="services.html" class="button button--effect">Explore Now</a>
                 </div>
             </div>
@@ -36,8 +36,8 @@
                             <span>Intro Video</span>
                         </div>
                     </div>
-                    <h3>Donate blood,save life !</h3>
-                    <h1>Donate Blood And Inspires Others.</h1>
+                    <h3>@lang('Donate blood,save life !')</h3>
+                    <h1>@lang('Donate Blood And Inspires Others.')</h1>
                     <a href="services.html" class="button button--effect">Explore Now</a>
                 </div>
             </div>
@@ -57,8 +57,8 @@
                             <span>Intro Video</span>
                         </div>
                     </div>
-                    <h3>Donate blood,save life !</h3>
-                    <h1>Donate Blood And Inspires Others.</h1>
+                    <h3>@lang('Donate blood,save life !')</h3>
+                    <h1>@lang('Donate Blood And Inspires Others.')</h1>
                     <a href="services.html" class="button button--effect">Explore Now</a>
                 </div>
             </div>
